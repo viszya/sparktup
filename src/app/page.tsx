@@ -9,13 +9,8 @@ import { Email } from "@/app/_components/email";
 
 export default function Home() {
   return (
-    <main className={cn("mb-12 mt-28 sm:mt-40 flex flex-col items-center justify-center text-center", tw_presets().wrapper)}>
-      <div className='mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-red-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-red-300 hover:bg-red/50'>
-        <p className="text-sm font-semibold text-gray-700 flex flex-row ">
-          <Icons.party className="h-5 w-5 mr-2" /> ClearSight is now public!
-        </p>
-        
-      </div>
+    <main className={cn("mb-12 mt-28 sm:mt-20 flex flex-col items-center justify-center text-center", tw_presets().wrapper)}>
+      
 
 
       {/* Hero Section */}
@@ -28,6 +23,12 @@ export default function Home() {
       <Link href="/dashboard" className={buttonVariants({ size: "lg", className: "mt-4 bg-gradient-to-r from-red-400 to-red-300 ease-in-out duration-200 hover:text-black hover:shadow-xl" })}>
         Get Started <Icons.arrowRight className="ml-2 h-5 w-5" />
       </Link>
+      <div className='mx-auto mb-4 mt-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-red-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-red-300 hover:bg-red/50'>
+        <p className="text-sm font-semibold text-gray-700 flex flex-row ">
+          <Icons.party className="h-5 w-5 mr-2" /> ClearSight is now public!
+        </p>
+        
+      </div>
       <Email />
 
       {/* Example Section */}

@@ -6,6 +6,7 @@ import { tw_presets, cn } from '@/server/utils'
 // import MobileNav from './MobileNav'
 import { getServerAuthSession } from "@/server/auth";
 import { api } from "@/trpc/server";
+import { Accordion } from '@radix-ui/react-accordion';
 
 const Nav = async () => {
   const session = await getServerAuthSession();
@@ -16,7 +17,7 @@ const Nav = async () => {
         <Link
           href='/'
           className='flex z-40 font-semibold'>
-          <span>clearsight.ai</span>
+          <span>SparktUp</span>
         </Link>
 
         <Link
