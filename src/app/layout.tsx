@@ -27,8 +27,8 @@ export const metadata = {
   ],
   authors: [
     {
-      name: "viszya",
-      url: "https://viszya.com",
+      name: "SparktUp",
+      url: "https://sparktup.vercel.app",
     },
   ],
   creator: "viszya",

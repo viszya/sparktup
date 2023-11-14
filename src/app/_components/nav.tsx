@@ -25,6 +25,14 @@ const Nav = async () => {
         >
           {session ? "Sign out" : "Sign in"}
         </Link>
+        <Link
+          href='/faq'
+          className={buttonVariants({
+            variant: 'ghost',
+            size: 'sm',
+          })}>
+          FAQ
+        </Link>
 
 
 
@@ -41,14 +49,7 @@ const Nav = async () => {
                 })}>
                 Pricing
               </Link>
-              <Link
-                href='/faq'
-                className={buttonVariants({
-                  variant: 'ghost',
-                  size: 'sm',
-                })}>
-                FAQ
-              </Link>
+              
               <LoginLink
                 className={buttonVariants({
                   variant: 'ghost',
