@@ -22,6 +22,14 @@ export function Email({ className }: React.HTMLAttributes<HTMLElement>) {
     )
 }
 
+export function EmailTemplate() {
+    return (
+        <div>
+            <h1>Welcome, !</h1>
+        </div>
+    )
+}
+
 // import * as React from 'react';
 
 // interface EmailTemplateProps {
