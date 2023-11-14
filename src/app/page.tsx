@@ -14,14 +14,16 @@ export default function Home() {
         <p className="text-sm font-semibold text-gray-700 flex flex-row ">
           <Icons.party className="h-5 w-5 mr-2" /> ClearSight is now public!
         </p>
+        
       </div>
+
 
       {/* Hero Section */}
       <h1 className="max-w-4xl text-5xl font-bold md:text-6xl lg:text:7xl">
-        Build Your Dream  with ClearSight&apos;s AI-Powered Tools
+        Build Your Dream SAAS with ClearSight&apos;s AI-Powered Tools
       </h1>
       <p className="mt-5 max-w-prose text-zinc-700 sm:text-lg">
-        ClearSight empowers SAAS developers to bring their ideas to life in just one week. From product idea generation to project management, we&apos;ve got you covered.
+        ClearSight empowers SAS developers to bring their ideas to life in just one week. From product idea generation to project management, we&apos;ve got you covered.
       </p>
       <Link href="/dashboard" className={buttonVariants({ size: "lg", className: "mt-4 bg-gradient-to-r from-red-400 to-red-300 ease-in-out duration-200 hover:text-black hover:shadow-xl" })}>
         Get Started <Icons.arrowRight className="ml-2 h-5 w-5" />
