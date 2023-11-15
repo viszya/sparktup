@@ -10,26 +10,58 @@ import { Email } from "@/app/_components/email";
 export default function Home() {
   return (
     <main className={cn("mb-12 mt-28 sm:mt-20 flex flex-col items-center justify-center text-center", tw_presets().wrapper)}>
-      
+
 
 
       {/* Hero Section */}
-      <h1 className="max-w-4xl text-5xl font-bold md:text-6xl lg:text:7xl">
-        Build Your Dream SAAS with ClearSight&apos;s AI-Powered Tools
+      <h1 className="max-w-4xl text-5xl mb-2 mt-10 font-semibold md:text-6xl text-black lg:text:7xl">
+        Ignite Your Tech<br />Career!
       </h1>
-      <p className="mt-5 max-w-prose text-zinc-700 sm:text-lg">
-        ClearSight empowers SAS developers to bring their ideas to life in just one week. From product idea generation to project management, we&apos;ve got you covered.
+      <p className="mt-5 max-w-prose mb-2 text-zinc-700 sm:text-lg">
+        Spark your tech career with ease and growth. Join Sparktup!
       </p>
-      <Link href="/dashboard" className={buttonVariants({ size: "lg", className: "mt-4 bg-gradient-to-r from-red-400 to-red-300 ease-in-out duration-200 hover:text-black hover:shadow-xl" })}>
-        Get Started <Icons.arrowRight className="ml-2 h-5 w-5" />
-      </Link>
-      <div className='mx-auto mb-4 mt-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-red-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-red-300 hover:bg-red/50'>
-        <p className="text-sm font-semibold text-gray-700 flex flex-row ">
-          <Icons.party className="h-5 w-5 mr-2" /> ClearSight is now public!
-        </p>
+      <div className="flex flex-row mt-4">
+        <Link href="/dashboard" className={buttonVariants({ size: "lg", className: "mr-5 bg-gradient-to-r from-red-400 to-red-300 ease-in-out duration-200 hover:text-black hover:shadow-xl" })}>
+          Get Started <Icons.arrowRight className="ml-2 h-5 w-5" />
+        </Link>
+        <Link href="/dashboard" className={buttonVariants({ variant: "heroButton2", size: "lg", className: 'ml-5 mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden text-black rounded-full border border-red-400 bg-white ease-in-out px-7 py-2 shadow-md backdrop-blur transition-all hover:border-red-400 hover:bg-gradient-to-r hover:from-red-400 hover:to-red-300 hover:shadow-xl  hover:text-white' })}>
+          About Us <Icons.arrowRight className="ml-2 h-5 w-5" />
+        </Link>
+      </div>
+
+      <Email />
+
+      {/*Partnered Companies */}
+      <div className="mx-auto w-full max-w-screen-xl px-2.5 shadow-md mt-32 bg-red-300 rounded-full hover:shadow-xl">
+        <div className="flex flex-row p-4">
+          <Link href="amazon.com" className="p-2 font-bold mr-11 ml-6 ">
+            Amazon
+          </Link>
+          <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
+            Costco
+          </Link>
+          <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
+            Microsoft
+          </Link>
+          <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
+            Google
+          </Link>
+          <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
+            Apple
+          </Link>
+          <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
+            Samsung
+          </Link>
+          <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
+            Lenovo
+          </Link>
+        </div>
+      </div>
+
+      {/* Features */}
+      <div>
         
       </div>
-      <Email />
 
       {/* Example Section */}
       <div className="mx-auto w-full max-w-screen-xl px-2.5 ">
