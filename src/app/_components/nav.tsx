@@ -1,12 +1,11 @@
 import Link from 'next/link'
 import { buttonVariants } from '@/app/_components/ui/button'
-import { ArrowRight } from 'lucide-react'
+// import { ArrowRight } from 'lucide-react'
 // import UserAccountNav from './UserAccountNav'
 import { tw_presets, cn } from '@/server/utils'
 // import MobileNav from './MobileNav'
 import { getServerAuthSession } from "@/server/auth";
-import { api } from "@/trpc/server";
-import { Accordion } from '@radix-ui/react-accordion';
+// import { api } from "@/trpc/server";
 
 const Nav = async () => {
   const session = await getServerAuthSession();

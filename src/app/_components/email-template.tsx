@@ -17,17 +17,17 @@ import {
   } from '@react-email/components';
   import * as React from 'react';
   
-  interface VercelInviteUserEmailProps {
-    username?: string;
-    userImage?: string;
-    invitedByUsername?: string;
-    invitedByEmail?: string;
-    teamName?: string;
-    teamImage?: string;
-    inviteLink?: string;
-    inviteFromIp?: string;
-    inviteFromLocation?: string;
-  } 
+  // interface VercelInviteUserEmailProps {
+  //   username?: string;
+  //   userImage?: string;
+  //   invitedByUsername?: string;
+  //   invitedByEmail?: string;
+  //   teamName?: string;
+  //   teamImage?: string;
+  //   inviteLink?: string;
+  //   inviteFromIp?: string;
+  //   inviteFromLocation?: string;
+  // } 
   
   const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -125,7 +125,7 @@ import {
                 <span className="text-black">{data.inviteFromIp}</span> located in{' '}
                 <span className="text-black">{data.inviteFromLocation}</span>. If you were not
                 expecting this invitation, you can ignore this email. If you are
-                concerned about your account's safety, please reply to this email to
+                concerned about your account&apos;s safety, please reply to this email to
                 get in touch with us.
               </Text>
             </Container>
