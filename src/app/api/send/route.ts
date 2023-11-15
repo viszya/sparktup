@@ -1,9 +1,10 @@
 // import { EmailTemplate } from '../../../components/EmailTemplate';
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { env } from "@/env.mjs";
 import VercelInviteUserEmail from '@/app/_components/email-template';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(env.RESEND_API_KEY);
 
 export async function GET() {
     try {
