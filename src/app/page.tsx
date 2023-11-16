@@ -13,98 +13,59 @@ export default async function Home() {
   const session = getServerAuthSession();
 
   return (
-<<<<<<< Updated upstream
-    <main className={cn("mb-12 mt-28 sm:mt-20 flex flex-col items-center justify-center text-center", tw_presets().wrapper)}>
-
-=======
     <>
       {await session ? redirect("/onboarding") : (
         <main className={cn("mb-12 mt-28 sm:mt-20 flex flex-col items-center justify-center text-center", tw_presets().wrapper)}>
->>>>>>> Stashed changes
 
           {/* Hero Section */}
-          <h1 className="max-w-4xl text-5xl font-bold md:text-6xl lg:text:7xl">
-            Build Your Dream SAAS with ClearSight&apos;s AI-Powered Tools
+          <h1 className="max-w-4xl text-5xl mb-2 mt-10 font-semibold md:text-6xl text-black lg:text:7xl">
+            Ignite Your Tech<br />Career!
           </h1>
-          <p className="mt-5 max-w-prose text-zinc-700 sm:text-lg">
-            ClearSight empowers SAS developers to bring their ideas to life in just one week. From product idea generation to project management, we&apos;ve got you covered.
+          <p className="mt-5 max-w-prose mb-2 text-zinc-700 sm:text-lg">
+            Spark your tech career with ease and growth. Join Sparktup!
           </p>
-          <Link href="/dashboard" className={buttonVariants({ size: "lg", className: "mt-4 bg-gradient-to-r from-red-400 to-red-300 ease-in-out duration-200 hover:text-black hover:shadow-xl" })}>
-            Get Started <Icons.arrowRight className="ml-2 h-5 w-5" />
-          </Link>
-          <div className='mx-auto mb-4 mt-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-red-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-red-300 hover:bg-red/50'>
-            <p className="text-sm font-semibold text-gray-700 flex flex-row ">
-              <Icons.party className="h-5 w-5 mr-2" /> ClearSight is now public!
-            </p>
-
-<<<<<<< Updated upstream
-      {/* Hero Section */}
-      <h1 className="max-w-4xl text-5xl mb-2 mt-10 font-semibold md:text-6xl text-black lg:text:7xl">
-        Ignite Your Tech<br />Career!
-      </h1>
-      <p className="mt-5 max-w-prose mb-2 text-zinc-700 sm:text-lg">
-        Spark your tech career with ease and growth. Join Sparktup!
-      </p>
-      <div className="flex flex-row mt-4">
-        <Link href="/dashboard" className={buttonVariants({ size: "lg", className: "mr-5 bg-gradient-to-r from-purple-400 to-red-300 ease-in-out duration-200 hover:text-black hover:shadow-xl" })}>
-          Get Started <Icons.arrowRight className="ml-2 h-5 w-5" />
-        </Link>
-        <Link href="/dashboard" className={buttonVariants({ variant: "heroButton2", size: "lg", className: 'ml-5 mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden text-black rounded-full border border-red-400 bg-white ease-in-out px-7 py-2 shadow-md backdrop-blur transition-all hover:border-red-400 hover:bg-gradient-to-r hover:from-purple-400 hover:to-red-300 hover:shadow-xl  hover:text-white' })}>
-          About Us <Icons.arrowRight className="ml-2 h-5 w-5" />
-        </Link>
-      </div>
-
-      <Email />
-
-      {/*Partnered Companies */}
-      <div className="mx-auto w-full max-w-screen-xl px-2.5 shadow-md mt-32 bg-gradient-to-br from-red-300 to-purple-400 rounded-full hover:shadow-xl">
-        <div className="flex flex-row p-4">
-          <Link href="amazon.com" className="p-2 font-bold mr-11 ml-6 ">
-            Amazon
-          </Link>
-          <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
-            Costco
-          </Link>
-          <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
-            Microsoft
-          </Link>
-          <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
-            Google
-          </Link>
-          <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
-            Apple
-          </Link>
-          <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
-            Samsung
-          </Link>
-          <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
-            Lenovo
-          </Link>
-        </div>
-      </div>
-
-      {/* Features */}
-      <div>
-        
-      </div>
-
-      {/* Example Section */}
-      <div className="mx-auto w-full max-w-screen-xl px-2.5 ">
-        <div className='relative isolate'>
-          <div
-            aria-hidden='true'
-            className='pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu orveflow-hidden blur-3xl sm:-top-80'>
-            <div
-              style={{
-                clipPath:
-                  'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-              }}
-              className='relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-red-300 to-red-400 opacity-40 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]'
-            />
-=======
->>>>>>> Stashed changes
+          <div className="flex flex-row mt-4">
+            <Link href="/dashboard" className={buttonVariants({ size: "lg", className: "mr-5 bg-gradient-to-r from-purple-400 to-red-300 ease-in-out duration-200 hover:text-black hover:shadow-xl" })}>
+              Get Started <Icons.arrowRight className="ml-2 h-5 w-5" />
+            </Link>
+            <Link href="/dashboard" className={buttonVariants({ variant: "heroButton2", size: "lg", className: 'ml-5 mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden text-black rounded-full border border-red-400 bg-white ease-in-out px-7 py-2 shadow-md backdrop-blur transition-all hover:border-red-400 hover:bg-gradient-to-r hover:from-purple-400 hover:to-red-300 hover:shadow-xl  hover:text-white' })}>
+              About Us <Icons.arrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </div>
+
           <Email />
+
+          {/*Partnered Companies */}
+          <div className="mx-auto w-full max-w-screen-xl px-2.5 shadow-md mt-32 bg-gradient-to-br from-red-300 to-purple-400 rounded-full hover:shadow-xl">
+            <div className="flex flex-row p-4">
+              <Link href="amazon.com" className="p-2 font-bold mr-11 ml-6 ">
+                Amazon
+              </Link>
+              <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
+                Costco
+              </Link>
+              <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
+                Microsoft
+              </Link>
+              <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
+                Google
+              </Link>
+              <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
+                Apple
+              </Link>
+              <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
+                Samsung
+              </Link>
+              <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
+                Lenovo
+              </Link>
+            </div>
+          </div>
+
+          {/* Features */}
+          <div>
+
+          </div>
 
           {/* Example Section */}
           <div className="mx-auto w-full max-w-screen-xl px-2.5 ">
@@ -120,38 +81,57 @@ export default async function Home() {
                   className='relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-red-300 to-red-400 opacity-40 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]'
                 />
               </div>
+              <Email />
 
-              <div>
-                <div className='mx-auto max-w-6xl px-6 lg:px-8'>
-                  <div className='mt-16 flow-root sm:mt-24'>
-                    <div className='-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
-                      <Image
-                        priority={true}
-                        src='/dashboard-preview.png'
-                        alt='product preview'
-                        width={1364}
-                        height={866}
-                        quality={100}
-                        className='rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10'
-                      />
+              {/* Example Section */}
+              <div className="mx-auto w-full max-w-screen-xl px-2.5 ">
+                <div className='relative isolate'>
+                  <div
+                    aria-hidden='true'
+                    className='pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu orveflow-hidden blur-3xl sm:-top-80'>
+                    <div
+                      style={{
+                        clipPath:
+                          'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                      }}
+                      className='relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-red-300 to-red-400 opacity-40 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]'
+                    />
+                  </div>
+
+                  <div>
+                    <div className='mx-auto max-w-6xl px-6 lg:px-8'>
+                      <div className='mt-16 flow-root sm:mt-24'>
+                        <div className='-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
+                          <Image
+                            priority={true}
+                            src='/dashboard-preview.png'
+                            alt='product preview'
+                            width={1364}
+                            height={866}
+                            quality={100}
+                            className='rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10'
+                          />
+                        </div>
+                      </div>
                     </div>
+                  </div>
+
+                  <div
+                    aria-hidden='true'
+                    className='pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80'>
+                    <div
+                      style={{
+                        clipPath:
+                          'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                      }}
+                      className='relative left-[calc(50%-13rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-red-500 to-yellow-300 opacity-30 sm:left-[calc(50%-36rem)] sm:w-[72.1875rem]'
+                    />
                   </div>
                 </div>
               </div>
-
-              <div
-                aria-hidden='true'
-                className='pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80'>
-                <div
-                  style={{
-                    clipPath:
-                      'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-                  }}
-                  className='relative left-[calc(50%-13rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-red-500 to-yellow-300 opacity-30 sm:left-[calc(50%-36rem)] sm:w-[72.1875rem]'
-                />
-              </div>
             </div>
           </div>
+
 
           <section className="text-left">
             <div className="relative items-center w-full px-5 pt-24 mx-auto md:px-12 lg:px-16 max-w-7xl lg:py-24 ">
@@ -312,8 +292,8 @@ export default async function Home() {
               </div>
             </div>
           </div>
-        </main>)
-      }
+        </main>
+      )}
     </>
   );
 }
