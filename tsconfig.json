@@ -33,7 +33,7 @@
     ".eslintrc.cjs",
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
+    "**/**/**/*.tsx",
     "**/*.cjs",
     "**/*.mjs",
     ".next/types/**/*.ts"

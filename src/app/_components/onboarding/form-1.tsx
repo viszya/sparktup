@@ -20,7 +20,7 @@ export function ProfileForm() {
 		},
 	});
 
-	async function onSubmit() {
+	function onSubmit() {
 		toast({
 			title: "Form submitted!",
 			description: "Friday, February 10, 2023 at 5:57 PM",
@@ -40,17 +40,17 @@ export function ProfileForm() {
 								</span>
 							</span>
 							<div className="mt-3 text-3xl tracking-tighter text-black">
-								Welcome! Let's get started.
+								Welcome! Let&apos;s get started.
 							</div>
 							<div className="mt-4 text-gray-500">
-								Let's get to know each other. Please fill out the following form to the best of your ability.
+								Let&apos;s get to know each other. Please fill out the following form to the best of your ability.
 								All this information will be used to create your profile. You can always edit your profile later.
 							</div>
 						</article>
 
 						<form  
 							className="flex flex-col gap-y-9"
-							onSubmit={(e) => { e.preventDefault(); onSubmit(); }}
+							onSubmit={(e) => { e.preventDefault(), onSubmit(); }}
 							>
 
 							<div className="col-span-full">
