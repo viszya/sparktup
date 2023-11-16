@@ -63,8 +63,31 @@ export default async function Home() {
           </div>
 
           {/* Features */}
-          <div>
-
+          <div className="mx-auto w-full max-w-screen-xl px-2.5 ">
+            <div className="">
+              <h1 className="font-bold text-4xl text-black mt-11">
+                Features
+              </h1>
+              <div className="mt-6">
+                <ol type="1" className="felx flex-colum text-start rounded-m p-5">
+                  <li className="text-l mb-4">
+                    <strong>Smart Connections -</strong> Instantly connect with top tech talent or exciting job opportunities, driven by our intelligent matchmaking system.
+                  </li>
+                  <li className="text-l mb-4">
+                    <strong>Personalized Matches -</strong> Tailored algorithms ensure businesses find ideal candidates, and individuals discover opportunities aligned with their skills and aspirations.
+                  </li>
+                  <li className="text-l mb-4">
+                    <strong>Effortless Experience -</strong> Streamlined platform navigation for businesses to post jobs seamlessly and individuals to apply with just a few clicks.  
+                    </li>
+                  <li className="text-l mb-4">
+                    <strong>Vibrant Tech Ecosystem -</strong> Join a collaborative community fostering innovation and growth, connecting businesses and individuals in the dynamic world of tech.
+                  </li>
+                  <li className="text-l mb-4">
+                    <strong>Supportive Community -</strong> Engage in a nurturing environment where collaboration and support fuel the journey to tech success.
+                  </li>
+                </ol>
+              </div>
+            </div>
           </div>
 
           {/* Example Section */}
