@@ -65,6 +65,14 @@ model User {
     posts         Post[]
 }
 
+model Onboarding {
+    id           String @id @default(cuid())
+    name         String?
+    email String?
+    jobTitle String?
+    statement String?
+}
+
 model VerificationToken {
     identifier String
     token      String   @unique
