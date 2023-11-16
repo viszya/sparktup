@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import { api } from "@/trpc/react";
 
-export function ProfileForm() {
+export function ProfileForm2() {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [jobTitle, setJobTitle] = useState("");
@@ -16,6 +16,10 @@ export function ProfileForm() {
 
 	const createPost = api.onboarding.form.useMutation({
 		onSuccess: () => {
+			setName("");
+			setEmail("");
+			setJobTitle("");
+			setStatement("");
 			//router.push("/onboarding/form-2");
 		},
 	});
@@ -36,11 +40,11 @@ export function ProfileForm() {
 						<article>
 							<span className="inline-flex items-center text-black rounded-xl">
 								<span className="font-mono text-sm" aria-hidden="true">
-									01
+									02
 								</span>
 							</span>
 							<div className="mt-3 text-3xl tracking-tighter text-black">
-								Welcome! Let's get started.
+								Lets get your profile set up!
 							</div>
 							<div className="mt-4 text-gray-500">
 								Let's get to know each other. Please fill out the following form to the best of your ability.
