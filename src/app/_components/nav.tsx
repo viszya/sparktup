@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { buttonVariants } from '@/app/_components/ui/button'
 // import { ArrowRight } from 'lucide-react'
 // import UserAccountNav from './UserAccountNav'
-import { tw_presets, cn } from '@/server/utils'
+import { twp, cn } from '@/server/utils'
 // import MobileNav from './MobileNav'
 import { getServerAuthSession } from "@/server/auth";
 // import { api } from "@/trpc/server";
@@ -13,7 +13,7 @@ const Nav = async () => {
   return (<>
 
     <div className="w-full mx-auto bg-white border-b 2xl:max-w-7xl">
-      <div className={cn(tw_presets().wrapper, "relative flex flex-col w-full p-5 mx-auto bg-white md:items-center md:justify-between md:flex-row md:px-6 lg:px-8")}>
+      <div className={cn(twp().wrapper, "relative flex flex-col w-full p-5 mx-auto bg-white md:items-center md:justify-between md:flex-row md:px-6 lg:px-8")}>
         <div className="flex flex-row items-center justify-between lg:justify-start">
           <a className="text-lg tracking-tight text-black uppercase focus:outline-none focus:ring lg:text-2xl" href="/">
             <span className="lg:text-lg uppecase focus:ring-0">
@@ -69,7 +69,7 @@ const Nav = async () => {
     </div>
 
    <nav className="sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-gray-200 bg-white/10 backdrop-blur-lg transition-all">
-      <div className={cn("flex h-14 items-center justify-between border-b border-zinc-200", tw_presets().wrapper)}>
+      <div className={cn("flex h-14 items-center justify-between border-b border-zinc-200", twp().wrapper)}>
         <Link
           href='/'
           className='flex z-40 font-semibold'>

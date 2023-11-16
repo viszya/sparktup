@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { cn } from "@/server/utils";
-import { tw_presets } from "@/server/utils";
+import { twp } from "@/server/utils";
 import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { Pricing } from "@/app/_components/pricing";
@@ -15,7 +15,7 @@ export default async function Home() {
   return (
     <>
       {await session ? redirect("/onboarding") : (
-        <main className={cn("mb-12 mt-28 sm:mt-20 flex flex-col items-center justify-center text-center", tw_presets().wrapper)}>
+        <main className={cn("mb-12 mt-28 sm:mt-20 flex flex-col items-center justify-center text-center", twp().wrapper)}>
 
           {/* Hero Section */}
           <h1 className="max-w-4xl text-5xl mb-2 mt-10 font-semibold md:text-6xl text-black lg:text:7xl">

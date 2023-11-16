@@ -8,7 +8,7 @@ import { cn } from "@/server/utils"
 import { Analytics } from "@vercel/analytics/react"
 import { ThemeProvider } from "@/app/_components/theme-provider"
 import { Footer } from "@/app/_components/footer";
-import { tw_presets } from "@/server/utils";
+import { twp } from "@/server/utils";
 import { Toaster } from "@/app/_components/ui/toaster"
 import Nav from "@/app/_components/nav";
 
@@ -56,7 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
             <Analytics />
             <Toaster />
-            <Footer className={tw_presets().wrapper} />
+            <Footer className={twp().wrapper} />
           </ThemeProvider>
         </TRPCReactProvider>
       </body>

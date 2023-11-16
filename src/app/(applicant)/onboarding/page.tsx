@@ -1,4 +1,4 @@
-import { tw_presets } from "@/server/utils"
+import { twp } from "@/server/utils"
 import { cn } from "@/server/utils"
 // import { CreatePost } from "@/app/_components/create-post";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/_components/ui/tabs"

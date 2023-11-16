@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function tw_presets() {
+export function twp() {
   return { 
     wrapper: "mx-auto w-full max-w-screen-xl px-2.5 md:px-20"
   }
