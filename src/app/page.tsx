@@ -61,6 +61,27 @@ export default async function Home() {
               </Link>
             </div>
           </div>
+          {/* Companies Partnered*/}
+          <div>
+            <div>
+              <div className="py-12 mx-auto lg:py-16">
+                <div className="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-6 lg:mt-8">
+                  <div className="flex justify-center col-span-1 px-8">
+                    <img className="max-h-12" src="./_components/images/googlesvg.svg" alt="logo">
+                  </div>
+                  <div className="flex justify-center col-span-1 px-8">
+                    <img className="max-h-12" src="./components/images/linkdensvg.svg" alt="logo">
+                  </div>
+                  <div className="flex justify-center col-span-1 px-8">
+                    <img className="max-h-12" src="./components/images/microsoftsvg.svg" alt="logo">
+                  </div>
+                  <div className="flex justify-center col-span-1 px-8">
+                    <img className="max-h-12" src="./components/images/twitchsvg.svg" alt="logo">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Features */}
           <div className="mx-auto w-full max-w-screen-xl px-2.5 ">
@@ -77,8 +98,8 @@ export default async function Home() {
                     <strong>Personalized Matches -</strong> Tailored algorithms ensure businesses find ideal candidates, and individuals discover opportunities aligned with their skills and aspirations.
                   </li>
                   <li className="text-l mb-4">
-                    <strong>Effortless Experience -</strong> Streamlined platform navigation for businesses to post jobs seamlessly and individuals to apply with just a few clicks.  
-                    </li>
+                    <strong>Effortless Experience -</strong> Streamlined platform navigation for businesses to post jobs seamlessly and individuals to apply with just a few clicks.
+                  </li>
                   <li className="text-l mb-4">
                     <strong>Vibrant Tech Ecosystem -</strong> Join a collaborative community fostering innovation and growth, connecting businesses and individuals in the dynamic world of tech.
                   </li>
