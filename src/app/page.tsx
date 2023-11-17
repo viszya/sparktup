@@ -8,6 +8,7 @@ import Image from "next/image"
 import { Email } from "@/app/_components/email";
 import { getServerAuthSession } from "@/server/auth";
 import { redirect } from "next/navigation";
+import { Button } from "@react-email/components";
 
 export default async function Home() {
   const session = getServerAuthSession();
@@ -32,86 +33,144 @@ export default async function Home() {
               About Us <Icons.arrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
+          
 
           <Email />
 
-          {/*Partnered Companies */}
-          <div className="mx-auto w-full max-w-screen-xl px-2.5 shadow-md mt-32 bg-gradient-to-br from-red-200 to-red-400 rounded-full hover:shadow-xl">
-            <div className="flex flex-row p-4">
-              <Link href="amazon.com" className="p-2 font-bold mr-11 ml-6 ">
-                Amazon
-              </Link>
-              <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
-                Costco
-              </Link>
-              <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
-                Microsoft
-              </Link>
-              <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
-                Google
-              </Link>
-              <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
-                Apple
-              </Link>
-              <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
-                Samsung
-              </Link>
-              <Link href="amazon.com" className="p-2 font-bold mr-11 ml-11 ">
-                Lenovo
-              </Link>
-            </div>
-          </div>
-          {/* Companies Partnered*/}
-          <div>
-            <div>
-              <div className="py-12 mx-auto lg:py-16">
-                <div className="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-6 lg:mt-8">
-                  <div className="flex justify-center col-span-1 px-8">
-                    <img className="max-h-12" src="/googlesvg.svg" alt="logo"></img>
+          {/* Features */}
+
+          <section>
+            <div className="relative items-center w-full px-5 py-24 mx-auto md:px-12 lg:px-16 max-w-7xl border-1 mt-11 rounded-2xl ">
+              <div className="w-full mx-auto text-left">
+                <div className="relative flex-col items-center m-auto align-middle">
+                  <div className="items-center gap-12 text-left lg:gap-24 lg:inline-flex">
+                    <div className="order-first block w-full mt-12 aspect-square lg:mt-0">
+                      <img className="object-cover object-center w-full mx-auto bg-white border-8 border-red-300 border lg:ml-auto" alt="features_img" src="/network3.png" />
+                    </div>
+                    <div className="flex flex-col mt-6 lg:mt-0">
+                      <div className="max-w-xl">
+                        <div>
+                          <p className="text-2xl font-medium tracking-tight text-black sm:text-4xl">
+                            Features
+                          </p>
+                        </div>
+                      </div>
+                      <div className="mx-auto mt-6 lg:max-w-7xl">
+                        <ul role="list" className="grid grid-cols-2 gap-4 list-none lg:grid-cols-1 lg:gap-3">
+                          <li>
+                            <div>
+                              <p className="mt-5 text-lg font-medium leading-6 text-black">
+                                Smart Connections
+                              </p>
+                            </div>
+                            <div className="mt-2 text-base text-gray-500">
+                              Instantly connect with top tech talent or exciting job opportunities, driven by our intelligent matchmaking system.
+                            </div>
+                          </li>
+                          <li>
+                            <div>
+                              <p className="mt-5 text-lg font-medium leading-6 text-black">
+                                Personalized Matches
+                              </p>
+                            </div>
+                            <div className="mt-2 text-base text-gray-500">
+                              Tailored algorithms ensure businesses find ideal candidates, and individuals discover opportunities aligned with their skills and aspirations.
+                            </div>
+                          </li>
+                          <li>
+                            <div>
+                              <p className="mt-5 text-lg font-medium leading-6 text-black">
+                                Effortless Experience
+                              </p>
+                            </div>
+                            <div className="mt-2 text-base text-gray-500">
+                              Streamlined platform navigation for businesses to post jobs seamlessly and individuals to apply with just a few clicks.
+                            </div>
+                          </li>
+                          <li>
+                            <div>
+                              <p className="mt-5 text-lg font-medium leading-6 text-black">
+                                Vibrant Tech Ecosystem
+                              </p>
+                            </div>
+                            
+                            <div className="mt-2 text-base text-gray-500">
+                              Join a collaborative community fostering innovation and growth, connecting businesses and individuals in the dynamic world of tech.
+                            </div>
+                            
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex justify-center col-span-1 px-8">
-                    <img className="max-h-12" src="/linkdensvg.svg" alt="logo"></img>
-                  </div>
-                  <div className="flex justify-center col-span-1 px-8">
-                    <img className="max-h-12" src="/microsoftsvg.svg" alt="logo"></img>
-                  </div>
-                  <div className="flex justify-center col-span-1 px-8">
-                    <img className="max-h-12" src="/twitchsvg.svg" alt="logo"></img>
-                  </div>
+                  {/* <div>
+                    <div>
+                      <div className="py-12 mx-auto lg:py-16">
+                        <div className="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-6 lg:mt-8">
+                          <div className="flex justify-center col-span-1 px-8">
+                            <img className="max-h-12" src="../images/logos/1.svg" alt="logo">
+                          </div>
+                          <div className="flex justify-center col-span-1 px-8">
+                            <img className="max-h-12" src="../images/logos/2.svg" alt="logo">
+                          </div>
+                          <div className="flex justify-center col-span-1 px-8">
+                            <img className="max-h-12" src="../images/logos/3.svg" alt="logo">
+                          </div>
+                          <div className="flex justify-center col-span-1 px-8">
+                            <img className="max-h-12" src="../images/logos/4.svg" alt="logo">
+                          </div>
+                          <div className="flex justify-center col-span-1 px-8">
+                            <img className="max-h-12" src="../images/logos/5.svg" alt="logo">
+                          </div>
+                          <div className="flex justify-center col-span-1 px-8">
+                            <img className="max-h-12" src="../images/logos/6.svg" alt="logo">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div> */}
                 </div>
               </div>
             </div>
-          </div>
+          </section>
 
-          {/* Features */}
-          <div className="mx-auto w-full max-w-screen-xl px-2.5 ">
-            <div className="">
-              <h1 className="font-bold text-4xl text-black mt-11">
-                Features
-              </h1>
-              <div className="mt-6">
-                <ol type="1" className="felx flex-colum text-start rounded-m p-5">
-                  <li className="text-l mb-4">
-                    <strong>Smart Connections -</strong> Instantly connect with top tech talent or exciting job opportunities, driven by our intelligent matchmaking system.
-                  </li>
-                  <li className="text-l mb-4">
-                    <strong>Personalized Matches -</strong> Tailored algorithms ensure businesses find ideal candidates, and individuals discover opportunities aligned with their skills and aspirations.
-                  </li>
-                  <li className="text-l mb-4">
-                    <strong>Effortless Experience -</strong> Streamlined platform navigation for businesses to post jobs seamlessly and individuals to apply with just a few clicks.
-                  </li>
-                  <li className="text-l mb-4">
-                    <strong>Vibrant Tech Ecosystem -</strong> Join a collaborative community fostering innovation and growth, connecting businesses and individuals in the dynamic world of tech.
-                  </li>
-                  <li className="text-l mb-4">
-                    <strong>Supportive Community -</strong> Engage in a nurturing environment where collaboration and support fuel the journey to tech success.
-                  </li>
-                </ol>
+          {/* About Us */}
+          <div className="sm:flex items-center max-w-screen-xl">
+            <div className="sm:w-1/2 p-10">
+              <div className="image object-center text-center">
+                <img src="dashboard-preview.png"></img>
+              </div>
+            </div>
+            <div className="sm:w-1/2 p-5">
+              <div className="text">
+                <span className="text-gray-500 border-b-2 border-red-400 uppercase">About us</span>
+                <h2 className="my-4 font-bold text-3xl  sm:text-4xl ">Igniting Tech Futures at <span className="text-red-400">Sparktup</span>
+                </h2>
+                <p className="text-gray-700">
+                At Sparktup, we are passionate about catalyzing growth and innovation in the dynamic world of technology. Born from a collective vision of connecting businesses with top-tier tech talent and empowering individuals to spark their careers, Sparktup is more than a platform—it's a vibrant community.
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Example Section */}
+          {/* CTA */}
+          
+              <section className="max-w-4xl text-5xl mb-2 mt-10 font-semibold md:text-6xl text-black lg:text:7xl">
+                <div className="max-w-4xl text-5xl mb-2 mt-10 justify-center font-semibold md:text-6xl text-black lg:text:7xl">
+                  <div className="max-w-xl mx-auto text-center lg:p-10">
+                    <div><p className="text-2xl font-medium tracking-tight text-black sm:text-4xl">
+                    Ready to Ignite Your Tech Journey? Join Sparktup Today!
+              </p>
+              </div>
+                    <div className="flex flex-col items-center justify-center mt-10 ">
+                      <Link className={buttonVariants({ variant: "heroButton2", size: "lg", className: 'ml-5 mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden flex flex-colum text-black rounded-full border border-red-400 bg-white ease-in-out px-7 py-2 shadow-md backdrop-blur transition-all hover:border-red-400 hover:bg-gradient-to-r hover:from-red-400 hover:to-red-300 hover:shadow-xl  hover:text-white' })} href="amazon.com"> SignUp Now! </Link>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            
+
+          {/* Example Section
           <div className="mx-auto w-full max-w-screen-xl px-2.5 ">
             <div className='relative isolate'>
               <div
@@ -128,7 +187,7 @@ export default async function Home() {
               <Email />
 
               {/* Example Section */}
-              <div className="mx-auto w-full max-w-screen-xl px-2.5 ">
+              {/* <div className="mx-auto w-full max-w-screen-xl px-2.5 ">
                 <div className='relative isolate'>
                   <div
                     aria-hidden='true'
@@ -335,7 +394,7 @@ export default async function Home() {
                 />
               </div>
             </div>
-          </div>
+          </div> */} 
         </main>
       )}
     </>
