@@ -35,6 +35,8 @@ import {
   MapPin,
   Dot,
   Contact,
+  ArrowUpRightFromCircle,
+  Hourglass,
   type XIcon as LucideIcon,
 } from "lucide-react"
 import type { LucideProps } from "lucide-react";
@@ -43,8 +45,10 @@ export type Icon = typeof LucideIcon;
 
 export const Icons = {
   logo: Command,
+  export: ArrowUpRightFromCircle,
   close: X,
   pin: MapPin,
+  hourglass: Hourglass,
   contact: Contact,
   dot: Dot,
   spinner: Loader2,
