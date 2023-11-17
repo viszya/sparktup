@@ -67,16 +67,16 @@ export default async function Home() {
               <div className="py-12 mx-auto lg:py-16">
                 <div className="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-6 lg:mt-8">
                   <div className="flex justify-center col-span-1 px-8">
-                    <img className="max-h-12" src="./_components/images/googlesvg.svg" alt="logo"></img>
+                    <img className="max-h-12" src="/googlesvg.svg" alt="logo"></img>
                   </div>
                   <div className="flex justify-center col-span-1 px-8">
-                    <img className="max-h-12" src="./components/images/linkdensvg.svg" alt="logo"></img>
+                    <img className="max-h-12" src="/linkdensvg.svg" alt="logo"></img>
                   </div>
                   <div className="flex justify-center col-span-1 px-8">
-                    <img className="max-h-12" src="./components/images/microsoftsvg.svg" alt="logo"></img>
+                    <img className="max-h-12" src="/microsoftsvg.svg" alt="logo"></img>
                   </div>
                   <div className="flex justify-center col-span-1 px-8">
-                    <img className="max-h-12" src="./components/images/twitchsvg.svg" alt="logo"></img>
+                    <img className="max-h-12" src="/twitchsvg.svg" alt="logo"></img>
                   </div>
                 </div>
               </div>

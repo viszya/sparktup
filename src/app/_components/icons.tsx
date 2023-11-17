@@ -32,6 +32,9 @@ import {
   PartyPopper,
   Brain,
   Badge,
+  MapPin,
+  Dot,
+  Contact,
   type XIcon as LucideIcon,
 } from "lucide-react"
 import type { LucideProps } from "lucide-react";
@@ -41,6 +44,9 @@ export type Icon = typeof LucideIcon;
 export const Icons = {
   logo: Command,
   close: X,
+  pin: MapPin,
+  contact: Contact,
+  dot: Dot,
   spinner: Loader2,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,
