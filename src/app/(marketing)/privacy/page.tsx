@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
     return (
         <div className={cn(twp().wrapper, "mt-20 mx-20")}>
             <article>
-                <div className="text-left mt-10 text-3xl tracking-tighter text-black">
+                <div className=" mt-10 text-3xl tracking-tighter text-black">
                     Privacy Policy for Sparktup
                 </div>
                 <div className="mt-4 text-gray-500 text-lg">
@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
                 </div>
             </article>
             <article>
-                <div className="text-left mt-20 text-3xl tracking-tighter text-black">
+                <div className=" mt-20 text-3xl tracking-tighter text-black">
                     1. Information Collected
                 </div>
                 <div className="mt-4 text-gray-500 text-lg">
@@ -30,7 +30,7 @@ export default function PrivacyPolicy() {
                 </div>
             </article>
             <article>
-                <div className="text-left mt-20 text-3xl tracking-tighter text-black">
+                <div className=" mt-20 text-3xl tracking-tighter text-black">
                     2. How We Use Your Information
                 </div>
                 <div className="mt-4 text-gray-500 text-lg">
@@ -49,7 +49,7 @@ export default function PrivacyPolicy() {
                 </div>
             </article>
             <article>
-                <div className="text-left mt-20 text-3xl tracking-tighter text-black">
+                <div className=" mt-20 text-3xl tracking-tighter text-black">
                     3. Information Sharing
                 </div>
                 <div className="mt-4 text-gray-500 text-lg">
@@ -64,7 +64,7 @@ export default function PrivacyPolicy() {
                 </div>
             </article>
             <article>
-                <div className="text-left mt-20 text-3xl tracking-tighter text-black">
+                <div className=" mt-20 text-3xl tracking-tighter text-black">
                     4. Data Security
                 </div>
                 <div className="mt-4 text-gray-500 text-lg">
@@ -79,7 +79,7 @@ export default function PrivacyPolicy() {
                 </div>
             </article>
             <article>
-                <div className="text-left mt-20 text-3xl tracking-tighter text-black">
+                <div className=" mt-20 text-3xl tracking-tighter text-black">
                     5. Cookies and Tracking
                 </div>
                 <div className="mt-4 text-gray-500 text-lg">
@@ -94,7 +94,7 @@ export default function PrivacyPolicy() {
                 </div>
             </article>
             <article>
-                <div className="text-left mt-20 text-3xl tracking-tighter text-black">
+                <div className=" mt-20 text-3xl tracking-tighter text-black">
                     6. User Rights
                 </div>
                 <div className="mt-4 text-gray-500 text-lg">
@@ -109,7 +109,7 @@ export default function PrivacyPolicy() {
                 </div>
             </article>
             <article>
-                <div className="text-left mt-20 text-3xl tracking-tighter text-black">
+                <div className=" mt-20 text-3xl tracking-tighter text-black">
                     7. Changes to Privacy Policy
                 </div>
                 <div className="mt-4 text-gray-500 text-lg">
@@ -120,7 +120,7 @@ export default function PrivacyPolicy() {
                 </div>
             </article>
             <article>
-                <div className="text-left mt-20 text-3xl tracking-tighter text-black">
+                <div className=" mt-20 text-3xl tracking-tighter text-black">
                     8. Contact Information
                 </div>
                 <div className="mt-4 text-gray-500 text-lg">
@@ -128,7 +128,7 @@ export default function PrivacyPolicy() {
                 </div>
             </article>
             <article>
-                <div className="text-left mt-20 text-3xl tracking-tighter text-black">
+                <div className=" mt-20 text-3xl tracking-tighter text-black">
                     This Privacy Policy is effective as of 12/31/2024. Continued use of Sparktup signifies acceptance of this policy.
                 </div>
             </article>
