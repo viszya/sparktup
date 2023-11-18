@@ -84,6 +84,7 @@ export default async function Home() {
           {/* Features */}
 
           <section>
+            
             <div className="relative items-center w-full px-5 py-24 mx-auto md:px-12 lg:px-16 max-w-7xl border-1 mt-11 rounded-2xl ">
               <div className="w-full mx-auto text-left">
                 <div className="relative flex-col items-center m-auto align-middle">
@@ -106,6 +107,7 @@ export default async function Home() {
                               <p className="mt-5 text-lg font-medium leading-6 text-black">
                                 Smart Connections
                               </p>
+                              
                             </div>
                             <div className="mt-2 text-base text-gray-500">
                               Instantly connect with top tech talent or exciting job opportunities, driven by our intelligent matchmaking system.
