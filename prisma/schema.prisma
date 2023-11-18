@@ -80,3 +80,57 @@ model VerificationToken {
 
     @@unique([identifier, token])
 }
+
+
+// model Profile {
+//     id                String @id @default(cuid())
+//     fullName          String
+//     jobTitle          String
+//     username          String
+//     location          String
+//     connections       String
+//     yearsOfExperience String
+//     about             String
+//     avaiableForWork   Boolean
+//     experiences       Experience[]
+//     projects          Project[]
+//     topSkills         TopSkill[]
+//     recommendations   Recommendation[]
+//     tags              String[]
+//     resumeLink        String  
+// }
+
+// model Experience {
+//     id                String @id @default(cuid())
+//     companyLogoSrc    String
+//     companyName       String
+//     companyImgSrc     String
+//     engangment        String
+//     relativeOfWork    String
+//     jobTitle          String
+//     location          String
+//     time              String
+//     jobDescriptions   String[]
+// }
+
+// model Project {
+//     id           String @id @default(cuid())
+//     name         String
+//     src          String
+//     link         String
+// }
+
+// model TopSkill {
+//     id           String @id @default(cuid())
+//     name         String
+//     color        String
+//     description  String
+// }
+
+// model Recommendation {
+//     id           String @id @default(cuid())
+//     name         String
+//     jobTitle     String
+//     srcImage     String
+//     message      String
+// }

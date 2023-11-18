@@ -12,11 +12,11 @@ const Nav = async () => {
 
   return (<>
 
-    <div className="w-full mx-auto bg-white border-b 2xl:max-w-7xl">
-      <div className={cn(twp().wrapper, "relative flex flex-col w-full p-5 mx-auto bg-white md:items-center md:justify-between md:flex-row md:px-6 lg:px-8")}>
+    <div className="sticky inset-x-0 top-0 z-30 w-full mx-auto border-b bg-white/10 backdrop-blur-lg transition-all">
+      <div className={cn(twp().wrapper, "relative flex flex-col w-full p-5 mx-auto  md:items-center md:justify-between md:flex-row md:px-6 lg:px-8")}>
         <div className="flex flex-row items-center justify-between lg:justify-start">
           <a className="text-lg tracking-tight text-black uppercase focus:outline-none focus:ring lg:text-2xl" href="/">
-            <span className="lg:text-lg uppecase focus:ring-0">
+            <span className="lg:text-lg uppecase focus:ring-0 font-semibold">
               SPARKTUP
             </span>
           </a>
@@ -28,32 +28,32 @@ const Nav = async () => {
           </button>
         </div>
         <nav className="flex-col items-center flex-grow hidden md:pb-0 md:flex md:justify-end md:flex-row">
-          <Link
-            href='/about'
-            className="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-blue-600">
-            About
-          </Link>
-          <Link
-            href='/solutions'
-            className="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-blue-600">
-            Solutions
-          </Link>
-          <Link
-            href='/positions'
-            className="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-blue-600">
-            Job Positions
-          </Link>
-          <Link
-            href='/faq'
-            className="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-blue-600">
-            FAQ
-          </Link>
-          
-          
+          <div className='flex-1 mx-10'>
+            <Link
+              href='/about'
+              className="px-2 py-2 text-sm text-gray-500 lg:px-6 transition-colors delay-75 rounded-2xl hover:bg-red-400/10 md:px-3 hover:text-red-400 ">
+              About
+            </Link>
+            <Link
+              href='/solutions'
+              className="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-red-400 transition-colors delay-75 rounded-2xl hover:bg-red-400/10">
+              Solutions
+            </Link>
+            <Link
+              href='/positions'
+              className="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-red-400 transition-colors delay-75 rounded-2xl hover:bg-red-400/10">
+              Job Positions
+            </Link>
+            <Link
+              href='/faq'
+              className="px-2 py-2 text-sm text-gray-500 lg:px-6 md:px-3 hover:text-red-400 transition-colors delay-75 rounded-2xl hover:bg-red-400/10">
+              FAQ
+            </Link>
+          </div>
           <div className="inline-flex items-center gap-2 list-none">
             <Link
               href="/api/auth/signin"
-              className="block px-4 py-2 mt-2 text-sm text-gray-500 md:mt-0 hover:text-blue-600 focus:outline-none focus:shadow-outline"
+              className="block px-4 py-2 mt-2 text-sm text-black bg-red-400/10 rounded-full font-semibold border-red-300 border-2  md:mt-0 hover:bg-red-300 transision-all delay-75 :focus:outline-none focus:shadow-outline"
             >
               Sign in
             </Link>
@@ -67,88 +67,7 @@ const Nav = async () => {
         </nav>
       </div>
     </div>
-
-   <nav className="sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-gray-200 bg-white/10 backdrop-blur-lg transition-all">
-      <div className={cn("flex h-14 items-center justify-between border-b border-zinc-200", twp().wrapper)}>
-        <Link
-          href='/'
-          className='flex z-40 font-semibold'>
-          <span>SparktUp</span>
-        </Link>
-
-        <Link
-          href={session ? "/api/auth/signout" : "/api/auth/signin"}
-          className="rounded-full bg-white/10 px-10 py-3 font-semibold no-underline transition hover:bg-white/20"
-        >
-          {session ? "Sign out" : "Sign in"}
-        </Link>
-        <Link
-          href='/faq'
-          className={buttonVariants({
-            variant: 'ghost',
-            size: 'sm',
-          })}>
-          FAQ
-        </Link> 
-
-
-
-  {/* <MobileNav isAuth={!!user} /> */ }
-
-  {/* <div className='hidden items-center space-x-4 sm:flex'>
-          {!(await user) ? (
-            <>
-              <Link
-                href='#pricing'
-                className={buttonVariants({
-                  variant: 'ghost',
-                  size: 'sm',
-                })}>
-                Pricing
-              </Link>
-              
-              <LoginLink
-                className={buttonVariants({
-                  variant: 'ghost',
-                  size: 'sm',
-                })}>
-                Sign in
-              </LoginLink>
-              <RegisterLink
-                className={buttonVariants({
-                  size: 'sm',
-                  className: "bg-gradient-to-r from-red-400 to-red-300 ease-in-out duration-200 hover:text-black hover:shadow-xl",
-                })}>
-                Get started{' '}
-                <ArrowRight className='ml-1.5 h-5 w-5' />
-              </RegisterLink>
-            </>
-          ) : (
-            <>
-              <Link
-                href='/dashboard'
-                className={buttonVariants({
-                  variant: 'ghost',
-                  size: 'sm',
-                })}>
-                Dashboard
-              </Link>
-
-              <UserAccountNav
-                name={
-                  !user.given_name || !user.family_name
-                    ? 'Your Account'
-                    : `${user.given_name} ${user.family_name}`
-                }
-                email={user.email ?? ''}
-                imageUrl={user.picture ?? ''}
-              /> 
-            </>
-          )}
-        </div> */}
-  </div>
-    </nav></>)
-
+  </>)
 }
 
 export default Nav
