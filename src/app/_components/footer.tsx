@@ -11,7 +11,7 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
                         <div className="flex items-center text-black">
                             <div>
                                 <p className="font-semibold leading-6 text-black uppercase">
-                                    ClearSight
+                                    SparktUp
                                 </p>
                                 <p className="mt-1 text-sm">Perfect AI tool for building SAAS</p>
                             </div>
@@ -37,7 +37,7 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
                 </div>
                 <div className="flex flex-col items-center pt-8 pb-12 border-t border-gray-200 md:flex-row-reverse md:justify-between md:pt-6">
                     <p className="mt-6 text-sm text-gray-500 md:mt-0">
-                       ClearSight © Copyright 2023 All Rights Reserved
+                       SparktUp © Copyright 2023 All Rights Reserved
                     </p>
                 </div>
             </div>

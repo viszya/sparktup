@@ -20,7 +20,7 @@ export default async function Home() {
 
           {/* Hero Section */}
           <h1 className="max-w-4xl text-5xl mb-2 mt-10 font-semibold md:text-6xl text-black lg:text:7xl">
-            Ignite Your Tech<br />Career!
+            Ignite Your Tech Career!
           </h1>
           <p className="mt-5 max-w-prose mb-2 text-zinc-700 sm:text-lg">
             Spark your tech career with ease and growth. Join Sparktup!
@@ -33,9 +33,6 @@ export default async function Home() {
               About Us <Icons.arrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
-
-
-          <Email />
 
           {/* Features */}
 
@@ -302,7 +299,7 @@ export default async function Home() {
                         </p>
                       </div>
                       <div className="mt-4 text-base text-gray-700">
-                        Launch your SAAS product in just one week with ClearSight.
+                        Launch your SAAS product in just one week with SparktUp.
                       </div>
                     </div>
                   </div>
@@ -319,7 +316,7 @@ export default async function Home() {
                     AI-Powered SAAS Development
                   </h2>
                   <p className="mt-5 text-base text-gray-700">
-                    ClearSight uses advanced AI algorithms to streamline the SAAS development process, making it faster and more efficient.
+                    SparktUp uses advanced AI algorithms to streamline the SAAS development process, making it faster and more efficient.
                   </p>
                   <ul className="grid grid-cols-2 gap-4 mt-12 list-none lg:gap-6" role="list">
                     <li>
@@ -345,7 +342,7 @@ export default async function Home() {
                         </p>
                       </div>
                       <div className="mt-2 text-base text-gray-700">
-                        ClearSight is compatible with various technology stacks, so you can use your preferred tools and languages.
+                        SparktUp is compatible with various technology stacks, so you can use your preferred tools and languages.
                       </div>
                     </li>
                   </ul>

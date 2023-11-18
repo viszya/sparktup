@@ -250,7 +250,7 @@ export default function Profile() {
 						{data.topSkills.map((data:any) =>  (
 							<div className="max-w-md p-6 mx-auto">
 							<div className="gap-3 lg:inline-flex lg:items-center">
-								<div className={cn("flex items-center justify-center w-12 h-12 text-black rounded-xl", `bg-{data.color}-100/70`)}>
+								<div className={cn("flex items-center justify-center w-12 h-12 text-black rounded-xl", `bg-${data.color}-100/70`)}>
 									❖
 								</div>
 								<p className="mt-4 text-lg font-medium leading-6 text-black lg:mt-0">
