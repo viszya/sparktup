@@ -7,7 +7,7 @@ export default function About() {
         <div className={cn(twp().wrapper, "mt-20")}>
             <div className="mx-20">
                 <article>
-                    <div className="text-center mt-10 text-3xl tracking-tighter text-black">
+                    <div className="text-center mt-10 text-5xl tracking-tighter text-black">
                         About Sparktup
                     </div>
                     <div className="mt-4 text-gray-500 text-lg">
