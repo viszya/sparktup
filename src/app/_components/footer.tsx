@@ -36,15 +36,15 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
                         <div className="relative flex items-center justify-center flex-none w-24 h-24 bg-gradient-to-br from-red-300/30 to-red-400/50 rounded-xl">
                             <Icons.twitter />
                         </div>
-                        <div className="ml-8 lg:w-64">
+                        <Link href="https://twitter.com/" target="_blank" className="ml-8 lg:w-64">
                             <p className="text-base font-semibold text-black">
-                                <a href="#"><span className="absolute inset-0 sm:rounded-2xl"></span>Stay
-                                    updated</a>
+                                <span className="absolute inset-0 sm:rounded-2xl"></span>Stay
+                                    updated
                             </p>
                             <p className="mt-1 text-sm text-gray-500 hover:text-red-300">
                                 Follow us for social media for news and updates
                             </p>
-                        </div>
+                        </Link>
                     </div>
                 </div>
                 <div className="flex flex-col items-center pt-8 pb-12 border-t border-gray-200 md:flex-row-reverse md:justify-between md:pt-6">
