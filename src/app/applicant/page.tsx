@@ -83,6 +83,7 @@ const data = {
 export default function CompanyProfile() {
     return (
         <div className={cn(twp().wrapper, "")}>
+            <h2 className="mt-20 sm:mt-30 mb-11 text-center text-4xl font-semibold">Applicants</h2>
             {data.applicants.map((applicant) => (
                 <div className="grid grid-flow-col grid-cols-2 md:grid-cols-1 gap-x-3 m-10 bg-gray-300/10 p-8 rounded-2xl border-2 border-gray-200">
                     <div className="max-w-[30rem]">
