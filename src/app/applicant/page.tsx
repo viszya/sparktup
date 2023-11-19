@@ -134,10 +134,14 @@ export default function CompanyProfile() {
                             <img alt="" className="object-cover w-6 h-6 rounded-full mr-2 border border-gray-400/30" src={applicant.companyLogoSrc} />
                             <span className="font-semibold">{applicant.currentJobTitle}</span>
                         </div>
-
                     </div>
                 </div>
             ))}
+            <div className="flex flex-row justify-center items-center">
+                <Button className="px-10 py-6 mt-10 rounded-full text-base">
+                    Show More
+                </Button>
+            </div>
         </div>
     )
 }
