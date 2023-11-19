@@ -11,6 +11,7 @@ import { Footer } from "@/app/_components/footer";
 import { twp } from "@/server/utils";
 import { Toaster } from "@/app/_components/ui/toaster"
 import Nav from "@/app/_components/nav";
+import { CTA } from "./_components/cta";
 
 // Metadata
 export const metadata = {
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
             <Analytics />
             <Toaster />
+            <CTA />
             <Footer className={twp().wrapper} />
           </ThemeProvider>
         </TRPCReactProvider>

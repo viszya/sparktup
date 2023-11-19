@@ -5,7 +5,6 @@ import {
     AccordionTrigger,
 } from "@/app/_components/ui/accordion"
 import { twp } from "@/server/utils"
-
 import { cn } from "@/server/utils"
 
 export default function Page() {

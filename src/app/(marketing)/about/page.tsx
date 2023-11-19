@@ -1,6 +1,5 @@
 import { cn } from "@/server/utils"
 import { twp } from "@/server/utils"
-import { CTA } from "@/app/_components/cta";
 
 export default function About() {
     return (
@@ -44,8 +43,6 @@ export default function About() {
                     </div>
                 </article>
             </div>
-
-            <CTA />
         </div >
     )
 }
