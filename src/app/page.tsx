@@ -26,11 +26,11 @@ export default async function Home() {
             Spark your tech career with ease and growth. Join Sparktup!
           </p>
           <div className="flex flex-row mt-4">
-            <Link href="/dashboard" className={buttonVariants({ size: "lg", className: "mr-5 bg-black ease-in-out duration-200 hover:text-white hover:bg-black hover:shadow-xl" })}>
+            <Link href="/signup" className={buttonVariants({ size: "lg", className: "mr-5 bg-black ease-in-out duration-200 hover:text-white hover:bg-black hover:shadow-xl" })}>
               Get Started <Icons.arrowRight className="ml-2 h-5 w-5" />
             </Link>
-            <Link href="/dashboard" className={buttonVariants({ variant: "heroButton2", size: "lg", className: 'ml-5 mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden text-black rounded-full border border-black bg-white ease-in-out px-7 py-2 shadow-md backdrop-blur transition-all hover:bg-white hover:shadow-xl hover:border-red-400 hover:text-red-300' })}>
-              About Us <Icons.arrowRight className="ml-2 h-5 w-5" />
+            <Link href="/solutions/company" className={buttonVariants({ variant: "heroButton2", size: "lg", className: 'ml-5 mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden text-black rounded-full border border-black bg-white ease-in-out px-7 py-2 shadow-md backdrop-blur transition-all hover:bg-white hover:shadow-xl hover:border-red-400 hover:text-red-300' })}>
+              For Companies <Icons.arrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
 

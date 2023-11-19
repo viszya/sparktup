@@ -62,13 +62,13 @@ const Nav = async () => {
           </div>
           <div className="inline-flex items-center gap-2 list-none">
             <Link
-              href="/api/auth/signin"
+              href="/signin"
               className="block px-4 py-2 mt-2 text-sm text-black bg-red-400/10 rounded-full font-semibold border-red-300 border-2  md:mt-0 hover:bg-red-300 transision-all delay-75 :focus:outline-none focus:shadow-outline"
             >
               Sign in
             </Link>
             <Link
-              href="/api/auth/signin"
+              href="/signup"
               className="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-black rounded-full group focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-gray-900 active:bg-gray-800 active:text-white focus-visible:outline-black"
             >
               Sign up
