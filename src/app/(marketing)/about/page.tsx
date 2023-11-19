@@ -1,7 +1,6 @@
 import { cn } from "@/server/utils"
-import { Icons } from "@/app/_components/icons"
 import { twp } from "@/server/utils"
-import { Button } from "@/app/_components/ui/button";
+import { CTA } from "@/app/_components/cta";
 
 export default function About() {
     return (
@@ -46,18 +45,7 @@ export default function About() {
                 </article>
             </div>
 
-            <div className="mt-10 px-20 py-6 bg-red-100/50 border-2 border-red-100 rounded-3xl flex flex-row items-center">
-                <div className="flex-1">
-                    <p className="flex flex-row items-center text-3xl text-black ">
-                        Sparktup - Where Tech Dreams Take Flight.
-                    </p>
-                </div>
-                <Button className="text-md items-center justify-center w-40 px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-lg inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black focus-visible:ring-black">
-                    Get Started
-                    <Icons.export className="ml-4 h-4 w-4" />
-                </Button>
-            </div>
-
+            <CTA />
         </div >
     )
 }
