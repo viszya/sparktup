@@ -14,7 +14,7 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
                                 <p className="font-semibold leading-6 text-black uppercase">
                                     SparktUp
                                 </p>
-                                <p className="mt-1 text-sm">Perfect AI tool for building SAAS</p>
+                                <p className="mt-1 text-sm">Modern Job Network for Tech Startups and Industry Professionals</p>
                             </div>
                         </div>
                         <nav className="flex gap-8 mt-11">
