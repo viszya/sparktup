@@ -28,8 +28,7 @@ Company Application Page
 Resume Page
 Company Settings Page
 Applicant Settings Page
-Custom Signin Page
-Custom Signup Page
+
 Nav + Footer for Company and Applicant Dashboard
 Dashboard Page Applicant
 Dashboard Page Company
@@ -48,3 +47,5 @@ FAQ Page
 TOS Page
 Privacy Page
 About Page
+Custom Signin Page
+Custom Signup Page
