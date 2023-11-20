@@ -7,11 +7,7 @@ import { TRPCReactProvider } from "@/trpc/react";
 import { cn } from "@/server/utils"
 import { Analytics } from "@vercel/analytics/react"
 import { ThemeProvider } from "@/app/_components/theme-provider"
-import { Footer } from "@/app/_components/footer";
-import { twp } from "@/server/utils";
 import { Toaster } from "@/app/_components/ui/toaster"
-import Nav from "@/app/_components/nav";
-import { CTA } from "./_components/cta";
 
 // Metadata
 export const metadata = {
@@ -53,12 +49,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={cn("bg-background min-h-screen font-sans antialiased ", GeistSans.className)}>
         <TRPCReactProvider cookies={cookies().toString()}>
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-            <Nav />
             {children}
             <Analytics />
             <Toaster />
-            <CTA />
-            <Footer className={twp().wrapper} />
           </ThemeProvider>
         </TRPCReactProvider>
       </body>

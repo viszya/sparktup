@@ -14,6 +14,7 @@ import { Input } from "@/app/_components/ui/input"
 import { Label } from "@/app/_components/ui/label"
 import { toast } from "@/app/_components/ui/use-toast"
 import { Icons } from "@/app/_components/icons"
+import Link from "next/link"
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> { }
 
@@ -65,6 +66,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
                             Email
                         </Label>
                         <Input
+                            className="rounded-2xl"
                             id="email"
                             placeholder="name@example.com"
                             type="email"
@@ -80,7 +82,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
                             </p>
                         )}
                     </div>
-                    <button className={cn(buttonVariants())} disabled={isLoading}>
+                    <button className={cn(buttonVariants(), "rounded-2xl")} disabled={isLoading}>
                         {isLoading && (
                             <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
                         )}
@@ -98,22 +100,23 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
                     </span>
                 </div>
             </div>
-            <button
-                type="button"
-                className={cn(buttonVariants({ variant: "outline" }))}
-                onClick={() => {
-                    setIsGitHubLoading(true)
-                    signIn("github")
-                }}
-                disabled={isLoading || isGitHubLoading}
-            >
-                {isGitHubLoading ? (
-                    <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-                ) : (
-                    <Icons.gitHub className="mr-2 h-4 w-4" />
-                )}{" "}
-                Github
-            </button>
+                <button
+                    type="button"
+                    className={cn(buttonVariants({ variant: "outline" }), "rounded-2xl")}
+                    onClick={() => {
+                        setIsGitHubLoading(true)
+                        signIn("google")
+                    }}
+                    disabled={isLoading || isGitHubLoading}
+                >
+                    {isGitHubLoading ? (
+                        <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+                    ) : (
+                        <Icons.google className="mr-2 h-6 w-6" />
+                    )}{" "}
+                    Google
+                </button>
+
         </div>
     )
 }
