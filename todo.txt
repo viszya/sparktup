@@ -28,7 +28,6 @@ Company Application Page
 Resume Page
 Company Settings Page
 Applicant Settings Page
-
 Nav + Footer for Company and Applicant Dashboard
 Dashboard Page Applicant
 Dashboard Page Company

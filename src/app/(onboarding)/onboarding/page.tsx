@@ -5,7 +5,7 @@ import { ProfileForm2 } from "@/app/_components/onboarding/form-2";
 
 export default function Onboarding() {
 	return (
-		<div className="flex flex-col justify-center items-center mt-20 mb-10">
+		<div className="flex flex-col justify-center items-center">
 			<Tabs defaultValue="account">
 				<TabsList className="gap-x-6 px-4">
 					<TabsTrigger value="account">Account</TabsTrigger>

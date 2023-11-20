@@ -46,7 +46,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="light" suppressHydrationWarning style={{ scrollBehavior: 'smooth' }}>
-      <body className={cn("bg-background min-h-screen font-sans antialiased ", GeistSans.className)}>
+      <body className={cn("bg-background min-h-screen font-sans antialiased", GeistSans.className)}>
         <TRPCReactProvider cookies={cookies().toString()}>
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
             {children}
