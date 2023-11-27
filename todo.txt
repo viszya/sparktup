@@ -19,10 +19,14 @@ Image Section (later will be post section)
 
 
 TODO PAGES
+(Vedant & Akshay)
 Solutions Page
 Company Solutions Page
 Applicants Solutions Page
 Companies Page
+Landing Page
+Contact Page
+
 Company Profile Page
 Company Application Page
 Resume Page
@@ -33,10 +37,8 @@ Dashboard Page Applicant
 Dashboard Page Company
 Adding Job (for company) Page
 Adding Post (for company) Page
-Notificaions Page Company
+Notifications Page Company
 Notifications Page Applicant
-Contact Page
-Landing Page
 Search Page
 
 Done Pages:
