@@ -25,7 +25,7 @@ Company Solutions Page
 Applicants Solutions Page
 Companies Page
 Landing Page
-Contact Page
+
 
 Company Profile Page
 Company Application Page
@@ -51,3 +51,4 @@ About Page (vishwa)
 Custom Signin Page (vishwa)
 Custom Signup Page (vishwa)
 404 Page (vishwa)
+Contact Page (vedant)
