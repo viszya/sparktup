@@ -40,11 +40,12 @@ Landing Page
 Search Page
 
 Done Pages:
-Applicant Profile Page
-Applicants Page
-FAQ Page
-TOS Page
-Privacy Page
-About Page
-Custom Signin Page
-Custom Signup Page
+Applicant Profile Page (vishwa)
+Applicants Page (vishwa)
+FAQ Page (vedant)
+TOS Page (akshay)
+Privacy Page (vedant)
+About Page (vishwa)
+Custom Signin Page (vishwa)
+Custom Signup Page (vishwa)
+404 Page (vishwa)
