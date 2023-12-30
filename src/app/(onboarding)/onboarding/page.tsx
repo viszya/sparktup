@@ -2,6 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/_components/ui/t
 import { Icons } from "@/app/_components/icons";
 import { ProfileForm } from "@/app/_components/onboarding/form-1";
 import { ProfileForm2 } from "@/app/_components/onboarding/form-2";
+import { TestForm } from "@/app/_components/onboarding/test";
 
 export default function Onboarding() {
 	return (
@@ -18,7 +19,7 @@ export default function Onboarding() {
 					<Icons.chevronRight className="text-gray-300 h-5 w-5" />
 					<TabsTrigger value="ready">Ready!</TabsTrigger>
 				</TabsList>
-				<TabsContent value="account"><ProfileForm /></TabsContent>
+				<TabsContent value="account"><TestForm /></TabsContent>
 				<TabsContent value="profile"><ProfileForm2 /></TabsContent>
 				<TabsContent value="interests"><ProfileForm2 /></TabsContent>
 				<TabsContent value="apply"><ProfileForm2 /></TabsContent>
