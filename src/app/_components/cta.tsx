@@ -9,7 +9,7 @@ export function CTA() {
           <div className="mt-10 px-20 py-6 bg-red-100/50 border-2 border-red-100 rounded-3xl flex flex-row items-center">
                 <div className="flex-1">
                     <p className="flex flex-row items-center text-3xl text-black ">
-                        Sparktup - Where Tech Dreams Take Flight.
+                        Sparktup - Where Dreams Take Flight.
                     </p>
                 </div>
                 <Link href="/signin" className="whitespace-nowrap text-md items-center justify-center w-40 px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-lg inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black focus-visible:ring-black">

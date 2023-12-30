@@ -20,12 +20,10 @@ Image Section (later will be post section)
 
 TODO PAGES
 (Vedant & Akshay)
-Solutions Page
 Company Solutions Page
 Applicants Solutions Page
 Companies Page
 Landing Page
-
 Company Profile Page
 Company Application Page
 Resume Page
@@ -52,3 +50,4 @@ Custom Signin Page (vishwa)
 Custom Signup Page (vishwa)
 404 Page (vishwa)
 Contact Page (vedant)
+Solutions Page (vedant) (only need to add images)

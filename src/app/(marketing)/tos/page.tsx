@@ -59,7 +59,7 @@ export default function TermsOfService() {
               <span className="text-lg tracking-tighter text-black">b. Prohibited Activities:</span>
               <br />
               Users must not engage in activities that violate these Terms,
-              infringe on intellectual property rights, or harm the platform's
+              infringe on intellectual property rights, or harm the platform&apos;s
               functionality.
             </p>
           </div>
@@ -111,7 +111,7 @@ export default function TermsOfService() {
           </div>
           <div className="mt-4 text-gray-500 text-lg">
             <p>
-              Sparktup is provided "as is" and "as available." We make no warranties, express or implied, regarding the platform's reliability, accuracy, or availability.
+              Sparktup is provided &quot;as is&quot; and &quot;as available.&quot; We make no warranties, express or implied, regarding the platform&apos;s reliability, accuracy, or availability.
             </p>
           </div>
         </article>
