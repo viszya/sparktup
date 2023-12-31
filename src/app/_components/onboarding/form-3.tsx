@@ -1,25 +1,20 @@
 "use client"
 
-import { useToast } from "@/app/_components/ui/use-toast"
-import { useRouter } from "next/navigation";
 import { useState } from "react";
-
 import { api } from "@/trpc/react";
 
 interface FormProps {
 	onNextClick: () => void; // Define the type of onNextClick prop
-  }
+}
 
 export function Form3({ onNextClick }: FormProps) {
-	const router = useRouter();
 	const [resumeLink, setResumeLink] = useState("");
-	const [profileTags, setProfileTags] =  useState<string[]>([""]);
-	const [interestedTags, setInterestedTags] =  useState<string[]>([""]);
+	const [profileTags, setProfileTags] = useState<string[]>([""]);
+	const [interestedTags, setInterestedTags] = useState<string[]>([""]);
 
 	const formUpdate = api.onboarding.updateForm3.useMutation({
 		onSuccess: () => {
 			onNextClick();
-			// router.push("/onboarding/form-2");
 		},
 	});
 
@@ -47,7 +42,7 @@ export function Form3({ onNextClick }: FormProps) {
 		setProfileTags(updatedProfileTags);
 	};
 
-	const addInterestedTags= () => {
+	const addInterestedTags = () => {
 		setInterestedTags([...interestedTags, ""]);
 	};
 

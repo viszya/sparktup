@@ -34,16 +34,20 @@ Adding Job Page (COMPANY)
 Adding Post Page (COMPANY)
 
 APPLICANT PAGES: (4 PAGES)
-Resume Page (APPLICANT)
 Adding Project (APPLICANT)
 Adding Experience (APPLICANT)
 Adding Reccomendation (APPLICANT)
 
 COMPANY & APPLICANT PAGES: (8 PAGES)
-Dahsboard: (APPLICANT & COMPANY)
+Dashboard: (APPLICANT & COMPANY)
+ - top section is stats (profieViews,jobApplications,jobOffers ,connections)
+ - feed (messages, job offers, status on applications, related news to interested tags)
 Settings: (APPLICANT & COMPANY)
 Nav + Footer: (APPLICANT & COMPANY)
-Notifications: (APPLICANT & COMPANY)
+MyProfile: (APPLICANT & COMPANY)
+SIdebar: home, messaging, myprofile, settings, sign out
+
+Connections using the bottom drawer component
 
 OTHER PAGES: (2 PAGES)
 Search Page
@@ -62,3 +66,5 @@ Custom Signup Page (vishwa)
 Contact Page (vedant)
 
 
+LATER:
+Resume Page (APPLICANT) 

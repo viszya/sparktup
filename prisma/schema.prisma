@@ -55,7 +55,6 @@ model User {
   jobTitle          String?
   username          String?
   location          String?
-  connections       String?
   yearsOfExperience String?
   about             String?
   proEmail          String?
@@ -119,4 +118,12 @@ model Recommendation {
   message  String
   User     User?   @relation(fields: [userId], references: [id])
   userId   String?
+}
+
+model ApplicantStats {
+  id              String @id @default(cuid())
+  profieViews     Int    @default(0)
+  jobApplications Int    @default(0)
+  jobOffers       Int    @default(0)
+  connections     Int    @default(0)
 }
