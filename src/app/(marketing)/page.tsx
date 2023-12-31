@@ -218,7 +218,7 @@ export default async function Home() {
                 <h2 className="my-4 font-bold text-3xl  sm:text-4xl ">Igniting Tech Futures at <span className="text-red-400">Sparktup</span>
                 </h2>
                 <p className="text-gray-700">
-                  At Sparktup, we are passionate about catalyzing growth and innovation in the dynamic world of technology. Born from a collective vision of connecting businesses with top-tier tech talent and empowering individuals to spark their careers, Sparktup is more than a platform—it's a vibrant community.
+                  At Sparktup, we are passionate about catalyzing growth and innovation in the dynamic world of technology. Born from a collective vision of connecting businesses with top-tier tech talent and empowering individuals to spark their careers, Sparktup is more than a platform—it&apos;s a vibrant community.
                 </p>
               </div>
             </div>

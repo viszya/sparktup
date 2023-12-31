@@ -37,7 +37,15 @@ import {
   Contact,
   ArrowUpRightFromCircle,
   Hourglass,
+  CheckCircle,
+  TrendingUp,
+  Clock,
+  Database,
   type XIcon as LucideIcon,
+  ShieldCheck,
+  Mail,
+  List,
+  Send,
 } from "lucide-react"
 import type { LucideProps } from "lucide-react";
 
@@ -73,6 +81,16 @@ export const Icons = {
   badgeCheck: BadgeCheck,
   party: PartyPopper,
   spark: Sparkles,
+  CheckCircle: CheckCircle,
+  TrendingUp: TrendingUp,
+  ShieldCheck: ShieldCheck,
+  Clock: Clock,
+  Database: Database,
+  Mail: Mail,
+  Check: Check,
+  Link: Link,
+  List: List,
+  Send: Send,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
