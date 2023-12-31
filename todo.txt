@@ -18,30 +18,38 @@ Location Section
 Image Section (later will be post section)
 
 
-TODO PAGES
-(Vedant & Akshay)
+TODO PAGES:
+
+LANDING PAGES: (VEDANT) (5 PAGES)
 Solutions Page
 Company Solutions Page
 Applicants Solutions Page
 Companies Page
 Landing Page
 
-Company Profile Page
-Company Application Page
-Resume Page
-Company Settings Page
-Applicant Settings Page
-Nav + Footer for Company and Applicant Dashboard
+COMPANY PAGES: (4 PAGES)
+Profile Page (COMPANY)
+Application Page (COMPANY)
+Adding Job Page (COMPANY)
+Adding Post Page (COMPANY)
 
-Dashboard Page Applicant
-Dashboard Page Company
-Adding Job (for company) Page
-Adding Post (for company) Page
-Notifications Page Company
-Notifications Page Applicant
+APPLICANT PAGES: (4 PAGES)
+Resume Page (APPLICANT)
+Adding Project (APPLICANT)
+Adding Experience (APPLICANT)
+Adding Reccomendation (APPLICANT)
+
+COMPANY & APPLICANT PAGES: (8 PAGES)
+Dahsboard: (APPLICANT & COMPANY)
+Settings: (APPLICANT & COMPANY)
+Nav + Footer: (APPLICANT & COMPANY)
+Notifications: (APPLICANT & COMPANY)
+
+OTHER PAGES: (2 PAGES)
 Search Page
+Messaging (for the connections)
 
-Done Pages:
+DONE PAGES:
 Applicant Profile Page (vishwa)
 Applicants Page (vishwa)
 FAQ Page (vedant)
@@ -52,3 +60,5 @@ Custom Signin Page (vishwa)
 Custom Signup Page (vishwa)
 404 Page (vishwa)
 Contact Page (vedant)
+
+

@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -9,18 +6,6 @@ datasource db {
   provider  = "postgresql"
   url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
-}
-
-model Post {
-  id        Int      @id @default(autoincrement())
-  name      String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  createdBy   User   @relation(fields: [createdById], references: [id])
-  createdById String
-
-  @@index([name])
 }
 
 // Necessary for Next auth
@@ -50,25 +35,6 @@ model Session {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime?
-  image         String?
-  accounts      Account[]
-  sessions      Session[]
-  posts         Post[]
-}
-
-model Onboarding {
-  id        String  @id @default(cuid())
-  name      String?
-  email     String?
-  jobTitle  String?
-  statement String?
-}
-
 model VerificationToken {
   identifier String
   token      String   @unique
@@ -77,22 +43,39 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-model Profile {
+model User {
   id                String           @id @default(cuid())
+  name              String?
+  email             String?          @unique
+  emailVerified     DateTime?
+  image             String?
+  accounts          Account[]
+  sessions          Session[]
   fullName          String?
-  jobTitle          String
-  username          String
-  location          String
-  connections       String
-  yearsOfExperience String
-  about             String
-  availableForWork   Boolean
+  jobTitle          String?
+  username          String?
+  location          String?
+  connections       String?
+  yearsOfExperience String?
+  about             String?
+  proEmail          String?
+  availableForWork  Boolean?
+  hasAJob           Boolean?
+  resumeLink        String?
+  profileTags       String[]
+  interestedTags    String[]
   experiences       Experience[]
   projects          Project[]
   topSkills         TopSkill[]
   recommendations   Recommendation[]
-  tags              String[]
-  resumeLink        String
+}
+
+model Onboarding {
+  id        String  @id @default(cuid())
+  name      String?
+  email     String?
+  jobTitle  String?
+  statement String?
 }
 
 model Experience {
@@ -106,34 +89,34 @@ model Experience {
   location        String
   time            String
   jobDescriptions String[]
-  Profile         Profile? @relation(fields: [profileId], references: [id])
-  profileId       String?
+  User            User?    @relation(fields: [userId], references: [id])
+  userId          String?
 }
 
 model Project {
-  id        String   @id @default(cuid())
-  name      String
-  src       String
-  link      String
-  Profile   Profile? @relation(fields: [profileId], references: [id])
-  profileId String?
+  id     String  @id @default(cuid())
+  name   String
+  src    String
+  link   String
+  User   User?   @relation(fields: [userId], references: [id])
+  userId String?
 }
 
 model TopSkill {
-  id          String   @id @default(cuid())
+  id          String  @id @default(cuid())
   name        String
   color       String
   description String
-  Profile     Profile? @relation(fields: [profileId], references: [id])
-  profileId   String?
+  User        User?   @relation(fields: [userId], references: [id])
+  userId      String?
 }
 
 model Recommendation {
-  id        String   @id @default(cuid())
-  name      String
-  jobTitle  String
-  srcImage  String
-  message   String
-  Profile   Profile? @relation(fields: [profileId], references: [id])
-  profileId String?
+  id       String  @id @default(cuid())
+  name     String
+  jobTitle String
+  srcImage String
+  message  String
+  User     User?   @relation(fields: [userId], references: [id])
+  userId   String?
 }
