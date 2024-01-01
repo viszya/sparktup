@@ -54,12 +54,12 @@ const data = {
         {
             name: "John Smith",
             role: "CEO",
-            photoSrc: "/john-smith-photo.png"
+            photoSrc: "/public/jhon-doe-microsoftData.jpeg"
         },
         {
             name: "Jane Doe",
             role: "CTO",
-            photoSrc: "/jane-doe-photo.png"
+            photoSrc: "/public/jane-doe-microsoftData.jpeg"
         },
         // Add more team members as needed
         ],
@@ -83,10 +83,9 @@ const data = {
         // Add more job openings as needed
         ],
         mediaGallery: [
-        "/company-office-photo1.png",
-        "/company-events-photo2.png",
-        "/company-team-photo3.png"
-        // Add more images as needed
+        "/public/office1-microsoftData.jpeg",
+        "/public/office2-microsoftData.jpeg",
+        "/public/office3-microsoftData.jpeg"    
         ],
         termsAndConditionsLink: "https://techsolutions.com/terms",
         privacyPolicyLink: "https://techsolutions.com/privacy",
@@ -95,7 +94,7 @@ const data = {
             date: "Thu, Mar 16, 2023, 8:00 AM",
             title: "The Future of Work: Reinventing Productivity with AI",
             location: "Live Video",
-            imgsrc: "/image.jpeg",
+            imgsrc: "/public/future_of_work-microsoftData.jpeg",
             attendees: "31,740 attendees",
             viewLink: "https://example.com/event1",
         },
@@ -103,7 +102,7 @@ const data = {
             date: "Tue, Nov 29, 2022, 5:00 PM",
             title: "Microsoft Industry Fair 2022",
             location: "Live Video",
-            imgsrc: "/event2.png",
+            imgsrc: "/public/microsoft-industry-fair-microsoftData.jpeg",
             attendees: "102 attendees",
             viewLink: "https://example.com/event2",
         },
@@ -111,7 +110,7 @@ const data = {
             date: "Mon, Nov 14, 2022, 5:00 PM",
             title: "Microsoft Hong Kong Cybersecurity Summit 2022",
             location: "Live Video",
-            imgsrc: "/event3.png",
+            imgsrc: "/public/event3-microsoftData.jpeg",
             attendees: "78 attendees",
             viewLink: "https://example.com/event3",
         },
