@@ -9,11 +9,11 @@ export default function Solutions() {
     <div className={cn("", twp().wrapper)}>
       <div className="grid grid-cols-2 gap-8 mt-40 mb-40">
         {/* Company Solutions Box */}
-        <div key="company" className="bg-gray-300/10 p-8 rounded-2xl border-2 border-red-300">
+        <div key="company" className=" p-8 rounded-2xl border-2 border-red-300 bg-red-100/10">
           <div className="text-2xl font-medium tracking-tight text-black sm:text-4xl mb-4">
             Company Solutions
           </div>
-          <div className="flex items-center gap-x-8 mb-4">
+          <div className="flex items-center gap-x-8 mb-10">
             {/* You can replace the image source with your own */}
             {/* <Image src="/public/microsoft_logo.png" alt="company" width={100} height={50} className="rounded-full overflow-hidden" /> */}
             <div>
@@ -29,7 +29,7 @@ export default function Solutions() {
         </div>
 
         {/* Applicant Solutions Box */}
-        <div key="applicant" className="bg-gray-300/10 p-8 rounded-2xl border-2 border-teal-300">
+        <div key="applicant" className="p-8 rounded-2xl border-2 border-teal-300 bg-teal-100/10">
           <div className="text-2xl font-medium tracking-tight text-black sm:text-4xl mb-4">
             Applicant Solutions
           </div>
