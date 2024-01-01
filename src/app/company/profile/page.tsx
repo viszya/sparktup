@@ -12,7 +12,7 @@ import Link from "next/link";
 const data = {
   companyName: "Tech Solutions Inc.",
   linkedInMembers: "224,866 associated members",
-  logoSrc: "/company-logo.png",
+  logoSrc: "/microsoft_logo.png",
   location: "San Francisco, CA, USA",
   website: "https://news.microsoft.com/",
   industry: "Technology",
@@ -26,106 +26,106 @@ const data = {
   keyBenefits: " - Scalable and flexible solutions\n - Robust security measures\n - Dedicated customer support\n - Continuous innovation and updates",
   keyFeatures: " - Customized software development\n - Cloud infrastructure management\n - Data-driven insights and analytics\n - Strategic consulting and planning",
   testimonials: [
-    {
+  {
       clientName: "ABC Corporation",
       feedback: "Tech Solutions Inc. has been an invaluable partner in our digital transformation journey. Their expertise and commitment to excellence have significantly contributed to our success."
-    },
-    {
+  },
+  {
       clientName: "XYZ Enterprises",
       feedback: "We chose Tech Solutions Inc. for their innovative solutions and they exceeded our expectations. Their team is responsive, knowledgeable, and always ready to tackle new challenges."
-    }
+  }
   ],
   specialties: [
-    "Business Software",
-    "Developer Tools",
-    "Home & Educational Software",
-    "Tablets",
-    "Search",
-    "Advertising",
-    "Servers",
-    "Windows Operating System",
-    "Windows Applications & Platforms",
-    "Smartphones",
-    "Cloud Computing",
-    "Quantum Computing",
-    "Future of Work",
-    "Productivity",
-    "AI",
-    "Artificial Intelligence",
-    "Machine Learning",
-    "Laptops",
-    "Mixed Reality",
-    "Virtual Reality",
-    "Gaming",
-    "Developers",
-    "IT Professional",
+  "Business Software",
+  "Developer Tools",
+  "Home & Educational Software",
+  "Tablets",
+  "Search",
+  "Advertising",
+  "Servers",
+  "Windows Operating System",
+  "Windows Applications & Platforms",
+  "Smartphones",
+  "Cloud Computing",
+  "Quantum Computing",
+  "Future of Work",
+  "Productivity",
+  "AI",
+  "Artificial Intelligence",
+  "Machine Learning",
+  "Laptops",
+  "Mixed Reality",
+  "Virtual Reality",
+  "Gaming",
+  "Developers",
+  "IT Professional",
   ],
   teamMembers: [
-    {
+  {
       name: "John Smith",
       role: "CEO",
-      photoSrc: "/john-smith-photo.png"
-    },
-    {
+      photoSrc: "/jhon-doe-microsoftData.jpeg"
+  },
+  {
       name: "Jane Doe",
       role: "CTO",
-      photoSrc: "/jane-doe-photo.png"
-    },
-    // Add more team members as needed
+      photoSrc: "/jane-doe-microsoftData.jpeg"
+  },
+  // Add more team members as needed
   ],
   companyCulture: "At Tech Solutions Inc., we foster a culture of collaboration, continuous learning, and diversity. Our team members are our greatest asset, and we prioritize their well-being, growth, and work-life balance. Join us in shaping the future of technology!",
   contactInformation: {
-    email: "info@techsolutions.com",
-    phone: "+1 (555) 123-4567",
-    address: "123 Tech Street, San Francisco, CA"
+  email: "info@techsolutions.com",
+  phone: "+1 (555) 123-4567",
+  address: "123 Tech Street, San Francisco, CA"
   },
   careerOpportunities: [
-    {
+  {
       position: "Software Engineer",
       location: "San Francisco, CA",
       applyLink: "https://techsolutions.com/careers/software-engineer"
-    },
-    {
+  },
+  {
       position: "Data Scientist",
       location: "Remote",
       applyLink: "https://techsolutions.com/careers/data-scientist"
-    }
-    // Add more job openings as needed
+  }
+  // Add more job openings as needed
   ],
   mediaGallery: [
-    "/company-office-photo1.png",
-    "/company-events-photo2.png",
-    "/company-team-photo3.png"
-    // Add more images as needed
+  "/office1-microsoftData.jpeg",
+  "/office2-microsoftData.jpeg",
+  "/office3-microsoftData.jpeg"    
   ],
   termsAndConditionsLink: "https://techsolutions.com/terms",
   privacyPolicyLink: "https://techsolutions.com/privacy",
   eventData: [
-    {
+  {
       date: "Thu, Mar 16, 2023, 8:00 AM",
       title: "The Future of Work: Reinventing Productivity with AI",
       location: "Live Video",
-      imgsrc: "/image.jpeg",
+      imgsrc: "/future_of_work-microsoftData.jpeg",
       attendees: "31,740 attendees",
       viewLink: "https://example.com/event1",
-    },
-    {
+  },
+  {
       date: "Tue, Nov 29, 2022, 5:00 PM",
       title: "Microsoft Industry Fair 2022",
       location: "Live Video",
-      imgsrc: "/event2.png",
+      imgsrc: "/microsoft-industry-fair-microsoftData.jpeg",
       attendees: "102 attendees",
       viewLink: "https://example.com/event2",
-    },
-    {
+  },
+  {
       date: "Mon, Nov 14, 2022, 5:00 PM",
       title: "Microsoft Hong Kong Cybersecurity Summit 2022",
       location: "Live Video",
-      imgsrc: "/event3.png",
+      imgsrc: "/event3-microsoftData.jpeg",
       attendees: "78 attendees",
       viewLink: "https://example.com/event3",
-    },
+  },
   ],
+
 };
 
 export default function CompanyProfile() {
