@@ -394,6 +394,38 @@ export default function CompanyProfile() {
         </div>
       </section>
 
+
+      <div className="bg-white p-8 rounded-lg shadow-md">
+      <h1 className="text-2xl font-bold mb-6">Commitments</h1>
+      <div className="grid grid-cols-3 gap-8">
+        <div className="col-span-1">
+          <div className="flex items-center space-x-2 mb-4">
+            {/* <HeartHandshakeIcon className="text-red-500 w-6 h-6" /> */}
+            <span className="text-lg font-semibold">Featured</span>
+          </div>
+          <ul className="space-y-2">
+            <li className="text-sm font-medium text-gray-700">Environmental sustainability</li>
+            <li className="text-sm text-gray-500">Social impact</li>
+            <li className="text-sm text-gray-500">Diversity, equity, and inclusion</li>
+            <li className="text-sm text-gray-500">Career growth and learning</li>
+            <li className="text-sm text-gray-500">Work-life balance</li>
+          </ul>
+        </div>
+        <div className="col-span-2">
+          <h2 className="text-lg font-semibold mb-2">Environmental sustainability</h2>
+          <p className="text-sm text-gray-700 mb-4">
+            Microsoft has public, time-bound commitments to become carbon negative, water positive, and zero waste in
+            our operations by 2030. Microsoft is accelerating progress toward a more sustainable future by measuring and
+            reducing our environmental footprint, accelerating research, helping our customers build sustainable
+            solutions, an...
+            <a className="text-blue-600" href="#">
+              See more
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
     </div>
 
 

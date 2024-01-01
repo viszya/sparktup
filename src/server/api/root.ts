@@ -2,6 +2,7 @@
 import { onboadingRouter } from "@/server/api/routers/onboarding";
 import { userRouter } from "@/server/api/routers/profile";
 import { settingsRouter } from "@/server/api/routers/settings";
+import { testRouter } from "@/server/api/routers/test";
 import { createTRPCRouter } from "@/server/api/trpc";
 
 /**
@@ -14,6 +15,7 @@ export const appRouter = createTRPCRouter({
   onboarding: onboadingRouter,
   user: userRouter,
   settings: settingsRouter,
+  test: testRouter,
 });
 
 // export type definition of API
