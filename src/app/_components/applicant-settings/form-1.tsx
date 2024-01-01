@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import { api } from "@/trpc/react";
-
+import { useToast } from "@/app/_components/ui/use-toast";
 
 
 export function Form1() {
+	const { toast } = useToast();
 	const [fullName, setFullName] = useState("");
 	const [username, setUsername] = useState("");
 	const [location, setLocation] = useState("");
@@ -19,11 +20,37 @@ export function Form1() {
 	const [profileTags, setProfileTags] = useState<string[]>([""]);
 	const [interestedTags, setInterestedTags] = useState<string[]>([""]);
 
-	// image             String?
-
-	const formUpdate = api.onboarding.updateForm1.useMutation({
+	const formUpdate = api.settings.settingsForm1.useMutation({
 		onSuccess: () => {
-			//
+			const today = new Date();
+			const date =
+				today.toLocaleString("default", { weekday: "long" }) +
+				", " +
+				today.toLocaleString("default", { month: "long" }) +
+				" " +
+				today.getDate() +
+				", " +
+				today.getFullYear() +
+				" at " +
+				today.getHours() +
+				":" +
+				today.getMinutes();
+			toast({
+				title: "Experience Added",
+				description: date,
+			});
+			setFullName("");
+			setUsername("");
+			setLocation("");
+			setProEmail("");
+			setAbout("");
+			setJobTitle("");
+			setYearsOfExperience("");
+			setAvailableForWork(false);
+			setHasAJob(false);
+			setResumeLink("");
+			setProfileTags([""]);
+			setInterestedTags([""]);
 		},
 	});
 
@@ -34,6 +61,13 @@ export function Form1() {
 			username,
 			location,
 			about,
+			jobTitle,
+			yearsOfExperience,
+			availableForWork,
+			hasAJob,
+			resumeLink,
+			profileTags,
+			interestedTags,
 		});
 	}
 
@@ -73,7 +107,7 @@ export function Form1() {
 		<section>
 			<div className="flex flex-col justify-center m-auto">
 				<div className="flex flex-col justify-center text-center md:flex-row md:text-left">
-					<div className="flex flex-col justify-center max-w-2xl p-10 space-y-12">
+					<div className="flex flex-col justify-center w-full max-w-5xl p-10 space-y-12">
 
 						<form
 							className="flex flex-col gap-y-9"

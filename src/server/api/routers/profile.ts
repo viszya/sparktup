@@ -20,7 +20,7 @@ export const userRouter = createTRPCRouter({
             //     companyLogoSrc: z.string(),
             //     companyName: z.string(),
             //     companyImgSrc: z.string(),
-            //     engangment: z.string(),
+            //     engagement: z.string(),
             //     relativeOfWork: z.string(),
             //     jobTitle: z.string(),
             //     location: z.string(),
@@ -56,7 +56,6 @@ export const userRouter = createTRPCRouter({
                     jobTitle: input.jobTitle,
                     username: input.username,
                     location: input.location,
-                    connections: input.connections,
                     yearsOfExperience: input.yearsOfExperience,
                     about: input.about,
                     availableForWork: input.availableForWork,
@@ -69,7 +68,7 @@ export const userRouter = createTRPCRouter({
                     //             companyLogoSrc: experience.companyLogoSrc,
                     //             companyName: experience.companyName,
                     //             companyImgSrc: experience.companyImgSrc,
-                    //             engangment: experience.engangment,
+                    //             engagement: experience.engagement,
                     //             relativeOfWork: experience.relativeOfWork,
                     //             time: experience.time,
                     //             jobDescriptions: experience.jobDescriptions,
@@ -107,7 +106,111 @@ export const userRouter = createTRPCRouter({
                     //         },
                     //     })),
                     // },
-                    tags: input.tags,
+                    //tags: input.tags,
+                    resumeLink: input.resumeLink,
+                },
+            });
+        }),
+
+
+    createProfile: protectedProcedure
+        .input(z.object({
+            fullName: z.string(),
+            jobTitle: z.string(),
+            username: z.string(),
+            location: z.string(),
+            connections: z.string(),
+            yearsOfExperience: z.string(),
+            about: z.string(),
+            availableForWork: z.boolean(),
+            experiences: z.array(z.object({
+                companyLogoSrc: z.string(),
+                companyName: z.string(),
+                companyImgSrc: z.string(),
+                engagement: z.string(),
+                relativeOfWork: z.string(),
+                jobTitle: z.string(),
+                location: z.string(),
+                time: z.string(),
+                jobDescriptions: z.array(z.string()),
+            })),
+            projects: z.array(z.object({
+                name: z.string(),
+                src: z.string(),
+                link: z.string(),
+            })),
+            topSkills: z.array(z.object({
+                name: z.string(),
+                color: z.string(),
+                description: z.string(),
+            })),
+            recommendations: z.array(z.object({
+                name: z.string(),
+                jobTitle: z.string(),
+                srcImage: z.string(),
+                message: z.string(),
+            })),
+            tags: z.array(z.string()),
+            resumeLink: z.string(),
+        }))
+        .mutation(async ({ ctx, input }) => {
+            return ctx.db.user.update({
+                where: {
+                    id: ctx.session.user.id,
+                },
+                data: {
+                    fullName: input.fullName,
+                    jobTitle: input.jobTitle,
+                    username: input.username,
+                    location: input.location,
+                    //connections: input.connections,
+                    yearsOfExperience: input.yearsOfExperience,
+                    about: input.about,
+                    availableForWork: input.availableForWork,
+                    experiences: {
+                        create: input.experiences.map((experience) => ({
+                            data: {
+                                jobTitle: experience.jobTitle,
+                                location: experience.location,
+                                companyLogoSrc: experience.companyLogoSrc,
+                                companyName: experience.companyName,
+                                companyImgSrc: experience.companyImgSrc,
+                                engagement: experience.engagement,
+                                relativeOfWork: experience.relativeOfWork,
+                                time: experience.time,
+                                jobDescriptions: experience.jobDescriptions,
+                            },
+                        })),
+                    },
+                    projects: {
+                        create: input.projects.map((project) => ({
+                            data: {
+                                name: project.name,
+                                src: project.src,
+                                link: project.link,
+                            },
+                        })),
+                    },
+                    topSkills: {
+                        create: input.topSkills.map((topSkill) => ({
+                            data: {
+                                name: topSkill.name,
+                                color: topSkill.color,
+                                description: topSkill.description,
+                            },
+                        })),
+                    },
+                    recommendations: {
+                        create: input.recommendations.map((recommendation) => ({
+                            data: {
+                                name: recommendation.name,
+                                jobTitle: recommendation.jobTitle,
+                                srcImage: recommendation.srcImage,
+                                message: recommendation.message,
+                            },
+                        })),
+                    },
+                    //tags: input.tags,
                     resumeLink: input.resumeLink,
                 },
             });

@@ -4,14 +4,15 @@ import { useToast } from "@/app/_components/ui/use-toast";
 import { useState } from "react";
 import { api } from "@/trpc/react";
 
-export function Project() {
+export function Recommendation() {
   const [name, setName] = useState("");
-  const [src, setSrc] = useState("");
-  const [link, setLink] = useState("");
+  const [jobTitle, setJobTitle] = useState("");
+  const [srcImage, setSrcImage] = useState("");
+  const [message, setMessage] = useState("");
 
   const { toast } = useToast();
 
-  const formUpdate = api.settings.addProject.useMutation({
+  const formUpdate = api.settings.addRecommendation.useMutation({
     onSuccess: () => {
       const today = new Date();
       const date =
@@ -27,20 +28,22 @@ export function Project() {
         ":" +
         today.getMinutes();
       toast({
-        title: "Project Added",
+        title: "Recommendation Added",
         description: date,
       });
       setName("");
-      setSrc("");
-      setLink("");
+      setJobTitle("");
+      setSrcImage("");
+      setMessage("");
     },
   });
 
   function onSubmit() {
     formUpdate.mutate({
       name,
-      src,
-      link,
+      jobTitle,
+      srcImage,
+      message,
     });
   }
 
@@ -50,7 +53,7 @@ export function Project() {
         <div className="flex flex-col justify-center text-center md:flex-row md:text-left">
           <div className="flex flex-col justify-left w-full max-w-5xl p-10 space-y-12">
             <div className="mt-3 text-3xl tracking-tighter text-black">
-              Add Project
+              Add Recommendation
             </div>
             <form
               className="flex flex-col gap-y-9"
@@ -61,15 +64,29 @@ export function Project() {
             >
               <div className="col-span-full">
                 <label className="block mb-3 text-sm font-medium text-gray-600">
-                  Project Name
+                  Name
                 </label>
                 <input
                   className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
-                  placeholder="Project Name"
+                  placeholder="Name"
                   required
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+
+              <div className="col-span-full">
+                <label className="block mb-3 text-sm font-medium text-gray-600">
+                  Job Title
+                </label>
+                <input
+                  className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
+                  placeholder="Job Title"
+                  type="text"
+                  required
+                  value={jobTitle}
+                  onChange={(e) => setJobTitle(e.target.value)}
                 />
               </div>
 
@@ -82,22 +99,21 @@ export function Project() {
                   placeholder="Image URL"
                   type="text"
                   required
-                  value={src}
-                  onChange={(e) => setSrc(e.target.value)}
+                  value={srcImage}
+                  onChange={(e) => setSrcImage(e.target.value)}
                 />
               </div>
 
               <div className="col-span-full">
                 <label className="block mb-3 text-sm font-medium text-gray-600">
-                  Project Link
+                  Message
                 </label>
-                <input
+                <textarea
                   className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
-                  placeholder="Project Link"
-                  type="text"
+                  placeholder="Recommendation Message"
                   required
-                  value={link}
-                  onChange={(e) => setLink(e.target.value)}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                 />
               </div>
 
@@ -107,7 +123,7 @@ export function Project() {
                   type="submit"
                   disabled={formUpdate.isLoading}
                 >
-                  Add Project
+                  Add Recommendation
                 </button>
               </div>
               {formUpdate.isLoading ? "Submitting..." : ""}

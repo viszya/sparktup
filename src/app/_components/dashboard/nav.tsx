@@ -1,14 +1,22 @@
+"use client"
+
 import Link from 'next/link'
 import { buttonVariants } from '@/app/_components/ui/button'
-// import { ArrowRight } from 'lucide-react'
-// import UserAccountNav from './UserAccountNav'
 import { twp, cn } from '@/server/utils'
-// import MobileNav from './MobileNav'
-import { getServerAuthSession } from "@/server/auth";
-// import { api } from "@/trpc/server";
+import { Icons } from "@/app/_components/icons"
+import { useState } from "react"
+import { signOut } from "next-auth/react"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuLabel,
+    DropdownMenuTrigger,
+} from "@/app/_components/ui/dropdown-menu"
 
-const Nav = async () => {
-    const session = await getServerAuthSession();
+
+export function Nav() {
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [isGitHubLoading, setIsGitHubLoading] = useState<boolean>(false)
 
     return (<>
         <div className="sticky inset-x-0 top-0 z-30 w-full mx-auto border-b bg-white/70 backdrop-blur-lg transition-all">
@@ -65,10 +73,34 @@ const Nav = async () => {
                             <input type="text" className="w-full py-2 pl-10 pr-4 text-black bg-white border border-gray-200 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-500 sm:text-sm rounded-xl placeholder:text-gray-400 focus:border-blue-500" placeholder="Search" />
                         </div>
                     </div>
+
+                    <DropdownMenu>
+                        <DropdownMenuTrigger>
+                            <div className='border bg-gray-200/20 rounded-full p-1 text-gray-700 hover:animate-spin transition-all duration-100'>
+                                <Icons.settings height="20" width="20" />
+                            </div>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent>
+                            <DropdownMenuLabel><button
+                                type="button"
+                                className={cn(buttonVariants({ variant: "outline" }), "rounded-2xl w-full")}
+                                onClick={() => {
+                                    setIsGitHubLoading(true)
+                                    signOut({ callbackUrl: "/" })
+                                }}
+                                disabled={isLoading || isGitHubLoading}
+                            >
+                                {isGitHubLoading ? (
+                                    <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+                                ) : (<></>
+                                )}{" "}
+                                Signout
+                            </button></DropdownMenuLabel>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+
                 </nav>
             </div>
         </div>
     </>)
 }
-
-export default Nav

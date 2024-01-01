@@ -89,11 +89,11 @@ export  default function Page({ params }: { params: { slug: string } }) {
 
 
 			{/* Experiences */}
-			{/* <section className="m-10">
+			<section className="m-10">
 				<div className="my-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">Experiences</div>
 				<div className="items-center py-4 mx-auto px-14 max-w-7xl bg-gray-300/10 p-8 rounded-2xl border-2 border-gray-200">
 					<ul className="w-full divide-y divide-mercury-300" role="list">
-						{data.exeriences.map((data: any) => (
+						{data.experiences.map((data: any) => (
 							<li className="py-4 lg:py-8">
 							<div className="grid items-start grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-24">
 								<div className="lg:col-span-2 lg:order-last">
@@ -133,7 +133,7 @@ export  default function Page({ params }: { params: { slug: string } }) {
 						))}
 					</ul>
 				</div>
-			</section> */}
+			</section>
 
 			{/* Top 3 Skills */}
 			{/* <section className="m-10">

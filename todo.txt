@@ -48,6 +48,7 @@ MyProfile: (APPLICANT & COMPANY)
 SIdebar: home, messaging, myprofile, settings, sign out
 
 Connections using the bottom drawer component
+also connections are currently just shown as emails or contact info directly to them
 
 OTHER PAGES: (2 PAGES)
 Search Page

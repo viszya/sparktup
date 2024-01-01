@@ -1,7 +1,9 @@
 export function MyProfile() {
     return (
         <div>
-            <div className="mt-4 mb-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">My Profile</div>
+            <div className="mt-3 text-3xl tracking-tighter text-black">
+                My Profile
+            </div>
         </div>
     )
 }

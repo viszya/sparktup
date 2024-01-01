@@ -4,8 +4,8 @@ generator client {
 
 datasource db {
   provider  = "postgresql"
-  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
 // Necessary for Next auth
@@ -67,14 +67,102 @@ model User {
   projects          Project[]
   topSkills         TopSkill[]
   recommendations   Recommendation[]
+  companyUser       CompanyUser?     @relation(fields: [companyUserId], references: [id]) // Link to the associated company user
+  companyUserId     String?
 }
 
-model Onboarding {
+model CompanyUser {
   id        String  @id @default(cuid())
-  name      String?
-  email     String?
-  jobTitle  String?
-  statement String?
+  name      String
+  email     String
+  company   Company @relation(fields: [companyId], references: [id])
+  User      User[]
+  companyId String
+}
+
+model Company {
+  id                     String   @id @default(cuid())
+  name                   String
+  linkedInMembers        String
+  logoSrc                String
+  location               String
+  website                String
+  industry               String
+  companySize            String
+  size                   String
+  foundingYear           String
+  missionValues          String
+  missionAndValues       String
+  about                  String
+  solutionsOverview      String
+  keyBenefits            String
+  keyFeatures            String
+  companyCulture         String
+  termsAndConditionsLink String
+  privacyPolicyLink      String
+  specialties            String[]
+  contactInformation  ContactInformation[]
+  testimonials        Testimonial[]
+  teamMembers         TeamMember[]
+  careerOpportunities CareerOpportunity[]
+  mediaGallery        MediaGallery[]
+  eventData            EventData[]
+  CompanyUser          CompanyUser[]
+  contactInformationId String
+}
+
+model Testimonial {
+  id         String  @id @default(cuid())
+  clientName String
+  feedback   String
+  company    Company @relation(fields: [companyId], references: [id])
+  companyId  String
+}
+
+model TeamMember {
+  id        String  @id @default(cuid())
+  name      String
+  role      String
+  photoSrc  String
+  company   Company @relation(fields: [companyId], references: [id])
+  companyId String
+}
+
+model ContactInformation {
+  id        String  @id @default(cuid())
+  email     String
+  phone     String
+  address   String
+  company   Company @relation(fields: [companyId], references: [id])
+  companyId String
+}
+
+model CareerOpportunity {
+  id        String  @id @default(cuid())
+  position  String
+  location  String
+  applyLink String
+  company   Company @relation(fields: [companyId], references: [id])
+  companyId String
+}
+
+model MediaGallery {
+  id        String  @id @default(cuid())
+  src       String
+  company   Company @relation(fields: [companyId], references: [id])
+  companyId String
+}
+
+model EventData {
+  id        String   @id @default(cuid())
+  date      DateTime
+  title     String
+  location  String
+  imgsrc    String
+  attendees String
+  viewLink  String
+  company   Company  @relation(fields: [companyId], references: [id])
+  companyId String
 }
 
 model Experience {
@@ -82,7 +170,7 @@ model Experience {
   companyLogoSrc  String
   companyName     String
   companyImgSrc   String
-  engangment      String
+  engagement      String
   relativeOfWork  String
   jobTitle        String
   location        String
