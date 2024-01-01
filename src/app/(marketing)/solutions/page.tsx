@@ -7,9 +7,9 @@ import Link from "next/link";
 export default function Solutions() {
   return (
     <div className={cn("", twp().wrapper)}>
-      <div className="grid grid-cols-2 gap-8 mt-11">
+      <div className="grid grid-cols-2 gap-8 mt-40 mb-40">
         {/* Company Solutions Box */}
-        <div key="company" className="bg-gray-300/10 p-8 rounded-2xl border-2 border-red-400">
+        <div key="company" className="bg-gray-300/10 p-8 rounded-2xl border-2 border-red-300">
           <div className="text-2xl font-medium tracking-tight text-black sm:text-4xl mb-4">
             Company Solutions
           </div>
@@ -22,14 +22,14 @@ export default function Solutions() {
             </div>
           </div>
           <Link href="../solutions/company">
-            <Button className="text-md items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-red-400 border-2 border-red-400 rounded-lg inline-flex hover:bg-transparent hover:border-red-400 hover:text-red-400 focus:outline-none focus-visible:outline-red-400 focus-visible:ring-red-400">
+            <Button className="text-md items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-red-300 border-2 border-red-300 rounded-lg inline-flex hover:bg-transparent hover:border-red-300 hover:text-red-300 focus:outline-none focus-visible:outline-red-300 focus-visible:ring-red-300">
               Read More <Icons.arrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
         </div>
 
         {/* Applicant Solutions Box */}
-        <div key="applicant" className="bg-gray-300/10 p-8 rounded-2xl border-2 border-green-500">
+        <div key="applicant" className="bg-gray-300/10 p-8 rounded-2xl border-2 border-teal-300">
           <div className="text-2xl font-medium tracking-tight text-black sm:text-4xl mb-4">
             Applicant Solutions
           </div>
@@ -42,7 +42,7 @@ export default function Solutions() {
             </div>
           </div>
           <Link href="../solutions/applicant">
-            <Button className="text-md items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-green-500 border-2 border-green-500 rounded-lg inline-flex hover:bg-transparent hover:border-green-500 hover:text-green-500 focus:outline-none focus-visible:outline-green-500 focus-visible:ring-green-500">
+            <Button className="text-md items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-teal-300 border-2 border-teal-300 rounded-lg inline-flex hover:bg-transparent hover:border-teal-300 hover:text-teal-300 focus:outline-none focus-visible:outline-teal-300 focus-visible:ring-teal-300">
               Read More <Icons.arrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
