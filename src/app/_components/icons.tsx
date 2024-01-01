@@ -46,6 +46,12 @@ import {
   Mail,
   List,
   Send,
+  UserPlus,
+  Search,
+  BookOpen,
+  Network,
+  MessageCircle,
+  Users,
 } from "lucide-react"
 import type { LucideProps } from "lucide-react";
 
@@ -91,6 +97,12 @@ export const Icons = {
   Link: Link,
   List: List,
   Send: Send,
+  UserPlus: UserPlus,
+  search: Search,
+  BookOpen: BookOpen,
+  Network: Network,
+  Chat: MessageCircle,
+  Users: Users,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
