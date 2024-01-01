@@ -1,121 +1,125 @@
-"use client"
-import { useToast } from "@/app/_components/ui/use-toast";
-import { useRouter } from "next/navigation";
+"use client";
+
 import { useState } from "react";
 import { api } from "@/trpc/react";
+import { useToast } from "@/app/_components/ui/use-toast";
 
-export default function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [jobTitle, setJobTitle] = useState("");
-  const [statement, setStatement] = useState("");
-  const router = useRouter();
+export function ContactForm() {
   const { toast } = useToast();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const createPost = api.onboarding.form.useMutation({
+  const formUpdate = api.settings.settingsContactForm.useMutation({
     onSuccess: () => {
-    
-      router.push("/thank-you");
+      const today = new Date();
+      const date =
+        today.toLocaleString("default", { weekday: "long" }) +
+        ", " +
+        today.toLocaleString("default", { month: "long" }) +
+        " " +
+        today.getDate() +
+        ", " +
+        today.getFullYear() +
+        " at " +
+        today.getHours() +
+        ":" +
+        today.getMinutes();
       toast({
-        title: "Form submitted successfully!",
-        description: "Thank you for contacting us.",
+        title: "Message Sent",
+        description: date,
       });
-    },
-    // Handle error cases
-    onError: (error) => {
-      toast({
-        title: "Error submitting form",
-        description: error.message || "An error occurred",
-        status: "error",
-      });
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setMessage("");
     },
   });
 
-  function onSubmit(e) {
-    e.preventDefault();
-
-    if (!name || !email || !jobTitle || !statement) {
-      toast({
-        title: "Form validation error",
-        description: "Please fill out all fields.",
-        status: "error",
-      });
-      return;
-    }
-
-    createPost.mutate({ name, email, jobTitle, statement });
+  function onSubmit() {
+    formUpdate.mutate({
+      firstName,
+      lastName,
+      email,
+      message,
+    });
   }
 
   return (
     <section>
-      <div className="flex items-center justify-center h-screen">
-        <div className="max-w-md w-full">
-          <div className="bg-white p-8 mt-11 rounded-lg shadow-xl hover:shadow-2xl">
-            <div className="text-3xl font-semibold text-center mb-4">
-              Contact Us
-            </div>
-            <form className="space-y-4" onSubmit={(e) => onSubmit(e)}>
-              <div>
-                <label className="block text-sm font-medium text-gray-600">
-                  Full Name
+      <div className="flex flex-col justify-center m-auto">
+        <div className="flex flex-col justify-center text-center md:flex-row md:text-left">
+          <div className="flex flex-col justify-center w-full max-w-5xl p-10 space-y-12">
+            <form
+              className="flex flex-col gap-y-9"
+              onSubmit={(e) => {
+                e.preventDefault();
+                onSubmit();
+              }}
+            >
+              <div className="col-span-full">
+                <label className="block mb-3 text-sm font-medium text-gray-600">
+                  First Name
                 </label>
                 <input
+                  className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
+                  placeholder="John"
                   type="text"
-                  className="mt-1 p-2 w-full border rounded-md"
-                  placeholder="Jeff Bezos"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  value={firstName}
+                  required
+                  onChange={(e) => setFirstName(e.target.value)}
                 />
               </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-600">
-                  Professional Email
+              <div className="col-span-full">
+                <label className="block mb-3 text-sm font-medium text-gray-600">
+                  Last Name
                 </label>
                 <input
+                  className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
+                  placeholder="Doe"
                   type="text"
-                  className="mt-1 p-2 w-full border rounded-md"
-                  placeholder="jeffbezos@example.com"
+                  value={lastName}
+                  required
+                  onChange={(e) => setLastName(e.target.value)}
+                />
+              </div>
+              <div className="col-span-full">
+                <label className="block mb-3 text-sm font-medium text-gray-600">
+                  Email
+                </label>
+                <input
+                  className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
+                  placeholder="john.doe@example.com"
+                  type="email"
                   value={email}
+                  required
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-600">
-                  Job Title
-                </label>
-                <input
-                  type="text"
-                  className="mt-1 p-2 w-full border rounded-md"
-                  placeholder="Richest Person in the World"
-                  value={jobTitle}
-                  onChange={(e) => setJobTitle(e.target.value)}
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-600">
-                  Personal Statement
+              <div className="col-span-full">
+                <label className="block mb-3 text-sm font-medium text-gray-600">
+                  Message
                 </label>
                 <textarea
-                  className="mt-1 p-2 w-full border rounded-md"
+                  className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
+                  placeholder="Your message here..."
                   rows={4}
-                  placeholder="What are you working on?"
-                  value={statement}
-                  onChange={(e) => setStatement(e.target.value)}
+                  value={message}
+                  required
+                  onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
               </div>
-
-              <div>
+              <div className="col-span-full">
                 <button
+                  className="items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-full inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black"
                   type="submit"
-                  className="w-full py-2 px-4 bg-black text-white rounded-md hover:bg-gray-800 focus:outline-none focus:ring focus:border-blue-300"
-                  disabled={createPost.isLoading}
+                  disabled={formUpdate.isLoading}
                 >
-                  {createPost.isLoading ? "Submitting..." : "Submit Request"}
+                  Send Message
                 </button>
               </div>
+              {formUpdate.isLoading ? "Submitting..." : ""}
             </form>
           </div>
         </div>

@@ -22,8 +22,6 @@ TODO PAGES:
 
 LANDING PAGES: (VEDANT) (5 PAGES)
 Solutions Page
-Company Solutions Page
-Applicants Solutions Page
 Companies Page
 Landing Page
 
@@ -65,6 +63,8 @@ Custom Signin Page (vishwa)
 Custom Signup Page (vishwa)
 404 Page (vishwa)
 Contact Page (vedant)
+Company Solutions Page (vedant)
+Applicants Solutions Page (vedant)
 
 
 LATER:
