@@ -11,7 +11,7 @@ export default function About() {
                     </div>
                     <div className="mt-4 text-gray-500 text-lg">
                         Welcome to Sparktup, where innovation meets opportunity. Founded by Vedant Lad, Vishwa Anand, and Akshay Burra, Sparktup was born out of a shared vision to revolutionize the way individuals and businesses connect in the dynamic world of technology. <br /> <br />
-                        At Sparktup, we've created more than just a platform; we've built a dynamic ecosystem where tech enthusiasts, professionals, and businesses converge. Our platform serves as a catalyst, sparking connections that drive innovation and propel careers.
+                        At Sparktup, we&apos;ve created more than just a platform; we&apos;ve built a dynamic ecosystem where tech enthusiasts, professionals, and businesses converge. Our platform serves as a catalyst, sparking connections that drive innovation and propel careers.
                     </div>
                 </article>
                 <article>
@@ -39,7 +39,7 @@ export default function About() {
                         Join Us in Sparking Tech Success
                     </div>
                     <div className="mt-4 text-gray-500 text-lg">
-                        Whether you're a business seeking top tech talent or an individual ready to ignite your tech career, Sparktup is your go-to platform. Join us in shaping the future of technology—where connections lead to innovation and opportunities spark growth.
+                        Whether you&apos;re a business seeking top tech talent or an individual ready to ignite your tech career, Sparktup is your go-to platform. Join us in shaping the future of technology—where connections lead to innovation and opportunities spark growth.
                     </div>
                 </article>
             </div>

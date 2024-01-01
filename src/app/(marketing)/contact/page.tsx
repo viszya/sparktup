@@ -1,56 +1,29 @@
 "use client";
 
 import { useState } from "react";
-import { api } from "@/trpc/react";
-import { useToast } from "@/app/_components/ui/use-toast";
+import { Email } from "@/app/_components/email";
 
-export function ContactForm() {
-  const { toast } = useToast();
+export default function ContactForm() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const formUpdate = api.settings.settingsContactForm.useMutation({
-    onSuccess: () => {
-      const today = new Date();
-      const date =
-        today.toLocaleString("default", { weekday: "long" }) +
-        ", " +
-        today.toLocaleString("default", { month: "long" }) +
-        " " +
-        today.getDate() +
-        ", " +
-        today.getFullYear() +
-        " at " +
-        today.getHours() +
-        ":" +
-        today.getMinutes();
-      toast({
-        title: "Message Sent",
-        description: date,
-      });
-      setFirstName("");
-      setLastName("");
-      setEmail("");
-      setMessage("");
-    },
-  });
-
   function onSubmit() {
-    formUpdate.mutate({
-      firstName,
-      lastName,
-      email,
-      message,
-    });
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setMessage("");
   }
 
   return (
-    <section>
+    <section className="mb-20">
+      <div className="text-center mt-32 text-5xl tracking-tighter text-black">
+        Contact Us
+      </div>
       <div className="flex flex-col justify-center m-auto">
         <div className="flex flex-col justify-center text-center md:flex-row md:text-left">
-          <div className="flex flex-col justify-center w-full max-w-5xl p-10 space-y-12">
+          <div className="flex flex-col justify-center w-full max-w-3xl p-10 space-y-12">
             <form
               className="flex flex-col gap-y-9"
               onSubmit={(e) => {
@@ -111,15 +84,13 @@ export function ContactForm() {
                 ></textarea>
               </div>
               <div className="col-span-full">
-                <button
-                  className="items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-full inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black"
-                  type="submit"
-                  disabled={formUpdate.isLoading}
-                >
-                  Send Message
-                </button>
+                <Email
+                  firstName={firstName}
+                  lastName={lastName}
+                  email={email}
+                  message={message}
+                />
               </div>
-              {formUpdate.isLoading ? "Submitting..." : ""}
             </form>
           </div>
         </div>
