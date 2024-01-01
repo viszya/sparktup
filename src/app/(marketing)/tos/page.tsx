@@ -162,7 +162,7 @@ export default function TermsOfService() {
 
         <article>
           <div className="mt-20 text-3xl tracking-tighter text-black">
-            These Terms of Service are effective as of 12/31/2024. Continued use of Sparktup signifies acceptance of these terms.
+            These Terms of Service are effective as of 12/31/2025. Continued use of Sparktup signifies acceptance of these terms.
           </div>
         </article>
       </div>

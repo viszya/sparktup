@@ -130,7 +130,7 @@ export default function PrivacyPolicy() {
                 </article>
                 <article>
                     <div className=" mt-20 text-3xl tracking-tighter text-black">
-                        This Privacy Policy is effective as of 12/31/2024. Continued use of Sparktup signifies acceptance of this policy.
+                        This Privacy Policy is effective as of 12/31/2025. Continued use of Sparktup signifies acceptance of this policy.
                     </div>
                 </article>
             </div>

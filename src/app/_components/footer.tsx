@@ -19,7 +19,7 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
                         </div>
                         <nav className="flex gap-8 mt-11">
                             <Link className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm text-gray-500 hover:text-red-300 transition-colors delay-150 hover:delay-0" href="/faq">
-                                FAQs
+                                FAQ
                             </Link>
                             <Link className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm text-gray-500 hover:text-red-300 transition-colors delay-150 hover:delay-0" href="/contact">
                                 Contact
