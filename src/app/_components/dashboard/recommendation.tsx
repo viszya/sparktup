@@ -38,7 +38,7 @@ export function Recommendation() {
     },
   });
 
-  function onSubmit(e) {
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     formUpdate.mutate({
       name,
