@@ -1,6 +1,5 @@
-import { Metadata } from "next"
+import type { Metadata } from "next"
 import Link from "next/link"
-
 import { cn } from "@/server/utils"
 import { buttonVariants } from "@/app/_components/ui/button"
 import { Icons } from "@/app/_components/icons"

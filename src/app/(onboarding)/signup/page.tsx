@@ -1,5 +1,5 @@
 import Link from "next/link"
-
+import type { Metadata } from "next"
 import { cn } from "@/server/utils"
 import { buttonVariants } from "@/app/_components/ui/button"
 import { Icons } from "@/app/_components/icons"
@@ -7,7 +7,7 @@ import { UserAuthForm } from "@/app/_components/auth-form"
 import { getServerAuthSession } from "@/server/auth"
 import { redirect } from "next/navigation"
 
-export const metadata = {
+export const metadata : Metadata = {
     title: "Create an account",
     description: "Create an account to get started.",
 }

@@ -10,7 +10,7 @@ import { cn } from "@/server/utils"
 export default function Page() {
     return (
         <div className={cn("flex flex-col justify-center items-center", twp().wrapper)}>
-             <h2 className="mt-20 sm:mt-30 mb-11 text-center text-4xl font-semibold">FAQ</h2>
+            <h2 className="mt-20 sm:mt-30 mb-11 text-center text-4xl font-semibold">FAQ</h2>
             <Accordion type="single" collapsible className="text-left w-full max-w-sm md:max-w-lg lg:max-w-2xl h-[55rem] max-h-[55rem] md:h-[55rem] md:max-h-[55rem]">
                 <AccordionItem value="item-1">
                     <AccordionTrigger className="text-left">How do I get started with Sparktup?</AccordionTrigger>
