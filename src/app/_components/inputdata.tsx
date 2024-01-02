@@ -5,150 +5,231 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { api } from "@/trpc/react";
 
-
 const data = {
-    companyName: "Tech Solutions Inc.",
-    linkedInMembers: "224,866 associated members",
-    logoSrc: "/company-logo.png",
-    location: "San Francisco, CA, USA",
-    website: "https://news.microsoft.com/",
-    industry: "Technology",
-    companySize: "10,001+ employees",
-    size: "10,001+ employees",
-    foundingYear: "Founded in 1975",
-    missionValues: `Every company has a mission. What's ours? To empower every person and every organization to achieve more. We believe technology can and should be a force for good and that meaningful innovation contributes to a brighter world in the future and today. Our culture doesn’t just encourage curiosity; it embraces it. Each day we make progress together by showing up as our authentic selves. We show up with a learn-it-all mentality. We show up cheering on others, knowing their success doesn't diminish our own. We show up every day open to learning our own biases, changing our behavior, and inviting in differences. Because impact matters.`,
-    missionAndValues: "Empowering innovation through cutting-edge technology solutions",
-    about: "Tech Solutions Inc. is a leading technology company that specializes in providing innovative solutions to businesses of all sizes. With a team of dedicated professionals, we strive to empower our clients to achieve their goals through the use of cutting-edge technology.",
-    solutionsOverview: "Our solutions cover a wide range of services, including software development, cloud computing, data analytics, and more. We tailor our offerings to meet the unique needs of each client, ensuring seamless integration and maximum impact.",
-    keyBenefits: " - Scalable and flexible solutions\n - Robust security measures\n - Dedicated customer support\n - Continuous innovation and updates",
-    keyFeatures: " - Customized software development\n - Cloud infrastructure management\n - Data-driven insights and analytics\n - Strategic consulting and planning",
-    companyCulture: "At Tech Solutions Inc., we foster a culture of collaboration, continuous learning, and diversity. Our team members are our greatest asset, and we prioritize their well-being, growth, and work-life balance. Join us in shaping the future of technology!",
-    specialties: [
-        "Business Software",
-        "Developer Tools",
-        "Home & Educational Software",
-        "Tablets",
-        "Search",
-        "Advertising",
-        "Servers",
-        "Windows Operating System",
-        "Windows Applications & Platforms",
-        "Smartphones",
-        "Cloud Computing",
-        "Quantum Computing",
-        "Future of Work",
-        "Productivity",
-        "AI",
-        "Artificial Intelligence",
-        "Machine Learning",
-        "Laptops",
-        "Mixed Reality",
-        "Virtual Reality",
-        "Gaming",
-        "Developers",
-        "IT Professional",
+    fullName: "Alexander Sandberg",
+    jobTitle: "Software Developer",
+    proEmail: "alexandr@gmail.com",
+    username: "alexander",
+    location: "Linz, Upper Austria, Austria",
+    connections: "500+",
+    yearsOfExperience: "8",
+    about: "I'm a self-taught, product-minded iOS/macOS Engineer with a background in web development and product design. Due to my curiosity for both design and development, I love working on meaningful products in close collaboration with designers and product people, and being part of the 'why'",
+    avaiableForWork: true,
+    hasAJob: true,
+    exeriences: [
+        {
+            companyLogoSrc: "/applelogo.png",
+            companyName: "Apple",
+            companyImgSrc: "/apple.png",
+            engagement: "Full-Time",
+            relativeOfWork: "Remote",
+            jobTitle: "Senior iOS Developer",
+            location: "Linz, Upper Austria, Austria",
+            time: "Nov 2021 - Sep 2023 · 1 yr 11 mos",
+            jobDescriptions: [
+                "Designed, developed, and owned the administrative tool for Apple's internal systems; Apple Admin Hub",
+                "Led the development and successful launch of iPadOS support for the Apple News app",
+                "Spearheaded the development, release, and ongoing management of the Apple News app for iOS devices",
+                "Collaborated closely with the iOS development team to ensure the implementation of clean and concise code",
+            ],
+        },
+        {
+            companyLogoSrc: "/applelogo.png",
+            companyName: "Apple",
+            companyImgSrc: "/apple.png",
+            engagement: "Full-Time",
+            relativeOfWork: "Remote",
+            jobTitle: "Senior iOS Developer",
+            location: "Linz, Upper Austria, Austria",
+            time: "Nov 2021 - Sep 2023 · 1 yr 11 mos",
+            jobDescriptions: [
+                "Designed, developed, and owned the administrative tool for Apple's internal systems; Apple Admin Hub",
+                "Led the development and successful launch of iPadOS support for the Apple News app",
+                "Spearheaded the development, release, and ongoing management of the Apple News app for iOS devices",
+                "Collaborated closely with the iOS development team to ensure the implementation of clean and concise code",
+            ],
+        },
     ],
-    mediaGallery: [
-        "/company-office-photo1.png",
-        "/company-events-photo2.png",
-        "/company-team-photo3.png"
-        // Add more images as needed
+    projects: [
+        {
+            name: "UI Masterclass",
+            src: "/dashboard-preview.png",
+            link: "https://google.com",
+        },
+        {
+            name: "UI Masterclass",
+            src: "/dashboard-preview.png",
+            link: "https://google.com",
+        },
+        {
+            name: "UI Masterclass",
+            src: "/dashboard-preview.png",
+            link: "https://google.com",
+        },
+        {
+            name: "UI Masterclass",
+            src: "/dashboard-preview.png",
+            link: "https://google.com",
+        },
     ],
-    termsAndConditionsLink: "https://techsolutions.com/terms",
-    privacyPolicyLink: "https://techsolutions.com/privacy",
-    
-    
-};
+    topSkills: [
+		{
+			skillName: "iOS Development",
+			color: "red",
+			skillDescription: "Proficient in iOS development with a focus on creating seamless and engaging mobile experiences for users.",
+		},
+		{
+			skillName: "Next.js Development",
+			color: "purple",
+			skillDescription: "Skilled in building robust and scalable web applications using Next.js for efficient server-side rendering.",
+		},
+		{
+			skillName: "React Development",
+			color: "teal",
+			skillDescription: "Experienced in building dynamic and interactive user interfaces using React for modern web applications.",
+		},
+	],
+    recommendations: [
+        {
+            name: "Volkan Kaya",
+            jobTitle: "Founder of Versoly.com",
+            srcImage: "/profile2.png",
+            message: "Snowflake is a cloud data platform that enables data storage, processing, and analytics solutions for businesses. With the Data Cloud platform, Snowflake manages the complexities of data storage infrastructure, enabling organizations to focus on building data-driven solutions",
 
-const data2 = {
-    testimonials: [
-        {
-            clientName: "ABC Corporation",
-            feedback: "Tech Solutions Inc. has been an invaluable partner in our digital transformation journey. Their expertise and commitment to excellence have significantly contributed to our success."
         },
         {
-            clientName: "XYZ Enterprises",
-            feedback: "We chose Tech Solutions Inc. for their innovative solutions and they exceeded our expectations. Their team is responsive, knowledgeable, and always ready to tackle new challenges."
-        }
-    ],
+            name: "Amrit Nagi",
+            jobTitle: "Founder of Tailwind Toolbox",
+            srcImage: "/profile2.png",
+            message: "Upswing securities passively index inverse bondholders capitalization financial health Moody's debt managed. Receive bondholders called capitalization investment grade bonds bills management district stocks. Potential funds consulting expenses.",
 
-    teamMembers: [
-        {
-            name: "John Smith",
-            role: "CEO",
-            photoSrc: "/john-smith-photo.png"
         },
         {
-            name: "Jane Doe",
-            role: "CTO",
-            photoSrc: "/jane-doe-photo.png"
-        },
-        // Add more team members as needed
-    ],
-    contactInformation: {
-        email: "info@techsolutions.com",
-        phone: "+1 (555) 123-4567",
-        address: "123 Tech Street, San Francisco, CA"
-    },
-    careerOpportunities: [
-        {
-            position: "Software Engineer",
-            location: "San Francisco, CA",
-            applyLink: "https://techsolutions.com/careers/software-engineer"
-        },
-        {
-            position: "Data Scientist",
-            location: "Remote",
-            applyLink: "https://techsolutions.com/careers/data-scientist"
-        }
-        // Add more job openings as needed
-    ],
-
-    eventData: [
-        {
-            date: "Thu, Mar 16, 2023, 8:00 AM",
-            title: "The Future of Work: Reinventing Productivity with AI",
-            location: "Live Video",
-            imgsrc: "/image.jpeg",
-            attendees: "31,740 attendees",
-            viewLink: "https://example.com/event1",
-        },
-        {
-            date: "Tue, Nov 29, 2022, 5:00 PM",
-            title: "Microsoft Industry Fair 2022",
-            location: "Live Video",
-            imgsrc: "/event2.png",
-            attendees: "102 attendees",
-            viewLink: "https://example.com/event2",
-        },
-        {
-            date: "Mon, Nov 14, 2022, 5:00 PM",
-            title: "Microsoft Hong Kong Cybersecurity Summit 2022",
-            location: "Live Video",
-            imgsrc: "/event3.png",
-            attendees: "78 attendees",
-            viewLink: "https://example.com/event3",
+            name: "Mike Jones",
+            jobTitle: "Blogger at Raspada",
+            srcImage: "/profile2.png",
+            message: "Debt bills lucrative capitalization municipal bonds government 401k bear bull credit corporate bonds called NYSE finance. Managed prices bondholders federal risk NASDAQ hedge fund expenses municipal bonds management.",
         },
     ],
+    profileTags: [
+        "ios",
+        "developer",
+        "apple"
+    ],
+    interestedTags: [
+        "DSFDFS",
+        "developer",
+        "apple"
+    ],
+    resumeLink: "https://google.com",
 }
 
 export function InputData() {
     const router = useRouter();
     const { toast } = useToast();
 
-    const updateProfile = api.test.createCompanyProfile.useMutation();
-    const updateTestimonial = api.test.createTestimonial.useMutation();
+    //const updateProfile = api.test.createCompanyProfile.useMutation();
+    //const updateTestimonial = api.test.createTestimonial.useMutation();
     //const s = api.user.getProfile.useQuery({ id: "clqst7m140000stm7xvs7wi5k" });
 
-
+    const profile = api.settings.settingsForm1.useMutation();
+    const addSkill = api.settings.settingsForm2.useMutation();
+    const addRecommendation = api.settings.addRecommendation.useMutation();
+    const addProject = api.settings.addProject.useMutation();
+    const addExperience = api.settings.addExperience.useMutation();
     function onSubmit() {
-        toast({
-            title: "Form submitted!",
-            description: "Friday, February 10, 2023 at 5:57 PM",
+        profile.mutate({
+            fullName: data.fullName,
+            proEmail: data.proEmail,
+            username: data.username,
+            location: data.location,
+            about: data.about,
+            jobTitle: data.jobTitle,
+            yearsOfExperience: data.yearsOfExperience,
+            availableForWork: data.avaiableForWork,
+            hasAJob: data.hasAJob,
+            resumeLink: data.resumeLink,
+            profileTags: data.profileTags,
+            interestedTags: data.interestedTags,
         });
-        //updateProfile.mutate(data);
-        updateTestimonial.mutate(data2.testimonials[0]);
-        //console.log(s);
+        addSkill.mutate({
+            skillName: data.topSkills[0].skillName,
+            skillDescription: data.topSkills[0].skillDescription,
+            color: data.topSkills[0].color,
+        });
+        addSkill.mutate({
+            skillName: data.topSkills[1].skillName,
+            skillDescription: data.topSkills[1].skillDescription,
+            color: data.topSkills[1].color,
+        });
+        addSkill.mutate({
+            skillName: data.topSkills[2].skillName,
+            skillDescription: data.topSkills[2].skillDescription,
+            color: data.topSkills[2].color,
+        });
+        addRecommendation.mutate({
+            name: data.recommendations[0].name,
+            jobTitle: data.recommendations[0].jobTitle,
+            srcImage: data.recommendations[0].srcImage,
+            message: data.recommendations[0].message,
+        });
+        addRecommendation.mutate({
+            name: data.recommendations[1].name,
+            jobTitle: data.recommendations[1].jobTitle,
+            srcImage: data.recommendations[1].srcImage,
+            message: data.recommendations[1].message,
+        });
+        addRecommendation.mutate({
+            name: data.recommendations[2].name,
+            jobTitle: data.recommendations[2].jobTitle,
+            srcImage: data.recommendations[2].srcImage,
+            message: data.recommendations[2].message,
+        });
+        addProject.mutate({
+            name: data.projects[0].name,
+            src: data.projects[0].src,
+            link: data.projects[0].link,
+        });
+        addProject.mutate({
+            name: data.projects[1].name,
+            src: data.projects[1].src,
+            link: data.projects[1].link,
+        });
+        addProject.mutate({
+            name: data.projects[2].name,
+            src: data.projects[2].src,
+            link: data.projects[2].link,
+        });
+        addProject.mutate({
+            name: data.projects[3].name,
+            src: data.projects[3].src,
+            link: data.projects[3].link,
+        });
+        addExperience.mutate({
+            companyLogoSrc: data.exeriences[0].companyLogoSrc,
+            companyName: data.exeriences[0].companyName,
+            companyImgSrc: data.exeriences[0].companyImgSrc,
+            engagement: data.exeriences[0].engagement,
+            relativeOfWork: data.exeriences[0].relativeOfWork,
+            jobTitle: data.exeriences[0].jobTitle,
+            location: data.exeriences[0].location,
+            time: data.exeriences[0].time,
+            jobDescriptions: data.exeriences[0].jobDescriptions,
+        });
+        addExperience.mutate({
+            companyLogoSrc: data.exeriences[1].companyLogoSrc,
+            companyName: data.exeriences[1].companyName,
+            companyImgSrc: data.exeriences[1].companyImgSrc,
+            engagement: data.exeriences[1].engagement,
+            relativeOfWork: data.exeriences[1].relativeOfWork,
+            jobTitle: data.exeriences[1].jobTitle,
+            location: data.exeriences[1].location,
+            time: data.exeriences[1].time,
+            jobDescriptions: data.exeriences[1].jobDescriptions,
+        });
+        toast({
+            title: "Data Inputted!",
+        });
     }
 
     return (
@@ -157,23 +238,9 @@ export function InputData() {
                 <div className="flex flex-col justify-center m-auto">
                     <div className="flex flex-col justify-center text-center md:flex-row md:text-left">
                         <div className="flex flex-col justify-center max-w-2xl p-10 space-y-12">
-                            <article>
-                                <span className="inline-flex items-center text-black rounded-xl">
-                                    <span className="font-mono text-sm" aria-hidden="true">
-                                        01
-                                    </span>
-                                </span>
-                                <div className="mt-3 text-3xl tracking-tighter text-black">
-                                    TEST DATA INPUT
-                                </div>
-                                <div className="mt-4 text-gray-500">
-                                    Let&apos;s get to know each other. Please fill out the following
-                                    form to the best of your ability. All this information will be
-                                    used to create your profile. You can always edit your profile
-                                    later.
-                                </div>
-                            </article>
-
+                            <div className="mt-3 text-3xl tracking-tighter text-black">
+                                TEST DATA INPUT
+                            </div>
                             <form
                                 className="flex flex-col gap-y-9"
                                 onSubmit={(e) => {
@@ -181,15 +248,11 @@ export function InputData() {
                                     onSubmit();
                                 }}
                             >
-                                {/* ... Existing form fields ... */}
-
                                 <div className="col-span-full">
                                     <button
                                         className="items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-full inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black"
                                         type="submit"
-                                        disabled={updateProfile.isLoading}
-                                    >
-                                        {updateProfile.isLoading ? "Submitting..." : "Submit your request"}
+                                    >Apply
                                     </button>
                                 </div>
                             </form>

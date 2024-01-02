@@ -19,14 +19,17 @@ export function Form2() {
 		addSkill.mutate({
 			skillName: skillName1,
 			skillDescription: description1,
+			color: "red",
 		});
 		addSkill.mutate({
 			skillName: skillName2,
 			skillDescription: description2,
+			color: "purple",
 		});
 		addSkill.mutate({
 			skillName: skillName3,
 			skillDescription: description3,
+			color: "teal",
 		});
 		const today = new Date();
 		const date =

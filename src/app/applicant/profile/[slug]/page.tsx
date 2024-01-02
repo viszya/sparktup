@@ -136,7 +136,7 @@ export  default function Page({ params }: { params: { slug: string } }) {
 			</section>
 
 			{/* Top 3 Skills */}
-			{/* <section className="m-10">
+			<section className="m-10">
 				<div className="mt-4 mb-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">Top Skills</div>
 				<div className="relative items-center w-full px-2 py-10 mx-auto md:px-12 lg:px-20 max-w-7xl bg-gray-300/10 p-8 rounded-2xl border-2 border-gray-200">
 					<div className="grid w-full grid-cols-1 mx-auto lg:grid-cols-3">
@@ -147,20 +147,20 @@ export  default function Page({ params }: { params: { slug: string } }) {
 									❖
 								</div>
 								<p className="mt-4 text-lg font-medium leading-6 text-black lg:mt-0">
-									{data.name}
+									{data.skillName}
 								</p>
 							</div>
 							<p className="mt-3 text-base text-gray-500">
-								{data.description}
+								{data.skillDescription}
 							</p>
 						</div>
 						))}
 					</div>
 				</div>
-			</section> */}
+			</section>
 
 			{/* Reccomendations */}
-			{/* <section className="m-10">
+			<section className="m-10">
 				<div className="my-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">Reccomendations</div>
 				<div className="items-center py-4 mx-auto px-14 max-w-7xl bg-gray-300/10 p-8 rounded-2xl border-2 border-gray-200">
 					<ul className="w-full divide-y divide-mercury-300" role="list">
@@ -190,11 +190,11 @@ export  default function Page({ params }: { params: { slug: string } }) {
 						))}
 					</ul>
 				</div>
-			</section> */}
+			</section>
 
 
 			{/* Projects */}
-			{/* <section className="m-10">
+			<section className="m-10">
 				<div className="my-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">Projects</div>
 				<div className="bg-gray-300/10 p-8 rounded-2xl border-2 border-gray-200">
 					<div className="relative items-center w-full px-5 py-2 mx-auto md:px-4 lg:px-8 max-w-7xl">
@@ -208,7 +208,7 @@ export  default function Page({ params }: { params: { slug: string } }) {
 						</div>
 					</div>
 				</div>
-			</section> */}
+			</section>
 
 
 			{/* View Resume */}
