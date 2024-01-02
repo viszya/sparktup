@@ -7,6 +7,17 @@ import { Button } from "@/app/_components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/app/_components/ui/carousel";
 import { api } from "@/trpc/react";
 import Link from "next/link";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/app/_components/ui/drawer"
+
 
 
 const data = {
@@ -18,6 +29,7 @@ const data = {
   industry: "Technology",
   companySize: "10,001+ employees",
   size: "10,001+ employees",
+  companyBannerImgSrc: "/microsoft-industry-fair-microsoftData.jpeg",
   foundingYear: "Founded in 1975",
   missionValues: `Every company has a mission. What's ours? To empower every person and every organization to achieve more. We believe technology can and should be a force for good and that meaningful innovation contributes to a brighter world in the future and today. Our culture doesn’t just encourage curiosity; it embraces it. Each day we make progress together by showing up as our authentic selves. We show up with a learn-it-all mentality. We show up cheering on others, knowing their success doesn't diminish our own. We show up every day open to learning our own biases, changing our behavior, and inviting in differences. Because impact matters.`,
   missionAndValues: "Empowering innovation through cutting-edge technology solutions",
@@ -26,104 +38,104 @@ const data = {
   keyBenefits: " - Scalable and flexible solutions\n - Robust security measures\n - Dedicated customer support\n - Continuous innovation and updates",
   keyFeatures: " - Customized software development\n - Cloud infrastructure management\n - Data-driven insights and analytics\n - Strategic consulting and planning",
   testimonials: [
-  {
+    {
       clientName: "ABC Corporation",
       feedback: "Tech Solutions Inc. has been an invaluable partner in our digital transformation journey. Their expertise and commitment to excellence have significantly contributed to our success."
-  },
-  {
+    },
+    {
       clientName: "XYZ Enterprises",
       feedback: "We chose Tech Solutions Inc. for their innovative solutions and they exceeded our expectations. Their team is responsive, knowledgeable, and always ready to tackle new challenges."
-  }
+    }
   ],
   specialties: [
-  "Business Software",
-  "Developer Tools",
-  "Home & Educational Software",
-  "Tablets",
-  "Search",
-  "Advertising",
-  "Servers",
-  "Windows Operating System",
-  "Windows Applications & Platforms",
-  "Smartphones",
-  "Cloud Computing",
-  "Quantum Computing",
-  "Future of Work",
-  "Productivity",
-  "AI",
-  "Artificial Intelligence",
-  "Machine Learning",
-  "Laptops",
-  "Mixed Reality",
-  "Virtual Reality",
-  "Gaming",
-  "Developers",
-  "IT Professional",
+    "Business Software",
+    "Developer Tools",
+    "Home & Educational Software",
+    "Tablets",
+    "Search",
+    "Advertising",
+    "Servers",
+    "Windows Operating System",
+    "Windows Applications & Platforms",
+    "Smartphones",
+    "Cloud Computing",
+    "Quantum Computing",
+    "Future of Work",
+    "Productivity",
+    "AI",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Laptops",
+    "Mixed Reality",
+    "Virtual Reality",
+    "Gaming",
+    "Developers",
+    "IT Professional",
   ],
   teamMembers: [
-  {
+    {
       name: "John Smith",
       role: "CEO",
       photoSrc: "/jhon-doe-microsoftData.jpeg"
-  },
-  {
+    },
+    {
       name: "Jane Doe",
       role: "CTO",
       photoSrc: "/jane-doe-microsoftData.jpeg"
-  },
-  // Add more team members as needed
+    },
+    // Add more team members as needed
   ],
   companyCulture: "At Tech Solutions Inc., we foster a culture of collaboration, continuous learning, and diversity. Our team members are our greatest asset, and we prioritize their well-being, growth, and work-life balance. Join us in shaping the future of technology!",
   contactInformation: {
-  email: "info@techsolutions.com",
-  phone: "+1 (555) 123-4567",
-  address: "123 Tech Street, San Francisco, CA"
+    email: "info@techsolutions.com",
+    phone: "+1 (555) 123-4567",
+    address: "123 Tech Street, San Francisco, CA"
   },
   careerOpportunities: [
-  {
+    {
       position: "Software Engineer",
       location: "San Francisco, CA",
       applyLink: "https://techsolutions.com/careers/software-engineer"
-  },
-  {
+    },
+    {
       position: "Data Scientist",
       location: "Remote",
       applyLink: "https://techsolutions.com/careers/data-scientist"
-  }
-  // Add more job openings as needed
+    }
+    // Add more job openings as needed
   ],
   mediaGallery: [
-  "/office1-microsoftData.jpeg",
-  "/office2-microsoftData.jpeg",
-  "/office3-microsoftData.jpeg"    
+    "/office1-microsoftData.jpeg",
+    "/office2-microsoftData.jpeg",
+    "/office3-microsoftData.jpeg"
   ],
   termsAndConditionsLink: "https://techsolutions.com/terms",
   privacyPolicyLink: "https://techsolutions.com/privacy",
   eventData: [
-  {
+    {
       date: "Thu, Mar 16, 2023, 8:00 AM",
       title: "The Future of Work: Reinventing Productivity with AI",
       location: "Live Video",
       imgsrc: "/future_of_work-microsoftData.jpeg",
       attendees: "31,740 attendees",
       viewLink: "https://example.com/event1",
-  },
-  {
+    },
+    {
       date: "Tue, Nov 29, 2022, 5:00 PM",
       title: "Microsoft Industry Fair 2022",
       location: "Live Video",
       imgsrc: "/microsoft-industry-fair-microsoftData.jpeg",
       attendees: "102 attendees",
       viewLink: "https://example.com/event2",
-  },
-  {
+    },
+    {
       date: "Mon, Nov 14, 2022, 5:00 PM",
       title: "Microsoft Hong Kong Cybersecurity Summit 2022",
       location: "Live Video",
       imgsrc: "/event3-microsoftData.jpeg",
       attendees: "78 attendees",
       viewLink: "https://example.com/event3",
-  },
+    },
   ],
 
 };
@@ -150,18 +162,46 @@ export default function CompanyProfile() {
               <Icons.user className="h-4 w-4 mr-2" />
               {data.size}
             </div>
-            <div className="w-full flex flex-row justify-center items-center px-3 py-0.5 text-sm border font-medium text-gray-500 duration-200 rounded-sm hover:text-red-300 hover:border-red-400 hover:scale-95 hover:cursor-pointer">
-              <Icons.contact className="h-4 w-4 mr-2" />
-              Contact Us
-            </div>
+            <Drawer>
+              <DrawerTrigger className="w-full flex flex-row justify-center items-center px-3 py-0.5 text-sm border font-medium text-gray-500 duration-200 rounded-sm hover:text-red-300 hover:border-red-400 hover:scale-95 hover:cursor-pointer">
+                <Icons.contact className="h-4 w-4 mr-2" />
+                Contact Us
+              </DrawerTrigger>
+              <DrawerContent className="flex justify-center items-center">
+                <DrawerHeader className="max-w-5xl flex justify-center items-center">
+                  <section className="m-10 flex justify-center items-center">
+                    <div className="mt-8 text-xl font-medium tracking-tight text-black sm:text-2xl">Contact Information</div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
+                      <div className="p-4 bg-gray-300/10 rounded-xl border-2 border-gray-200">
+                        <p className="text-base text-black font-medium">{data.contactInformation.email}</p>
+                        <p className="text-sm text-gray-500">Email</p>
+                      </div>
+                      <div className="p-4 bg-gray-300/10 rounded-xl border-2 border-gray-200">
+                        <p className="text-base text-black font-medium">{data.contactInformation.phone}</p>
+                        <p className="text-sm text-gray-500">Phone</p>
+                      </div>
+                      <div className="p-4 bg-gray-300/10 rounded-xl border-2 border-gray-200">
+                        <p className="text-base text-black font-medium">{data.contactInformation.address}</p>
+                        <p className="text-sm text-gray-500">Address</p>
+                      </div>
+                    </div>
+                  </section>
+                </DrawerHeader>
+                <DrawerFooter>
+                  <DrawerClose>
+                    <Button variant="outline">Close</Button>
+                  </DrawerClose>
+                </DrawerFooter>
+              </DrawerContent>
+            </Drawer>
           </div>
-          <Button className="text-md mt-6 items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-lg inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black">
-            <Icons.user className="h-4 w-4 mr-2" />
-            CONNECT
+          <Button className="text-md mt-6 items-center justify-center w-full px-6 py-12 text-center text-white duration-200 bg-black border-2 border-black rounded-lg inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black">
+            <Icons.users className="h-4 w-4 mr-2" />
+            CONNECT TO JOBS
           </Button>
         </div>
         <div>
-          <Image src="/company-banner.png" alt="company-banner" width={400} height={150} className="rounded-2xl overflow-hidden" />
+          <Image src={data.companyBannerImgSrc} alt="company-banner" width={400} height={150} className="rounded-2xl overflow-hidden" />
         </div>
       </div>
 
@@ -394,37 +434,38 @@ export default function CompanyProfile() {
         </div>
       </section>
 
-
-      <div className="bg-white p-8 rounded-lg shadow-md">
-      <h1 className="text-2xl font-bold mb-6">Commitments</h1>
-      <div className="grid grid-cols-3 gap-8">
-        <div className="col-span-1">
-          <div className="flex items-center space-x-2 mb-4">
-            {/* <HeartHandshakeIcon className="text-red-500 w-6 h-6" /> */}
-            <span className="text-lg font-semibold">Featured</span>
+      <section className="m-10">
+      <div className="mt-8 text-xl font-medium tracking-tight text-black sm:text-2xl">Commitments</div>
+        <div className="mt-4 p-4 bg-gray-300/10 rounded-xl border-2 border-gray-200">
+          <div className="grid grid-cols-3 gap-8">
+            <div className="col-span-1 p-4 bg-gray-300/10 rounded-xl border-2 border-gray-200">
+              <div className="flex items-center space-x-2 mb-4 ">
+                <Icons.heart className="h-4 w-4 text-red-500" />
+                <span className="text-lg font-semibold">Featured</span>
+              </div>
+              <ul className="space-y-2">
+                <li className="text-sm font-medium text-gray-700">Environmental sustainability</li>
+                <li className="text-sm text-gray-500">Social impact</li>
+                <li className="text-sm text-gray-500">Diversity, equity, and inclusion</li>
+                <li className="text-sm text-gray-500">Career growth and learning</li>
+                <li className="text-sm text-gray-500">Work-life balance</li>
+              </ul>
+            </div>
+            <div className="col-span-2 p-4 bg-gray-300/10 rounded-xl border-2 border-gray-200">
+              <div className="flex items-center space-x-2 mb-4 ">
+                <Icons.tree className="h-4 w-4 text-green-500" />
+                <span className="text-lg font-semibold">Environmental sustainability</span>
+              </div>
+              <p className="text-sm text-gray-700 mb-4">
+                Microsoft has public, time-bound commitments to become carbon negative, water positive, and zero waste in
+                our operations by 2030. Microsoft is accelerating progress toward a more sustainable future by measuring and
+                reducing our environmental footprint, accelerating research, helping our customers build sustainable
+                solutions, and advocating for policies that combat climate change and promote environmental justice.
+              </p>
+            </div>
           </div>
-          <ul className="space-y-2">
-            <li className="text-sm font-medium text-gray-700">Environmental sustainability</li>
-            <li className="text-sm text-gray-500">Social impact</li>
-            <li className="text-sm text-gray-500">Diversity, equity, and inclusion</li>
-            <li className="text-sm text-gray-500">Career growth and learning</li>
-            <li className="text-sm text-gray-500">Work-life balance</li>
-          </ul>
         </div>
-        <div className="col-span-2">
-          <h2 className="text-lg font-semibold mb-2">Environmental sustainability</h2>
-          <p className="text-sm text-gray-700 mb-4">
-            Microsoft has public, time-bound commitments to become carbon negative, water positive, and zero waste in
-            our operations by 2030. Microsoft is accelerating progress toward a more sustainable future by measuring and
-            reducing our environmental footprint, accelerating research, helping our customers build sustainable
-            solutions, an...
-            <a className="text-blue-600" href="#">
-              See more
-            </a>
-          </p>
-        </div>
-      </div>
-    </div>
+      </section>
 
     </div>
 
