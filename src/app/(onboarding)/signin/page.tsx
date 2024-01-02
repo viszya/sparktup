@@ -5,13 +5,18 @@ import { cn } from "@/server/utils"
 import { buttonVariants } from "@/app/_components/ui/button"
 import { Icons } from "@/app/_components/icons"
 import { UserAuthForm } from "@/app/_components/auth-form"
+import { getServerAuthSession } from "@/server/auth"
+import { redirect } from "next/navigation"
 
 export const metadata: Metadata = {
     title: "Login",
     description: "Login to your account",
 }
 
-export default function LoginPage() {
+export default async function LoginPage() {
+    const session = await getServerAuthSession();
+    if (session) return redirect("/dashboard")
+
     return (
         <div className="container flex h-screen w-screen flex-col items-center justify-center">
             <Link

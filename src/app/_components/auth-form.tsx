@@ -100,22 +100,22 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
                     </span>
                 </div>
             </div>
-                <button
-                    type="button"
-                    className={cn(buttonVariants({ variant: "outline" }), "rounded-2xl")}
-                    onClick={() => {
-                        setIsGitHubLoading(true)
-                        signIn("google")
-                    }}
-                    disabled={isLoading || isGitHubLoading}
-                >
-                    {isGitHubLoading ? (
-                        <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-                    ) : (
-                        <Icons.google className="mr-2 h-6 w-6" />
-                    )}{" "}
-                    Google
-                </button>
+            <button
+                type="button"
+                className={cn(buttonVariants({ variant: "outline" }), "rounded-2xl")}
+                onClick={async () => {
+                    setIsGitHubLoading(true)
+                    await signIn("google")
+                }}
+                disabled={isLoading || isGitHubLoading}
+            >
+                {isGitHubLoading ? (
+                    <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+                ) : (
+                    <Icons.google className="mr-2 h-6 w-6" />
+                )}{" "}
+                Google
+            </button>
 
         </div>
     )

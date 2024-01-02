@@ -4,13 +4,18 @@ import { cn } from "@/server/utils"
 import { buttonVariants } from "@/app/_components/ui/button"
 import { Icons } from "@/app/_components/icons"
 import { UserAuthForm } from "@/app/_components/auth-form"
+import { getServerAuthSession } from "@/server/auth"
+import { redirect } from "next/navigation"
 
 export const metadata = {
     title: "Create an account",
     description: "Create an account to get started.",
 }
 
-export default function RegisterPage() {
+export default async function RegisterPage() {
+    const session = await getServerAuthSession();
+    if (session) return redirect("/dashboard")
+
     return (
         <div className="container grid h-screen w-screen flex-col items-center justify-center">
             <Link
