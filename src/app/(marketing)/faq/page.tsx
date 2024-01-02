@@ -15,7 +15,7 @@ export default function Page() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger className="text-left">How do I get started with Sparktup?</AccordionTrigger>
                     <AccordionContent>
-                        Simply visit our website and click on "Sign Up." Follow the prompts to create your account and unlock a world of tech opportunities.
+                        Simply visit our website and click on &quot;Sign Up.&quot; Follow the prompts to create your account and unlock a world of tech opportunities.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
@@ -27,7 +27,7 @@ export default function Page() {
                 <AccordionItem value="item-3">
                     <AccordionTrigger className="text-left">How do businesses post job listings on Sparktup?</AccordionTrigger>
                     <AccordionContent>
-                        Businesses can post job openings by logging into their accounts, navigating to the "Post a Job" section, and filling out the required details.
+                        Businesses can post job openings by logging into their accounts, navigating to the &quot;Post a Job&quot; section, and filling out the required details.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4">
@@ -39,7 +39,7 @@ export default function Page() {
                 <AccordionItem value="item-5">
                     <AccordionTrigger className="text-left">How quickly can I go from idea to a running SAAS product?</AccordionTrigger>
                     <AccordionContent>
-                        With SparktUp's efficient processes and guidance, you can transform your concept into a fully operational SAAS product in just one week.
+                        With SparktUp&apos;s efficient processes and guidance, you can transform your concept into a fully operational SAAS product in just one week.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-6">
@@ -99,7 +99,7 @@ export default function Page() {
                 <AccordionItem value="item-15">
                     <AccordionTrigger className="text-left">How can I provide feedback or get support on Sparktup?</AccordionTrigger>
                     <AccordionContent>
-                        We value your feedback! Reach out to our support team through the "Contact Us" section on the website, and we'll assist you promptly.
+                        We value your feedback! Reach out to our support team through the &quot;Contact Us&quot; section on the website, and we&apos;ll assist you promptly.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

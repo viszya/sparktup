@@ -64,7 +64,7 @@ export default function Component() {
               love to speak with you about becoming our next Audio Director!
             </p>
             <p className="text-gray-600">
-              Microsoft's mission is to empower every person and every organization on the planet to achieve more. As
+              Microsoft&apos;s mission is to empower every person and every organization on the planet to achieve more. As
               employees we come together with a growth mindset, innovate to empower others, and collaborate to realize
               our shared goals. Each day we build on our values of respect, integrity, and accountability to create a
               culture of inclusion where everyone can thrive at work and beyond.
@@ -74,7 +74,7 @@ export default function Component() {
             <h2 className="font-semibold text-xl mb-2">Responsibilities</h2>
             <ul className="list-disc pl-5 text-gray-600">
               <li>
-                Collaborate with 343's creative leaders and stakeholders to define, create, and lead the audio team to
+                Collaborate with 343&apos;s creative leaders and stakeholders to define, create, and lead the audio team to
                 deliver on the audio vision for future Halo titles across internal and external teams.
               </li>
               <li>Partner across teams inside the studio to establish tools and workflow for audio team.</li>
@@ -102,11 +102,11 @@ export default function Component() {
                 <h3 className="font-semibold mb-2">Required/Minimum Qualifications</h3>
                 <ul className="list-disc pl-5 text-gray-600 mb-4">
                   <li>
-                    Associate's Degree or certification in Audio Design, Music Technology, or related in audio design
+                    Associate&apos;s Degree or certification in Audio Design, Music Technology, or related in audio design
                     AND 5+ years audio or sound design experience
                   </li>
                   <li>
-                    OR Bachelor's Degree in Sound Design, Interactive Design and Development, Communications Design,
+                    OR Bachelor&apos;s Degree in Sound Design, Interactive Design and Development, Communications Design,
                     Human Computer Interaction, Multimedia Design, or related field AND 5+ years audio or sound design
                     experience
                   </li>
@@ -120,11 +120,11 @@ export default function Component() {
                 <h3 className="font-semibold mb-2">Additional or Preferred Qualifications</h3>
                 <ul className="list-disc pl-5 text-gray-600">
                   <li>
-                    Associate's Degree or certification in Audio Design, Music Technology, or related in audio design
+                    Associate&apos;s Degree or certification in Audio Design, Music Technology, or related in audio design
                     AND 8+ years audio or sound design experience
                   </li>
                   <li>
-                    OR Bachelor's Degree in Sound Design, Interactive Design and Development, Communications Design,
+                    OR Bachelor&apos;s Degree in Sound Design, Interactive Design and Development, Communications Design,
                     Human Computer Interaction, Multimedia Design, or related field AND 8+ years audio or sound design
                     experience
                   </li>
