@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useToast } from "@/app/_components/ui/use-toast";
 import { useState } from "react";
@@ -36,7 +36,8 @@ export function Project() {
     },
   });
 
-  function onSubmit() {
+  function onSubmit(e) {
+    e.preventDefault();
     formUpdate.mutate({
       name,
       src,
@@ -46,74 +47,66 @@ export function Project() {
 
   return (
     <section>
-      <div className="flex flex-col justify-center m-auto">
-        <div className="flex flex-col justify-center text-center md:flex-row md:text-left">
-          <div className="flex flex-col justify-left w-full max-w-5xl p-10 space-y-12">
-            <div className="mt-3 text-3xl tracking-tighter text-black">
-              Add Project
-            </div>
-            <form
-              className="flex flex-col gap-y-9"
-              onSubmit={(e) => {
-                e.preventDefault();
-                onSubmit();
-              }}
-            >
-              <div className="col-span-full">
-                <label className="block mb-3 text-sm font-medium text-gray-600">
-                  Project Name
-                </label>
-                <input
-                  className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
-                  placeholder="Project Name"
-                  required
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-
-              <div className="col-span-full">
-                <label className="block mb-3 text-sm font-medium text-gray-600">
-                  Image Source
-                </label>
-                <input
-                  className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
-                  placeholder="Image URL"
-                  type="text"
-                  required
-                  value={src}
-                  onChange={(e) => setSrc(e.target.value)}
-                />
-              </div>
-
-              <div className="col-span-full">
-                <label className="block mb-3 text-sm font-medium text-gray-600">
-                  Project Link
-                </label>
-                <input
-                  className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
-                  placeholder="Project Link"
-                  type="text"
-                  required
-                  value={link}
-                  onChange={(e) => setLink(e.target.value)}
-                />
-              </div>
-
-              <div className="col-span-full">
-                <button
-                  className="items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-full inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black"
-                  type="submit"
-                  disabled={formUpdate.isLoading}
-                >
-                  Add Project
-                </button>
-              </div>
-              {formUpdate.isLoading ? "Submitting..." : ""}
-            </form>
-          </div>
+      <div className="mx-4 md:mx-20">
+        <div className="mt-8 text-2xl md:text-5xl tracking-tighter text-black text-center">
+          Add Project
         </div>
+        <form
+          className="max-w-2xl mx-auto mt-8 space-y-4"
+          onSubmit={onSubmit}
+        >
+          <div>
+            <label className="block mb-2 text-sm font-medium text-gray-600">
+              Project Name
+            </label>
+            <input
+              className="w-full px-4 py-2 text-black bg-white border border-gray-200 rounded-md placeholder-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 text-sm"
+              placeholder="Project Name"
+              required
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <label className="block mb-2 text-sm font-medium text-gray-600">
+              Image Source
+            </label>
+            <input
+              className="w-full px-4 py-2 text-black bg-white border border-gray-200 rounded-md placeholder-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 text-sm"
+              placeholder="Image URL"
+              type="text"
+              required
+              value={src}
+              onChange={(e) => setSrc(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <label className="block mb-2 text-sm font-medium text-gray-600">
+              Project Link
+            </label>
+            <input
+              className="w-full px-4 py-2 text-black bg-white border border-gray-200 rounded-md placeholder-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 text-sm"
+              placeholder="Project Link"
+              type="text"
+              required
+              value={link}
+              onChange={(e) => setLink(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <button
+              className="w-full px-4 py-2 text-white bg-black border border-black rounded-full inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black"
+              type="submit"
+              disabled={formUpdate.isLoading}
+            >
+              {formUpdate.isLoading ? "Submitting..." : "Add Project"}
+            </button>
+          </div>
+        </form>
       </div>
     </section>
   );
