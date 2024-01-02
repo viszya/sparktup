@@ -11,7 +11,12 @@ import { Recommendation } from "@/app/_components/dashboard/recommendation";
 import { Nav } from "@/app/_components/dashboard/nav"
 // className={cn("", twp().wrapper)}
 import { Toaster } from "@/app/_components/ui/toaster"
-export default function Dashboard() {
+import { redirect } from "next/navigation"
+export default async function Dashboard() {
+	const session = await getServerAuthSession()
+    if (!session) {
+        redirect("/unauthorized")
+    }
 	return (
 		<main >
 			<Nav />

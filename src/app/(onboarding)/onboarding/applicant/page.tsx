@@ -9,8 +9,14 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn } from "@/server/utils";
+import { getServerAuthSession } from "@/server/auth"
+import { redirect } from "next/navigation"
 
-export default function Onboarding() {
+export default async function Onboarding() {
+  const session = await getServerAuthSession()
+    if (!session) {
+        redirect("/unauthorized")
+    }
   const [activeTab, setActiveTab] = useState("profile"); // Initial active tab
   const router = useRouter();
 

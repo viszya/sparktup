@@ -12,8 +12,14 @@ import { Icons } from "@/app/_components/icons"
 import { cn } from "@/server/utils"
 import Link from "next/link"
 import { useState } from "react"
+import { getServerAuthSession } from "@/server/auth"
+import { redirect } from "next/navigation"
 
-export default function Onboarding() {
+export default async function Onboarding() {
+    const session = await getServerAuthSession()
+    if (!session) {
+        redirect("/unauthorized")
+    }
     const [isLoading] = useState<boolean>(false)
     const [isLoading2] = useState<boolean>(false)
     const [isApplicant, setApplicantLoading] = useState<boolean>(false)

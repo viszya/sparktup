@@ -107,6 +107,7 @@ export const settingsRouter = createTRPCRouter({
         .input(z.object({
             skillName: z.string(),
             skillDescription: z.string(),
+            color: z.string(),
         }))
         .mutation(async ({ ctx, input }) => {
             return ctx.db.user.update({
@@ -118,6 +119,7 @@ export const settingsRouter = createTRPCRouter({
                         create: {
                             skillName: input.skillName,
                             skillDescription: input.skillDescription,
+                            color: input.color,
                         },
                     },
                 },

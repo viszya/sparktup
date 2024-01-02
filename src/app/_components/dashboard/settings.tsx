@@ -16,6 +16,8 @@ export function Settings() {
             <TabsTrigger value="account">Account</TabsTrigger>
             <Icons.chevronRight className="text-gray-300 h-5 w-5" />
             <TabsTrigger value="skills">Skills</TabsTrigger>
+            <Icons.chevronRight className="text-gray-300 h-5 w-5" />
+            <TabsTrigger value="data">Data</TabsTrigger>
           </TabsList>
           <div className="w-full">
             <TabsContent value="account">
@@ -23,6 +25,9 @@ export function Settings() {
             </TabsContent>
             <TabsContent value="skills">
               <Form2 />
+            </TabsContent>
+            <TabsContent value="data">
+              <InputData />
             </TabsContent>
           </div>
         </Tabs>
