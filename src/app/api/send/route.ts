@@ -1,46 +1,35 @@
-// import { EmailTemplate } from '../../../components/EmailTemplate';
 import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 import { Resend } from 'resend';
 import { env } from "@/env.mjs";
-import VercelInviteUserEmail from '@/app/_components/email-template';
+import ContactEmail from '@/app/_components/contact-email';
 
 const resend = new Resend(env.RESEND_API_KEY);
+interface ReqData {
+    email: string;
+    firstName: string;
+    lastName: string;
+    subject: string;
+    message: string;
+}
 
-export async function POST(req: Request) {
-    // const headersList = headers();
-    //const referer = headersList.get("body");
-    console.log("HIHIHIHIHII@@@");
-    // console.log(headersList);
-
-    
-
-    //console.log({ headersList, referer });
-    
+export async function POST(req: NextRequest) {
+    const reqData = await req.json() as ReqData;
     try {
-        const r = await req.json();
         const { data, error } = await resend.emails.send({
-            from: 'Sparktup <onboarding@resend.dev>',
-            to: "xanthan.mx@gmail.com", 
-            subject: 'Contact Request: ' + r.body.subject,
-            react: VercelInviteUserEmail(),
+            from: 'Sparktup <contact@resend.dev>',
+            to: "xanthan.ex@gmail.com",
+            subject: 'Contact Request: ' + reqData.subject,
+            react: ContactEmail({ email: reqData.email, firstName: reqData.firstName, lastName: reqData.lastName, message: reqData.message }),
         });
         if (error) {
             console.log(error);
             return NextResponse.json({ error });
         }
-        return NextResponse.json(data, r);
+        return NextResponse.json(data);
     } catch (error) {
         console.log(error);
         return NextResponse.json({ error });
     }
-
-    //   return new Response(JSON.stringify({ message: "test" }), {
-    //     status: 200,
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   });
-
-
 }
 
