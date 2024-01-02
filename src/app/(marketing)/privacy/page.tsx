@@ -1,7 +1,5 @@
 import { cn } from "@/server/utils"
-import { Icons } from "@/app/_components/icons"
 import { twp } from "@/server/utils"
-import { Button } from "@/app/_components/ui/button";
 
 export default function PrivacyPolicy() {
     return (
