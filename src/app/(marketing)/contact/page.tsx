@@ -8,12 +8,14 @@ export default function ContactForm() {
 	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
 	const [message, setMessage] = useState("");
+	const [subject, setSubject] = useState("");
 
 	function onSubmit() {
 		setFirstName("");
 		setLastName("");
 		setEmail("");
 		setMessage("");
+		setSubject("");
 	}
 
 	return (
@@ -72,6 +74,19 @@ export default function ContactForm() {
 							</div>
 							<div className="col-span-full">
 								<label className="block mb-3 text-sm font-medium text-gray-600">
+									Subject
+								</label>
+								<input
+									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
+									placeholder="Subject"
+									type="text"
+									value={subject}
+									required
+									onChange={(e) => setSubject(e.target.value)}
+								/>
+							</div>
+							<div className="col-span-full">
+								<label className="block mb-3 text-sm font-medium text-gray-600">
 									Message
 								</label>
 								<textarea
@@ -89,6 +104,7 @@ export default function ContactForm() {
 									lastName={lastName}
 									email={email}
 									message={message}
+									subject={subject}
 								/>
 							</div>
 						</form>

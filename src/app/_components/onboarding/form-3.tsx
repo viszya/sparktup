@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { api } from "@/trpc/react";
+import { Icons } from "@/app/_components/icons";
+import { buttonVariants } from "@/app/_components/ui/button";
+import { cn } from "@/server/utils";
 
 interface FormProps {
 	onNextClick: () => void; // Define the type of onNextClick prop
@@ -11,6 +14,8 @@ export function Form3({ onNextClick }: FormProps) {
 	const [resumeLink, setResumeLink] = useState("");
 	const [profileTags, setProfileTags] = useState<string[]>([""]);
 	const [interestedTags, setInterestedTags] = useState<string[]>([""]);
+	const [isLoading, setIsLoading] = useState<boolean>(false)
+	const [isGitHubLoading, setIsGitHubLoading] = useState<boolean>(false)
 
 	const formUpdate = api.onboarding.updateForm3.useMutation({
 		onSuccess: () => {
@@ -19,6 +24,7 @@ export function Form3({ onNextClick }: FormProps) {
 	});
 
 	function onSubmit() {
+		setIsGitHubLoading(true)
 		formUpdate.mutate({
 			resumeLink,
 			profileTags,
@@ -160,11 +166,18 @@ export function Form3({ onNextClick }: FormProps) {
 								</button>
 							</div>
 							<div className="col-span-full">
-								<button className="items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-full nline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black" type="submit" disabled={formUpdate.isLoading}>
-									Submit your request
+								<button
+									type="submit"
+									className={cn(buttonVariants({ variant: "outline" }), "items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-full inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black")}
+									disabled={isLoading || isGitHubLoading}
+								>
+									{isGitHubLoading ? (
+										<Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+									) : (<></>
+									)}{" "}
+									Next
 								</button>
 							</div>
-							{formUpdate.isLoading ? "Submitting..." : ""}
 						</form>
 					</div>
 				</div>

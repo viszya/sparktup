@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { api } from "@/trpc/react";
+import { Icons } from "@/app/_components/icons";
+import { buttonVariants } from "@/app/_components/ui/button";
+import { cn } from "@/server/utils";
 
 interface FormProps {
 	onNextClick: () => void; // Define the type of onNextClick prop
@@ -12,6 +15,8 @@ export function Form2({ onNextClick }: FormProps) {
 	const [yearsOfExperience, setYearsOfExperience] = useState("");
 	const [availableForWork, setAvailableForWork] = useState(false);
 	const [hasAJob, setHasAJob] = useState(false);
+	const [isLoading, setIsLoading] = useState<boolean>(false)
+	const [isGitHubLoading, setIsGitHubLoading] = useState<boolean>(false)
 
 	const formUpdate = api.onboarding.updateForm2.useMutation({
 		onSuccess: () => {
@@ -20,6 +25,7 @@ export function Form2({ onNextClick }: FormProps) {
 	});
 
 	function onSubmit() {
+		setIsGitHubLoading(true)
 		formUpdate.mutate({
 			jobTitle,
 			yearsOfExperience,
@@ -101,11 +107,18 @@ export function Form2({ onNextClick }: FormProps) {
 								<span className="text-gray-600">Yes, I am available for work</span>
 							</div>
 							<div className="col-span-full">
-								<button className="items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-full nline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black" type="submit" disabled={formUpdate.isLoading}>
-									Submit your request
+								<button
+									type="submit"
+									className={cn(buttonVariants({ variant: "outline" }), "items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-full inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black")}
+									disabled={isLoading || isGitHubLoading}
+								>
+									{isGitHubLoading ? (
+										<Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+									) : (<></>
+									)}{" "}
+									Next
 								</button>
 							</div>
-							{formUpdate.isLoading ? "Submitting..." : ""}
 						</form>
 					</div>
 				</div>

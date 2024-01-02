@@ -7,6 +7,8 @@ import { Form2 } from "@/app/_components/onboarding/form-2";
 import { Form3 } from "@/app/_components/onboarding/form-3";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { buttonVariants } from "@/app/_components/ui/button";
+import { cn } from "@/server/utils";
 
 export default function Onboarding() {
   const [activeTab, setActiveTab] = useState("profile"); // Initial active tab
@@ -59,7 +61,7 @@ export default function Onboarding() {
 
       {/* Back Button */}
       {activeTab !== "profile" && (
-        <button onClick={handleBackButtonClick} className="mt-4 underline cursor-pointer text-blue-500">
+        <button onClick={handleBackButtonClick} className={cn(buttonVariants({variant: "outline"}), "rounded-full")}>
           Back
         </button>
       )}
