@@ -46,11 +46,10 @@ export function Form2({ onNextClick }: FormProps) {
 								</span>
 							</span>
 							<div className="mt-3 text-3xl tracking-tighter text-black">
-								Let&apos;s get your profile set up!
+							Employment Details!
 							</div>
 							<div className="mt-4 text-gray-500">
-								Let&apos;s get to know each other. Please fill out the following form to the best of your ability.
-								All this information will be used to create your profile. You can always edit your profile later.
+							Help us understand your current professional status and aspirations. Share information about your current job, job title, relevant experience, and whether you&apos;re actively seeking new opportunities. Your responses will contribute to shaping a comprehensive profile that reflects your career journey. Remember, you can always update this information later to keep your profile accurate and up-to-date.
 							</div>
 						</article>
 
@@ -60,7 +59,7 @@ export function Form2({ onNextClick }: FormProps) {
 						>
 							<div className="col-span-full">
 								<label className="block mb-3 text-sm font-medium text-gray-600">
-									Do you have a job?
+									Do you have a job? <em className="text-gray-400">Leave Un-Checked if don&apos;t have a job</em>
 								</label>
 								<input
 									className="mr-2"
@@ -77,7 +76,7 @@ export function Form2({ onNextClick }: FormProps) {
 								</label>
 								<input
 									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
-									placeholder="Richest Person in the World"
+									placeholder="Full Stack Developer, etc."
 									type="text"
 									value={jobTitle}
 									onChange={(e) => setJobTitle(e.target.value)}
@@ -98,7 +97,7 @@ export function Form2({ onNextClick }: FormProps) {
 							</div>
 							<div className="col-span-full">
 								<label className="block mb-3 text-sm font-medium text-gray-600">
-									Are you available for work?
+									Are you looking for a job? <em className="text-gray-400">Leave Un-Checked if you are not looking for a job</em>
 								</label>
 								<input
 									className="mr-2"

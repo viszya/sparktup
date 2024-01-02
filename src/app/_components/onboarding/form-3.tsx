@@ -76,11 +76,10 @@ export function Form3({ onNextClick }: FormProps) {
 								</span>
 							</span>
 							<div className="mt-3 text-3xl tracking-tighter text-black">
-								Let&apos;s get your profile set up!
+							Professional Identity Boost!
 							</div>
 							<div className="mt-4 text-gray-500">
-								Let&apos;s get to know each other. Please fill out the following form to the best of your ability.
-								All this information will be used to create your profile. You can always edit your profile later.
+							Let&apos;s enhance your profile by providing additional details. Share a link to your resume for a comprehensive overview. Add tags that describe your skills, making it easier for companies to discover your profile. Additionally, let us know your interests and preferences by specifying the tags or types of posts you&apos;re keen on, such as design or database-related content. This information ensures that you receive tailored recommendations and opportunities. Remember, you have the flexibility to update these preferences whenever needed.
 							</div>
 						</article>
 
