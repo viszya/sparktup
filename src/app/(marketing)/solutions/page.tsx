@@ -6,9 +6,9 @@ import Link from "next/link";
 export default function Solutions() {
 	return (
 		<div className={cn("", twp().wrapper)}>
-			<div className="grid grid-cols-2 gap-8 mt-40 mb-40">
+			<div className="grid grid-cols-2 gap-8 mt-20 mb-20">
 				{/* Company Solutions Box */}
-				<div key="company" className=" p-8 rounded-2xl border-2 border-green-300 bg-green-100/10">
+				<div key="company" className=" p-8 rounded-2xl border-2 border-gray-400 bg-gray-100/10">
 					<div className="text-2xl font-medium tracking-tight text-black sm:text-4xl mb-4">
 						Company Solutions
 					</div>
@@ -21,7 +21,7 @@ export default function Solutions() {
 						</div>
 					</div>
 					<Link href="../solutions/company">
-						<Button className="text-md items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-green-300 border-2 border-green-300 rounded-lg inline-flex hover:bg-transparent hover:border-green-300 hover:text-green-300 focus:outline-none focus-visible:outline-green-300 focus-visible:ring-green-300">
+						<Button className="text-md items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-gray-400 border-2 border-gray-400 rounded-lg inline-flex hover:bg-transparent hover:border-gray-400 hover:text-gray-400 focus:outline-none focus-visible:outline-gray-400 focus-visible:ring-gray-400">
 							Read More <Icons.arrowRight className="ml-2 h-4 w-4" />
 						</Button>
 					</Link>

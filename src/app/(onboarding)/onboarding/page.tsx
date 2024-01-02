@@ -18,7 +18,7 @@ export default function Onboarding() {
 
     if (currentIndex < tabOrder.length - 1) {
       const nextTab = tabOrder[currentIndex + 1];
-      setActiveTab(nextTab);
+      setActiveTab(nextTab!);
     }
 
     if (activeTab === "tags") {
@@ -32,7 +32,7 @@ export default function Onboarding() {
 
     if (currentIndex > 0) {
       const prevTab = tabOrder[currentIndex - 1];
-      setActiveTab(prevTab);
+      setActiveTab(prevTab!);
     }
   }
 
