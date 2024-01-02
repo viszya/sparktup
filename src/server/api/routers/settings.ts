@@ -103,6 +103,27 @@ export const settingsRouter = createTRPCRouter({
             });
         }),
 
+    settingsForm2: protectedProcedure
+        .input(z.object({
+            skillName: z.string(),
+            skillDescription: z.string(),
+        }))
+        .mutation(async ({ ctx, input }) => {
+            return ctx.db.user.update({
+                where: {
+                    id: ctx.session.user.id,
+                },
+                data: {
+                    topSkills: {
+                        create: {
+                            skillName: input.skillName,
+                            skillDescription: input.skillDescription,
+                        },
+                    },
+                },
+            });
+        }),
+
     addRecommendation: protectedProcedure
         .input(z.object({
             name: z.string(),

@@ -1,7 +1,7 @@
 import { Icons } from "@/app/_components/icons"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/_components/ui/tabs"
-import { Form1 } from "@/app/_components/applicant-settings/form-1";
-import { Form2 } from "@/app/_components/applicant-settings/form-2";
+import { Form1 } from "@/app/_components/dashboard/applicant-settings/form-1";
+import { Form2 } from "@/app/_components/dashboard/applicant-settings/form-2";
 import { InputData }  from "@/app/_components/inputdata"
 
 export function Settings() {
@@ -19,7 +19,7 @@ export function Settings() {
                     </TabsList>
                     <div className="w-full">
                         <TabsContent value="account"><Form1 /></TabsContent>
-                        <TabsContent value="skills"><InputData /></TabsContent>
+                        <TabsContent value="skills"><Form2 /></TabsContent>
                     </div>
                 </Tabs>
             </div>

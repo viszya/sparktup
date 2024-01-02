@@ -14,7 +14,7 @@ export function Form3({ onNextClick }: FormProps) {
 	const [resumeLink, setResumeLink] = useState("");
 	const [profileTags, setProfileTags] = useState<string[]>([""]);
 	const [interestedTags, setInterestedTags] = useState<string[]>([""]);
-	const [isLoading, setIsLoading] = useState<boolean>(false)
+	const [isLoading] = useState<boolean>(false)
 	const [isGitHubLoading, setIsGitHubLoading] = useState<boolean>(false)
 
 	const formUpdate = api.onboarding.updateForm3.useMutation({
@@ -90,7 +90,7 @@ export function Form3({ onNextClick }: FormProps) {
 						>
 							<div className="col-span-full">
 								<label className="block mb-3 text-sm font-medium text-gray-600">
-									What is your resume link?
+									What is your resume link?  <span className="text-red-400">*optional</span>
 								</label>
 								<input
 									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
@@ -102,14 +102,15 @@ export function Form3({ onNextClick }: FormProps) {
 							</div>
 							<div className="col-span-full">
 								<label className="block mb-3 text-sm font-medium text-gray-600">
-									Your Profile Tags
+									Your Profile Tags  <span className="text-red-400">*at least 1 required</span>
 								</label>
 								{profileTags.map((description, index) => (
-									<div key={index} className="flex items-center space-x-3">
+									<div key={index} className="flex items-center space-x-3 mb-2">
 										<input
 											className="block w-full px-4 py-2 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
 											placeholder={`Tag #${index + 1}`}
 											type="text"
+											required
 											value={description}
 											onChange={(e) =>
 												updateProfileTags(index, e.target.value)
@@ -117,7 +118,7 @@ export function Form3({ onNextClick }: FormProps) {
 										/>
 										<button
 											type="button"
-											className="text-red-500 focus:outline-none"
+											className={cn(buttonVariants({ variant: "secondary" }), "text-red-500 focus:outline-none rounded-2xl")}
 											onClick={() => removeProfileTags(index)}
 										>
 											Remove
@@ -126,7 +127,7 @@ export function Form3({ onNextClick }: FormProps) {
 								))}
 								<button
 									type="button"
-									className="text-blue-500 focus:outline-none"
+									className={cn(buttonVariants({ variant: "secondary" }), "text-blue-500 focus:outline-none rounded-2xl")}
 									onClick={addProfileTags}
 								>
 									Add Tag
@@ -135,14 +136,15 @@ export function Form3({ onNextClick }: FormProps) {
 
 							<div className="col-span-full">
 								<label className="block mb-3 text-sm font-medium text-gray-600">
-									Your Interested Tags
+									Your Interested Tags <span className="text-red-400">*at least 1 required</span>
 								</label>
 								{interestedTags.map((description, index) => (
-									<div key={index} className="flex items-center space-x-3">
+									<div key={index} className="flex items-center space-x-3 mb-2">
 										<input
 											className="block w-full px-4 py-2 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
 											placeholder={`Tag #${index + 1}`}
 											type="text"
+											required
 											value={description}
 											onChange={(e) =>
 												updateInterestedTags(index, e.target.value)
@@ -150,7 +152,7 @@ export function Form3({ onNextClick }: FormProps) {
 										/>
 										<button
 											type="button"
-											className="text-red-500 focus:outline-none"
+											className={cn(buttonVariants({ variant: "secondary" }), "text-red-500 focus:outline-none rounded-2xl")}
 											onClick={() => removeInterestedTags(index)}
 										>
 											Remove
@@ -159,7 +161,7 @@ export function Form3({ onNextClick }: FormProps) {
 								))}
 								<button
 									type="button"
-									className="text-blue-500 focus:outline-none"
+									className={cn(buttonVariants({ variant: "secondary" }), "text-blue-500 focus:outline-none rounded-2xl")}
 									onClick={addInterestedTags}
 								>
 									Add Tag
@@ -175,7 +177,7 @@ export function Form3({ onNextClick }: FormProps) {
 										<Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
 									) : (<></>
 									)}{" "}
-									Next
+									Finish
 								</button>
 							</div>
 						</form>

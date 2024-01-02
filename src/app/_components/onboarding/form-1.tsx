@@ -16,7 +16,7 @@ export function Form1({ onNextClick }: FormProps) {
 	const [location, setLocation] = useState("");
 	const [proEmail, setProEmail] = useState("");
 	const [about, setAbout] = useState("");
-	const [isLoading, setIsLoading] = useState<boolean>(false)
+	const [isLoading] = useState<boolean>(false)
 	const [isGitHubLoading, setIsGitHubLoading] = useState<boolean>(false)
 
 

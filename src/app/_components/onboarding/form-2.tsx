@@ -15,7 +15,7 @@ export function Form2({ onNextClick }: FormProps) {
 	const [yearsOfExperience, setYearsOfExperience] = useState("");
 	const [availableForWork, setAvailableForWork] = useState(false);
 	const [hasAJob, setHasAJob] = useState(false);
-	const [isLoading, setIsLoading] = useState<boolean>(false)
+	const [isLoading] = useState<boolean>(false)
 	const [isGitHubLoading, setIsGitHubLoading] = useState<boolean>(false)
 
 	const formUpdate = api.onboarding.updateForm2.useMutation({
@@ -60,19 +60,20 @@ export function Form2({ onNextClick }: FormProps) {
 						>
 							<div className="col-span-full">
 								<label className="block mb-3 text-sm font-medium text-gray-600">
-									Yes, I have a job
+									Do you have a job?
 								</label>
 								<input
 									className="mr-2"
 									type="checkbox"
+									required
 									checked={hasAJob}
 									onChange={() => setHasAJob(!hasAJob)}
 								/>
-								<span className="text-gray-600">Yes, I am available for work</span>
+								<span className="text-gray-600">Yes, I have a job</span>
 							</div>
 							<div className="col-span-full">
 								<label className="block mb-3 text-sm font-medium text-gray-600">
-									What is your profession or job title?
+									What is your main profession or job title? <span className="text-red-400">*optional</span>
 								</label>
 								<input
 									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
@@ -84,11 +85,12 @@ export function Form2({ onNextClick }: FormProps) {
 							</div>
 							<div className="col-span-full">
 								<label className="block mb-3 text-sm font-medium text-gray-600">
-									How many years of experience do you have?
+									How many years of experience do you have? 
 								</label>
 								<input
 									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
 									placeholder="10+"
+									required
 									type="text"
 									value={yearsOfExperience}
 									onChange={(e) => setYearsOfExperience(e.target.value)}
@@ -101,6 +103,7 @@ export function Form2({ onNextClick }: FormProps) {
 								<input
 									className="mr-2"
 									type="checkbox"
+									required
 									checked={availableForWork}
 									onChange={() => setAvailableForWork(!availableForWork)}
 								/>
@@ -123,9 +126,6 @@ export function Form2({ onNextClick }: FormProps) {
 					</div>
 				</div>
 			</div>
-
-
 		</section >
-
 	);
 }

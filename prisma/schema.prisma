@@ -174,12 +174,11 @@ model Project {
 }
 
 model TopSkill {
-  id          String  @id @default(cuid())
-  name        String
-  color       String
-  description String
-  User        User?   @relation(fields: [userId], references: [id])
-  userId      String?
+  id               String  @id @default(cuid())
+  skillName        String
+  skillDescription String
+  User             User?   @relation(fields: [userId], references: [id])
+  userId           String?
 }
 
 model Recommendation {

@@ -3,6 +3,8 @@
 import { useToast } from "@/app/_components/ui/use-toast";
 import { useState } from "react";
 import { api } from "@/trpc/react";
+import { buttonVariants } from "@/app/_components/ui/button";
+import { cn } from "@/server/utils";
 
 export function Experience() {
   const [companyLogoSrc, setCompanyLogoSrc] = useState("");
@@ -101,19 +103,6 @@ export function Experience() {
                 onSubmit();
               }}
             >
-              <div className="col-span-full">
-                <label className="block mb-3 text-sm font-medium text-gray-600">
-                  Company Logo Source
-                </label>
-                <input
-                  className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
-                  placeholder="URL"
-                  required
-                  type="text"
-                  value={companyLogoSrc}
-                  onChange={(e) => setCompanyLogoSrc(e.target.value)}
-                />
-              </div>
 
               <div className="col-span-full">
                 <label className="block mb-3 text-sm font-medium text-gray-600">
@@ -131,7 +120,21 @@ export function Experience() {
 
               <div className="col-span-full">
                 <label className="block mb-3 text-sm font-medium text-gray-600">
-                  Company Image Source
+                  Company Logo Image
+                </label>
+                <input
+                  className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
+                  placeholder="URL"
+                  required
+                  type="text"
+                  value={companyLogoSrc}
+                  onChange={(e) => setCompanyLogoSrc(e.target.value)}
+                />
+              </div>
+
+              <div className="col-span-full">
+                <label className="block mb-3 text-sm font-medium text-gray-600">
+                  Company Banner Image
                 </label>
                 <input
                   className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
@@ -149,7 +152,7 @@ export function Experience() {
                 </label>
                 <input
                   className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
-                  placeholder="Full-time, Part-time"
+                  placeholder="Full-time, Part-time, Intern, etc."
                   type="text"
                   value={engagement}
                   required
@@ -163,7 +166,7 @@ export function Experience() {
                 </label>
                 <input
                   className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
-                  placeholder="Software Engineer"
+                  placeholder="Remote or In-person"
                   type="text"
                   required
                   value={relativeOfWork}
@@ -203,7 +206,7 @@ export function Experience() {
                 </label>
                 <input
                   className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
-                  placeholder="Full-time, Part-time"
+                  placeholder="Jan 2020 - Present"
                   type="text"
                   required
                   value={time}
@@ -213,10 +216,10 @@ export function Experience() {
 
               <div className="col-span-full">
                 <label className="block mb-3 text-sm font-medium text-gray-600">
-                  Job Descriptions
+                  Job Descriptions <span className="text-red-400">*at least 1 required</span>
                 </label>
                 {jobDescriptions.map((description, index) => (
-                  <div key={index} className="flex items-center space-x-3">
+                  <div key={index} className="flex items-center space-x-3 mb-2">
                     <input
                       className="block w-full px-4 py-2 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
                       placeholder={`Job Description #${index + 1}`}
@@ -229,7 +232,7 @@ export function Experience() {
                     />
                     <button
                       type="button"
-                      className="text-red-500 focus:outline-none"
+                      className={cn(buttonVariants({ variant: "secondary" }), "text-red-500 focus:outline-none rounded-2xl")}
                       onClick={() => removeJobDescription(index)}
                     >
                       Remove
@@ -238,7 +241,7 @@ export function Experience() {
                 ))}
                 <button
                   type="button"
-                  className="text-blue-500 focus:outline-none"
+                  className={cn(buttonVariants({ variant: "secondary" }), "text-blue-500 focus:outline-none rounded-2xl")}
                   onClick={addJobDescription}
                 >
                   Add Job Description
