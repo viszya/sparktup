@@ -64,7 +64,6 @@ export function Form2({ onNextClick }: FormProps) {
 								<input
 									className="mr-2"
 									type="checkbox"
-									required
 									checked={hasAJob}
 									onChange={() => setHasAJob(!hasAJob)}
 								/>
@@ -102,7 +101,6 @@ export function Form2({ onNextClick }: FormProps) {
 								<input
 									className="mr-2"
 									type="checkbox"
-									required
 									checked={availableForWork}
 									onChange={() => setAvailableForWork(!availableForWork)}
 								/>

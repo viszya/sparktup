@@ -435,7 +435,7 @@ export default function CompanyProfile() {
       </section>
 
       <section className="m-10">
-      <div className="mt-8 text-xl font-medium tracking-tight text-black sm:text-2xl">Commitments</div>
+        <div className="mt-8 text-xl font-medium tracking-tight text-black sm:text-2xl">Commitments</div>
         <div className="mt-4 p-4 bg-gray-300/10 rounded-xl border-2 border-gray-200">
           <div className="grid grid-cols-3 gap-8">
             <div className="col-span-1 p-4 bg-gray-300/10 rounded-xl border-2 border-gray-200">
