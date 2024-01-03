@@ -1,230 +1,59 @@
-import { Badge } from "@/app/_components/ui/badge"
 import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/app/_components/ui/card"
 import Link from "next/link"
-import { Button } from "@/app/_components/ui/button"
+import { buttonVariants } from "@/app/_components/ui/button";
 import { twp, cn } from "@/server/utils"
 import Image from "next/image"
-
+import { data } from "@/app/company/data";
 
 export default function Component() {
   return (
     <div className={cn(twp().wrapper)}>
-      <Card className="p-4 bg-gray-300/10 rounded-3xl border-2 border-gray-200 flex flex-row gap-x-2 my-10">
-        <div className="">
-          <CardHeader>
-            <div className="flex items-center space-x-2">
-              <Image alt="Company Logo" height="24" src="/applelogo.png" width="24" />
-              <CardTitle>Audio Director</CardTitle>
-            </div>
-            <CardDescription>Microsoft · Redmond, WA · Reposted 1 week ago · Over 100 applicants</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
+      {data.careerOpportunities.map((data: any) => (
+        <Card className="p-4 bg-gray-300/10 rounded-3xl border-2 border-gray-200 flex flex-row gap-x-2 my-10">
+          <div className="">
+            <CardHeader>
               <div className="flex items-center space-x-2">
-                <BriefcaseIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">$112,000/yr - $238,600/yr · Hybrid · Full-time</p>
+                <Image alt="Company Logo" height="24" src={data.companyLogo} width="24" />
+                <CardTitle>{data.position}</CardTitle>
               </div>
-              <div className="flex items-center space-x-2">
-                <BuildingIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">10,001+ employees · Software Development</p>
+              <CardDescription>{data.description}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-2">
+                  <BriefcaseIcon className="h-5 w-5 text-gray-500" />
+                  <p className="text-sm text-gray-700">{data.pricingDescription}</p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <BuildingIcon className="h-5 w-5 text-gray-500" />
+                  <p className="text-sm text-gray-700">{data.sizeDescription}</p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <MusicIcon className="h-5 w-5 text-gray-500" />
+                  <p className="text-sm text-gray-700">Skills: {data.skills}</p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircleIcon className="h-5 w-5 text-gray-500" />
+                  <p className="text-sm text-gray-700">
+                    View verifications related to this job post.{" "}
+                    <Link className="text-blue-600" href={data.jobLink}>
+                      Show all
+                    </Link>
+                  </p>
+                </div>
               </div>
-              <div className="flex items-center space-x-2">
-                <MusicIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">Skills: Music, Audio Recording, +8 more</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircleIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">
-                  View verifications related to this job post.{" "}
-                  <Link className="text-blue-600" href="#">
-                    Show all
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </CardContent>
-          <CardFooter className="flex space-x-4">
-            <Button className="bg-blue-600 text-white">See More</Button>
-            <Button variant="outline">Save</Button>
-          </CardFooter>
-        </div>
-        <div className="overflow-hidden rounded-3xl flex justify-center items-center max-h-80">
-          <Image src="/microsoft-event.png" width="600" height="100" alt="job-banner" />
-        </div>
-      </Card>
-      <Card className="p-4 bg-gray-300/10 rounded-3xl border-2 border-gray-200 flex flex-row gap-x-2 my-10">
-        <div className="">
-          <CardHeader>
-            <div className="flex items-center space-x-2">
-              <Image alt="Company Logo" height="24" src="/applelogo.png" width="24" />
-              <CardTitle>Audio Director</CardTitle>
-            </div>
-            <CardDescription>Microsoft · Redmond, WA · Reposted 1 week ago · Over 100 applicants</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <BriefcaseIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">$112,000/yr - $238,600/yr · Hybrid · Full-time</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <BuildingIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">10,001+ employees · Software Development</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <MusicIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">Skills: Music, Audio Recording, +8 more</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircleIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">
-                  View verifications related to this job post.{" "}
-                  <Link className="text-blue-600" href="#">
-                    Show all
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </CardContent>
-          <CardFooter className="flex space-x-4">
-            <Button className="bg-blue-600 text-white">See More</Button>
-            <Button variant="outline">Save</Button>
-          </CardFooter>
-        </div>
-        <div className="overflow-hidden rounded-3xl flex justify-center items-center max-h-80">
-          <Image src="/microsoft-event.png" width="600" height="100" alt="job-banner" />
-        </div>
-      </Card>
-      <Card className="p-4 bg-gray-300/10 rounded-3xl border-2 border-gray-200 flex flex-row gap-x-2 my-10">
-        <div className="">
-          <CardHeader>
-            <div className="flex items-center space-x-2">
-              <Image alt="Company Logo" height="24" src="/applelogo.png" width="24" />
-              <CardTitle>Audio Director</CardTitle>
-            </div>
-            <CardDescription>Microsoft · Redmond, WA · Reposted 1 week ago · Over 100 applicants</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <BriefcaseIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">$112,000/yr - $238,600/yr · Hybrid · Full-time</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <BuildingIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">10,001+ employees · Software Development</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <MusicIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">Skills: Music, Audio Recording, +8 more</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircleIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">
-                  View verifications related to this job post.{" "}
-                  <Link className="text-blue-600" href="#">
-                    Show all
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </CardContent>
-          <CardFooter className="flex space-x-4">
-            <Button className="bg-blue-600 text-white">See More</Button>
-            <Button variant="outline">Save</Button>
-          </CardFooter>
-        </div>
-        <div className="overflow-hidden rounded-3xl flex justify-center items-center max-h-80">
-          <Image src="/microsoft-event.png" width="600" height="100" alt="job-banner" />
-        </div>
-      </Card>
-      <Card className="p-4 bg-gray-300/10 rounded-3xl border-2 border-gray-200 flex flex-row gap-x-2 my-10">
-        <div className="">
-          <CardHeader>
-            <div className="flex items-center space-x-2">
-              <Image alt="Company Logo" height="24" src="/applelogo.png" width="24" />
-              <CardTitle>Audio Director</CardTitle>
-            </div>
-            <CardDescription>Microsoft · Redmond, WA · Reposted 1 week ago · Over 100 applicants</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <BriefcaseIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">$112,000/yr - $238,600/yr · Hybrid · Full-time</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <BuildingIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">10,001+ employees · Software Development</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <MusicIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">Skills: Music, Audio Recording, +8 more</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircleIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">
-                  View verifications related to this job post.{" "}
-                  <Link className="text-blue-600" href="#">
-                    Show all
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </CardContent>
-          <CardFooter className="flex space-x-4">
-            <Button className="bg-blue-600 text-white">See More</Button>
-            <Button variant="outline">Save</Button>
-          </CardFooter>
-        </div>
-        <div className="overflow-hidden rounded-3xl flex justify-center items-center max-h-80">
-          <Image src="/microsoft-event.png" width="600" height="100" alt="job-banner" />
-        </div>
-      </Card>
-      <Card className="p-4 bg-gray-300/10 rounded-3xl border-2 border-gray-200 flex flex-row gap-x-2 my-10">
-        <div className="">
-          <CardHeader>
-            <div className="flex items-center space-x-2">
-              <Image alt="Company Logo" height="24" src="/applelogo.png" width="24" />
-              <CardTitle>Audio Director</CardTitle>
-            </div>
-            <CardDescription>Microsoft · Redmond, WA · Reposted 1 week ago · Over 100 applicants</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <BriefcaseIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">$112,000/yr - $238,600/yr · Hybrid · Full-time</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <BuildingIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">10,001+ employees · Software Development</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <MusicIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">Skills: Music, Audio Recording, +8 more</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircleIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">
-                  View verifications related to this job post.{" "}
-                  <Link className="text-blue-600" href="#">
-                    Show all
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </CardContent>
-          <CardFooter className="flex space-x-4">
-            <Button className="bg-blue-600 text-white">See More</Button>
-            <Button variant="outline">Save</Button>
-          </CardFooter>
-        </div>
-        <div className="overflow-hidden rounded-3xl flex justify-center items-center max-h-80">
-          <Image src="/microsoft-event.png" width="600" height="100" alt="job-banner" />
-        </div>
-      </Card>
-      
+            </CardContent>
+            <CardFooter className="flex space-x-4">
+              <Link href={data.seeSrc} className={cn("bg-red-400 text-white", buttonVariants())} >
+                See More
+              </Link>
+            </CardFooter>
+          </div>
+          <div className="overflow-hidden rounded-3xl flex justify-center items-center max-h-80">
+            <Image src={data.thumbnail} width="600" height="100" alt="job-banner" />
+          </div>
+        </Card>
+      ))}
     </div>
   )
 }

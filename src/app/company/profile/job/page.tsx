@@ -1,86 +1,74 @@
 import { Badge } from "@/app/_components/ui/badge"
 import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/app/_components/ui/card"
 import Link from "next/link"
-import { Button } from "@/app/_components/ui/button"
+import { Button, buttonVariants } from "@/app/_components/ui/button"
 import { twp, cn } from "@/server/utils"
 import Image from "next/image"
+import { data } from "@/app/company/data";
 
 
 export default function Component() {
+  const data2 = data.careerOpportunities[0];
   return (
     <div className={cn(twp().wrapper)}>
-      <Card className="p-4 bg-gray-300/10 rounded-3xl border-2 border-gray-200 flex flex-row gap-x-2 w-full my-10">
-        <div>
-          <CardHeader>
-            <div className="flex items-center space-x-2">
-              <Image alt="Company Logo" height="24" src="/applelogo.png" width="24" />
-              <CardTitle>Audio Director</CardTitle>
-            </div>
-            <CardDescription>Microsoft · Redmond, WA · Reposted 1 week ago · Over 100 applicants</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
+      <Card className="p-4 bg-gray-300/10 rounded-3xl border-2 border-gray-200 flex flex-row gap-x-2 my-10">
+          <div className="">
+            <CardHeader>
               <div className="flex items-center space-x-2">
-                <BriefcaseIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">$112,000/yr - $238,600/yr · Hybrid · Full-time</p>
+                <Image alt="Company Logo" height="24" src={data2.companyLogo} width="24" />
+                <CardTitle>{data2.position}</CardTitle>
               </div>
-              <div className="flex items-center space-x-2">
-                <BuildingIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">10,001+ employees · Software Development</p>
+              <CardDescription>{data2.description}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-2">
+                  <BriefcaseIcon className="h-5 w-5 text-gray-500" />
+                  <p className="text-sm text-gray-700">{data2.pricingDescription}</p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <BuildingIcon className="h-5 w-5 text-gray-500" />
+                  <p className="text-sm text-gray-700">{data2.sizeDescription}</p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <MusicIcon className="h-5 w-5 text-gray-500" />
+                  <p className="text-sm text-gray-700">Skills: {data2.skills}</p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircleIcon className="h-5 w-5 text-gray-500" />
+                  <p className="text-sm text-gray-700">
+                    View verifications related to this job post.{" "}
+                    <Link className="text-blue-600" href={data2.jobLink}>
+                      Show all
+                    </Link>
+                  </p>
+                </div>
               </div>
-              <div className="flex items-center space-x-2">
-                <MusicIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">Skills: Music, Audio Recording, +8 more</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircleIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">
-                  View verifications related to this job post.{" "}
-                  <Link className="text-blue-600" href="#">
-                    Show all
-                  </Link>
-                </p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <BarChartIcon className="h-5 w-5 text-gray-500" />
-                <p className="text-sm text-gray-700">
-                  See how you compare to over 100 other applicants.{" "}
-                  <Link className="text-blue-600" href="#">
-                    Upgrade my plan
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </CardContent>
-          <CardFooter className="flex space-x-4">
-            <Button className="bg-blue-600 text-white">Apply</Button>
-            <Button variant="outline">Save</Button>
-          </CardFooter>
-        </div>
-        <div className="overflow-hidden rounded-3xl flex justify-center items-center">
-          <Image src="/microsoft-event.png" width="600" height="100" alt="job-banner" />
-        </div>
-      </Card>
+            </CardContent>
+            <CardFooter className="flex space-x-4">
+              <Link href={data2.seeSrc} className={cn("bg-red-400 text-white", buttonVariants())} >
+                Apply
+              </Link>
+            </CardFooter>
+          </div>
+          <div className="overflow-hidden rounded-3xl flex justify-center items-center max-h-80">
+            <Image src={data2.thumbnail} width="600" height="100" alt="job-banner" />
+          </div>
+        </Card>
+
       <div className="p-4 bg-gray-300/10 rounded-3xl border-2 border-gray-200">
         <div className="mt-4 text-lg font-semibold tracking-tight text-black mb-2">About The Job</div>
         <p className="mt-2 text-sm text-gray-600">
-          343 Industries is the developer of the blockbuster Halo series of video games. As part of Xbox Game Studios, the
-          Halo franchise encompasses games, television series, novels, comics, licensed collectibles, apparel and more. We
-          are looking for new Spartans to join our team to build the next generation of games and experiences in our
-          award-winning sci-fi universe. Do you have experience delivering AAA audio experiences with audio
-          post-production, music, sound design, dialogue recording and pipelines, and mixing? Do you want to build and
-          develop an audio team and stable of partners that can work across stakeholders and products to consistently
-          deliver world class audio to delight our fans?
+         {data2.about}
         </p>
-        <Button className="mt-4" variant="secondary">
-          See more
-        </Button>
-
+        <Link href={data2.jobLink} className={cn("mt-4", buttonVariants())}>
+        See More
+        </Link>
         <div className="mt-6">
           <div className="mt-4 text-lg font-semibold tracking-tight text-black mb-2">Pay found in job post</div>
-          <p className="mt-2 text-sm font-medium">$112,000/yr - $238,600/yr (from job description)</p>
+          <p className="mt-2 text-sm font-medium">{data2.pay} (from job description)</p>
         </div>
-        <div className="mt-6">
+        {/* <div className="mt-6">
           <div className="mt-4 text-lg font-semibold tracking-tight text-black mb-2">How strong your connection is</div>
           <p className="mt-2 text-sm">3 skills match your profile. Stand out by adding other skills you have.</p>
           <div className="mt-4">
@@ -120,20 +108,14 @@ export default function Component() {
               Add skills
             </Button>
           </div>
-        </div>
+        </div> */}
         <div className="mt-4 text-lg font-semibold tracking-tight text-black mb-2">About The Company</div>
         <p className="mt-2 text-sm text-gray-600">
-          343 Industries is the developer of the blockbuster Halo series of video games. As part of Xbox Game Studios, the
-          Halo franchise encompasses games, television series, novels, comics, licensed collectibles, apparel and more. We
-          are looking for new Spartans to join our team to build the next generation of games and experiences in our
-          award-winning sci-fi universe. Do you have experience delivering AAA audio experiences with audio
-          post-production, music, sound design, dialogue recording and pipelines, and mixing? Do you want to build and
-          develop an audio team and stable of partners that can work across stakeholders and products to consistently
-          deliver world class audio to delight our fans?
+         {data2.companyAbout}
         </p>
-        <Button className="mt-4" variant="secondary">
+        <Link href={data2.jobLink} className={cn("mt-4", buttonVariants())}>
           See more
-        </Button>
+        </Link>
       </div>
     </div>
 
