@@ -47,13 +47,13 @@ export function Form1({ onNextClick, addFormVals }: any) {
                                 </span>
                             </span>
                             <div className="mt-3 text-3xl tracking-tighter text-primary">
-                                Welcome! Let&apos;s get started.
+                                Update Company Profile
                             </div>
                             <div className="mt-4 text-primary/80">
                                 Let&apos;s get started! Please fill out the following
-                                form to the best of your ability. All this information will be
-                                used to create your profile. You can always edit your profile
-                                later.
+                                form to update your profile information. All this information will be
+                                used to update your current profile. You can always edit your profile
+                                again.
                             </div>
                         </article>
                         <form
@@ -65,10 +65,10 @@ export function Form1({ onNextClick, addFormVals }: any) {
                         >
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    What is the Company Name?
+                                    New Company Name?
                                 </label>
                                 <Input
-                                    placeholder="Company Name"
+                                    placeholder="Google CorpCompany Name"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -78,7 +78,7 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    How many LinkedIn Members?
+                                    How many Members/Employees?
                                 </label>
                                 <Input
                                     placeholder="LinkedIn Members"
