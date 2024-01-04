@@ -30,11 +30,6 @@ const Nav = async () => {
         <nav className="flex-col items-center flex-grow hidden md:pb-0 md:flex md:justify-end md:flex-row">
           <div className='flex-1 mx-4'>
             <Link
-              href='/about'
-              className="px-2 py-2 text-sm text-gray-900 lg:px-6 transition-colors delay-75 rounded-2xl hover:bg-red-400/10 md:px-3 hover:text-red-400 ">
-              About
-            </Link>
-            <Link
               href='/solutions'
               className="px-2 py-2 text-sm text-gray-900 lg:px-6 md:px-3 hover:text-red-400 transition-colors delay-75 rounded-2xl hover:bg-red-400/10">
               Solutions
@@ -58,6 +53,11 @@ const Nav = async () => {
               href='/faq'
               className="px-2 py-2 text-sm text-gray-900 lg:px-6 md:px-3 hover:text-red-400 transition-colors delay-75 rounded-2xl hover:bg-red-400/10">
               FAQ
+            </Link>
+            <Link
+              href='/about'
+              className="px-2 py-2 text-sm text-gray-900 lg:px-6 transition-colors delay-75 rounded-2xl hover:bg-red-400/10 md:px-3 hover:text-red-400 ">
+              About
             </Link>
           </div>
           <div className="inline-flex items-center gap-2 list-none">
