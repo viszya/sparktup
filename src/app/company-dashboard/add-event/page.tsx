@@ -9,7 +9,10 @@ import { InputData } from "@/app/_components/inputdata";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { buttonVariants } from "@/app/_components/ui/button";
-import { cn } from "@/server/utils";
+import { api } from "@/trpc/react";
+import { toast } from "@/app/_components/ui/sonner";
+import { formatDate } from "@/server/utils";
+
 import {
     Card,
     CardContent,
@@ -19,11 +22,51 @@ import {
     CardTitle,
 } from "@/app/_components/ui/card"
 
+export default function AddCareer() {
+    const [date, setDate] = useState("");
+    const [title, setTitle] = useState("");
+    const [location, setLocation] = useState("");
+    const [imgsrc, setImgsrc] = useState("");
+    const [attendees, setAttendees] = useState("");
+    const [viewLink, setViewLink] = useState("");
+    const [eventType, setEventType] = useState("");
+    const [eventBy, setEventBy] = useState("");
+    const [about, setAbout] = useState("");
+    const [seeSrc, setSeeSrc] = useState("");
+    const [attendSrc, setAttendSrc] = useState("");
+    const [photoSrc, setPhotoSrc] = useState("");
+    const [activeTab, setActiveTab] = useState("profile");
+    const tabOrder = ["profile", "contact", "socialmedia"];
+    const createEvent = api.test.createEvent.useMutation({
+        onSuccess: () => {
+            // setIsNextLoading(false);
+            toast("Success", {
+                description: "Event has been created at " + formatDate(Date()),
+            });
+        },
+    });
 
-export default function AddCompany() {
-    const [activeTab, setActiveTab] = useState("profile"); // Initial active tab
-    const router = useRouter();
-    const tabOrder = ["profile", "contact", "socialmedia", "teammembers", "data"];
+
+    function addForm1Vals(form1Vals: any) {
+        setDate(form1Vals.date);
+        setTitle(form1Vals.title);
+        setLocation(form1Vals.location);
+        setImgsrc(form1Vals.imgsrc);
+        setAttendees(form1Vals.attendees);
+    }
+
+    function addForm2Vals(form2Vals: any) {
+        setViewLink(form2Vals.viewLink);
+        setEventType(form2Vals.eventType);
+        setEventBy(form2Vals.eventBy);
+        setAbout(form2Vals.about);
+    }
+
+    function addForm3Vals(form3Vals: any) {
+        setSeeSrc(form3Vals.seeSrc);
+        setAttendSrc(form3Vals.attendSrc);
+        setPhotoSrc(form3Vals.photoSrc);
+    }
 
     function handleNextButtonClick() {
         const currentIndex = tabOrder.indexOf(activeTab);
@@ -32,10 +75,23 @@ export default function AddCompany() {
             const nextTab = tabOrder[currentIndex + 1];
             setActiveTab(nextTab!);
         }
+    }
 
-        if (activeTab === "data") {
-            router.push("/dashboard");
-        }
+    function handleSubmitClick() {
+        createEvent.mutate({
+            date,
+            title,
+            location,
+            imgsrc,
+            attendees,
+            viewLink,
+            eventType,
+            eventBy,
+            about,
+            seeSrc,
+            attendSrc,
+            photoSrc,
+        });
     }
 
     function handleBackButtonClick() {
@@ -54,7 +110,7 @@ export default function AddCompany() {
                     Go through the form processes to create a company profile
                 </p>
             </div>
-            <div className="flex flex-col justify-center w-full max-w-5xl">
+            <div className="flex flex-col justify-center w-full ">
                 <Tabs value={activeTab} className="mt-5">
                     <TabsList className="flex flex-row gap-x-6 overflow-x-auto">
                         <TabsTrigger value="profile">Company Profile</TabsTrigger>
@@ -65,30 +121,19 @@ export default function AddCompany() {
                     </TabsList>
                     <div className="w-full">
                         <TabsContent value="profile">
-                            <Form1 onNextClick={handleNextButtonClick} />
+                            <Form1 onNextClick={handleNextButtonClick} addFormVals={addForm1Vals} />
                         </TabsContent>
                         <TabsContent value="contact">
-                            <Form2 onNextClick={handleNextButtonClick} onBackClick={handleBackButtonClick} />
+                            <Form2 onNextClick={handleNextButtonClick} addFormVals={addForm2Vals} onBackClick={handleBackButtonClick} />
                         </TabsContent>
                         <TabsContent value="socialmedia">
-                            <Form3 onNextClick={handleNextButtonClick} onBackClick={handleBackButtonClick} />
+                            <Form3 onSubmitClick={handleSubmitClick} addFormVals={addForm3Vals} onBackClick={handleBackButtonClick} />
                         </TabsContent>
                         <TabsContent value="data">
                             <InputData />
                         </TabsContent>
                     </div>
                 </Tabs>
-            </div>
-            <div className="mt-5 border border-dased border-secondary rounded-xl p-2">
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Edit or Delete Testimonials</CardTitle>
-                        <CardDescription>Using the data table sort, filter to eedit delete testimonials</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-
-                    </CardContent>
-                </Card>
             </div>
         </div>
     );

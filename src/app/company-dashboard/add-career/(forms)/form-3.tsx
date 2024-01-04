@@ -1,40 +1,32 @@
 "use client"
 
 import { useState } from "react";
-import { api } from "@/trpc/react";
 import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
 import { toast } from "@/app/_components/ui/sonner";
 
-interface FormProps {
-    onNextClick: () => void;
-}
 
-export function Form3({ onNextClick }: FormProps) {
+export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
     const [about, setAbout] = useState("");
     const [pay, setPay] = useState("");
     const [companyAbout, setCompanyAbout] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
-    const [submitted, setSubmitted] = useState(false);
-
-
-    const createCompany = api.company.createProfile.useMutation({
-        onSuccess: () => {
-            setIsNextLoading(false);
-            toast("Success", {
-                description: "Career has been created at " + formatDate(Date()),
-            });
-        },
-    });
+    const [submitted, setSubmitted] = useState(true);
 
     function onSubmit() {
         setIsLoading(true);
         setSubmitted(true);
-        createCompany.mutate({
-
+        addFormVals({
+            about,
+            pay,
+            companyAbout,
+        });
+        setIsNextLoading(false);
+        toast("Success", {
+            description: "Career has been created at " + formatDate(Date()),
         });
     }
 
@@ -116,7 +108,7 @@ export function Form3({ onNextClick }: FormProps) {
                                     ) : (
                                         <></>
                                     )}{" "}
-                                    Create Company
+                                    Submit
                                 </button>
                             </div>
                         </form>
@@ -124,12 +116,14 @@ export function Form3({ onNextClick }: FormProps) {
                 </div>
             </div>
             {submitted ? (
-                <div className="flex justify-center items-center">
-                    <div className="border border-dashed border-primary/60 p-2 flex justify-center items-center rounded-xl mt-2">
-                        {/* Next Button */}
-
-                        <button onClick={onNextClick} className={cn(buttonVariants({ variant: "default" }), " rounded-xl w-26")}>
-                            Next
+                <div className="flex justify-center items-center gap-x-4 ">
+                    <div className="border border-dashed border-primary/60 p-2 flex justify-center items-center gap-x-4 rounded-xl mt-2">
+                        <button onClick={onBackClick} className={cn(buttonVariants({ variant: "outline" }), " rounded-xl w-26")}>
+                            <Icons.chevronLeft className="h-5 w-5 mr-2" />
+                            Back
+                        </button>
+                        <button onClick={onSubmitClick} className={cn(buttonVariants({ variant: "default" }), " rounded-xl w-26")}>
+                            Add to Profile
                             <Icons.chevronRight className="h-5 w-5 ml-2" />
                         </button>
                     </div>

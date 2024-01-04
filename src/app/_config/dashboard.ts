@@ -73,12 +73,17 @@ export const dashboardCompanyConfig: DashboardConfig = {
       icon: "cog",
     },
     {
-      title: "Add/Edit Career",
+      title: "Edit Careers & Events",
+      href: "/company-dashboard/edit",
+      icon: "cog",
+    },
+    {
+      title: "Add Career",
       href: "/company-dashboard/add-career",
       icon: "briefcase",
     },
     {
-      title: "Add/Edit Event",
+      title: "Add Event",
       href: "/company-dashboard/add-event",
       icon: "calendarclock",
     },
@@ -93,7 +98,7 @@ export const dashboardCompanyConfig: DashboardConfig = {
       icon: "messagesquare",
     },
     {
-      title: "Add/Edit Contact Info",
+      title: "Add Contact Info",
       href: "/company-dashboard/add-contact-info",
       icon: "phone",
     },

@@ -9,7 +9,10 @@ import { InputData } from "@/app/_components/inputdata";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { buttonVariants } from "@/app/_components/ui/button";
-import { cn } from "@/server/utils";
+import { api } from "@/trpc/react";
+import { toast } from "@/app/_components/ui/sonner";
+import { formatDate } from "@/server/utils";
+
 import {
     Card,
     CardContent,
@@ -19,10 +22,55 @@ import {
     CardTitle,
 } from "@/app/_components/ui/card"
 
-export default function AddCompany() {
-    const [activeTab, setActiveTab] = useState("profile"); // Initial active tab
-    const router = useRouter();
-    const tabOrder = ["profile", "contact", "socialmedia", "teammembers", "data"];
+export default function AddCareer() {
+    const [position, setPosition] = useState("");
+    const [location, setLocation] = useState("");
+    const [applyLink, setApplyLink] = useState("");
+    const [companyLogo, setCompanyLogo] = useState("");
+    const [description, setDescription] = useState("");
+    const [pricingDescription, setPricingDescription] = useState("");
+    const [sizeDescription, setSizeDescription] = useState("");
+    const [skills, setSkills] = useState("");
+    const [jobLink, setJobLink] = useState("");
+    const [seeSrc, setSeeSrc] = useState("");
+    const [thumbnail, setThumbnail] = useState("");
+    const [about, setAbout] = useState("");
+    const [pay, setPay] = useState("");
+    const [companyAbout, setCompanyAbout] = useState("");
+    const [activeTab, setActiveTab] = useState("profile");
+    const tabOrder = ["profile", "contact", "socialmedia"];
+    const createCompanyProfile = api.test.createCompanyProfile.useMutation({
+        onSuccess: () => {
+            // setIsNextLoading(false);
+            toast("Success", {
+                description: "Event has been created at " + formatDate(Date()),
+            });
+        },
+    });
+
+
+    function addForm1Vals(form1Vals: any) {
+        setPosition(form1Vals.position);
+        setLocation(form1Vals.location);
+        setApplyLink(form1Vals.applyLink);
+        setCompanyLogo(form1Vals.companyLogo);
+        setDescription(form1Vals.description);
+    }
+
+    function addForm2Vals(form2Vals: any) {
+        setPricingDescription(form2Vals.pricingDescription);
+        setSizeDescription(form2Vals.sizeDescription);
+        setSkills(form2Vals.skills);
+        setJobLink(form2Vals.jobLink);
+        setSeeSrc(form2Vals.seeSrc);
+    }
+
+    function addForm3Vals(form3Vals: any) {
+        setThumbnail(form3Vals.thumbnail);
+        setAbout(form3Vals.about);
+        setPay(form3Vals.pay);
+        setCompanyAbout(form3Vals.companyAbout);
+    }
 
     function handleNextButtonClick() {
         const currentIndex = tabOrder.indexOf(activeTab);
@@ -31,10 +79,25 @@ export default function AddCompany() {
             const nextTab = tabOrder[currentIndex + 1];
             setActiveTab(nextTab!);
         }
+    }
 
-        if (activeTab === "data") {
-            router.push("/dashboard");
-        }
+    function handleSubmitClick() {
+        createCompanyProfile.mutate({
+            position,
+            location,
+            applyLink,
+            companyLogo,
+            description,
+            pricingDescription,
+            sizeDescription,
+            skills,
+            jobLink,
+            seeSrc,
+            thumbnail,
+            about,
+            pay,
+            companyAbout,
+        });
     }
 
     function handleBackButtonClick() {
@@ -53,7 +116,7 @@ export default function AddCompany() {
                     Go through the form processes to create a company profile
                 </p>
             </div>
-            <div className="flex flex-col justify-center w-full max-w-5xl">
+            <div className="flex flex-col justify-center w-full ">
                 <Tabs value={activeTab} className="mt-5">
                     <TabsList className="flex flex-row gap-x-6 overflow-x-auto">
                         <TabsTrigger value="profile">Company Profile</TabsTrigger>
@@ -64,31 +127,19 @@ export default function AddCompany() {
                     </TabsList>
                     <div className="w-full">
                         <TabsContent value="profile">
-                            <Form1 onNextClick={handleNextButtonClick} />
+                            <Form1 onNextClick={handleNextButtonClick} addFormVals={addForm1Vals} />
                         </TabsContent>
                         <TabsContent value="contact">
-                            <Form2 onNextClick={handleNextButtonClick} onBackClick={handleBackButtonClick} />
+                            <Form2 onNextClick={handleNextButtonClick} addFormVals={addForm2Vals} onBackClick={handleBackButtonClick} />
                         </TabsContent>
                         <TabsContent value="socialmedia">
-                            <Form3 onNextClick={handleNextButtonClick} onBackClick={handleBackButtonClick} />
+                            <Form3 onSubmitClick={handleSubmitClick} addFormVals={addForm3Vals} onBackClick={handleBackButtonClick} />
                         </TabsContent>
                         <TabsContent value="data">
                             <InputData />
                         </TabsContent>
                     </div>
                 </Tabs>
-
-            </div>
-            <div className="mt-5 border border-dased border-secondary rounded-xl p-2">
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Edit or Delete Testimonials</CardTitle>
-                        <CardDescription>Using the data table sort, filter to eedit delete testimonials</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-
-                    </CardContent>
-                </Card>
             </div>
         </div>
     );

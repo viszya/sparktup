@@ -8,11 +8,7 @@ import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
 import { toast } from "@/app/_components/ui/sonner";
 
-interface FormProps {
-    onNextClick: () => void;
-}
-
-export function Form1({ onNextClick }: FormProps) {
+export function Form1({ onNextClick, addFormVals }: any) {
     const [position, setPosition] = useState("");
     const [location, setLocation] = useState("");
     const [applyLink, setApplyLink] = useState("");
@@ -20,28 +16,23 @@ export function Form1({ onNextClick }: FormProps) {
     const [description, setDescription] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
-    const [submitted, setSubmitted] = useState(false);
-
-
-    const createCompany = api.company.createProfile.useMutation({
-        onSuccess: () => {
-            setIsNextLoading(false);
-            toast("Success", {
-                description: "Career has been created at " + formatDate(Date()),
-            });
-        },
-    });
+    const [submitted, setSubmitted] = useState(true);
 
     function onSubmit() {
         setIsLoading(true);
         setSubmitted(true);
-        createCompany.mutate({
+        addFormVals({
             position,
             location,
             applyLink,
             companyLogo,
             description,
         });
+        setIsNextLoading(false);
+        toast("Success", {
+            description: "Career has been created at " + formatDate(Date()),
+        });
+
     }
 
     return (
@@ -148,7 +139,7 @@ export function Form1({ onNextClick }: FormProps) {
                                     ) : (
                                         <></>
                                     )}{" "}
-                                    Create Company
+                                    Submit
                                 </button>
                             </div>
                         </form>
