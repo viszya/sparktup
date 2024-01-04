@@ -72,6 +72,9 @@ model User {
 
 model Company {
   id                     String               @id @default(cuid())
+  views                  Int                  @default(0)
+  applications           Int                  @default(0)
+  acceptedApplications   Int                  @default(0)
   companyName            String?
   linkedInMembers        String?
   logoSrc                String?

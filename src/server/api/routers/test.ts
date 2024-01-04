@@ -9,6 +9,21 @@ import { create } from "domain";
 
 
 export const testRouter = createTRPCRouter({
+    updateAccount: protectedProcedure
+        .input(z.object({
+            name: z.string(),
+        }))
+        .mutation(async ({ ctx, input }) => {
+            return ctx.db.user.update({
+                where: {
+                    id: ctx.session.user.id,
+                },
+                data: {
+                    name: input.name,
+                },
+            });
+        }),
+
     createCompanyProfile: protectedProcedure
         .input(z.object({
             companyName: z.string(),
@@ -194,6 +209,7 @@ export const testRouter = createTRPCRouter({
             eventBy: z.string(),
             about: z.string(),
             attendSrc: z.string(),
+            photoSrc: z.string(),
         }))
         .mutation(async ({ ctx, input }) => {
             return ctx.db.eventData.create({

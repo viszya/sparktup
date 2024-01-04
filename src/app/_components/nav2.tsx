@@ -69,6 +69,11 @@ export function MainNav({ items, children }: MainNavProps) {
             className="px-2 py-2 text-sm text-gray-900 lg:px-6 md:px-3 hover:text-red-400 transition-colors delay-75 rounded-2xl hover:bg-red-400/10">
             FAQ
           </Link>
+          <Link
+            href='/support'
+            className="px-2 py-2 text-sm text-gray-900 lg:px-6 md:px-3 hover:text-red-400 transition-colors delay-75 rounded-2xl hover:bg-red-400/10">
+            Support
+          </Link>
         </div>
       </nav>
       <button
