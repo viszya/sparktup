@@ -4,42 +4,42 @@ export const dashboardConfig: DashboardConfig = {
   mainNav: [
     {
       title: "FAQ",
-      href: "/dashboard/support",
+      href: "/faq",
     },
     {
       title: "Support",
-      href: "/dashboard/support",
+      href: "/support",
     },
   ],
   sidebarNav: [
     {
       title: "Home",
-      href: "/dashboard",
+      href: "/applicant-dashboard",
       icon: "home",
     },
     {
       title: "My Profile",
-      href: "/dashboard/profile",
+      href: "/applicant-dashboard/profile",
       icon: "user",
     },
     {
       title: "Add Projects",
-      href: "/dashboard/project",
-      icon: "copyplus",
+      href: "/applicant-dashboard/add-project",
+      icon: "package",
     },
     {
       title: "Add Recommendatinos",
-      href: "/dashboard/recommendation",
-      icon: "copyplus",
+      href: "/applicant-dashboard/add-recommendation",
+      icon: "usercheck",
     },
     {
       title: "Add Experiences",
-      href: "/dashboard/experience",
-      icon: "copyplus",
+      href: "/applicant-dashboard/add-experience",
+      icon: "sparkles",
     },
     {
       title: "Settings",
-      href: "/dashboard/settings",
+      href: "/applicant-dashboard/settings",
       icon: "settings",
     },
   ],
