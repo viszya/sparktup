@@ -1,6 +1,6 @@
 import { Footer } from "@/app/_components/footer";
 import { twp } from "@/server/utils";
-import Nav from "@/app/_components/nav";
+import Nav from "@/app/_components/main-nav";
 import { CTA } from "@/app/_components/cta";
 
 interface MarketingLayoutProps {

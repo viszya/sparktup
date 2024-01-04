@@ -6,7 +6,7 @@ import { api } from "@/trpc/react";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn } from "@/server/utils";
 
-export function Experience() {
+export default function Experience() {
   const [companyLogoSrc, setCompanyLogoSrc] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [companyImgSrc, setCompanyImgSrc] = useState("");

@@ -19,6 +19,7 @@ export const testRouter = createTRPCRouter({
             industry: z.string(),
             companySize: z.string(),
             size: z.string(),
+            companyBannerImgSrc: z.string(),
             foundingYear: z.string(),
             missionValues: z.string(),
             missionAndValues: z.string(),
@@ -27,10 +28,10 @@ export const testRouter = createTRPCRouter({
             keyBenefits: z.string(),
             keyFeatures: z.string(),
             companyCulture: z.string(),
-            specialties: z.array(z.string()),
-            mediaGallery: z.array(z.string()),
             termsAndConditionsLink: z.string(),
             privacyPolicyLink: z.string(),
+            specialties: z.array(z.string()),
+            mediaGallery: z.array(z.string()),
         }))
         .mutation(async ({ ctx, input }) => {
             return ctx.db.user.update({
@@ -48,6 +49,7 @@ export const testRouter = createTRPCRouter({
                             industry: input.industry,
                             companySize: input.companySize,
                             size: input.size,
+                            companyBannerImgSrc: input.companyBannerImgSrc,
                             foundingYear: input.foundingYear,
                             missionValues: input.missionValues,
                             missionAndValues: input.missionAndValues,
@@ -56,10 +58,10 @@ export const testRouter = createTRPCRouter({
                             keyBenefits: input.keyBenefits,
                             keyFeatures: input.keyFeatures,
                             companyCulture: input.companyCulture,
-                            specialties: input.specialties,
-                            mediaGallery: input.mediaGallery,
                             termsAndConditionsLink: input.termsAndConditionsLink,
                             privacyPolicyLink: input.privacyPolicyLink,
+                            specialties: input.specialties,
+                            mediaGallery: input.mediaGallery,
                         }
                     }
 
@@ -67,108 +69,151 @@ export const testRouter = createTRPCRouter({
             });
         }),
 
+    // createSpeaker: protectedProcedure
+    //     .input(z.object({
+    //         id: z.string(),
+    //         name: z.string(),
+    //         role: z.string(),
+    //         photoSrc: z.string(),
+    //     }))
+    //     .mutation(async ({ ctx, input }) => {
+    //         return ctx.db.speaker.create({
+    //             data: {
+    //                 name: input.name,
+    //                 role: input.role,
+    //                 photoSrc: input.photoSrc,
+    //                 company: {
+    //                     connect: {
+    //                         id: input.id,
+    //                     },
+    //                 }
+    //             },
+    //         });
+    //     }),
+
 
     createTestimonial: protectedProcedure
         .input(z.object({
+            id: z.string(),
             clientName: z.string(),
             feedback: z.string(),
         }))
         .mutation(async ({ ctx, input }) => {
-            return ctx.db.user.update({
-                where: {
-                    id: ctx.session.user.id,
-                },
+            return ctx.db.testimonial.create({
                 data: {
+                    clientName: input.clientName,
+                    feedback: input.feedback,
                     company: {
-                        update: {
-                            where: {
-                                id: ctx.session.user.id,
-                            },
-                            data: {
-                                testimonials: {
-                                    create: {
-                                        clientName: input.clientName,
-                                        feedback: input.feedback,
-                                    }
-                                }
-                            },
-                        }
-                    },
+                        connect: {
+                            id: input.id,
+                        },
+                    }
                 },
             });
         }),
 
     createTeamMember: protectedProcedure
         .input(z.object({
+            id: z.string(),
             name: z.string(),
             role: z.string(),
             photoSrc: z.string(),
         }))
         .mutation(async ({ ctx, input }) => {
-            return ctx.db.user.update({
-                where: {
-                    id: ctx.session.user.id,
-                },
+            return ctx.db.teamMember.create({
                 data: {
-                    teamMembers: {
-                        create: {
-                            name: input.name,
-                            role: input.role,
-                            photoSrc: input.photoSrc,
+                    name: input.name,
+                    role: input.role,
+                    photoSrc: input.photoSrc,
+                    company: {
+                        connect: {
+                            id: input.id,
                         },
-                    },
+                    }
                 },
             });
         }),
 
+
     createCareerOpportunity: protectedProcedure
         .input(z.object({
+            id: z.string(),
             position: z.string(),
             location: z.string(),
             applyLink: z.string(),
+            companyLogo: z.string(),
+            description: z.string(),
+            pricingDescription: z.string(),
+            sizeDescription: z.string(),
+            skills: z.string(),
+            jobLink: z.string(),
+            seeSrc: z.string(),
+            thumbnail: z.string(),
+            about: z.string(),
+            pay: z.string(),
+            companyAbout: z.string(),
+
         }))
         .mutation(async ({ ctx, input }) => {
-            return ctx.db.user.update({
-                where: {
-                    id: ctx.session.user.id,
-                },
+            return ctx.db.careerOpportunity.create({
                 data: {
-                    careerOpportunities: {
-                        create: {
-                            position: input.position,
-                            location: input.location,
-                            applyLink: input.applyLink,
+                    position: input.position,
+                    location: input.location,
+                    applyLink: input.applyLink,
+                    companyLogo: input.companyLogo,
+                    description: input.description,
+                    pricingDescription: input.pricingDescription,
+                    sizeDescription: input.sizeDescription,
+                    skills: input.skills,
+                    jobLink: input.jobLink,
+                    seeSrc: input.seeSrc,
+                    thumbnail: input.thumbnail,
+                    about: input.about,
+                    pay: input.pay,
+                    companyAbout: input.companyAbout,
+                    company: {
+                        connect: {
+                            id: input.id,
                         },
-                    },
+                    }
                 },
             });
         }),
 
     createEvent: protectedProcedure
         .input(z.object({
+            id: z.string(),
             date: z.string(),
             title: z.string(),
             location: z.string(),
             imgsrc: z.string(),
             attendees: z.string(),
             viewLink: z.string(),
+            seeSrc: z.string(),
+            eventType: z.string(),
+            eventBy: z.string(),
+            about: z.string(),
+            attendSrc: z.string(),
         }))
         .mutation(async ({ ctx, input }) => {
-            return ctx.db.user.update({
-                where: {
-                    id: ctx.session.user.id,
-                },
+            return ctx.db.eventData.create({
                 data: {
-                    events: {
-                        create: {
-                            date: input.date,
-                            title: input.title,
-                            location: input.location,
-                            imgsrc: input.imgsrc,
-                            attendees: input.attendees,
-                            viewLink: input.viewLink,
+                    date: input.date,
+                    title: input.title,
+                    location: input.location,
+                    seeSrc: input.seeSrc,
+                    imgsrc: input.imgsrc,
+                    eventBy: input.eventBy,
+                    attendees: input.attendees,
+                    viewLink: input.viewLink,
+                    eventType: input.eventType,
+                    about: input.about,
+                    attendSrc: input.attendSrc,
+                    company: {
+                        connect: {
+                            id: input.id,
                         },
-                    },
+                    }
                 },
             });
         }),
@@ -178,22 +223,51 @@ export const testRouter = createTRPCRouter({
             email: z.string(),
             phone: z.string(),
             address: z.string(),
+            id: z.string(),
         }))
         .mutation(async ({ ctx, input }) => {
-            return ctx.db.user.update({
-                where: {
-                    id: ctx.session.user.id,
-                },
+            return ctx.db.contactInformation.create({
                 data: {
-                    contactInformation: {
-                        create: {
-                            email: input.email,
-                            phone: input.phone,
-                            address: input.address,
+                    email: input.email,
+                    phone: input.phone,
+                    address: input.address,
+                    company: {
+                        connect: {
+                            id: input.id,
                         },
-                    },
+                    }
                 },
             });
         }),
+
+    getCompanyProfilePrivate: protectedProcedure
+        .query(async ({ ctx }) => {
+            return ctx.db.user.findUnique({
+                where: {
+                    id: ctx.session.user.id,
+                },
+                include: {
+                    company: true,
+                },
+            });
+        }),
+
+    getCompanyProfile: publicProcedure
+        .input(z.object({
+            id: z.string(),
+        }))
+        .query(async ({ ctx, input }) => {
+            return ctx.db.user.findUnique({
+                where: {
+                    id: input.id,
+                },
+                include: {
+                    company: true,
+                },
+            });
+        }),
+
+
+
 });
 

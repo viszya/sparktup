@@ -11,6 +11,8 @@ import {
     DropdownMenuContent,
     DropdownMenuLabel,
     DropdownMenuTrigger,
+    DropdownMenuItem,
+    DropdownMenuSeparator,
 } from "@/app/_components/ui/dropdown-menu"
 
 
@@ -62,7 +64,7 @@ export function Nav() {
                             FAQ
                         </Link>
                     </div>
-                    <div className="hidden mx-10 md:block lg:ml-auto">
+                    {/* <div className="hidden mx-10 md:block lg:ml-auto">
                         <div className="relative">
                             <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                                 <svg className="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
@@ -72,33 +74,106 @@ export function Nav() {
 
                             <input type="text" className="w-full py-2 pl-10 pr-4 text-black bg-white border border-gray-200 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-500 sm:text-sm rounded-xl placeholder:text-gray-400 focus:border-blue-500" placeholder="Search" />
                         </div>
+                    </div> */}
+                    <div className='flex justify-center items-center'>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger>
+                                <div className='border bg-gray-200/20 rounded-full p-1 text-gray-700 hover:animate-spin transition-all duration-100'>
+                                    <Icons.settings height="20" width="20" />
+                                </div>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent>
+                                <DropdownMenuLabel><button
+                                    type="button"
+                                    className={cn(buttonVariants({ variant: "outline" }), "rounded-2xl w-full")}
+                                    onClick={() => {
+                                        setIsGitHubLoading(true)
+                                        signOut({ callbackUrl: "/" })
+                                    }}
+                                    disabled={isLoading || isGitHubLoading}
+                                >
+                                    {isGitHubLoading ? (
+                                        <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+                                    ) : (<></>
+                                    )}{" "}
+                                    Signout
+                                </button></DropdownMenuLabel>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+
+                        <DropdownMenu>
+                            <DropdownMenuTrigger className='ml-2 border bg-gray-200/20 rounded-full p-1 text-gray-700 hover:animate-spin transition-all duration-100'>
+                                <Icons.menu className="w-5 h-5 text-primary" />
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent className='p-2 '>
+                                <DropdownMenuItem className='flex justify-center items-center px-0'>
+                                    <Link
+                                        href='//dashboard'
+                                        className="w-full text-center px-2 py-2 text-sm text-primary lg:px-6 transition-colors delay-75 rounded-2xl hover:bg-teal-400/10 md:px-3 hover:text-teal-400 ">
+                                        Home
+                                    </Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem className='flex justify-center items-center px-0'>
+                                    <Link
+                                        href='/dashboard/profile'
+                                        className="w-full text-center px-2 py-2 text-sm text-primary lg:px-6 transition-colors delay-75 rounded-2xl hover:bg-teal-400/10 md:px-3 hover:text-teal-400 ">
+                                        My Profile
+                                    </Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem className='flex justify-center items-center px-0'>
+                                    <Link
+                                        href='/dashboard/project'
+                                        className="w-full text-center px-2 py-2 text-sm text-primary lg:px-6 transition-colors delay-75 rounded-2xl hover:bg-teal-400/10 md:px-3 hover:text-teal-400 ">
+                                        Add Projects
+                                    </Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem className='flex justify-center items-center px-0'>
+                                    <Link
+                                        href='/dashboard/recommendation'
+                                        className="w-full text-center px-2 py-2 text-sm text-primary lg:px-6 transition-colors delay-75 rounded-2xl hover:bg-teal-400/10 md:px-3 hover:text-teal-400 ">
+                                        Add Recommendations
+                                    </Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem className='flex justify-center items-center px-0'>
+                                    <Link
+                                        href='/dashboard/experience'
+                                        className="w-full text-center px-2 py-2 text-sm text-primary lg:px-6 transition-colors delay-75 rounded-2xl hover:bg-teal-400/10 md:px-3 hover:text-teal-400 ">
+                                        Add Experiences
+                                    </Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem className='flex justify-center items-center px-0'>
+                                    <Link
+                                        href='/dashboard/settings'
+                                        className="w-full text-center px-2 py-2 text-sm text-primary lg:px-6 transition-colors delay-75 rounded-2xl hover:bg-teal-400/10 md:px-3 hover:text-teal-400 ">
+                                        Settings
+                                    </Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuSeparator />
+
+                                <DropdownMenuItem className='flex justify-center items-center px-0'>
+                                    <Link
+                                        href='/company'
+                                        className="w-full text-center px-2 py-2 text-sm text-primary lg:px-6 transition-colors delay-75 rounded-2xl hover:bg-teal-400/10 md:px-3 hover:text-teal-400 ">
+                                        Companies
+                                    </Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem className='flex justify-center items-center px-0'>
+                                    <Link
+                                        href='/applicant'
+                                        className="w-full text-center px-2 py-2 text-sm text-primary lg:px-6 transition-colors delay-75 rounded-2xl hover:bg-teal-400/10 md:px-3 hover:text-teal-400 ">
+                                        Applicants
+                                    </Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem className='flex justify-center items-center px-0'>
+                                    <Link
+                                        href='/faq'
+                                        className="w-full text-center px-2 py-2 text-sm text-primary lg:px-6 transition-colors delay-75 rounded-2xl hover:bg-teal-400/10 md:px-3 hover:text-teal-400 ">
+                                        FAQ
+                                    </Link>
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                     </div>
-
-                    <DropdownMenu>
-                        <DropdownMenuTrigger>
-                            <div className='border bg-gray-200/20 rounded-full p-1 text-gray-700 hover:animate-spin transition-all duration-100'>
-                                <Icons.settings height="20" width="20" />
-                            </div>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent>
-                            <DropdownMenuLabel><button
-                                type="button"
-                                className={cn(buttonVariants({ variant: "outline" }), "rounded-2xl w-full")}
-                                onClick={() => {
-                                    setIsGitHubLoading(true)
-                                    signOut({ callbackUrl: "/" })
-                                }}
-                                disabled={isLoading || isGitHubLoading}
-                            >
-                                {isGitHubLoading ? (
-                                    <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-                                ) : (<></>
-                                )}{" "}
-                                Signout
-                            </button></DropdownMenuLabel>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-
                 </nav>
             </div>
         </div>

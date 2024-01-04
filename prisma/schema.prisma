@@ -68,7 +68,6 @@ model User {
   topSkills         TopSkill[]
   recommendations   Recommendation[]
   company           Company[]
-  companyId         String?
 }
 
 model Company {
@@ -81,6 +80,7 @@ model Company {
   industry               String?
   companySize            String?
   size                   String?
+  companyBannerImgSrc    String?
   foundingYear           String?
   missionValues          String?
   missionAndValues       String?
@@ -92,11 +92,11 @@ model Company {
   termsAndConditionsLink String?
   privacyPolicyLink      String?
   specialties            String[]
+  mediaGallery           String[]
   contactInformation     ContactInformation[]
   testimonials           Testimonial[]
   teamMembers            TeamMember[]
   careerOpportunities    CareerOpportunity[]
-  mediaGallery           String[]
   eventData              EventData[]
   User                   User?                @relation(fields: [userId], references: [id])
   userId                 String?
@@ -104,49 +104,75 @@ model Company {
 
 model Testimonial {
   id         String  @id @default(cuid())
-  clientName String
-  feedback   String
+  clientName String?
+  feedback   String?
   company    Company @relation(fields: [companyId], references: [id])
   companyId  String
 }
 
 model TeamMember {
   id        String  @id @default(cuid())
-  name      String
-  role      String
-  photoSrc  String
+  name      String?
+  role      String?
+  photoSrc  String?
   company   Company @relation(fields: [companyId], references: [id])
   companyId String
 }
 
 model ContactInformation {
   id        String  @id @default(cuid())
-  email     String
-  phone     String
-  address   String
+  email     String?
+  phone     String?
+  address   String?
   company   Company @relation(fields: [companyId], references: [id])
   companyId String
 }
 
 model CareerOpportunity {
-  id        String  @id @default(cuid())
-  position  String
-  location  String
-  applyLink String
-  company   Company @relation(fields: [companyId], references: [id])
-  companyId String
+  id                 String  @id @default(cuid())
+  position           String?
+  location           String?
+  applyLink          String?
+  companyLogo        String?
+  description        String?
+  pricingDescription String?
+  sizeDescription    String?
+  skills             String?
+  jobLink            String?
+  seeSrc             String?
+  thumbnail          String?
+  about              String?
+  pay                String?
+  companyAbout       String?
+  company            Company @relation(fields: [companyId], references: [id])
+  companyId          String
 }
 
 model EventData {
-  id        String   @id @default(cuid())
-  date      DateTime
+  id        String    @id @default(cuid())
+  date      String
   title     String
   location  String
-  imgsrc    String
-  attendees String
-  viewLink  String
-  company   Company  @relation(fields: [companyId], references: [id])
+  imgsrc    String?
+  attendees String?
+  viewLink  String?
+  eventType String?
+  eventBy   String?
+  about     String?
+  seeSrc    String?
+  attendSrc String?
+  speakers  Speaker[]
+  company   Company   @relation(fields: [companyId], references: [id])
   companyId String
+}
+
+model Speaker {
+  id          String    @id @default(cuid())
+  name        String
+  imgsrc      String
+  position    String
+  eventData   EventData @relation(fields: [eventDataId], references: [id])
+  eventDataId String
 }
 
 model Experience {

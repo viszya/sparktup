@@ -4,7 +4,7 @@ import { Form1 } from "@/app/_components/dashboard/applicant-settings/form-1";
 import { Form2 } from "@/app/_components/dashboard/applicant-settings/form-2";
 import { InputData } from "@/app/_components/inputdata";
 
-export function Settings() {
+export default function Settings() {
   return (
     <div className="flex flex-col justify-center items-center p-4">
       <div className="mt-3 text-3xl tracking-tighter text-black">

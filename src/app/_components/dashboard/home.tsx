@@ -8,8 +8,8 @@ const data = {
 export function Home() {
     return (
         <div>
-            <div className="mt-4 mb-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">Stats</div>
-            <div className="flex flex-row gap-2">
+            <div className="mt-4 mb-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">Applications</div>
+            {/* <div className="flex flex-row gap-2">
                 <div className="w-full p-6 bg-red-100/50 rounded-xl border-2 border-red-100">
                     <div className="text-2xl font-medium leading-6">{data.connections}</div>
                     <div className="font-light">Connections</div>
@@ -26,8 +26,8 @@ export function Home() {
                     <div className="text-2xl font-medium leading-6">{data.jobOffers}</div>
                     <div className="font-light">Job Offers</div>
                 </div>
-            </div>
-            <div className="mt-4 mb-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">Feed</div>
+            </div> */}
+            {/* <div className="mt-4 mb-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">Feed</div> */}
         </div>
     )
 }

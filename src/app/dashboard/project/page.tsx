@@ -4,7 +4,7 @@ import { useToast } from "@/app/_components/ui/use-toast";
 import { useState } from "react";
 import { api } from "@/trpc/react";
 
-export function Project() {
+export default function Project() {
   const [name, setName] = useState("");
   const [src, setSrc] = useState("");
   const [link, setLink] = useState("");

@@ -4,7 +4,7 @@ import { useToast } from "@/app/_components/ui/use-toast";
 import { useState } from "react";
 import { api } from "@/trpc/react";
 
-export function Recommendation() {
+export default function Recommendation() {
   const [name, setName] = useState("");
   const [jobTitle, setJobTitle] = useState("");
   const [srcImage, setSrcImage] = useState("");
