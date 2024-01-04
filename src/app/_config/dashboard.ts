@@ -73,29 +73,29 @@ export const dashboardCompanyConfig: DashboardConfig = {
       icon: "cog",
     },
     {
-      title: "Add Contact Info",
-      href: "/company-dashboard/add-contact-info",
-      icon: "phone",
-    },
-    {
-      title: "Add Career",
+      title: "Add/Edit Career",
       href: "/company-dashboard/add-career",
       icon: "briefcase",
     },
     {
-      title: "Add Event",
+      title: "Add/Edit Event",
       href: "/company-dashboard/add-event",
       icon: "calendarclock",
     },
     {
-      title: "Add Team Member",
+      title: "Add/Edit Team Member",
       href: "/company-dashboard/add-team-member",
       icon: "UserPlus",
     },
     {
-      title: "Add Testimonial",
+      title: "Add/Edit Testimonial",
       href: "/company-dashboard/add-testimonial",
       icon: "messagesquare",
+    },
+    {
+      title: "Add/Edit Contact Info",
+      href: "/company-dashboard/add-contact-info",
+      icon: "phone",
     },
     {
       title: "Settings",

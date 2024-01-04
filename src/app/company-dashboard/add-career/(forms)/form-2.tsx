@@ -12,21 +12,23 @@ interface FormProps {
     onNextClick: () => void;
 }
 
-export function Form1({ onNextClick }: FormProps) {
-    const [submitted, setSubmitted] = useState(false);
-    const [name, setName] = useState("");
-    const [image, setImage] = useState("");
-    const [industry, setIndustry] = useState("");
-    const [description, setDescription] = useState("");
-    const [partner, setPartner] = useState(false);
+export function Form2({ onNextClick }: FormProps) {
+    const [pricingDescription, setPricingDescription] = useState("");
+    const [sizeDescription, setSizeDescription] = useState("");
+    const [skills, setSkills] = useState("");
+    const [jobLink, setJobLink] = useState("");
+    const [seeSrc, setSeeSrc] = useState("");
+    const [thumbnail, setThumbnail] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
+    const [submitted, setSubmitted] = useState(false);
+
 
     const createCompany = api.company.createProfile.useMutation({
         onSuccess: () => {
-            setIsLoading(false);
-            toast({
-                title: "Success (Click the next button to continue)",
-                description: "Company profile created at " + formatDate(Date()),
+            setIsNextLoading(false);
+            toast("Success", {
+                description: "Career has been created at " + formatDate(Date()),
             });
         },
     });
@@ -35,11 +37,12 @@ export function Form1({ onNextClick }: FormProps) {
         setIsLoading(true);
         setSubmitted(true);
         createCompany.mutate({
-            name,
-            image,
-            industry,
-            description,
-            partner,
+            pricingDescription,
+            sizeDescription,
+            skills,
+            jobLink,
+            seeSrc,
+            thumbnail,
         });
     }
 
@@ -72,66 +75,82 @@ export function Form1({ onNextClick }: FormProps) {
                             }}
                         >
                             <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Company Name
+                                <label className="block mb-3 text-sm font-medium text-primary/90" >
+                                    What is the pricing description of the job?
                                 </label>
                                 <Input
-                                    placeholder="My Company"
+                                    placeholder="Pricing description"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
-                                    value={name}
                                     required
-                                    onChange={(e) => setName(e.target.value)}
+                                    value={pricingDescription}
+                                    onChange={(e) => setPricingDescription(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Company Logo (Image URL)
+                                    What is the size description of the job?
                                 </label>
                                 <Input
-                                    placeholder="https://example.com/logo.png"
+                                    placeholder="Size description"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
-                                    value={image}
-                                    onChange={(e) => setImage(e.target.value)}
+                                    required
+                                    value={sizeDescription}
+                                    onChange={(e) => setSizeDescription(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Industry
+                                <label className="block mb-3 text-sm font-medium text-primary/90" >
+                                    What is the skills of the job?
                                 </label>
                                 <Input
-                                    placeholder="Technology"
+                                    placeholder="Skills"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
-                                    value={industry}
-                                    onChange={(e) => setIndustry(e.target.value)}
+                                    required
+                                    value={skills}
+                                    onChange={(e) => setSkills(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Description
+                                    What is the job link of the job?
                                 </label>
                                 <Input
-                                    placeholder="A brief description of the company"
+                                    placeholder="https://example.com/job"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
-                                    value={description}
-                                    onChange={(e) => setDescription(e.target.value)}
+                                    required
+                                    value={jobLink}
+                                    onChange={(e) => setJobLink(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Is this company a business partner your organization engages with?  <br />
-                                    <em className="text-primary/80">Leave Un-Checked if they are not a partner </em>
+                                <label className="block mb-3 text-sm font-medium text-primary/90" >
+                                    What is the see source of the job?
                                 </label>
-                                <input
-                                    className="rounded-xl placeholder:text-primary/40 border-primary/20 mr-2"
-                                    type="checkbox"
-                                    checked={partner}
-                                    onChange={() => setPartner(!partner)}
+                                <Input
+                                    placeholder="https://example.com/see"
+                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                    type="text"
+                                    required
+                                    value={seeSrc}
+                                    onChange={(e) => setSeeSrc(e.target.value)}
                                 />
-                                <span className="text-primary/80 text-sm">Yes, this company is a partner</span>
+                            </div>
+                            <div className="col-span-full">
+                                <label className="block mb-3 text-sm font-medium text-primary/90" >
+                                    What is the thumbnail of the job?
+                                </label>
+                                <Input
+                                    placeholder="https://example.com/thumbnail"
+                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                    type="text"
+                                    required
+                                    value={thumbnail}
+                                    onChange={(e) => setThumbnail(e.target.value)}
+                                />
                             </div>
                             <div className="col-span-full">
                                 <button

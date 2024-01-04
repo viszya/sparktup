@@ -9,6 +9,7 @@ import { Input } from "@/app/_components/ui/input";
 import { toast } from "sonner"
 
 
+
 export default function AddContactInfo() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -21,7 +22,7 @@ export default function AddContactInfo() {
   const createContactInformation = api.test.createContactInformation.useMutation({
     onSuccess: () => {
       setIsNextLoading(false);
-      toast("Success",{
+      toast("Success", {
         description: "Your profile has been updated at " + formatDate(Date()),
       });
     },
@@ -60,7 +61,7 @@ export default function AddContactInfo() {
                   <label className="block mb-3 text-sm font-medium text-primary/90">
                     What is the main company email address?
                   </label>
-                  <Input 
+                  <Input
                     placeholder="company@example.com"
                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                     type="email"
@@ -113,6 +114,7 @@ export default function AddContactInfo() {
           </div>
         </div>
       </div>
+    
     </div>
 
   );

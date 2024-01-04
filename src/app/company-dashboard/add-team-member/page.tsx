@@ -7,7 +7,14 @@ import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
 import { toast } from "sonner"
-
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/app/_components/ui/card"
 
 export default function AddContactInfo() {
     const [name, setName] = useState("");
@@ -112,6 +119,17 @@ export default function AddContactInfo() {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="mt-5 border border-dased border-secondary rounded-xl p-2">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Edit or Delete Testimonials</CardTitle>
+                        <CardDescription>Using the data table sort, filter to eedit delete testimonials</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+
+                    </CardContent>
+                </Card>
             </div>
         </div>
 

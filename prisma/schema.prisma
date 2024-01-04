@@ -68,6 +68,7 @@ model User {
   topSkills         TopSkill[]
   recommendations   Recommendation[]
   company           Company[]
+  Application       Application[]
 }
 
 model Company {
@@ -101,6 +102,7 @@ model Company {
   teamMembers            TeamMember[]
   careerOpportunities    CareerOpportunity[]
   eventData              EventData[]
+  Application            Application[]
   User                   User?                @relation(fields: [userId], references: [id])
   userId                 String?
 }
@@ -227,4 +229,26 @@ model ApplicantStats {
   jobApplications Int    @default(0)
   jobOffers       Int    @default(0)
   connections     Int    @default(0)
+}
+
+model Application {
+  id              String            @id @default(cuid())
+  nID             Int               @default(0000)
+  status          String            @default("Not Viewed")
+  applicationForm ApplicationForm[]
+  company         Company           @relation(fields: [companyId], references: [id])
+  companyId       String
+  applicant       User?             @relation(fields: [applicantId], references: [id])
+  applicantId     String
+}
+
+model ApplicationForm {
+  id            String      @id @default(cuid())
+  name          String
+  email         String
+  phone         String
+  coverLetter   String
+  resume        String
+  application   Application @relation(fields: [applicationId], references: [id])
+  applicationId String
 }
