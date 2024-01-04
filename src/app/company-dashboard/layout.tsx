@@ -23,6 +23,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
 } from "@/app/_components/ui/dropdown-menu"
+import { dashboardCompanyConfig } from "@/app/_config/dashboard"
 
 interface DashboardLayoutProps {
   children?: React.ReactNode
@@ -38,7 +39,7 @@ export default function DashboardLayout({
     <div className="flex min-h-screen flex-col space-y-6">
       <header className="sticky top-0 z-40 border-b bg-background">
         <div className="mx-32 lg:mx-10 md:mx-8 sm:mx-2  flex h-16 items-center justify-between py-4">
-          <MainNav items={dashboardConfig.mainNav} />
+          <MainNav items={dashboardCompanyConfig.mainNav} />
           <div className='flex justify-center items-center'>
             <DropdownMenu>
               <DropdownMenuTrigger>
@@ -143,7 +144,7 @@ export default function DashboardLayout({
 
       <div className="mx-32 lg:mx-10 md:mx-8 sm:mx-2 grid flex-1 gap-12 md:grid-cols-[150px_1fr]">
         <aside className="hidden w-[200px] flex-col md:flex">
-          <DashboardNav items={dashboardConfig.sidebarNav} />
+          <DashboardNav items={dashboardCompanyConfig.sidebarNav} />
         </aside>
         <main className="flex w-full flex-1 flex-col overflow-hidden">
           {children}

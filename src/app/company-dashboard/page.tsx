@@ -18,10 +18,15 @@ export default function Dashboard() {
 	//     redirect("/unauthorized")
 	// }
 	return (
-		<main >
-			<div className="justify-center items-center my-10 mr-8">
-				<div className="mt-4 mb-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">Applications</div>
+		<div className="flex flex-col px-8">
+			<div>
+				<h2 className="text-3xl font-bold tracking-tight">Settings</h2>
+				<p className="text-muted-foreground">
+					Update your personal account settings
+				</p>
 			</div>
-		</main>
+			<div className="flex flex-col justify-center w-full max-w-5xl">
+			</div>
+		</div>
 	);
 }
