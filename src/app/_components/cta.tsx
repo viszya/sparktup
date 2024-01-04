@@ -6,9 +6,9 @@ import Link from "next/link";
 export function CTA() {
     return (
        <div className={cn(twp().wrapper, "")}>
-          <div className="mt-10 px-20 py-6 bg-red-100/50 border-2 border-red-100 rounded-3xl flex flex-row items-center">
+          <div className="mt-10 mx-8 px-20 py-6 bg-red-100/50 border-2 border-red-100 rounded-2xl flex flex-row items-center">
                 <div className="flex-1">
-                    <p className="flex flex-row items-center text-3xl text-black ">
+                    <p className="flex flex-row items-center text-2xl font-semibold text-black ">
                         Sparktup - Where Dreams Take Flight.
                     </p>
                 </div>

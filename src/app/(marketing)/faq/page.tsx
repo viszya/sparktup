@@ -10,8 +10,8 @@ import { cn } from "@/server/utils";
 export default function Page() {
     return (
         <div className={cn("flex flex-col justify-center items-center", twp().wrapper)}>
-            <h2 className="mt-10 sm:mt-20 text-center text-3xl md:text-4xl font-semibold">FAQ</h2>
-            <Accordion type="single" collapsible className="text-left w-full max-w-md md:max-w-lg lg:max-w-2xl mt-6">
+            <h2 className="text-3xl font-bold tracking-tight mt-10 mb-5">FAQ</h2>
+            <Accordion type="single" collapsible className="text-left w-full max-w-md md:max-w-lg lg:max-w-2xl sm:max-w-3xl mt-2 mb-6 rounded-xl border border-dashed border-secondary p-4 px-6">
                 {/* Question 1 */}
                 <AccordionItem value="item-1">
                     <AccordionTrigger className="text-left">How can my company partner with Sparktup for hiring?</AccordionTrigger>

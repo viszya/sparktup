@@ -6,7 +6,7 @@ import Link from "next/link";
 export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
     return (
         <footer className={cn(" border-gray-200", className)}>
-            <div className=" py-12 mx-8 max-w-7xl">
+            <div className=" pb-12 mx-8 max-w-7xl">
                 <div className="flex flex-col items-start justify-between pt-16 pb-6 gap-y-12 lg:flex-row lg:items-center lg:py-16">
                     <div>
                         <div className="flex items-center text-black">

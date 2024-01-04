@@ -15,12 +15,12 @@ export const dashboardConfig: DashboardConfig = {
     {
       title: "Home",
       href: "/dashboard",
-      icon: "database",
+      icon: "home",
     },
     {
       title: "My Profile",
       href: "/dashboard/profile",
-      icon: "copyplus",
+      icon: "user",
     },
     {
       title: "Add Projects",
@@ -60,42 +60,42 @@ export const dashboardCompanyConfig: DashboardConfig = {
     {
       title: "Home",
       href: "/company-dashboard",
-      icon: "database",
+      icon: "home",
     },
     {
       title: "My Profile",
       href: "/company-dashboard/profile",
-      icon: "copyplus",
+      icon: "usercircle",
     },
     {
       title: "Update Profile",
       href: "/company-dashboard/update-profile",
-      icon: "copyplus",
+      icon: "cog",
     },
     {
       title: "Add Contact Info",
       href: "/company-dashboard/add-contact-info",
-      icon: "copyplus",
+      icon: "phone",
     },
     {
       title: "Add Career",
       href: "/company-dashboard/add-career",
-      icon: "copyplus",
+      icon: "briefcase",
     },
     {
       title: "Add Event",
       href: "/company-dashboard/add-event",
-      icon: "copyplus",
+      icon: "calendarclock",
     },
     {
       title: "Add Team Member",
       href: "/company-dashboard/add-team-member",
-      icon: "copyplus",
+      icon: "UserPlus",
     },
     {
       title: "Add Testimonial",
       href: "/company-dashboard/add-testimonial",
-      icon: "copyplus",
+      icon: "messagesquare",
     },
     {
       title: "Settings",
