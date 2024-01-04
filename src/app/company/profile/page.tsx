@@ -21,7 +21,7 @@ import {
 
 
 const data = {
-  companyName: "Tech Solutions Inc.",
+  companyName: "Microsoft Corparation",
   linkedInMembers: "224,866 associated members",
   logoSrc: "/microsoft_logo.png",
   location: "San Francisco, CA, USA",

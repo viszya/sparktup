@@ -61,6 +61,7 @@ import {
   Briefcase,
   Phone,
   Home, 
+  FileEdit,
   UserCircle,
   UserCog,
 } from "lucide-react"
@@ -79,6 +80,7 @@ export const Icons = {
   pin: MapPin,
   briefcase: Briefcase,
   hourglass: Hourglass,
+  edit: FileEdit,
   users: Users,
   menu: Menu,
   messagesquare: MessageSquarePlus,

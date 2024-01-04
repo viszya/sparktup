@@ -75,7 +75,7 @@ export const dashboardCompanyConfig: DashboardConfig = {
     {
       title: "Edit Careers & Events",
       href: "/company-dashboard/edit",
-      icon: "cog",
+      icon: "edit",
     },
     {
       title: "Add Career",

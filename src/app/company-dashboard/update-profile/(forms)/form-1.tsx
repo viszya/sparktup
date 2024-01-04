@@ -68,7 +68,7 @@ export function Form1({ onNextClick, addFormVals }: any) {
                                     New Company Name?
                                 </label>
                                 <Input
-                                    placeholder="Google CorpCompany Name"
+                                    placeholder="Google, Microsoft, etc."
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -81,7 +81,7 @@ export function Form1({ onNextClick, addFormVals }: any) {
                                     How many Members/Employees?
                                 </label>
                                 <Input
-                                    placeholder="LinkedIn Members"
+                                    placeholder="10000+"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -91,10 +91,10 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Company Logo
+                                    Edit Logo:
                                 </label>
                                 <Input
-                                    placeholder="Company Logo"
+                                    placeholder="Current Logo"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -104,10 +104,10 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Location
+                                    Edit Company Location <i>City, State</i>
                                 </label>
                                 <Input
-                                    placeholder="Location"
+                                    placeholder="Seatte, WA"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -117,10 +117,10 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Website
+                                    Edit Website URL
                                 </label>
                                 <Input
-                                    placeholder="Website"
+                                    placeholder="google.com"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
