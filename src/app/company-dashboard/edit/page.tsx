@@ -28,13 +28,13 @@ export default function Edit() {
 				</p>
 			</div>
             <div className="mt-4">
-				<h2 className="text-xl font-bold tracking-tight">Anaylytics</h2>
+				<h2 className="text-xl font-bold tracking-tight">Careers</h2>
 			</div>
             <div className="mt-5 border border-dased border-secondary rounded-xl p-2">
                 <Card>
                     <CardHeader>
-                        <CardTitle>Edit or Delete Testimonials</CardTitle>
-                        <CardDescription>Using the data table sort, filter to eedit delete testimonials</CardDescription>
+                        <CardTitle>Edit or Delete Careers</CardTitle>
+                        <CardDescription>Using the data table sort, filter to edit delete careers</CardDescription>
                     </CardHeader>
                     <CardContent>
 
@@ -42,13 +42,13 @@ export default function Edit() {
                 </Card>
             </div>
             <div className="mt-4">
-				<h2 className="text-xl font-bold tracking-tight">Anaylytics</h2>
+				<h2 className="text-xl font-bold tracking-tight">Events</h2>
 			</div>
             <div className="mt-5 border border-dased border-secondary rounded-xl p-2">
                 <Card>
                     <CardHeader>
-                        <CardTitle>Edit or Delete Testimonials</CardTitle>
-                        <CardDescription>Using the data table sort, filter to eedit delete testimonials</CardDescription>
+                        <CardTitle>Edit or Delete Events</CardTitle>
+                        <CardDescription>Using the data table sort, filter to edit delete events</CardDescription>
                     </CardHeader>
                     <CardContent>
 

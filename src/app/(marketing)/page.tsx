@@ -73,7 +73,6 @@ export default function Home() {
     {/* Features */}
 
     <section>
-
       <div className="relative items-center w-full px-5 py-24 mx-auto md:px-12 lg:px-16 max-w-7xl border-1 mt-11 rounded-2xl ">
         <div className="w-full mx-auto text-left">
           <div className="relative flex-col items-center m-auto align-middle">
@@ -179,7 +178,7 @@ export default function Home() {
       </div>
       <div className="sm:w-1/2 p-5">
         <div className="text">
-          <span className="text-gray-500 border-b-2 border-red-400 uppercase">About us</span>
+          <span className="text-gray-500 border-b-2 border-red-400 uppercase">Our Mission</span>
           <h2 className="my-4 font-bold text-3xl  sm:text-4xl ">Igniting Tech Futures at <span className="text-red-400">Sparktup</span>
           </h2>
           <p className="text-gray-700">

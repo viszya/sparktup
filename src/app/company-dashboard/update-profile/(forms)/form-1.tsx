@@ -9,11 +9,11 @@ import { Input } from "@/app/_components/ui/input";
 import { toast } from "@/app/_components/ui/sonner";
 
 export function Form1({ onNextClick, addFormVals }: any) {
-    const [date, setDate] = useState("");
-    const [title, setTitle] = useState("");
+    const [companyName, setCompanyName] = useState("");
+    const [linkedInMembers, setLinkedInMembers] = useState("");
+    const [logoSrc, setLogoSrc] = useState("");
     const [location, setLocation] = useState("");
-    const [imgsrc, setImgsrc] = useState("");
-    const [attendees, setAttendees] = useState("");
+    const [website, setWebsite] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
     const [submitted, setSubmitted] = useState(true);
@@ -22,11 +22,11 @@ export function Form1({ onNextClick, addFormVals }: any) {
         setIsLoading(true);
         setSubmitted(true);
         addFormVals({
-            date,
-            title,
+            companyName,
+            linkedInMembers,
+            logoSrc,
             location,
-            imgsrc,
-            attendees,
+            website,
         });
         setIsNextLoading(false);
         toast("Success", {
@@ -65,28 +65,41 @@ export function Form1({ onNextClick, addFormVals }: any) {
                         >
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Date
+                                    What is the Company Name?
                                 </label>
                                 <Input
-                                    placeholder="Date"
+                                    placeholder="Company Name"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={date}
-                                    onChange={(e) => setDate(e.target.value)}
+                                    value={companyName}
+                                    onChange={(e) => setCompanyName(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Title
+                                    How many LinkedIn Members?
                                 </label>
                                 <Input
-                                    placeholder="Title"
+                                    placeholder="LinkedIn Members"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={title}
-                                    onChange={(e) => setTitle(e.target.value)}
+                                    value={linkedInMembers}
+                                    onChange={(e) => setLinkedInMembers(e.target.value)}
+                                />
+                            </div>
+                            <div className="col-span-full">
+                                <label className="block mb-3 text-sm font-medium text-primary/90">
+                                    Company Logo
+                                </label>
+                                <Input
+                                    placeholder="Company Logo"
+                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                    type="text"
+                                    required
+                                    value={logoSrc}
+                                    onChange={(e) => setLogoSrc(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
@@ -104,28 +117,15 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Image Source
+                                    Website
                                 </label>
                                 <Input
-                                    placeholder="Image Source"
+                                    placeholder="Website"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={imgsrc}
-                                    onChange={(e) => setImgsrc(e.target.value)}
-                                />
-                            </div>
-                            <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Attendees
-                                </label>
-                                <Input
-                                    placeholder="Attendees"
-                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                    type="text"
-                                    required
-                                    value={attendees}
-                                    onChange={(e) => setAttendees(e.target.value)}
+                                    value={website}
+                                    onChange={(e) => setWebsite(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">

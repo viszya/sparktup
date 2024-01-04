@@ -4,15 +4,6 @@ import { Home } from "@/app/_components/dashboard/home";
 import Nav from "@/app/_components/main-nav"
 import { Toaster } from "@/app/_components/ui/toaster"
 import { redirect } from "next/navigation"
-import {
-	Table,
-	TableBody,
-	TableCaption,
-	TableCell,
-	TableHead,
-	TableHeader,
-	TableRow,
-} from "@/app/_components/ui/table"
 import { Separator } from "@/app/_components/ui/separator"
 import {
 	Card,
@@ -22,6 +13,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/app/_components/ui/card"
+import { DataPage } from "@/app/company-dashboard/(data-table)/datatable"
 
 
 export default function Dashboard() {
@@ -61,38 +53,10 @@ export default function Dashboard() {
 
 			</div>
 
-			<div className="mt-4">
+			<div className="mt-4 mb-4">
 				<h2 className="text-xl font-bold tracking-tight">Recent Applications</h2>
 			</div>
-			<div className="flex flex-col justify-center w-full max-w-5xl p-2 border border-secondary rounded-xl mt-2">
-				<Table>
-					<TableCaption>View Applicant Profiles to either Accept or Deny</TableCaption>
-					<TableHeader>
-						<TableRow>
-							<TableHead className="w-[100px]">Application</TableHead>
-							<TableHead>Priority</TableHead>
-							<TableHead>Status</TableHead>
-							<TableHead>Job Position</TableHead>
-							<TableHead className="text-right">Applicant</TableHead>
-							<TableHead className="text-right">Profile</TableHead>
-							<TableHead className="text-right">Application Form</TableHead>
-
-						</TableRow>
-					</TableHeader>
-					<TableBody>
-						<TableRow>
-							<TableCell className="font-medium">AP001</TableCell>
-							<TableCell><Icons.arrowRight className="w-4 h-4 text-primary"/></TableCell>
-							<TableCell>Not Viewed</TableCell>
-							<TableCell>iOS Developper</TableCell>
-							<TableCell className="text-right">Alexandr Sangsberg</TableCell>
-							<TableCell className="text-right">View</TableCell>
-							<TableCell className="text-right">View</TableCell>
-						</TableRow>
-					</TableBody>
-				</Table>
-
-			</div>
+			<DataPage />
 		</div>
 	);
 }

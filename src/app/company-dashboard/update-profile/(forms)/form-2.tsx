@@ -10,10 +10,11 @@ import { toast } from "@/app/_components/ui/sonner";
 
 
 export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
-    const [viewLink, setViewLink] = useState("");
-    const [eventType, setEventType] = useState("");
-    const [eventBy, setEventBy] = useState("");
-    const [about, setAbout] = useState("");
+    const [industry, setIndustry] = useState("");
+    const [companySize, setCompanySize] = useState("");
+    const [size, setSize] = useState("");
+    const [companyBannerImgSrc, setCompanyBannerImgSrc] = useState("");
+    const [foundingYear, setFoundingYear] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
     const [submitted, setSubmitted] = useState(true);
@@ -22,10 +23,11 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
         setIsLoading(true);
         setSubmitted(true);
         addFormVals({
-            viewLink,
-            eventType,
-            eventBy,
-            about,
+            industry,
+            companySize,
+            size,
+            companyBannerImgSrc,
+            foundingYear,
         });
         setIsNextLoading(false);
         toast("Success", {
@@ -61,58 +63,77 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                                 onSubmit();
                             }}
                         >
-                            <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    View Link
-                                </label>
-                                <Input
-                                    placeholder="View Link"
-                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                    type="text"
-                                    required
-                                    value={viewLink}
-                                    onChange={(e) => setViewLink(e.target.value)}
-                                />
-                            </div>
-                            <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Event Type
-                                </label>
-                                <Input
-                                    placeholder="Event Type"
-                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                    type="text"
-                                    required
-                                    value={eventType}
-                                    onChange={(e) => setEventType(e.target.value)}
-                                />
-                            </div>
-                            <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Event By
-                                </label>
-                                <Input
-                                    placeholder="Event By"
-                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                    type="text"
-                                    required
-                                    value={eventBy}
-                                    onChange={(e) => setEventBy(e.target.value)}
-                                />
-                            </div>
-                            <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    About
-                                </label>
-                                <Input
-                                    placeholder="About"
-                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                    type="text"
-                                    required
-                                    value={about}
-                                    onChange={(e) => setAbout(e.target.value)}
-                                />
-                            </div>
+                             <div className="col-span-full">
+                                    <label className="block mb-3 text-sm font-medium text-primary/90">
+                                        Industry
+                                    </label>
+                                    <Input
+                                        placeholder="Industry"
+                                        className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                        type="text"
+                                        required
+                                        value={industry}
+                                        onChange={(e) => setIndustry(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className="col-span-full">
+                                    <label className="block mb-3 text-sm font-medium text-primary/90">
+                                        Company Size
+                                    </label>
+                                    <Input
+                                        placeholder="Company Size"
+                                        className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                        type="text"
+                                        required
+                                        value={companySize}
+                                        onChange={(e) => setCompanySize(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className="col-span-full">
+                                    <label className="block mb-3 text-sm font-medium text-primary/90">
+                                        Size
+                                    </label>
+                                    <Input
+                                        placeholder="Size"
+                                        className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                        type="text"
+                                        required
+                                        value={size}
+                                        onChange={(e) => setSize(e.target.value)}
+                                    />
+
+                                </div>
+
+                                <div className="col-span-full">
+                                    <label className="block mb-3 text-sm font-medium text-primary/90">
+                                        Company Banner Image
+                                    </label>
+                                    <Input
+                                        placeholder="Company Banner Image"
+                                        className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                        type="text"
+                                        required
+                                        value={companyBannerImgSrc}
+                                        onChange={(e) => setCompanyBannerImgSrc(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className="col-span-full">
+                                    <label className="block mb-3 text-sm font-medium text-primary/90">
+                                        Founding Year
+                                    </label>
+                                    <Input
+                                        placeholder="Founding Year"
+                                        className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                        type="text"
+                                        required
+                                        value={foundingYear}
+                                        onChange={(e) => setFoundingYear(e.target.value)}
+                                    />
+
+                                </div>
                             <div className="col-span-full">
                                 <button
                                     type="submit"

@@ -8,10 +8,9 @@ import { Input } from "@/app/_components/ui/input";
 import { toast } from "@/app/_components/ui/sonner";
 
 
-export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
-    const [seeSrc, setSeeSrc] = useState("");
-    const [attendSrc, setAttendSrc] = useState("");
-    const [photoSrc, setPhotoSrc] = useState("");
+export function Form5({ onSubmitClick, addFormVals, onBackClick }: any) {
+    const [specialties, setSpecialties] = useState([""]);
+    const [mediaGallery, setMediaGallery] = useState([""]);
     const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
     const [submitted, setSubmitted] = useState(true);
@@ -20,9 +19,8 @@ export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
         setIsLoading(true);
         setSubmitted(true);
         addFormVals({
-            seeSrc,
-            attendSrc,
-            photoSrc,
+            specialties,
+            mediaGallery,
         });
         setIsNextLoading(false);
         toast("Success", {
@@ -58,46 +56,30 @@ export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
                                 onSubmit();
                             }}
                         >
-                            
                             <div className="col-span-full">
-                                    <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        See Source
-                                    </label>
-                                    <Input
-                                        placeholder="See Source"
-                                        className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                        type="text"
-                                        required
-                                        value={seeSrc}
-                                        onChange={(e) => setSeeSrc(e.target.value)}
-                                    />
-                                </div>
-                                <div className="col-span-full">
-                                    <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Attend Source
-                                    </label>
-                                    <Input
-                                        placeholder="Attend Source"
-                                        className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                        type="text"
-                                        required
-                                        value={attendSrc}
-                                        onChange={(e) => setAttendSrc(e.target.value)}
-                                    />
-                                </div>
-                                <div className="col-span-full">
-                                    <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Photo Source
-                                    </label>
-                                    <Input
-                                        placeholder="Photo Source"
-                                        className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                        type="text"
-                                        required
-                                        value={photoSrc}
-                                        onChange={(e) => setPhotoSrc(e.target.value)}
-                                    />
-                                </div>
+                                <label className="block mb-3 text-sm font-medium text-primary/90">Specialties</label>
+                                <Input
+                                    placeholder="Specialties"
+                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                    type="text"
+                                    required
+                                    value={specialties}
+                                    onChange={(e) => setSpecialties(e.target.value)}
+                                />
+                            </div>
+
+                            <div className="col-span-full">
+                                <label className="block mb-3 text-sm font-medium text-primary/90">Media Gallery</label>
+                                <Input
+                                    placeholder="Media Gallery"
+                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                    type="text"
+                                    required
+                                    value={mediaGallery}
+                                    onChange={(e) => setMediaGallery(e.target.value)}
+                                />
+                            </div>
+
                             <div className="col-span-full">
                                 <button
                                     type="submit"

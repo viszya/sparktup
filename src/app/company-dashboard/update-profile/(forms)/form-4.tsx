@@ -9,11 +9,12 @@ import { Input } from "@/app/_components/ui/input";
 import { toast } from "@/app/_components/ui/sonner";
 
 
-export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
-    const [viewLink, setViewLink] = useState("");
-    const [eventType, setEventType] = useState("");
-    const [eventBy, setEventBy] = useState("");
-    const [about, setAbout] = useState("");
+export function Form4({ onNextClick, addFormVals, onBackClick }: any) {
+    const [keyBenefits, setKeyBenefits] = useState("");
+    const [keyFeatures, setKeyFeatures] = useState("");
+    const [companyCulture, setCompanyCulture] = useState("");
+    const [termsAndConditionsLink, setTermsAndConditionsLink] = useState("");
+    const [privacyPolicyLink, setPrivacyPolicyLink] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
     const [submitted, setSubmitted] = useState(true);
@@ -22,10 +23,11 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
         setIsLoading(true);
         setSubmitted(true);
         addFormVals({
-            viewLink,
-            eventType,
-            eventBy,
-            about,
+            keyBenefits,
+            keyFeatures,
+            companyCulture,
+            termsAndConditionsLink,
+            privacyPolicyLink,
         });
         setIsNextLoading(false);
         toast("Success", {
@@ -61,56 +63,64 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                                 onSubmit();
                             }}
                         >
+                            
+
                             <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    View Link
-                                </label>
+                                <label className="block mb-3 text-sm font-medium text-primary/90">Key Benefits</label>
                                 <Input
-                                    placeholder="View Link"
+                                    placeholder="Key Benefits"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={viewLink}
-                                    onChange={(e) => setViewLink(e.target.value)}
+                                    value={keyBenefits}
+                                    onChange={(e) => setKeyBenefits(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Event Type
-                                </label>
+                                <label className="block mb-3 text-sm font-medium text-primary/90">Key Features</label>
                                 <Input
-                                    placeholder="Event Type"
+                                    placeholder="Key Features"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={eventType}
-                                    onChange={(e) => setEventType(e.target.value)}
+                                    value={keyFeatures}
+                                    onChange={(e) => setKeyFeatures(e.target.value)}
                                 />
                             </div>
+
                             <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Event By
-                                </label>
+                                <label className="block mb-3 text-sm font-medium text-primary/90">Company Culture</label>
                                 <Input
-                                    placeholder="Event By"
+                                    placeholder="Company Culture"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={eventBy}
-                                    onChange={(e) => setEventBy(e.target.value)}
+                                    value={companyCulture}
+                                    onChange={(e) => setCompanyCulture(e.target.value)}
                                 />
                             </div>
+
                             <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    About
-                                </label>
+                                <label className="block mb-3 text-sm font-medium text-primary/90">Terms and Conditions Link</label>
                                 <Input
-                                    placeholder="About"
+                                    placeholder="Terms and Conditions Link"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={about}
-                                    onChange={(e) => setAbout(e.target.value)}
+                                    value={termsAndConditionsLink}
+                                    onChange={(e) => setTermsAndConditionsLink(e.target.value)}
+                                />
+                            </div>
+
+                            <div className="col-span-full">
+                                <label className="block mb-3 text-sm font-medium text-primary/90">Privacy Policy Link</label>
+                                <Input
+                                    placeholder="Privacy Policy Link"
+                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                    type="text"
+                                    required
+                                    value={privacyPolicyLink}
+                                    onChange={(e) => setPrivacyPolicyLink(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">

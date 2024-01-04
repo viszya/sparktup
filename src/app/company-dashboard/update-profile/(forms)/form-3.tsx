@@ -9,11 +9,11 @@ import { Input } from "@/app/_components/ui/input";
 import { toast } from "@/app/_components/ui/sonner";
 
 
-export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
-    const [viewLink, setViewLink] = useState("");
-    const [eventType, setEventType] = useState("");
-    const [eventBy, setEventBy] = useState("");
+export function Form3({ onNextClick, addFormVals, onBackClick }: any) {
+    const [missionValues, setMissionValues] = useState("");
+    const [missionAndValues, setMissionAndValues] = useState("");
     const [about, setAbout] = useState("");
+    const [solutionsOverview, setSolutionsOverview] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
     const [submitted, setSubmitted] = useState(true);
@@ -22,10 +22,10 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
         setIsLoading(true);
         setSubmitted(true);
         addFormVals({
-            viewLink,
-            eventType,
-            eventBy,
+            missionValues,
+            missionAndValues,
             about,
+            solutionsOverview,
         });
         setIsNextLoading(false);
         toast("Success", {
@@ -63,43 +63,32 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                         >
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    View Link
+                                    Mission Values
                                 </label>
                                 <Input
-                                    placeholder="View Link"
+                                    placeholder="Mission Values"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={viewLink}
-                                    onChange={(e) => setViewLink(e.target.value)}
+                                    value={missionValues}
+                                    onChange={(e) => setMissionValues(e.target.value)}
                                 />
                             </div>
+
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Event Type
+                                    Mission and Values
                                 </label>
                                 <Input
-                                    placeholder="Event Type"
+                                    placeholder="Mission and Values"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={eventType}
-                                    onChange={(e) => setEventType(e.target.value)}
+                                    value={missionAndValues}
+                                    onChange={(e) => setMissionAndValues(e.target.value)}
                                 />
                             </div>
-                            <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Event By
-                                </label>
-                                <Input
-                                    placeholder="Event By"
-                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                    type="text"
-                                    required
-                                    value={eventBy}
-                                    onChange={(e) => setEventBy(e.target.value)}
-                                />
-                            </div>
+
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
                                     About
@@ -111,6 +100,20 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                                     required
                                     value={about}
                                     onChange={(e) => setAbout(e.target.value)}
+                                />
+                            </div>
+
+                            <div className="col-span-full">
+                                <label className="block mb-3 text-sm font-medium text-primary/90">
+                                    Solutions Overview
+                                </label>
+                                <Input
+                                    placeholder="Solutions Overview"
+                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                    type="text"
+                                    required
+                                    value={solutionsOverview}
+                                    onChange={(e) => setSolutionsOverview(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
