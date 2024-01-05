@@ -23,8 +23,8 @@ export default function AddContactInfo() {
 		onSuccess: () => {
 			setIsNextLoading(false);
 			toast({
-				title:"Success",
-				description: "Testimonial has been created at " + formatDate(Date()),
+				title: "Success",
+				description: "Account updated at " + formatDate(Date()),
 			});
 		},
 	});
@@ -129,9 +129,8 @@ export default function AddContactInfo() {
 				</div>
 			</div>
 			<div className="border border-primary mt-5 p-2 rounded-xl bg-secondary">
-			<InputData />
+				<InputData />
 			</div>
 		</div>
-
 	);
 }

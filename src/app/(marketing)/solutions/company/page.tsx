@@ -100,8 +100,6 @@ export default function CompanySolutions() {
 					</div>
 				</div>
 			</section>
-
-
 		</div>
 	);
 }

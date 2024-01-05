@@ -22,8 +22,6 @@ export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
     const [submitted, setSubmitted] = useState(false);
 
-
-
     function onSubmit() {
         setIsLoading(true);
         setSubmitted(true);
@@ -35,7 +33,7 @@ export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
         setIsLoading(false);
         toast({
             title: "Success",
-            description: "Company Profile: Form 5 Completed",
+            description: "Profile: Form 3 Submitted",
         });
     }
 

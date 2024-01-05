@@ -33,7 +33,7 @@ export default function UpdateProfilePage() {
         onSuccess: () => {
             toast({
                 title: "Success", 
-                description: "Event has been created at " + formatDate(Date()),
+                description: "Profile has been updated at " + formatDate(Date()),
             });
         },
     });

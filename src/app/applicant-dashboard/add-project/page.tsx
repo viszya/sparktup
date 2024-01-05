@@ -21,9 +21,9 @@ export default function AddContactInfo() {
         onSuccess: () => {
             setIsNextLoading(false);
             toast({
-                title: "Success",
-                description: "Company Profile: Form 5 Completed",
-            });
+				title: "Success",
+				description: "Project added at " + formatDate(Date()),
+			});
         },
     });
 
@@ -104,7 +104,7 @@ export default function AddContactInfo() {
                                             <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
                                         ) : (<></>
                                         )}{" "}
-                                        Update Account
+                                        Add Project
                                     </button>
                                 </div>
                             </form>
@@ -113,6 +113,5 @@ export default function AddContactInfo() {
                 </div>
             </div>
         </div>
-
     );
 }

@@ -79,48 +79,43 @@ export default function DashboardLayout({
                 <DropdownMenuLabel>Dashboard</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
-                  <Link href="/company-dashboard">
+                  <Link href="/applicant-dashboard">
                     Home
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/company-dashboard/profile">
+                  <Link href="/applicant-dashboard/profile">
                     My Profile
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/company-dashboard/update-profile">
+                  <Link href="/applicant-dashboard/update-profile">
                     Update Profile
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/company-dashboard/add-event">
-                    Add Event
+                  <Link href="/applicant-dashboard/edit">
+                   Edit Profile Items
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/company-dashboard/add-career">
-                    Add Career
+                  <Link href="/applicant-dashboard/add-experience">
+                    Add Experience
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/company-dashboard/add-team-member">
-                    Add Team Member
+                  <Link href="/applicant-dashboard/add-recommendation">
+                    Add Recommendation
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/company-dashboard/add-testmonial">
-                    Add Testimonial
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="/company-dashboard/add-contact-info">
-                    Add Contact Info
+                  <Link href="/applicant-dashboard/add-project">
+                    Add Project
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
-                  <Link href="/job-positions">
+                  <Link href="/company/positions">
                     Job Positions
                   </Link>
                 </DropdownMenuItem>
@@ -130,7 +125,7 @@ export default function DashboardLayout({
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/companies">
+                  <Link href="/company">
                     Companies
                   </Link>
                 </DropdownMenuItem>

@@ -63,7 +63,7 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
         setIsLoading(false);
         toast({
             title: "Success",
-            description: "Company Profile: Form 2 Completed",
+            description: "Profile: Form 2 Submitted",
         });
     }
 

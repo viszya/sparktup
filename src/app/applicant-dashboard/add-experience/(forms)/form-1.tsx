@@ -31,9 +31,8 @@ export function Form1({ onNextClick, addFormVals }: any) {
         setIsLoading(false);
         toast({
             title: "Success",
-            description: "Company Profile: Form 5 Completed",
+            description: "Experience Form 1 Submitted",
         });
-
     }
 
     return (
@@ -150,8 +149,6 @@ export function Form1({ onNextClick, addFormVals }: any) {
             {submitted ? (
                 <div className="flex justify-center items-center">
                     <div className="border border-dashed border-primary/60 p-2 flex justify-center items-center rounded-xl mt-2">
-                        {/* Next Button */}
-
                         <button onClick={onNextClick} className={cn(buttonVariants({ variant: "default" }), " rounded-xl w-26")}>
                             Next
                             <Icons.chevronRight className="h-5 w-5 ml-2" />

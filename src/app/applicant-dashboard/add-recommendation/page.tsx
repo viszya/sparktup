@@ -6,11 +6,12 @@ import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
-import { toast } from "sonner"
+import { useToast } from "@/app/_components/ui/use-toast";
 import { Textarea } from "@/app/_components/ui/textarea";
 
 
 export default function AddContactInfo() {
+    const { toast } = useToast();
     const [name, setName] = useState("");
     const [jobTitle, setJobTitle] = useState("");
     const [srcImage, setSrcImage] = useState("");
@@ -21,8 +22,9 @@ export default function AddContactInfo() {
     const addProject = api.settings.addRecommendation.useMutation({
         onSuccess: () => {
             setIsNextLoading(false);
-            toast("Success", {
-                description: "Testimonial has been created at " + formatDate(Date()),
+            toast({
+                title: "Success",
+                description: "Recommendation added at " + formatDate(Date()),
             });
         },
     });
@@ -126,6 +128,5 @@ export default function AddContactInfo() {
                 </div>
             </div>
         </div>
-
     );
 }

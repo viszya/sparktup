@@ -55,9 +55,9 @@ const Nav = async () => {
               FAQ
             </Link>
             <Link
-              href='/about'
+              href='/support'
               className="px-2 py-2 text-sm text-gray-900 lg:px-6 transition-colors delay-75 rounded-2xl hover:bg-red-400/10 md:px-3 hover:text-red-400 ">
-              About
+              Support
             </Link>
           </div>
           <div className="inline-flex items-center gap-2 list-none">

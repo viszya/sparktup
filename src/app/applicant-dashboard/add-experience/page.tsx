@@ -4,7 +4,6 @@ import { Icons } from "@/app/_components/icons";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/_components/ui/tabs";
 import { Form1 } from "@/app/applicant-dashboard/add-experience/(forms)/form-1";
 import { Form2 } from "@/app/applicant-dashboard/add-experience/(forms)/form-2";
-import { InputData } from "@/app/_components/inputdata";
 import { useState } from "react";
 import { api } from "@/trpc/react";
 import { formatDate } from "@/server/utils";
@@ -21,15 +20,14 @@ export default function AddCareer() {
     const [location, setLocation] = useState("");
     const [time, setTime] = useState("");
     const [jobDescriptions, setJobDescriptions] = useState<string[]>([""]);
-    const [activeTab, setActiveTab] = useState("profile");
-    const tabOrder = ["profile", "contact"];
+    const [activeTab, setActiveTab] = useState("form1");
+    const tabOrder = ["form1", "form2"];
 
     const addExperience = api.settings.addExperience.useMutation({
         onSuccess: () => {
-            // setIsNextLoading(false);
             toast({
                 title: "Success",
-                description: "Company Profile: Form 5 Completed",
+                description: "Experience added at " + formatDate(Date()),
             });
         },
     });
@@ -80,6 +78,7 @@ export default function AddCareer() {
             setActiveTab(prevTab!);
         }
     }
+    
     return (
         <div className="flex flex-col px-8">
             <div>
@@ -91,15 +90,15 @@ export default function AddCareer() {
             <div className="flex flex-col justify-center w-full ">
                 <Tabs value={activeTab} className="mt-5">
                     <TabsList className="flex flex-row gap-x-6 overflow-x-auto">
-                        <TabsTrigger value="profile">Company Profile</TabsTrigger>
+                        <TabsTrigger value="form1">Company Profile</TabsTrigger>
                         <Icons.chevronRight className="text-gray-300 h-5 w-5" />
-                        <TabsTrigger value="contact">Contact Info</TabsTrigger>
+                        <TabsTrigger value="form2">Contact Info</TabsTrigger>
                     </TabsList>
                     <div className="w-full">
-                        <TabsContent value="profile">
+                        <TabsContent value="form1">
                             <Form1 onNextClick={handleNextButtonClick} addFormVals={addForm1Vals} />
                         </TabsContent>
-                        <TabsContent value="contact">
+                        <TabsContent value="form2">
                             <Form2 onNextClick={handleSubmitClick} addFormVals={addForm2Vals} onBackClick={handleBackButtonClick} />
                         </TabsContent>
                     </div>

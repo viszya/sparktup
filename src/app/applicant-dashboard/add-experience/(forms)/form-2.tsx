@@ -31,7 +31,7 @@ export function Form2({ onSubmitClick, addFormVals, onBackClick }: any) {
         setIsLoading(false);
         toast({
             title: "Success",
-            description: "Company Profile: Form 5 Completed",
+            description: "Experience Form 2 Submitted",
         });
     }
 
@@ -180,12 +180,11 @@ export function Form2({ onSubmitClick, addFormVals, onBackClick }: any) {
                         Back
                     </button>
                     {submitted ? (
-                        <button onClick={onSubmitClick} className={cn(buttonVariants({ variant: "default" }), " rounded-xl w-26")}>
-                        Add to Profile
+                        <button onClick={onSubmitClick} className={cn(buttonVariants({ variant: "default" }), "rounded-xl w-26")}>
+                        Add Experience
                         <Icons.chevronRight className="h-5 w-5 ml-2" />
                     </button>
                     ) : (<></>)}
-
                 </div>
             </div>
         </section>
