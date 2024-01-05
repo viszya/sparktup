@@ -65,7 +65,7 @@ export function Form1({ onNextClick, addFormVals }: any) {
                         >
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    New Company Name?
+                                    Company Name?
                                 </label>
                                 <Input
                                     placeholder="Google, Microsoft, etc."
@@ -91,7 +91,7 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Edit Logo:
+                                    Company Logo?
                                 </label>
                                 <Input
                                     placeholder="Current Logo"
@@ -104,7 +104,7 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Edit Company Location <i>City, State</i>
+                                    Company Location <i>City, State</i>
                                 </label>
                                 <Input
                                     placeholder="Seatte, WA"
@@ -117,7 +117,7 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Edit Website URL
+                                    Website URL?
                                 </label>
                                 <Input
                                     placeholder="google.com"
@@ -139,7 +139,7 @@ export function Form1({ onNextClick, addFormVals }: any) {
                                     ) : (
                                         <></>
                                     )}{" "}
-                                    Submit
+                                    Update Profile
                                 </button>
                             </div>
                         </form>
