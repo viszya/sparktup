@@ -61,7 +61,7 @@ export default function AddContactInfo() {
               >
                 <div className="col-span-full">
                   <label className="block mb-3 text-sm font-medium text-primary/90">
-                    What is the main company email address?
+                    What is the company primary email address?
                   </label>
                   <Input
                     placeholder="company@example.com"
@@ -74,7 +74,7 @@ export default function AddContactInfo() {
                 </div>
                 <div className="col-span-full">
                   <label className="block mb-3 text-sm font-medium text-primary/90" >
-                    What is the main company phone number?
+                    What is the primary company phone number?
                   </label>
                   <Input
                     placeholder="123-456-7890"
@@ -87,7 +87,7 @@ export default function AddContactInfo() {
                 </div>
                 <div className="col-span-full">
                   <label className="block mb-3 text-sm font-medium text-primary/90">
-                    What is the main company address?
+                    What is the primary company address?
                   </label>
                   <Input
                     placeholder="123 Main St, City, State, Zip"

@@ -50,7 +50,7 @@ export default function AddContactInfo() {
     return (
         <div className="flex flex-col px-8">
             <div>
-                <h2 className="text-3xl font-bold tracking-tight">Add Testimonial</h2>
+                <h2 className="text-3xl font-bold tracking-tight">Add Testimonials</h2>
                 <p className="text-muted-foreground">
                     Add testimonals to your company profile by filling out the form below.
                 </p>
@@ -72,7 +72,7 @@ export default function AddContactInfo() {
                                     </label>
                                     <Input
                                         type="text"
-                                        placeholder="Client Name"
+                                        placeholder="Jhon Doe"
                                         value={clientName}
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         onChange={(e) => setClientName(e.target.value)}
