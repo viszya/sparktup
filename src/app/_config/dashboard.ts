@@ -23,14 +23,19 @@ export const dashboardConfig: DashboardConfig = {
       icon: "usercircle",
     },
     {
+      title: "Edit Profile Items",
+      href: "/applicant-dashboard/edit",
+      icon: "edit",
+    },
+    {
       title: "Update Profile",
       href: "/applicant-dashboard/update-profile",
       icon: "cog",
     },
     {
-      title: "Add Projects",
-      href: "/applicant-dashboard/add-project",
-      icon: "package",
+      title: "Add Experiences",
+      href: "/applicant-dashboard/add-experience",
+      icon: "sparkles",
     },
     {
       title: "Add Recommendatinos",
@@ -38,9 +43,9 @@ export const dashboardConfig: DashboardConfig = {
       icon: "usercheck",
     },
     {
-      title: "Add Experiences",
-      href: "/applicant-dashboard/add-experience",
-      icon: "sparkles",
+      title: "Add Projects",
+      href: "/applicant-dashboard/add-project",
+      icon: "package",
     },
     {
       title: "Settings",

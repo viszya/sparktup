@@ -2,45 +2,35 @@
 
 import { Icons } from "@/app/_components/icons";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/_components/ui/tabs";
-import { Form1 } from "@/app/company-dashboard/update-profile/(forms)/form-1";
-import { Form2 } from "@/app/company-dashboard/update-profile/(forms)/form-2";
-import { Form3 } from "@/app/company-dashboard/update-profile/(forms)/form-3";
-import { Form4 } from "@/app/company-dashboard/update-profile/(forms)/form-4";
-import { Form5 } from "@/app/company-dashboard/update-profile/(forms)/form-5";
+import { Form1 } from "@/app/applicant-dashboard/update-profile/(forms)/form-1";
+import { Form2 } from "@/app/applicant-dashboard/update-profile/(forms)/form-2";
+import { Form3 } from "@/app/applicant-dashboard/update-profile/(forms)/form-3";
 import { InputData } from "@/app/_components/inputdata";
 import { useState } from "react";
 import { api } from "@/trpc/react";
 import { useToast } from "@/app/_components/ui/use-toast";
 import { formatDate } from "@/server/utils";
 
-export default function AddCareer() {
+export default function UpdateProfilePage() {
     const { toast } = useToast();
-    const [companyName, setCompanyName] = useState("");
-    const [linkedInMembers, setLinkedInMembers] = useState("");
-    const [logoSrc, setLogoSrc] = useState("");
-    const [location, setLocation] = useState("");
-    const [website, setWebsite] = useState("");
-    const [industry, setIndustry] = useState("");
-    const [companySize, setCompanySize] = useState("");
-    const [size, setSize] = useState("");
-    const [companyBannerImgSrc, setCompanyBannerImgSrc] = useState("");
-    const [foundingYear, setFoundingYear] = useState("");
-    const [missionValues, setMissionValues] = useState("");
-    const [missionAndValues, setMissionAndValues] = useState("");
-    const [about, setAbout] = useState("");
-    const [solutionsOverview, setSolutionsOverview] = useState("");
-    const [keyBenefits, setKeyBenefits] = useState("");
-    const [keyFeatures, setKeyFeatures] = useState("");
-    const [companyCulture, setCompanyCulture] = useState("");
-    const [termsAndConditionsLink, setTermsAndConditionsLink] = useState("");
-    const [privacyPolicyLink, setPrivacyPolicyLink] = useState("");
-    const [specialties, setSpecialties] = useState([""]);
-    const [mediaGallery, setMediaGallery] = useState([""]);
+	const [about, setAbout] = useState("");
+	const [jobTitle, setJobTitle] = useState("");
+	const [yearsOfExperience, setYearsOfExperience] = useState("");
+	const [availableForWork, setAvailableForWork] = useState(false);
+	const [hasAJob, setHasAJob] = useState(false);
+	const [resumeLink, setResumeLink] = useState("");
+	const [profileTags, setProfileTags] = useState<string[]>([""]);
+	const [interestedTags, setInterestedTags] = useState<string[]>([""]);
+    const [skillName1, setSkillName1] = useState("");
+	const [description1, setDescription1] = useState("");
+	const [skillName2, setSkillName2] = useState("");
+	const [description2, setDescription2] = useState("");
+	const [skillName3, setSkillName3] = useState("");
+	const [description3, setDescription3] = useState("");
     const [activeTab, setActiveTab] = useState("form1");
-    const tabOrder = ["form1", "form2", "form3", "form4", "form5"];
-    const createCompanyProfile = api.test.createCompanyProfile.useMutation({
+    const tabOrder = ["form1", "form2", "form3"];
+    const updateProfile2 = api.settings.updateProfile2.useMutation({
         onSuccess: () => {
-            // setIsNextLoading(false);
             toast({
                 title: "Success", 
                 description: "Event has been created at " + formatDate(Date()),
@@ -48,42 +38,31 @@ export default function AddCareer() {
         },
     });
 
+    const settingsForm2 = api.settings.settingsForm2.useMutation();
 
     function addForm1Vals(form1Vals: any) {
-        setCompanyName(form1Vals.companyName);
-        setLinkedInMembers(form1Vals.linkedInMembers);
-        setLogoSrc(form1Vals.logoSrc);
-        setLocation(form1Vals.location);
-        setWebsite(form1Vals.website);
+        setAbout(form1Vals.about);
+        setJobTitle(form1Vals.jobTitle);
+        setYearsOfExperience(form1Vals.yearsOfExperience);
+        setAvailableForWork(form1Vals.availableForWork);
+        setHasAJob(form1Vals.hasAJob);
     }
 
     function addForm2Vals(form2Vals: any) {
-        setIndustry(form2Vals.industry);
-        setCompanySize(form2Vals.companySize);
-        setSize(form2Vals.size);
-        setCompanyBannerImgSrc(form2Vals.companyBannerImgSrc);
-        setFoundingYear(form2Vals.foundingYear);
+        setResumeLink(form2Vals.resumeLink);
+        setProfileTags(form2Vals.profileTags);
+        setInterestedTags(form2Vals.interestedTags);
     }
 
     function addForm3Vals(form3Vals: any) {
-        setMissionValues(form3Vals.missionValues);
-        setMissionAndValues(form3Vals.missionAndValues);
-        setAbout(form3Vals.about);
-        setSolutionsOverview(form3Vals.solutionsOverview);
+        setSkillName1(form3Vals.skillName1);
+        setDescription1(form3Vals.description1);
+        setSkillName2(form3Vals.skillName2);
+        setDescription2(form3Vals.description2);
+        setSkillName3(form3Vals.skillName3);
+        setDescription3(form3Vals.description3);
     }
 
-    function addForm4Vals(form4Vals: any) {
-        setKeyBenefits(form4Vals.keyBenefits);
-        setKeyFeatures(form4Vals.keyFeatures);
-        setCompanyCulture(form4Vals.companyCulture);
-        setTermsAndConditionsLink(form4Vals.termsAndConditionsLink);
-        setPrivacyPolicyLink(form4Vals.privacyPolicyLink);
-    }
-
-    function addForm5Vals(form5Vals: any) {
-        setSpecialties(form5Vals.specialties);
-        setMediaGallery(form5Vals.mediaGallery);
-    }
 
     function handleNextButtonClick() {
         const currentIndex = tabOrder.indexOf(activeTab);
@@ -95,29 +74,34 @@ export default function AddCareer() {
     }
 
     function handleSubmitClick() {
-        createCompanyProfile.mutate({
-            companyName,
-            linkedInMembers,
-            logoSrc,
-            location,
-            website,
-            industry,
-            companySize,
-            size,
-            companyBannerImgSrc,
-            foundingYear,
-            missionValues,
-            missionAndValues,
-            about,
-            solutionsOverview,
-            keyBenefits,
-            keyFeatures,
-            companyCulture,
-            termsAndConditionsLink,
-            privacyPolicyLink,
-            specialties,
-            mediaGallery,
+        
+        settingsForm2.mutate({
+            skillName: skillName1,
+            skillDescription: description1,
+            color: "red",
         });
+        settingsForm2.mutate({
+            skillName: skillName2,
+            skillDescription: description2,
+            color: "red",
+        });
+        settingsForm2.mutate({
+            skillName: skillName3,
+            skillDescription: description3,
+            color: "red",
+        });
+        
+        updateProfile2.mutate({
+            about,
+            jobTitle,
+            yearsOfExperience,
+            availableForWork,
+            hasAJob,
+            resumeLink,
+            profileTags,
+            interestedTags,
+        });
+
     }
 
     function handleBackButtonClick() {
@@ -144,10 +128,6 @@ export default function AddCareer() {
                         <TabsTrigger value="form2">Contact Info</TabsTrigger>
                         <Icons.chevronRight className="text-gray-300 h-5 w-5" />
                         <TabsTrigger value="form3">Social Media</TabsTrigger>
-                        <Icons.chevronRight className="text-gray-300 h-5 w-5" />
-                        <TabsTrigger value="form4">Social Media</TabsTrigger>
-                        <Icons.chevronRight className="text-gray-300 h-5 w-5" />
-                        <TabsTrigger value="form5">Social Media</TabsTrigger>
                     </TabsList>
                     <div className="w-full">
                         <TabsContent value="form1">
@@ -157,16 +137,7 @@ export default function AddCareer() {
                             <Form2 onNextClick={handleNextButtonClick} addFormVals={addForm2Vals} onBackClick={handleBackButtonClick} />
                         </TabsContent>
                         <TabsContent value="form3">
-                            <Form3 onNextClick={handleNextButtonClick} addFormVals={addForm3Vals} onBackClick={handleBackButtonClick} />
-                        </TabsContent>
-                        <TabsContent value="form4">
-                            <Form4 onNextClick={handleNextButtonClick} addFormVals={addForm4Vals} onBackClick={handleBackButtonClick} />
-                        </TabsContent>
-                        <TabsContent value="form5">
-                            <Form5 onSubmitClick={handleSubmitClick} addFormVals={addForm5Vals} onBackClick={handleBackButtonClick} />
-                        </TabsContent>
-                        <TabsContent value="data">
-                            <InputData />
+                            <Form3 onSubmitClick={handleSubmitClick} addFormVals={addForm3Vals} onBackClick={handleBackButtonClick} />
                         </TabsContent>
                     </div>
                 </Tabs>

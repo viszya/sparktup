@@ -150,7 +150,7 @@ export default function DashboardLayout({
         </div>
       </header >
 
-      <div className="mx-2 sm:mx-32 grid flex-1 gap-12 md:grid-cols-[150px_1fr]">
+      <div className="mx-2 sm:mx-8 grid flex-1 gap-12 md:grid-cols-[150px_1fr]">
         <aside className="hidden w-[200px] flex-col md:flex">
           <DashboardNav items={dashboardConfig.sidebarNav} />
         </aside>

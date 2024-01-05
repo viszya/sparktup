@@ -235,8 +235,9 @@ model Application {
   id              String            @id @default(cuid())
   nID             Int               @default(0000)
   status          String            @default("Not Viewed")
+  priority        String            @default("low")
   applicationForm ApplicationForm[]
-  company         Company           @relation(fields: [companyId], references: [id])
+  company         Company?           @relation(fields: [companyId], references: [id])
   companyId       String
   applicant       User?             @relation(fields: [applicantId], references: [id])
   applicantId     String

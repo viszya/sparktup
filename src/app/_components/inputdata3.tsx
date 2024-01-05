@@ -127,6 +127,7 @@ export const data = {
             attendees: "31,740 attendees",
             viewLink: "https://example.com/event1",
             attendSrc: "/",
+            photoSrc: "/",
             speakers: [
                 {
                     name: "Satya Nadella",
@@ -153,6 +154,7 @@ export const data = {
             about: "Join us for a special event with Satya Nadella and Jared Spataro to learn how AI will power a whole new way of working for every person and organization. The live stream starts at 8 AM Pacific Time on March 16.",
             attendees: "31,740 attendees",
             viewLink: "https://example.com/event1",
+            photoSrc: "/",
             attendSrc: "/",
             speakers: [
                 {
@@ -181,6 +183,8 @@ export const data = {
             attendees: "31,740 attendees",
             viewLink: "https://example.com/event1",
             attendSrc: "/",
+            photoSrc: "/",
+
             speakers: [
                 {
                     name: "Satya Nadella",
@@ -199,7 +203,7 @@ export const data = {
     ],
 };
 
-export  function InputData() {
+export  function InputData2() {
     const { toast } = useToast();
 
     //const updateProfile = api.test.createCompanyProfile.useMutation();
@@ -213,92 +217,93 @@ export  function InputData() {
     // const addExperience = api.settings.addExperience.useMutation();
 
     const createCompanyProfile = api.test.createCompanyProfile.useMutation();
-    // const createContactInformation = api.test.createContactInformation.useMutation();
-    // const createCareerOpportunity = api.test.createCareerOpportunity.useMutation();
-    // const createTestimonial = api.test.createTestimonial.useMutation();
-    // const createTeamMember = api.test.createTeamMember.useMutation();
-    // const createEvent = api.test.createEvent.useMutation();
-    // const company = api.test.getCompanyProfilePrivate.useQuery();
-    // const companyData = company.data;
-    // console.log(companyData);
+    const createContactInformation = api.test.createContactInformation.useMutation();
+    const createCareerOpportunity = api.test.createCareerOpportunity.useMutation();
+    const createTestimonial = api.test.createTestimonial.useMutation();
+    const createTeamMember = api.test.createTeamMember.useMutation();
+    const createEvent = api.test.createEvent.useMutation();
+    const company = api.test.getCompanyProfilePrivate.useQuery();
+    const companyData = company.data;
+    console.log(companyData);
 
     function onSubmit() {
-        createCompanyProfile.mutate({
-            companyName: data.companyName,
-            linkedInMembers: data.linkedInMembers,
-            logoSrc: data.logoSrc,
-            location: data.location,
-            website: data.website,
-            size: data.size,
-            industry: data.industry,
-            companySize: data.companySize,
-            companyBannerImgSrc: data.companyBannerImgSrc,
-            foundingYear: data.foundingYear,
-            missionValues: data.missionValues,
-            missionAndValues: data.missionAndValues,
-            about: data.about,
-            solutionsOverview: data.solutionsOverview,
-            keyBenefits: data.keyBenefits,
-            keyFeatures: data.keyFeatures,
-            specialties: data.specialties,
-            mediaGallery: data.mediaGallery,
-            termsAndConditionsLink: data.termsAndConditionsLink,
-            privacyPolicyLink: data.privacyPolicyLink,
-            companyCulture: data.companyCulture,
+        // createCompanyProfile.mutate({
+        //     companyName: data.companyName,
+        //     linkedInMembers: data.linkedInMembers,
+        //     logoSrc: data.logoSrc,
+        //     location: data.location,
+        //     website: data.website,
+        //     size: data.size,
+        //     industry: data.industry,
+        //     companySize: data.companySize,
+        //     companyBannerImgSrc: data.companyBannerImgSrc,
+        //     foundingYear: data.foundingYear,
+        //     missionValues: data.missionValues,
+        //     missionAndValues: data.missionAndValues,
+        //     about: data.about,
+        //     solutionsOverview: data.solutionsOverview,
+        //     keyBenefits: data.keyBenefits,
+        //     keyFeatures: data.keyFeatures,
+        //     specialties: data.specialties,
+        //     mediaGallery: data.mediaGallery,
+        //     termsAndConditionsLink: data.termsAndConditionsLink,
+        //     privacyPolicyLink: data.privacyPolicyLink,
+        //     companyCulture: data.companyCulture,
+        // });
+
+        createContactInformation.mutate({
+            id: companyData.company[0].id,
+            email: data.contactInformation.email,
+            phone: data.contactInformation.phone,
+            address: data.contactInformation.address,
         });
 
-        // createContactInformation.mutate({
-        //     id: companyData.company[0].id,
-        //     email: data.contactInformation.email,
-        //     phone: data.contactInformation.phone,
-        //     address: data.contactInformation.address,
-        // });
+        createCareerOpportunity.mutate({
+            id: companyData.company[0].id,
+            position: data.careerOpportunities[0].position,
+            location: data.careerOpportunities[0].location,
+            applyLink: data.careerOpportunities[0].applyLink,
+            companyLogo: data.careerOpportunities[0].companyLogo,
+            description: data.careerOpportunities[0].description,
+            pricingDescription: data.careerOpportunities[0].pricingDescription,
+            sizeDescription: data.careerOpportunities[0].sizeDescription,
+            skills: data.careerOpportunities[0].skills,
+            jobLink: data.careerOpportunities[0].jobLink,
+            seeSrc: data.careerOpportunities[0].seeSrc,
+            thumbnail: data.careerOpportunities[0].thumbnail,
+            about: data.careerOpportunities[0].about,
+            pay: data.careerOpportunities[0].pay,
+            companyAbout: data.careerOpportunities[0].companyAbout,
+        });
 
-        // createCareerOpportunity.mutate({
-        //     id: companyData.company[0].id,
-        //     position: data.careerOpportunities[0].position,
-        //     location: data.careerOpportunities[0].location,
-        //     applyLink: data.careerOpportunities[0].applyLink,
-        //     companyLogo: data.careerOpportunities[0].companyLogo,
-        //     description: data.careerOpportunities[0].description,
-        //     pricingDescription: data.careerOpportunities[0].pricingDescription,
-        //     sizeDescription: data.careerOpportunities[0].sizeDescription,
-        //     skills: data.careerOpportunities[0].skills,
-        //     jobLink: data.careerOpportunities[0].jobLink,
-        //     seeSrc: data.careerOpportunities[0].seeSrc,
-        //     thumbnail: data.careerOpportunities[0].thumbnail,
-        //     about: data.careerOpportunities[0].about,
-        //     pay: data.careerOpportunities[0].pay,
-        //     companyAbout: data.careerOpportunities[0].companyAbout,
-        // });
+        createTestimonial.mutate({
+            id: companyData.company[0].id,
+            clientName: data.testimonials[0].clientName,
+            feedback: data.testimonials[0].feedback,
+        });
 
-        // createTestimonial.mutate({
-        //     id: companyData.company[0].id,
-        //     clientName: data.testimonials[0].clientName,
-        //     feedback: data.testimonials[0].feedback,
-        // });
+        createTeamMember.mutate({
+            id: companyData.company[0].id,
+            name: data.teamMembers[0].name,
+            role: data.teamMembers[0].role,
+            photoSrc: data.teamMembers[0].photoSrc,
+        });
 
-        // createTeamMember.mutate({
-        //     id: companyData.company[0].id,
-        //     name: data.teamMembers[0].name,
-        //     role: data.teamMembers[0].role,
-        //     photoSrc: data.teamMembers[0].photoSrc,
-        // });
-
-        // createEvent.mutate({
-        //     id: companyData.company[0].id,
-        //     date: data.eventData[0].date,
-        //     eventType: data.eventData[0].eventType,
-        //     seeSrc: data.eventData[0].seeSrc,
-        //     title: data.eventData[0].title,
-        //     location: data.eventData[0].location,
-        //     eventBy: data.eventData[0].eventBy,
-        //     imgsrc: data.eventData[0].imgsrc,
-        //     about: data.eventData[0].about,
-        //     attendees: data.eventData[0].attendees,
-        //     viewLink: data.eventData[0].viewLink,
-        //     attendSrc: data.eventData[0].attendSrc,
-        // });
+        createEvent.mutate({
+            id: companyData.company[0].id,
+            date: data.eventData[0].date,
+            eventType: data.eventData[0].eventType,
+            seeSrc: data.eventData[0].seeSrc,
+            title: data.eventData[0].title,
+            location: data.eventData[0].location,
+            eventBy: data.eventData[0].eventBy,
+            imgsrc: data.eventData[0].imgsrc,
+            about: data.eventData[0].about,
+            attendees: data.eventData[0].attendees,
+            viewLink: data.eventData[0].viewLink,
+            attendSrc: data.eventData[0].attendSrc,
+            photoSrc: data.eventData[0].photoSrc,
+        });
 
         toast({
             title: "Data Inputted!",
@@ -312,7 +317,7 @@ export  function InputData() {
                     <div className="flex flex-col justify-center text-center md:flex-row md:text-left">
                         <div className="flex flex-col justify-center max-w-2xl p-10 space-y-12">
                             <div className="mt-3 text-3xl tracking-tighter text-black">
-                                TEST DATA INPUT (PROFILE)
+                                TEST DATA INPUT
                             </div>
                             <form
                                 className="flex flex-col gap-y-9"

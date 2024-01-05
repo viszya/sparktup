@@ -239,5 +239,26 @@ export const userRouter = createTRPCRouter({
             return user;
         }),
 
+    getProfilePrivate: protectedProcedure
+        .query(async ({ ctx }) => {
+            const user = await ctx.db.user.findUnique({
+                where: {
+                    id: ctx.session.user.id,
+                },
+                include: {
+                    experiences: true,
+                    projects: true,
+                    topSkills: true,
+                    recommendations: true,
+                },
+            });
+
+            if (!user) {
+                throw new Error(`Profile with username ${ctx.session.user.id} not found`);
+            }
+
+            return user;
+        }),
+
 
 });

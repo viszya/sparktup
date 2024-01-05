@@ -10,14 +10,12 @@ import { useToast } from "@/app/_components/ui/use-toast";
 
 export function Form1({ onNextClick, addFormVals }: any) {
     const { toast } = useToast();
-	const [about, setAbout] = useState("");
+    const [about, setAbout] = useState("");
 	const [jobTitle, setJobTitle] = useState("");
 	const [yearsOfExperience, setYearsOfExperience] = useState("");
 	const [availableForWork, setAvailableForWork] = useState(false);
 	const [hasAJob, setHasAJob] = useState(false);
-	const [resumeLink, setResumeLink] = useState("");
-	const [profileTags, setProfileTags] = useState<string[]>([""]);
-	const [interestedTags, setInterestedTags] = useState<string[]>([""]);
+    const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
     const [submitted, setSubmitted] = useState(false);
 
@@ -25,11 +23,11 @@ export function Form1({ onNextClick, addFormVals }: any) {
         setIsLoading(true);
         setSubmitted(true);
         addFormVals({
-            companyName,
-            linkedInMembers,
-            logoSrc,
-            location,
-            website,
+            about,
+            jobTitle,
+            yearsOfExperience,
+            availableForWork,
+            hasAJob,
         });
         setIsLoading(false);
         toast({
@@ -69,69 +67,70 @@ export function Form1({ onNextClick, addFormVals }: any) {
                         >
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    New Company Name?
+                                   Profile About
                                 </label>
                                 <Input
                                     placeholder="Google, Microsoft, etc."
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={companyName}
-                                    onChange={(e) => setCompanyName(e.target.value)}
+                                    value={about}
+                                    onChange={(e) => setAbout(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    How many Members/Employees?
+                                    Job Title
                                 </label>
                                 <Input
-                                    placeholder="10000+"
+                                    placeholder="Google, Microsoft, etc."
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={linkedInMembers}
-                                    onChange={(e) => setLinkedInMembers(e.target.value)}
+                                    value={jobTitle}
+                                    onChange={(e) => setJobTitle(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Edit Logo:
+                                    Years of Experience
                                 </label>
                                 <Input
-                                    placeholder="Current Logo"
+                                    placeholder="Google, Microsoft, etc."
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={logoSrc}
-                                    onChange={(e) => setLogoSrc(e.target.value)}
+                                    value={yearsOfExperience}
+                                    onChange={(e) => setYearsOfExperience(e.target.value)}
                                 />
                             </div>
+                            
                             <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Edit Company Location <i>City, State</i>
-                                </label>
-                                <Input
-                                    placeholder="Seatte, WA"
-                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                    type="text"
-                                    required
-                                    value={location}
-                                    onChange={(e) => setLocation(e.target.value)}
-                                />
-                            </div>
+								<label className="block mb-3 text-sm font-medium text-gray-600">
+									Are you available for work?
+								</label>
+								<input
+									className="mr-2"
+									type="checkbox"
+									checked={availableForWork}
+									onChange={() => setAvailableForWork(!availableForWork)}
+								/>
+								<span className="text-gray-600">Yes, I am available for work</span>
+							</div>
+
                             <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Edit Website URL
-                                </label>
-                                <Input
-                                    placeholder="google.com"
-                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                    type="url"
-                                    required
-                                    value={website}
-                                    onChange={(e) => setWebsite(e.target.value)}
-                                />
-                            </div>
+								<label className="block mb-3 text-sm font-medium text-gray-600">
+									Do you have a job?
+								</label>
+								<input
+									className="mr-2"
+									type="checkbox"
+									checked={hasAJob}
+									onChange={() => setHasAJob(!hasAJob)}
+								/>
+								<span className="text-gray-600">Yes, I am available for work</span>
+							</div>
+                            
                             <div className="col-span-full">
                                 <button
                                     type="submit"

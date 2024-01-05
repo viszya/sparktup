@@ -256,6 +256,35 @@ export const testRouter = createTRPCRouter({
             });
         }),
 
+    combinedGetCompanyProfile: protectedProcedure
+        .query(async ({ ctx }) => {
+            const basicProfile = await ctx.db.user.findUnique({
+                where: {
+                    id: ctx.session.user.id,
+                },
+                include: {
+                    company: true,
+                },
+            });
+
+            // Then, get the complete company profile with additional details
+            const completeProfile = await ctx.db.company.findUnique({
+                where: {
+                    id: basicProfile.company[0].id,
+                },
+                include: {
+                    contactInformation: true,
+                    teamMembers: true,
+                    careerOpportunities: true,
+                    eventData: true,
+                    testimonials: true,
+                },
+            });
+
+            return completeProfile;
+        }),
+
+
     getCompanyProfilePrivate: protectedProcedure
         .query(async ({ ctx }) => {
             return ctx.db.user.findUnique({
@@ -264,6 +293,29 @@ export const testRouter = createTRPCRouter({
                 },
                 include: {
                     company: true,
+                },
+            });
+        }),
+    getCompanyCompleteProfile: protectedProcedure
+        .input(z.object({
+            id: z.string(),
+        }))
+        .query(async ({ ctx, input }) => {
+            return ctx.db.user.findUnique({
+                where: {
+                    id: input.id,
+                },
+                include: {
+                    company: {
+
+                        include: {
+                            contactInformation: true,
+                            teamMembers: true,
+                            careerOpportunities: true,
+                            eventData: true,
+                            testimonials: true,
+                        }
+                    },
                 },
             });
         }),

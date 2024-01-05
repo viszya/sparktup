@@ -103,6 +103,32 @@ export const settingsRouter = createTRPCRouter({
             });
         }),
 
+    updateProfile2: protectedProcedure
+        .input(z.object({
+            about: z.string(),
+            jobTitle: z.string(),
+            yearsOfExperience: z.string(),
+            availableForWork: z.boolean(),
+            hasAJob: z.boolean(),
+            resumeLink: z.string(),
+            profileTags: z.array(z.string()),
+        }))
+        .mutation(async ({ ctx, input }) => {
+            return ctx.db.user.update({
+                where: {
+                    id: ctx.session.user.id,
+                },
+                data: {
+                    about: input.about,
+                    jobTitle: input.jobTitle,
+                    yearsOfExperience: input.yearsOfExperience,
+                    availableForWork: input.availableForWork,
+                    hasAJob: input.hasAJob,
+                    resumeLink: input.resumeLink,
+                    profileTags: input.profileTags,
+                },
+            });
+        }),
     settingsForm2: protectedProcedure
         .input(z.object({
             skillName: z.string(),
@@ -122,6 +148,27 @@ export const settingsRouter = createTRPCRouter({
                             color: input.color,
                         },
                     },
+                },
+            });
+        }),
+
+    actualSettings: protectedProcedure
+        .input(z.object({
+            fullName: z.string(),
+            proEmail: z.string(),
+            username: z.string(),
+            location: z.string(),
+        }))
+        .mutation(async ({ ctx, input }) => {
+            return ctx.db.user.update({
+                where: {
+                    id: ctx.session.user.id,
+                },
+                data: {
+                    fullName: input.fullName,
+                    proEmail: input.proEmail,
+                    username: input.username,
+                    location: input.location,
                 },
             });
         }),

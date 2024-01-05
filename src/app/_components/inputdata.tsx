@@ -10,6 +10,7 @@ const data = {
     jobTitle: "Software Developer",
     proEmail: "alexandr@gmail.com",
     username: "alexander",
+    phone: "+43 123 456 789",
     location: "Linz, Upper Austria, Austria",
     connections: "500+",
     yearsOfExperience: "8",

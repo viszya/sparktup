@@ -1,38 +1,41 @@
 "use client"
 
 import { useState } from "react";
-import { api } from "@/trpc/react";
 import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
+import { Textarea } from "@/app/_components/ui/textarea";
 import { useToast } from "@/app/_components/ui/use-toast";
+import { Card, CardTitle, CardContent, CardHeader } from "@/app/_components/ui/card";
 
 
-export function Form3({ onNextClick, addFormVals, onBackClick }: any) {
+export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
     const { toast } = useToast();
-
-    const [missionValues, setMissionValues] = useState("");
-    const [missionAndValues, setMissionAndValues] = useState("");
-    const [about, setAbout] = useState("");
-    const [solutionsOverview, setSolutionsOverview] = useState("");
+    const [skillName1, setSkillName1] = useState("");
+    const [description1, setDescription1] = useState("");
+    const [skillName2, setSkillName2] = useState("");
+    const [description2, setDescription2] = useState("");
+    const [skillName3, setSkillName3] = useState("");
+    const [description3, setDescription3] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
     const [submitted, setSubmitted] = useState(false);
+
+
 
     function onSubmit() {
         setIsLoading(true);
         setSubmitted(true);
         addFormVals({
-            missionValues,
-            missionAndValues,
-            about,
-            solutionsOverview,
+            specialties,
+            mediaGallery,
         });
+        setIsNextLoading(false);
         setIsLoading(false);
         toast({
             title: "Success",
-            description: "Company Profile: Form 3 Completed",
+            description: "Company Profile: Form 5 Completed",
         });
     }
 
@@ -64,61 +67,99 @@ export function Form3({ onNextClick, addFormVals, onBackClick }: any) {
                                 onSubmit();
                             }}
                         >
-                            <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Mission Values
-                                </label>
-                                <Input
-                                    placeholder="Mission Values"
-                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                    type="text"
-                                    required
-                                    value={missionValues}
-                                    onChange={(e) => setMissionValues(e.target.value)}
-                                />
-                            </div>
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle className="text-center">Skill 1</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="col-span-full mb-6">
+                                    <label className="block mb-3 text-sm font-medium text-primary/90">
+                                            Skill Name
+                                        </label>
+                                        <Input
+                                            placeholder="iOS Development"
+                                            type="text"
+                                            className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                            value={skillName1}
+                                            onChange={(e) => setSkillName1(e.target.value)}
+                                        />
+                                    </div>
 
-                            <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Mission and Values
-                                </label>
-                                <Input
-                                    placeholder="Mission and Values"
-                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                    type="text"
-                                    required
-                                    value={missionAndValues}
-                                    onChange={(e) => setMissionAndValues(e.target.value)}
-                                />
-                            </div>
+                                    <div className="col-span-full">
+                                    <label className="block mb-3 text-sm font-medium text-primary/90">
+                                            Skill Description
+                                        </label>
+                                        <Textarea
+                                            placeholder="Proficient in iOS development with a focus on creating seamless and engaging mobile experiences for users."
+                                            className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                            value={description1}
+                                            onChange={(e) => setDescription1(e.target.value)}
+                                        />
+                                    </div>
+                                </CardContent>
+                            </Card>
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle className="text-center">Skill 2</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="col-span-full mb-6">
+                                    <label className="block mb-3 text-sm font-medium text-primary/90">
+                                            Skill Name
+                                        </label>
+                                        <Input
+                                            placeholder="iOS Development"
+                                            type="text"
+                                            className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                            value={skillName2}
+                                            onChange={(e) => setSkillName2(e.target.value)}
+                                        />
+                                    </div>
 
-                            <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    About
-                                </label>
-                                <Input
-                                    placeholder="About"
-                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                    type="text"
-                                    required
-                                    value={about}
-                                    onChange={(e) => setAbout(e.target.value)}
-                                />
-                            </div>
+                                    <div className="col-span-full">
+                                    <label className="block mb-3 text-sm font-medium text-primary/90">
+                                            Skill Description
+                                        </label>
+                                        <Textarea
+                                            placeholder="Proficient in iOS development with a focus on creating seamless and engaging mobile experiences for users."
+                                            value={description2}
+                                            className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                            onChange={(e) => setDescription2(e.target.value)}
+                                        />
+                                    </div>
+                                </CardContent>
+                            </Card>
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle className="text-center">Skill 3</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="col-span-full mb-6">
+                                        <label className="block mb-3 text-sm font-medium text-primary/90">
+                                            Skill Name
+                                        </label>
+                                        <Input
+                                            placeholder="iOS Development"
+                                            type="text"
+                                            className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                            value={skillName3}
+                                            onChange={(e) => setSkillName3(e.target.value)}
+                                        />
+                                    </div>
 
-                            <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Solutions Overview
-                                </label>
-                                <Input
-                                    placeholder="Solutions Overview"
-                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                    type="text"
-                                    required
-                                    value={solutionsOverview}
-                                    onChange={(e) => setSolutionsOverview(e.target.value)}
-                                />
-                            </div>
+                                    <div className="col-span-full">
+                                    <label className="block mb-3 text-sm font-medium text-primary/90">
+                                            Skill Description
+                                        </label>
+                                        <Textarea
+                                            placeholder="Proficient in iOS development with a focus on creating seamless and engaging mobile experiences for users."
+                                            value={description3}
+                                            className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                            onChange={(e) => setDescription3(e.target.value)}
+                                        />
+                                    </div>
+                                </CardContent>
+                            </Card>
                             <div className="col-span-full">
                                 <button
                                     type="submit"
@@ -137,6 +178,7 @@ export function Form3({ onNextClick, addFormVals, onBackClick }: any) {
                     </div>
                 </div>
             </div>
+
             <div className="flex justify-center items-center gap-x-4 ">
                 <div className="border border-dashed border-primary/60 p-2 flex justify-center items-center gap-x-4 rounded-xl mt-2">
                     <button onClick={onBackClick} className={cn(buttonVariants({ variant: "outline" }), " rounded-xl w-26")}>
@@ -144,10 +186,9 @@ export function Form3({ onNextClick, addFormVals, onBackClick }: any) {
                         Back
                     </button>
                     {submitted ? (
-                        <button onClick={onNextClick} className={cn(buttonVariants({ variant: "default" }), " rounded-xl w-26")}>
-                           Next
-                           <Icons.chevronRight className="h-5 w-5 ml-2" />
-
+                        <button onClick={onSubmitClick} className={cn(buttonVariants({ variant: "default" }), " rounded-xl w-26")}>
+                            Update Profile
+                            <Icons.chevronRight className="h-5 w-5 ml-2" />
                         </button>
                     ) : (<></>)}
                 </div>

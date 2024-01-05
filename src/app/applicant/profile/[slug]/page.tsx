@@ -7,7 +7,7 @@ import { Button } from "@/app/_components/ui/button";
 import { api } from "@/trpc/react";
 
 
-export  default function Page({ params }: { params: { slug: string } }) {
+export default function ProfilePage({ params }: { params: { slug: string } }) {
 
 	const res = api.user.getProfile.useQuery({ id: params.slug });
     if (res.isLoading) {

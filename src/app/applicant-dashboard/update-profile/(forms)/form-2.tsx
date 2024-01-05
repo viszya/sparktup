@@ -11,24 +11,53 @@ import { useToast } from "@/app/_components/ui/use-toast";
 
 export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
     const { toast } = useToast();
-    const [industry, setIndustry] = useState("");
-    const [companySize, setCompanySize] = useState("");
-    const [size, setSize] = useState("");
-    const [companyBannerImgSrc, setCompanyBannerImgSrc] = useState("");
-    const [foundingYear, setFoundingYear] = useState("");
+    const [resumeLink, setResumeLink] = useState("");
+    const [profileTags, setProfileTags] = useState<string[]>([""]);
+    const [interestedTags, setInterestedTags] = useState<string[]>([""]);
     const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
     const [submitted, setSubmitted] = useState(false);
+
+    const addProfileTags = () => {
+        setProfileTags([...profileTags, ""]);
+    }
+
+    const removeProfileTags = (index: number) => {
+        const updatedProfileTags = [...profileTags];
+        updatedProfileTags.splice(index, 1);
+        setProfileTags(updatedProfileTags);
+    }
+
+    const updateProfileTags = (index: number, value: string) => {
+        const updatedProfileTags = [...profileTags];
+        updatedProfileTags[index] = value;
+        setProfileTags(updatedProfileTags);
+    }
+
+    const addInterestedTags = () => {
+        setInterestedTags([...interestedTags, ""]);
+    }
+
+    const removeInterestedTags = (index: number) => {
+        const updatedInterestedTags = [...interestedTags];
+        updatedInterestedTags.splice(index, 1);
+        setInterestedTags(updatedInterestedTags);
+    }
+
+    const updateInterestedTags = (index: number, value: string) => {
+        const updatedInterestedTags = [...interestedTags];
+        updatedInterestedTags[index] = value;
+        setInterestedTags(updatedInterestedTags);
+    }
+
 
     function onSubmit() {
         setIsLoading(true);
         setSubmitted(true);
         addFormVals({
-            industry,
-            companySize,
-            size,
-            companyBannerImgSrc,
-            foundingYear,
+            resumeLink,
+            profileTags,
+            interestedTags,
         });
         setIsNextLoading(false);
         setIsLoading(false);
@@ -66,77 +95,94 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                                 onSubmit();
                             }}
                         >
-                             <div className="col-span-full">
-                                    <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Industry
-                                    </label>
-                                    <Input
-                                        placeholder="Industry"
-                                        className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                        type="text"
-                                        required
-                                        value={industry}
-                                        onChange={(e) => setIndustry(e.target.value)}
-                                    />
+                            <div className="col-span-full">
+                                <label className="block mb-3 text-sm font-medium text-primary/90">
+                                    Resume Link
+                                </label>
+                                <Input
+                                    placeholder="Industry"
+                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                    type="text"
+                                    required
+                                    value={resumeLink}
+                                    onChange={(e) => setResumeLink(e.target.value)}
+                                />
+                            </div>
+
+                            <div className="col-span-full">
+                                <label className="block mb-3 text-sm font-medium text-primary/90">
+                                    Profile Tags
+                                </label>
+                                <div className="flex flex-col gap-y-3">
+                                    {profileTags.map((profileTag, index) => (
+                                        <div className="flex flex-row gap-x-2">
+                                            <Input
+                                                key={index}
+                                                type="text"
+                                                placeholder="I worked on..."
+                                                value={profileTag}
+                                                className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                                onChange={(e) => {
+                                                    updateProfileTags(index, e.target.value);
+                                                }}
+                                                required
+                                            />
+                                            <button
+                                                type="button"
+                                                className={cn(buttonVariants({ variant: "destructive" }), "w-20 rounded-xl ")}
+                                                onClick={() => removeProfileTags(index)}
+                                            >
+                                                Remove
+                                            </button>
+                                        </div>
+                                    ))}
+                                    <button
+                                        type="button"
+                                        className={cn(buttonVariants({ variant: "outline" }), " w-60 items-center justify-center px-6 py-2.5 text-center text-secondary duration-200 bg-primary border-2 border-primary rounded-xl inline-flex hover:bg-transparent hover:border-primary hover:text-primary focus:outline-none focus-visible:outline-primary text-sm focus-visible:ring-primary")}
+                                        onClick={addProfileTags}
+                                    >
+                                        Add Profile Tag
+                                    </button>
                                 </div>
+                            </div>
 
-                                <div className="col-span-full">
-                                    <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Company Size
-                                    </label>
-                                    <Input
-                                        placeholder="Company Size"
-                                        className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                        type="text"
-                                        required
-                                        value={companySize}
-                                        onChange={(e) => setCompanySize(e.target.value)}
-                                    />
+                            <div className="col-span-full">
+                                <label className="block mb-3 text-sm font-medium text-primary/90">
+                                    Interested Tags
+                                </label>
+                                <div className="flex flex-col gap-y-3">
+                                    {interestedTags.map((interestedTag, index) => (
+                                        <div className="flex flex-row gap-x-2">
+                                            <Input
+                                                key={index}
+                                                type="text"
+                                                placeholder="I worked on..."
+                                                value={interestedTag}
+                                                className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                                onChange={(e) => {
+                                                    updateInterestedTags(index, e.target.value);
+                                                }}
+                                                required
+                                            />
+                                            <button
+                                                type="button"
+                                                className={cn(buttonVariants({ variant: "destructive" }), "w-20 rounded-xl ")}
+                                                onClick={() => removeInterestedTags(index)}
+                                            >
+                                                Remove
+                                            </button>
+                                        </div>
+                                    ))}
+                                    <button
+                                        type="button"
+                                        className={cn(buttonVariants({ variant: "outline" }), " w-60 items-center justify-center px-6 py-2.5 text-center text-secondary duration-200 bg-primary border-2 border-primary rounded-xl inline-flex hover:bg-transparent hover:border-primary hover:text-primary focus:outline-none focus-visible:outline-primary text-sm focus-visible:ring-primary")}
+                                        onClick={addInterestedTags}
+                                    >
+                                        Add Interested Tag
+                                    </button>
                                 </div>
+                            </div>
 
-                                <div className="col-span-full">
-                                    <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Size
-                                    </label>
-                                    <Input
-                                        placeholder="Size"
-                                        className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                        type="text"
-                                        required
-                                        value={size}
-                                        onChange={(e) => setSize(e.target.value)}
-                                    />
-
-                                </div>
-
-                                <div className="col-span-full">
-                                    <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Company Banner Image
-                                    </label>
-                                    <Input
-                                        placeholder="Company Banner Image"
-                                        className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                        type="text"
-                                        required
-                                        value={companyBannerImgSrc}
-                                        onChange={(e) => setCompanyBannerImgSrc(e.target.value)}
-                                    />
-                                </div>
-
-                                <div className="col-span-full">
-                                    <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Founding Year
-                                    </label>
-                                    <Input
-                                        placeholder="Founding Year"
-                                        className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                        type="text"
-                                        required
-                                        value={foundingYear}
-                                        onChange={(e) => setFoundingYear(e.target.value)}
-                                    />
-
-                                </div>
                             <div className="col-span-full">
                                 <button
                                     type="submit"
@@ -163,9 +209,9 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                     </button>
                     {submitted ? (
                         <button onClick={onNextClick} className={cn(buttonVariants({ variant: "default" }), " rounded-xl w-26")}>
-                           Next
-                           <Icons.chevronRight className="h-5 w-5 ml-2" />
-                        
+                            Next
+                            <Icons.chevronRight className="h-5 w-5 ml-2" />
+
                         </button>
                     ) : (<></>)}
                 </div>
