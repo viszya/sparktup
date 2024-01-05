@@ -6,7 +6,7 @@ import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
-import { toast } from "sonner"
+import { useToast } from "@/app/_components/ui/use-toast";
 import {
     Card,
     CardContent,
@@ -19,6 +19,8 @@ import {
 
 
 export default function AddContactInfo() {
+    const { toast } = useToast();
+
     const [clientName, setClientName] = useState("");
     const [feedback, setFeedback] = useState("");
     const [isLoading] = useState<boolean>(false)
@@ -29,8 +31,9 @@ export default function AddContactInfo() {
     const createTestimonial = api.test.createTestimonial.useMutation({
         onSuccess: () => {
             setIsNextLoading(false);
-            toast("Success", {
-                description: "Testimonial has been created at " + formatDate(Date()),
+            toast({
+                title: "Success",
+                description: "Company Profile: Form 5 Completed",
             });
         },
     });

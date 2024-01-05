@@ -8,13 +8,13 @@ import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
 import { toast } from "sonner"
 
-
 export default function AddContactInfo() {
-	const [name, setName] = useState("");
+	const [fullName, setFullName] = useState("");
+	const [username, setUsername] = useState("");
+	const [location, setLocation] = useState("");
+	const [proEmail, setProEmail] = useState("");
 	const [isLoading] = useState<boolean>(false)
 	const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
-
-	const company = api.test.getCompanyProfilePrivate.useQuery();
 
 	const updateAccount = api.test.updateAccount.useMutation({
 		onSuccess: () => {
@@ -28,7 +28,7 @@ export default function AddContactInfo() {
 	function onSubmit() {
 		setIsNextLoading(true)
 		updateAccount.mutate({
-			name: name,
+
 		});
 	}
 
@@ -53,14 +53,53 @@ export default function AddContactInfo() {
 							>
 								<div className="col-span-full">
 									<label className="block mb-3 text-sm font-medium text-primary/90">
-										Account Name
+										Full Name (First and Last)
 									</label>
 									<Input
 										type="text"
 										placeholder="northcreek"
-										value={name}
+										value={fullName}
 										className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-										onChange={(e) => setName(e.target.value)}
+										onChange={(e) => setFullName(e.target.value)}
+										required
+									/>
+								</div>
+								<div className="col-span-full">
+									<label className="block mb-3 text-sm font-medium text-primary/90">
+										Username
+									</label>
+									<Input
+										type="text"
+										placeholder="northcreek"
+										value={username}
+										className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+										onChange={(e) => setUsername(e.target.value)}
+										required
+									/>
+								</div>
+								<div className="col-span-full">
+									<label className="block mb-3 text-sm font-medium text-primary/90">
+										Location
+									</label>
+									<Input
+										type="text"
+										placeholder="northcreek"
+										value={location}
+										className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+										onChange={(e) => setLocation(e.target.value)}
+										required
+									/>
+								</div>
+								<div className="col-span-full">
+									<label className="block mb-3 text-sm font-medium text-primary/90">
+										Professional Email
+									</label>
+									<Input
+										type="text"
+										placeholder="northcreek"
+										value={proEmail}
+										className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+										onChange={(e) => setProEmail(e.target.value)}
 										required
 									/>
 								</div>

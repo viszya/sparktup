@@ -101,9 +101,9 @@ export default function AddContactInfo() {
                                     </label>
                                     <Textarea 
                                      placeholder="northcreek"
-                                     value={srcImage}
+                                     value={message}
                                      className="rounded-2xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                     onChange={(e) => setSrcImage(e.target.value)}
+                                     onChange={(e) => setMessage(e.target.value)}
                                      required
                                     />
                                 </div>

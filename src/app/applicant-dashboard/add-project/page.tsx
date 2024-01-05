@@ -6,10 +6,11 @@ import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
-import { toast } from "sonner"
+import { useToast } from "@/app/_components/ui/use-toast";
 
 
 export default function AddContactInfo() {
+    const { toast } = useToast();
     const [name, setName] = useState("");
     const [src, setSrc] = useState("");
     const [link, setLink] = useState("");
@@ -19,8 +20,9 @@ export default function AddContactInfo() {
     const addProject = api.settings.addProject.useMutation({
         onSuccess: () => {
             setIsNextLoading(false);
-            toast("Success", {
-                description: "Testimonial has been created at " + formatDate(Date()),
+            toast({
+                title: "Success",
+                description: "Company Profile: Form 5 Completed",
             });
         },
     });

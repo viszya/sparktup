@@ -20,7 +20,12 @@ export const dashboardConfig: DashboardConfig = {
     {
       title: "My Profile",
       href: "/applicant-dashboard/profile",
-      icon: "user",
+      icon: "usercircle",
+    },
+    {
+      title: "Update Profile",
+      href: "/applicant-dashboard/update-profile",
+      icon: "cog",
     },
     {
       title: "Add Projects",

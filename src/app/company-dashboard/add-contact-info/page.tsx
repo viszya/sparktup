@@ -6,11 +6,12 @@ import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
-import { toast } from "sonner"
+import { useToast } from "@/app/_components/ui/use-toast";
 
 
 
 export default function AddContactInfo() {
+  const { toast } = useToast();
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
@@ -22,9 +23,10 @@ export default function AddContactInfo() {
   const createContactInformation = api.test.createContactInformation.useMutation({
     onSuccess: () => {
       setIsNextLoading(false);
-      toast("Success", {
-        description: "Your profile has been updated at " + formatDate(Date()),
-      });
+      toast({
+        title: "Success",
+        description: "Company Profile: Form 5 Completed",
+    });
     },
   });
 

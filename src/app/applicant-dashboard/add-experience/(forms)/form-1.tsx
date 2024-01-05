@@ -1,36 +1,37 @@
 "use client"
 
 import { useState } from "react";
-import { api } from "@/trpc/react";
 import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
-import { toast } from "@/app/_components/ui/sonner";
+import { useToast } from "@/app/_components/ui/use-toast";
 
 export function Form1({ onNextClick, addFormVals }: any) {
-    const [date, setDate] = useState("");
-    const [title, setTitle] = useState("");
-    const [location, setLocation] = useState("");
-    const [imgsrc, setImgsrc] = useState("");
-    const [attendees, setAttendees] = useState("");
+    const { toast } = useToast();
+    const [companyLogoSrc, setCompanyLogoSrc] = useState("");
+    const [companyName, setCompanyName] = useState("");
+    const [companyImgSrc, setCompanyImgSrc] = useState("");
+    const [engagement, setEngagement] = useState("");
+    const [relativeOfWork, setRelativeOfWork] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
-    const [submitted, setSubmitted] = useState(true);
+    const [submitted, setSubmitted] = useState(false);
 
     function onSubmit() {
         setIsLoading(true);
         setSubmitted(true);
         addFormVals({
-            date,
-            title,
-            location,
-            imgsrc,
-            attendees,
+            companyLogoSrc,
+            companyName,
+            companyImgSrc,
+            engagement,
+            relativeOfWork,
         });
-        setIsNextLoading(false);
-        toast("Success", {
-            description: "Career has been created at " + formatDate(Date()),
+        setIsLoading(false);
+        toast({
+            title: "Success",
+            description: "Company Profile: Form 5 Completed",
         });
 
     }
@@ -65,67 +66,67 @@ export function Form1({ onNextClick, addFormVals }: any) {
                         >
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Date
+                                Company Name
                                 </label>
                                 <Input
                                     placeholder="Date"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={date}
-                                    onChange={(e) => setDate(e.target.value)}
+                                    value={companyName}
+                                    onChange={(e) => setCompanyName(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Title
+                                Company Logo
                                 </label>
                                 <Input
-                                    placeholder="Title"
+                                    placeholder="Date"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={title}
-                                    onChange={(e) => setTitle(e.target.value)}
+                                    value={companyLogoSrc}
+                                    onChange={(e) => setCompanyLogoSrc(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Location
+                                Company Image
                                 </label>
                                 <Input
-                                    placeholder="Location"
+                                    placeholder="Date"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={location}
-                                    onChange={(e) => setLocation(e.target.value)}
+                                    value={companyImgSrc}
+                                    onChange={(e) => setCompanyImgSrc(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Image Source
+                                Engagement
                                 </label>
                                 <Input
-                                    placeholder="Image Source"
+                                    placeholder="Date"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={imgsrc}
-                                    onChange={(e) => setImgsrc(e.target.value)}
+                                    value={engagement}
+                                    onChange={(e) => setEngagement(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Attendees
+                                Relative of Work
                                 </label>
                                 <Input
-                                    placeholder="Attendees"
+                                    placeholder="Date"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={attendees}
-                                    onChange={(e) => setAttendees(e.target.value)}
+                                    value={relativeOfWork}
+                                    onChange={(e) => setRelativeOfWork(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
