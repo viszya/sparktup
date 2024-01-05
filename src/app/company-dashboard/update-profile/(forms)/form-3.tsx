@@ -44,16 +44,16 @@ export function Form3({ onNextClick, addFormVals, onBackClick }: any) {
                         <article>
                             <span className="inline-flex items-center text-primary rounded-xl">
                                 <span className="font-mono text-sm" aria-hidden="true">
-                                    01
+                                    03
                                 </span>
                             </span>
                             <div className="mt-3 text-3xl tracking-tighter text-primary">
-                                Welcome! Let&apos;s get started.
+                                Update Company Mission
                             </div>
                             <div className="mt-4 text-primary/80">
-                                Let&apos;s get started! Please fill out the following
+                                Please fill out the following
                                 form to the best of your ability. All this information will be
-                                used to create your profile. You can always edit your profile
+                                used to create your profile and represent your company&apos;s Mission. You can always edit your Mission
                                 later.
                             </div>
                         </article>
@@ -66,10 +66,10 @@ export function Form3({ onNextClick, addFormVals, onBackClick }: any) {
                         >
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Mission Values
+                                    What are your Company&apos;s Mission Values?
                                 </label>
                                 <Input
-                                    placeholder="Mission Values"
+                                    placeholder="Customer Satisfaction, etc. "
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -80,10 +80,10 @@ export function Form3({ onNextClick, addFormVals, onBackClick }: any) {
 
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Mission and Values
+                                    What is your Company&apos;s Mission?
                                 </label>
                                 <Input
-                                    placeholder="Mission and Values"
+                                    placeholder="&quot;Style shouldn&apos;t break the bank&quot;"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -94,10 +94,10 @@ export function Form3({ onNextClick, addFormVals, onBackClick }: any) {
 
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    About
+                                    What is your Company? <i>About Us Section</i>
                                 </label>
                                 <Input
-                                    placeholder="About"
+                                    placeholder="About Us"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -108,10 +108,10 @@ export function Form3({ onNextClick, addFormVals, onBackClick }: any) {
 
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Solutions Overview
+                                    What are your Company&apos;s Solutions?
                                 </label>
                                 <Input
-                                    placeholder="Solutions Overview"
+                                    placeholder="Customer Solutions, etc."
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required

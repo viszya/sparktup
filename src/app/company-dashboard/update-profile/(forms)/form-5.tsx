@@ -52,16 +52,15 @@ export function Form5({ onSubmitClick, addFormVals, onBackClick }: any) {
                         <article>
                             <span className="inline-flex items-center text-primary rounded-xl">
                                 <span className="font-mono text-sm" aria-hidden="true">
-                                    01
+                                    05
                                 </span>
                             </span>
                             <div className="mt-3 text-3xl tracking-tighter text-primary">
-                                Welcome! Let&apos;s get started.
+                                Company Specialities and Media Gallery
                             </div>
                             <div className="mt-4 text-primary/80">
-                                Let&apos;s get started! Please fill out the following
-                                form to the best of your ability. All this information will be
-                                used to create your profile. You can always edit your profile
+                                All this information will be
+                                used to update your Company Speacialities and Company Media. You can always edit your Speacialities and Media
                                 later.
                             </div>
                         </article>
@@ -74,7 +73,7 @@ export function Form5({ onSubmitClick, addFormVals, onBackClick }: any) {
                         >
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Specialtiles
+                                    What are your Company&apos;s Specialtiles?
                                 </label>
                                 <div className="flex flex-col gap-y-3">
                                     {specialties.map((specialty, index) => (
@@ -115,7 +114,7 @@ export function Form5({ onSubmitClick, addFormVals, onBackClick }: any) {
 
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Media Gallery
+                                    Media Gallery <i>(Only .png and .jpg files accepted)</i>
                                 </label>
                                 <div className="flex flex-col gap-y-3">
                                     {mediaGallery.map((media, index) => (

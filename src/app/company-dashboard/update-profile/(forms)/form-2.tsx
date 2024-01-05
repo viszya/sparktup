@@ -46,17 +46,17 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                         <article>
                             <span className="inline-flex items-center text-primary rounded-xl">
                                 <span className="font-mono text-sm" aria-hidden="true">
-                                    01
+                                    02
                                 </span>
                             </span>
                             <div className="mt-3 text-3xl tracking-tighter text-primary">
-                                Welcome! Let&apos;s get started.
+                                Update Company Industry
                             </div>
                             <div className="mt-4 text-primary/80">
-                                Let&apos;s get started! Please fill out the following
-                                form to the best of your ability. All this information will be
-                                used to create your profile. You can always edit your profile
-                                later.
+                                Please fill out the following to update you company&apos;s industry information
+                                Your industry information will be displayed to applicants.
+                                You can always edit your industry
+                                information.
                             </div>
                         </article>
                         <form
@@ -68,10 +68,10 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                         >
                              <div className="col-span-full">
                                     <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Industry
+                                        What is the Company&apos;s Industry
                                     </label>
                                     <Input
-                                        placeholder="Industry"
+                                        placeholder="Appliances, Information Technology, etc."
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         type="text"
                                         required
@@ -82,10 +82,10 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
 
                                 <div className="col-span-full">
                                     <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Company Size
+                                        What is the Company&apos;s Size in Member&apos;s/Employees
                                     </label>
                                     <Input
-                                        placeholder="Company Size"
+                                        placeholder="10000+"
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         type="text"
                                         required
@@ -111,10 +111,10 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
 
                                 <div className="col-span-full">
                                     <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Company Banner Image
+                                        Company Banner <i>Insert 16:9 image</i>
                                     </label>
                                     <Input
-                                        placeholder="Company Banner Image"
+                                        placeholder=".png, .jpg"
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         type="text"
                                         required
@@ -125,10 +125,10 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
 
                                 <div className="col-span-full">
                                     <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Founding Year
+                                        What is the Founding Year?
                                     </label>
                                     <Input
-                                        placeholder="Founding Year"
+                                        placeholder="2012, 2018, etc."
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         type="text"
                                         required
