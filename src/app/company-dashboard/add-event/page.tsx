@@ -6,23 +6,13 @@ import { Form1 } from "@/app/company-dashboard/add-career/(forms)/form-1";
 import { Form2 } from "@/app/company-dashboard/add-career/(forms)/form-2";
 import { Form3 } from "@/app/company-dashboard/add-career/(forms)/form-3";
 import { InputData } from "@/app/_components/inputdata";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { buttonVariants } from "@/app/_components/ui/button";
 import { api } from "@/trpc/react";
-import { toast } from "@/app/_components/ui/sonner";
 import { formatDate } from "@/server/utils";
-
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/app/_components/ui/card"
+import { useToast } from "@/app/_components/ui/use-toast";
 
 export default function AddCareer() {
+    const { toast } = useToast();
     const [date, setDate] = useState("");
     const [title, setTitle] = useState("");
     const [location, setLocation] = useState("");
@@ -37,11 +27,13 @@ export default function AddCareer() {
     const [photoSrc, setPhotoSrc] = useState("");
     const [activeTab, setActiveTab] = useState("profile");
     const tabOrder = ["profile", "contact", "socialmedia"];
+    const company = api.test.getCompanyProfilePrivate.useQuery();
     const createEvent = api.test.createEvent.useMutation({
         onSuccess: () => {
             // setIsNextLoading(false);
-            toast("Success", {
-                description: "Event has been created at " + formatDate(Date()),
+            toast({
+                title: "Success",
+                description: "Company Profile: Form 5 Completed",
             });
         },
     });
@@ -78,7 +70,25 @@ export default function AddCareer() {
     }
 
     function handleSubmitClick() {
+        console.log("HIHI");
+        console.log({
+            id: company.data?.company[0]?.id ?? "",
+            date,
+            title,
+            location,
+            imgsrc,
+            attendees,
+            viewLink,
+            eventType,
+            eventBy,
+            about,
+            seeSrc,
+            attendSrc,
+            photoSrc,
+        });
+        console.log("HIHHIHIHII");
         createEvent.mutate({
+            id: company.data?.company[0]?.id ?? "",
             date,
             title,
             location,

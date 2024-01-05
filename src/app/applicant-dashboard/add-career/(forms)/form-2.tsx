@@ -6,15 +6,16 @@ import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
-import { useToast } from "@/app/_components/ui/use-toast";
+import { toast } from "@/app/_components/ui/sonner";
 
 
 export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
-    const { toast } = useToast();
-    const [viewLink, setViewLink] = useState("");
-    const [eventType, setEventType] = useState("");
-    const [eventBy, setEventBy] = useState("");
-    const [about, setAbout] = useState("");
+    const [pricingDescription, setPricingDescription] = useState("");
+    const [sizeDescription, setSizeDescription] = useState("");
+    const [skills, setSkills] = useState("");
+    const [jobLink, setJobLink] = useState("");
+    const [seeSrc, setSeeSrc] = useState("");
+    const [thumbnail, setThumbnail] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
     const [submitted, setSubmitted] = useState(true);
@@ -23,15 +24,16 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
         setIsLoading(true);
         setSubmitted(true);
         addFormVals({
-            viewLink,
-            eventType,
-            eventBy,
-            about,
+            pricingDescription,
+            sizeDescription,
+            skills,
+            jobLink,
+            seeSrc,
+            thumbnail,
         });
-        setIsLoading(false);
-        toast({
-            title: "Success",
-            description: "Company Profile: Form 5 Completed",
+        setIsNextLoading(false);
+        toast("Success", {
+            description: "Career has been created at " + formatDate(Date()),
         });
     }
 
@@ -64,55 +66,81 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                             }}
                         >
                             <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    View Link
+                                <label className="block mb-3 text-sm font-medium text-primary/90" >
+                                    What is the pricing description of the job?
                                 </label>
                                 <Input
-                                    placeholder="View Link"
+                                    placeholder="Pricing description"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={viewLink}
-                                    onChange={(e) => setViewLink(e.target.value)}
+                                    value={pricingDescription}
+                                    onChange={(e) => setPricingDescription(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Event Type
+                                    What is the size description of the job?
                                 </label>
                                 <Input
-                                    placeholder="Event Type"
+                                    placeholder="Size description"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={eventType}
-                                    onChange={(e) => setEventType(e.target.value)}
+                                    value={sizeDescription}
+                                    onChange={(e) => setSizeDescription(e.target.value)}
+                                />
+                            </div>
+                            <div className="col-span-full">
+                                <label className="block mb-3 text-sm font-medium text-primary/90" >
+                                    What is the skills of the job?
+                                </label>
+                                <Input
+                                    placeholder="Skills"
+                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                    type="text"
+                                    required
+                                    value={skills}
+                                    onChange={(e) => setSkills(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Event By
+                                    What is the job link of the job?
                                 </label>
                                 <Input
-                                    placeholder="Event By"
+                                    placeholder="https://example.com/job"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={eventBy}
-                                    onChange={(e) => setEventBy(e.target.value)}
+                                    value={jobLink}
+                                    onChange={(e) => setJobLink(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
-                                <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    About
+                                <label className="block mb-3 text-sm font-medium text-primary/90" >
+                                    What is the see source of the job?
                                 </label>
                                 <Input
-                                    placeholder="About"
+                                    placeholder="https://example.com/see"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={about}
-                                    onChange={(e) => setAbout(e.target.value)}
+                                    value={seeSrc}
+                                    onChange={(e) => setSeeSrc(e.target.value)}
+                                />
+                            </div>
+                            <div className="col-span-full">
+                                <label className="block mb-3 text-sm font-medium text-primary/90" >
+                                    What is the thumbnail of the job?
+                                </label>
+                                <Input
+                                    placeholder="https://example.com/thumbnail"
+                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                    type="text"
+                                    required
+                                    value={thumbnail}
+                                    onChange={(e) => setThumbnail(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">

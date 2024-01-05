@@ -7,28 +7,17 @@ import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
 import { useToast } from "@/app/_components/ui/use-toast";
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/app/_components/ui/card"
-
 
 
 export default function AddContactInfo() {
     const { toast } = useToast();
-
-    const [clientName, setClientName] = useState("");
-    const [feedback, setFeedback] = useState("");
+    const [name, setName] = useState("");
+    const [src, setSrc] = useState("");
+    const [link, setLink] = useState("");
     const [isLoading] = useState<boolean>(false)
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
 
-    const company = api.test.getCompanyProfilePrivate.useQuery();
-
-    const createTestimonial = api.test.createTestimonial.useMutation({
+    const addProject = api.settings.addProject.useMutation({
         onSuccess: () => {
             setIsNextLoading(false);
             toast({
@@ -40,19 +29,19 @@ export default function AddContactInfo() {
 
     function onSubmit() {
         setIsNextLoading(true)
-        createTestimonial.mutate({
-            id: company.data?.company[0]?.id ?? "",
-            clientName: clientName,
-            feedback: feedback,
+        addProject.mutate({
+            name: name,
+            src: src,
+            link: link,
         });
     }
 
     return (
         <div className="flex flex-col px-8">
             <div>
-                <h2 className="text-3xl font-bold tracking-tight">Add Testimonial</h2>
+                <h2 className="text-3xl font-bold tracking-tight">Add Project</h2>
                 <p className="text-muted-foreground">
-                    Add testimonals to your company profile by filling out the form below.
+                    Edit Your Personal Accounts Settings
                 </p>
             </div>
             <div className="flex flex-col justify-center w-full max-w-5xl">
@@ -68,27 +57,40 @@ export default function AddContactInfo() {
                             >
                                 <div className="col-span-full">
                                     <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Client Name
+                                        Project Name
                                     </label>
                                     <Input
                                         type="text"
-                                        placeholder="Client Name"
-                                        value={clientName}
+                                        placeholder="northcreek"
+                                        value={name}
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                        onChange={(e) => setClientName(e.target.value)}
+                                        onChange={(e) => setName(e.target.value)}
                                         required
                                     />
                                 </div>
                                 <div className="col-span-full">
                                     <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Feedback
+                                        Project Link
                                     </label>
                                     <Input
                                         type="text"
-                                        placeholder="Feedback"
-                                        value={feedback}
+                                        placeholder="https://northcreek.ca"
+                                        value={link}
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                        onChange={(e) => setFeedback(e.target.value)}
+                                        onChange={(e) => setLink(e.target.value)}
+                                        required
+                                    />
+                                </div>
+                                <div className="col-span-full">
+                                    <label className="block mb-3 text-sm font-medium text-primary/90">
+                                        Project Image Source
+                                    </label>
+                                    <Input
+                                        type="text"
+                                        placeholder="https://northcreek.ca"
+                                        value={src}
+                                        className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                        onChange={(e) => setSrc(e.target.value)}
                                         required
                                     />
                                 </div>
@@ -102,24 +104,13 @@ export default function AddContactInfo() {
                                             <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
                                         ) : (<></>
                                         )}{" "}
-                                        Add Testimonial
+                                        Update Account
                                     </button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="mt-5 border border-dased border-secondary rounded-xl p-2">
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Edit or Delete Testimonials</CardTitle>
-                        <CardDescription>Using the data table sort, filter to eedit delete testimonials</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                            
-                    </CardContent>
-                </Card>
             </div>
         </div>
 

@@ -6,15 +6,14 @@ import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
-import { useToast } from "@/app/_components/ui/use-toast";
+import { toast } from "@/app/_components/ui/sonner";
 
-
-export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
-    const { toast } = useToast();
-    const [viewLink, setViewLink] = useState("");
-    const [eventType, setEventType] = useState("");
-    const [eventBy, setEventBy] = useState("");
-    const [about, setAbout] = useState("");
+export function Form1({ onNextClick, addFormVals }: any) {
+    const [position, setPosition] = useState("");
+    const [location, setLocation] = useState("");
+    const [applyLink, setApplyLink] = useState("");
+    const [companyLogo, setCompanyLogo] = useState("");
+    const [description, setDescription] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
     const [submitted, setSubmitted] = useState(true);
@@ -23,16 +22,17 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
         setIsLoading(true);
         setSubmitted(true);
         addFormVals({
-            viewLink,
-            eventType,
-            eventBy,
-            about,
+            position,
+            location,
+            applyLink,
+            companyLogo,
+            description,
         });
-        setIsLoading(false);
-        toast({
-            title: "Success",
-            description: "Company Profile: Form 5 Completed",
+        setIsNextLoading(false);
+        toast("Success", {
+            description: "Career has been created at " + formatDate(Date()),
         });
+
     }
 
     return (
@@ -65,54 +65,67 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                         >
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    View Link
+                                    What is positiong of the job?
                                 </label>
                                 <Input
-                                    placeholder="View Link"
+                                    placeholder="iOS Developer"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={viewLink}
-                                    onChange={(e) => setViewLink(e.target.value)}
+                                    value={position}
+                                    onChange={(e) => setPosition(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Event Type
+                                    What is the location of the job?
                                 </label>
                                 <Input
-                                    placeholder="Event Type"
+                                    placeholder="San Francisco, CA"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={eventType}
-                                    onChange={(e) => setEventType(e.target.value)}
+                                    value={location}
+                                    onChange={(e) => setLocation(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Event By
+                                    What is the apply link of the job?
                                 </label>
                                 <Input
-                                    placeholder="Event By"
+                                    placeholder="https://example.com/apply"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={eventBy}
-                                    onChange={(e) => setEventBy(e.target.value)}
+                                    value={applyLink}
+                                    onChange={(e) => setApplyLink(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    About
+                                    What is the company logo of the job?
                                 </label>
                                 <Input
-                                    placeholder="About"
+                                    placeholder="https://example.com/logo.png"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={about}
-                                    onChange={(e) => setAbout(e.target.value)}
+                                    value={companyLogo}
+                                    onChange={(e) => setCompanyLogo(e.target.value)}
+                                />
+                            </div>
+                            <div className="col-span-full">
+                                <label className="block mb-3 text-sm font-medium text-primary/90">
+                                    What is the description of the job?
+                                </label>
+                                <Input
+                                    placeholder="Job description"
+                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                    type="text"
+                                    required
+                                    value={description}
+                                    onChange={(e) => setDescription(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
@@ -134,12 +147,10 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                 </div>
             </div>
             {submitted ? (
-                <div className="flex justify-center items-center gap-x-4 ">
-                    <div className="border border-dashed border-primary/60 p-2 flex justify-center items-center gap-x-4 rounded-xl mt-2">
-                        <button onClick={onBackClick} className={cn(buttonVariants({ variant: "outline" }), " rounded-xl w-26")}>
-                            <Icons.chevronLeft className="h-5 w-5 mr-2" />
-                            Back
-                        </button>
+                <div className="flex justify-center items-center">
+                    <div className="border border-dashed border-primary/60 p-2 flex justify-center items-center rounded-xl mt-2">
+                        {/* Next Button */}
+
                         <button onClick={onNextClick} className={cn(buttonVariants({ variant: "default" }), " rounded-xl w-26")}>
                             Next
                             <Icons.chevronRight className="h-5 w-5 ml-2" />

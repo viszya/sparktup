@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react";
-import { api } from "@/trpc/react";
 import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
@@ -9,12 +8,12 @@ import { Input } from "@/app/_components/ui/input";
 import { useToast } from "@/app/_components/ui/use-toast";
 
 
-export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
+export function Form2({ onSubmitClick, addFormVals, onBackClick }: any) {
     const { toast } = useToast();
-    const [viewLink, setViewLink] = useState("");
-    const [eventType, setEventType] = useState("");
-    const [eventBy, setEventBy] = useState("");
-    const [about, setAbout] = useState("");
+    const [jobTitle, setJobTitle] = useState("");
+    const [location, setLocation] = useState("");
+    const [time, setTime] = useState("");
+    const [jobDescriptions, setJobDescriptions] = useState<string[]>([""]);
     const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
     const [submitted, setSubmitted] = useState(true);
@@ -23,17 +22,34 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
         setIsLoading(true);
         setSubmitted(true);
         addFormVals({
-            viewLink,
-            eventType,
-            eventBy,
-            about,
+            jobTitle,
+            location,
+            time,
+            jobDescriptions,
         });
+        setIsNextLoading(false);
         setIsLoading(false);
         toast({
             title: "Success",
             description: "Company Profile: Form 5 Completed",
         });
     }
+
+    const addJobDescription = () => {
+        setJobDescriptions([...jobDescriptions, ""]);
+    };
+
+    const removeJobDescription = (index: number) => {
+        const updatedJobDescriptions = [...jobDescriptions];
+        updatedJobDescriptions.splice(index, 1);
+        setJobDescriptions(updatedJobDescriptions);
+    };
+
+    const updateJobDescription = (index: number, value: string) => {
+        const updatedJobDescriptions = [...jobDescriptions];
+        updatedJobDescriptions[index] = value;
+        setJobDescriptions(updatedJobDescriptions);
+    };
 
     return (
         <section>
@@ -65,55 +81,78 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                         >
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    View Link
+                                    Job Title
                                 </label>
                                 <Input
-                                    placeholder="View Link"
+                                    placeholder="Date"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={viewLink}
-                                    onChange={(e) => setViewLink(e.target.value)}
+                                    value={jobTitle}
+                                    onChange={(e) => setJobTitle(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Event Type
+                                    Location
                                 </label>
                                 <Input
-                                    placeholder="Event Type"
+                                    placeholder="Date"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={eventType}
-                                    onChange={(e) => setEventType(e.target.value)}
+                                    value={location}
+                                    onChange={(e) => setLocation(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Event By
+                                    Time
                                 </label>
                                 <Input
-                                    placeholder="Event By"
+                                    placeholder="Date"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={eventBy}
-                                    onChange={(e) => setEventBy(e.target.value)}
+                                    value={time}
+                                    onChange={(e) => setTime(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    About
+                                    Job Description
                                 </label>
-                                <Input
-                                    placeholder="About"
-                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                    type="text"
-                                    required
-                                    value={about}
-                                    onChange={(e) => setAbout(e.target.value)}
-                                />
+                                <div className="flex flex-col gap-y-3">
+                                    {jobDescriptions.map((jobDescription, index) => (
+                                        <div className="flex flex-row gap-x-2">
+                                            <Input
+                                                key={index}
+                                                type="text"
+                                                placeholder="I worked on..."
+                                                value={jobDescription}
+                                                className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                                onChange={(e) => {
+                                                    updateJobDescription(index, e.target.value);
+                                                }}
+                                                required
+                                            />
+                                            <button
+                                                type="button"
+                                                className={cn(buttonVariants({ variant: "destructive" }), "w-20 rounded-xl ")}
+                                                onClick={() => removeJobDescription(index)}
+                                            >
+                                                Remove
+                                            </button>
+                                        </div>
+                                    ))}
+                                    <button
+                                        type="button"
+                                        className={cn(buttonVariants({ variant: "outline" }), " w-60 items-center justify-center px-6 py-2.5 text-center text-secondary duration-200 bg-primary border-2 border-primary rounded-xl inline-flex hover:bg-transparent hover:border-primary hover:text-primary focus:outline-none focus-visible:outline-primary text-sm focus-visible:ring-primary")}
+                                        onClick={addJobDescription}
+                                    >
+                                        Add Job Description
+                                    </button>
+                                </div>
                             </div>
                             <div className="col-span-full">
                                 <button
@@ -133,20 +172,22 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                     </div>
                 </div>
             </div>
-            {submitted ? (
-                <div className="flex justify-center items-center gap-x-4 ">
-                    <div className="border border-dashed border-primary/60 p-2 flex justify-center items-center gap-x-4 rounded-xl mt-2">
-                        <button onClick={onBackClick} className={cn(buttonVariants({ variant: "outline" }), " rounded-xl w-26")}>
-                            <Icons.chevronLeft className="h-5 w-5 mr-2" />
-                            Back
-                        </button>
-                        <button onClick={onNextClick} className={cn(buttonVariants({ variant: "default" }), " rounded-xl w-26")}>
-                            Next
-                            <Icons.chevronRight className="h-5 w-5 ml-2" />
-                        </button>
-                    </div>
+
+            <div className="flex justify-center items-center gap-x-4 ">
+                <div className="border border-dashed border-primary/60 p-2 flex justify-center items-center gap-x-4 rounded-xl mt-2">
+                    <button onClick={onBackClick} className={cn(buttonVariants({ variant: "outline" }), " rounded-xl w-26")}>
+                        <Icons.chevronLeft className="h-5 w-5 mr-2" />
+                        Back
+                    </button>
+                    {submitted ? (
+                        <button onClick={onSubmitClick} className={cn(buttonVariants({ variant: "default" }), " rounded-xl w-26")}>
+                        Add to Profile
+                        <Icons.chevronRight className="h-5 w-5 ml-2" />
+                    </button>
+                    ) : (<></>)}
+
                 </div>
-            ) : (<></>)}
+            </div>
         </section>
     );
 }

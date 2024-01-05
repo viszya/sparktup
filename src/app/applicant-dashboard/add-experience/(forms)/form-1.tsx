@@ -1,38 +1,39 @@
 "use client"
 
 import { useState } from "react";
-import { api } from "@/trpc/react";
 import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
 import { useToast } from "@/app/_components/ui/use-toast";
 
-
-export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
+export function Form1({ onNextClick, addFormVals }: any) {
     const { toast } = useToast();
-    const [viewLink, setViewLink] = useState("");
-    const [eventType, setEventType] = useState("");
-    const [eventBy, setEventBy] = useState("");
-    const [about, setAbout] = useState("");
+    const [companyLogoSrc, setCompanyLogoSrc] = useState("");
+    const [companyName, setCompanyName] = useState("");
+    const [companyImgSrc, setCompanyImgSrc] = useState("");
+    const [engagement, setEngagement] = useState("");
+    const [relativeOfWork, setRelativeOfWork] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
-    const [submitted, setSubmitted] = useState(true);
+    const [submitted, setSubmitted] = useState(false);
 
     function onSubmit() {
         setIsLoading(true);
         setSubmitted(true);
         addFormVals({
-            viewLink,
-            eventType,
-            eventBy,
-            about,
+            companyLogoSrc,
+            companyName,
+            companyImgSrc,
+            engagement,
+            relativeOfWork,
         });
         setIsLoading(false);
         toast({
             title: "Success",
             description: "Company Profile: Form 5 Completed",
         });
+
     }
 
     return (
@@ -65,54 +66,67 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                         >
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    View Link
+                                Company Name
                                 </label>
                                 <Input
-                                    placeholder="View Link"
+                                    placeholder="Date"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={viewLink}
-                                    onChange={(e) => setViewLink(e.target.value)}
+                                    value={companyName}
+                                    onChange={(e) => setCompanyName(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Event Type
+                                Company Logo
                                 </label>
                                 <Input
-                                    placeholder="Event Type"
+                                    placeholder="Date"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={eventType}
-                                    onChange={(e) => setEventType(e.target.value)}
+                                    value={companyLogoSrc}
+                                    onChange={(e) => setCompanyLogoSrc(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Event By
+                                Company Image
                                 </label>
                                 <Input
-                                    placeholder="Event By"
+                                    placeholder="Date"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={eventBy}
-                                    onChange={(e) => setEventBy(e.target.value)}
+                                    value={companyImgSrc}
+                                    onChange={(e) => setCompanyImgSrc(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    About
+                                Engagement
                                 </label>
                                 <Input
-                                    placeholder="About"
+                                    placeholder="Date"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
-                                    value={about}
-                                    onChange={(e) => setAbout(e.target.value)}
+                                    value={engagement}
+                                    onChange={(e) => setEngagement(e.target.value)}
+                                />
+                            </div>
+                            <div className="col-span-full">
+                                <label className="block mb-3 text-sm font-medium text-primary/90">
+                                Relative of Work
+                                </label>
+                                <Input
+                                    placeholder="Date"
+                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                    type="text"
+                                    required
+                                    value={relativeOfWork}
+                                    onChange={(e) => setRelativeOfWork(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">
@@ -134,12 +148,10 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                 </div>
             </div>
             {submitted ? (
-                <div className="flex justify-center items-center gap-x-4 ">
-                    <div className="border border-dashed border-primary/60 p-2 flex justify-center items-center gap-x-4 rounded-xl mt-2">
-                        <button onClick={onBackClick} className={cn(buttonVariants({ variant: "outline" }), " rounded-xl w-26")}>
-                            <Icons.chevronLeft className="h-5 w-5 mr-2" />
-                            Back
-                        </button>
+                <div className="flex justify-center items-center">
+                    <div className="border border-dashed border-primary/60 p-2 flex justify-center items-center rounded-xl mt-2">
+                        {/* Next Button */}
+
                         <button onClick={onNextClick} className={cn(buttonVariants({ variant: "default" }), " rounded-xl w-26")}>
                             Next
                             <Icons.chevronRight className="h-5 w-5 ml-2" />

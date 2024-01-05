@@ -1,14 +1,15 @@
 "use client"
 
-import { useState } from "react";
+import { use, useState } from "react";
 import { api } from "@/trpc/react";
 import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
-import { toast } from "@/app/_components/ui/sonner";
+import { useToast } from "@/app/_components/ui/use-toast";
 
 export function Form1({ onNextClick, addFormVals }: any) {
+    const { toast } = useToast();
     const [companyName, setCompanyName] = useState("");
     const [linkedInMembers, setLinkedInMembers] = useState("");
     const [logoSrc, setLogoSrc] = useState("");
@@ -16,7 +17,7 @@ export function Form1({ onNextClick, addFormVals }: any) {
     const [website, setWebsite] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
-    const [submitted, setSubmitted] = useState(true);
+    const [submitted, setSubmitted] = useState(false);
 
     function onSubmit() {
         setIsLoading(true);
@@ -28,9 +29,10 @@ export function Form1({ onNextClick, addFormVals }: any) {
             location,
             website,
         });
-        setIsNextLoading(false);
-        toast("Success", {
-            description: "Career has been created at " + formatDate(Date()),
+        setIsLoading(false);
+        toast({
+            title: "Success",
+            description: "Company Profile: Form 1 Completed",
         });
 
     }
@@ -122,7 +124,7 @@ export function Form1({ onNextClick, addFormVals }: any) {
                                 <Input
                                     placeholder="google.com"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                    type="text"
+                                    type="url"
                                     required
                                     value={website}
                                     onChange={(e) => setWebsite(e.target.value)}
