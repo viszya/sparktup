@@ -335,7 +335,62 @@ export const testRouter = createTRPCRouter({
             });
         }),
 
+    getCompanyProfile2: publicProcedure
+        .input(z.object({
+            id: z.string(),
+        }))
+        .query(async ({ ctx, input }) => {
+            return ctx.db.company.findUnique({
+                where: {
+                    id: input.id,
+                },
+                include: {
+                    contactInformation: true,
+                    teamMembers: true,
+                    careerOpportunities: true,
+                    eventData: true,
+                    testimonials: true,
+                },
+            });
+        }),
+       
 
+    getCompanyProfiles: publicProcedure
+        .query(async ({ ctx }) => {
+            return ctx.db.company.findMany({
+                include: {
+                    contactInformation: true,
+                    teamMembers: true,
+                    careerOpportunities: true,
+                    eventData: true,
+                    testimonials: true,
+                }
+            });
+        }),
+    
+    getCompanyCareers: publicProcedure
+        .input(z.object({
+            id: z.string(),
+        }))
+        .query(async ({ ctx, input }) => {
+            return ctx.db.careerOpportunity.findMany({
+                where: {
+                    companyId: input.id,
+                },
+            });
+        }),
+
+    getCareer: publicProcedure
+        .input(z.object({
+            id: z.string(),
+        }))
+        .query(async ({ ctx, input }) => {
+            return ctx.db.careerOpportunity.findUnique({
+                where: {
+                    id: input.id,
+                },
+            });
+        }),
 
 });
 

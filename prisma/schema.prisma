@@ -232,24 +232,26 @@ model ApplicantStats {
 }
 
 model Application {
-  id              String            @id @default(cuid())
-  nID             Int               @default(0000)
-  status          String            @default("Not Viewed")
-  priority        String            @default("low")
-  applicationForm ApplicationForm[]
-  company         Company?           @relation(fields: [companyId], references: [id])
-  companyId       String
-  applicant       User?             @relation(fields: [applicantId], references: [id])
-  applicantId     String
-}
-
-model ApplicationForm {
-  id            String      @id @default(cuid())
-  name          String
-  email         String
-  phone         String
-  coverLetter   String
-  resume        String
-  application   Application @relation(fields: [applicationId], references: [id])
-  applicationId String
+  id                           String   @id @default(cuid())
+  nID                          Int      @default(0000)
+  status                       String   @default("Not Viewed")
+  priority                     String   @default("low")
+  job                          String?
+  technicalSkills              String?
+  softSkills                   String?
+  certifications               String?
+  startDate                    String?
+  employmentType               String?
+  desiredWorkSchedule          String?
+  convictedOfCrime             String?
+  interestReason               String?
+  suitableCandidateReason      String?
+  challengingSituation         String?
+  backgroundCheckAuthorization Boolean  @default(false)
+  termsAndConditionsAgreement  Boolean  @default(false)
+  fullName                    String?
+  company                      Company? @relation(fields: [companyId], references: [id])
+  companyId                    String
+  applicant                    User?    @relation(fields: [applicantId], references: [id])
+  applicantId                  String
 }

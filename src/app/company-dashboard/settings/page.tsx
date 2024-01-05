@@ -7,6 +7,9 @@ import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
 import { useToast } from "@/app/_components/ui/use-toast";
+import { InputData } from "@/app/_components/inputdata2";
+import { InputData2 } from "@/app/_components/inputdata3";
+
 
 
 export default function AddContactInfo() {
@@ -21,9 +24,9 @@ export default function AddContactInfo() {
 		onSuccess: () => {
 			setIsNextLoading(false);
 			toast({
-                title: "Success",
-                description: "Company Profile: Form 5 Completed",
-            });
+				title: "Success",
+				description: "Company Profile: Form 5 Completed",
+			});
 		},
 	});
 
@@ -59,7 +62,7 @@ export default function AddContactInfo() {
 									</label>
 									<Input
 										type="text"
-										placeholder="Northcreek"
+										placeholder="northcreek"
 										value={name}
 										className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
 										onChange={(e) => setName(e.target.value)}
@@ -83,6 +86,12 @@ export default function AddContactInfo() {
 						</div>
 					</div>
 				</div>
+			</div>
+			<div className="border border-primary mt-5 p-2 rounded-xl bg-secondary">
+				<InputData />
+			</div>
+			<div className="border border-primary mt-5 p-2 rounded-xl bg-secondary">
+				<InputData2 />
 			</div>
 		</div>
 

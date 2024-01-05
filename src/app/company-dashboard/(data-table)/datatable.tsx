@@ -1,31 +1,45 @@
+"use client"
+
 import { promises as fs } from "fs"
 import path from "path"
-import { Metadata } from "next"
-import Image from "next/image"
 import { z } from "zod"
 
 import { columns } from "./components/columns"
 import { DataTable } from "./components/data-table"
-import { UserNav } from "./components/user-nav"
-import { taskSchema } from "./data/schema"
+import { api } from "@/trpc/react"
 
 // Simulate a database read for tasks.
-async function getTasks() {
-  const data = await fs.readFile(
-    path.join(process.cwd(), "src/app/company-dashboard/(data-table)/data/tasks.json")
-  )
+function getTasks() {
+  // application: z.string(),
+  // priority: z.string(),
+  // status: z.string(),
+  // jobposition: z.string(),
+  // applicant: z.string(),
+  // profile: z.string(),
+  // applicationform: z.string(),
+  // const data = await fs.readFile(
+  //   path.join(process.cwd(), "src/app/company-dashboard/(data-table)/data/tasks.json")
+  // )
 
-  const tasks = JSON.parse(data.toString())
+  // const tasks = JSON.parse(data.toString())
 
-  return z.array(taskSchema).parse(tasks)
+  // return z.array(taskSchema).parse(tasks)
+  
+
 }
 
-export async function DataPage() {
-  const tasks = await getTasks()
+export  function DataPage() {
+  const applications = api.application.getApplicationsFromCompany.useQuery()
+  const data = applications.data
+  console.log(data)
+
+  if (applications.isLoading == true) {
+    return <div>Loading...</div>
+  }
 
   return (
     <>
-        <DataTable data={tasks} columns={columns} />
+        <DataTable data={data} columns={columns} />
     </>
   )
 }

@@ -12,6 +12,7 @@ import { DataTableRowActions } from "./data-table-row-actions"
 import { buttonVariants } from "@/app/_components/ui/button"
 import Link from "next/link"
 import { cn } from "@/server/utils"
+import { api } from "@/trpc/react"
 
 export const columns: ColumnDef<Task>[] = [
   {
@@ -39,16 +40,16 @@ export const columns: ColumnDef<Task>[] = [
     enableHiding: false,
   },
   {
-    accessorKey: "application",
+    accessorKey: "nID",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Application" />
+      <DataTableColumnHeader column={column} title="ID" />
     ),
-    cell: ({ row }) => <div className="w-[80px]">{row.getValue("application")}</div>,
+    cell: ({ row }) => <div className="w-[80px]">{row.getValue("nID")}</div>,
     enableSorting: false,
     enableHiding: false,
   },
   {
-    accessorKey: "jobposition",
+    accessorKey: "job",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Job Position" />
     ),
@@ -59,25 +60,22 @@ export const columns: ColumnDef<Task>[] = [
         <div className="flex space-x-2">
           {/* {label && <Badge variant="outline">{label.label}</Badge>} */}
           <span className="max-w-[500px] truncate font-medium">
-            {row.getValue("jobposition")}
+            {row.getValue("job")}
           </span>
         </div>
       )
     },
   },
   {
-    accessorKey: "applicant",
+    accessorKey: "fullName",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Applicant" />
     ),
     cell: ({ row }) => {
-      // const label = labels.find((label) => label.value === row.original.label)
-
       return (
         <div className="flex space-x-2">
-          {/* {label && <Badge variant="outline">{label.label}</Badge>} */}
           <span className="max-w-[500px] truncate font-medium">
-            {row.getValue("applicant")}
+            {row.getValue("fullName")}
           </span>
         </div>
       )
@@ -156,7 +154,7 @@ export const columns: ColumnDef<Task>[] = [
   },
 
   {
-    accessorKey: "profile",
+    accessorKey: "applicantId",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Profile" />
     ),
@@ -166,7 +164,7 @@ export const columns: ColumnDef<Task>[] = [
       return (
         <div className="flex space-x-2">
           {/* {label && <Badge variant="outline">{label.label}</Badge>} */}
-          <Link href="/" className={cn(buttonVariants())}>
+          <Link href={"/applicant/profile/" + String(row.getValue("applicantId"))} className={cn(buttonVariants())}>
             View
           </Link>
         </div>
