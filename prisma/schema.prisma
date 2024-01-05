@@ -51,11 +51,14 @@ model User {
   image             String?
   accounts          Account[]
   sessions          Session[]
+  phone             String?
   fullName          String?
   jobTitle          String?
   username          String?
   location          String?
+  accountType       String?
   yearsOfExperience String?
+  accountStatus     Boolean          @default(false)
   about             String?
   proEmail          String?
   availableForWork  Boolean?
@@ -249,7 +252,7 @@ model Application {
   challengingSituation         String?
   backgroundCheckAuthorization Boolean  @default(false)
   termsAndConditionsAgreement  Boolean  @default(false)
-  fullName                    String?
+  fullName                     String?
   company                      Company? @relation(fields: [companyId], references: [id])
   companyId                    String
   applicant                    User?    @relation(fields: [applicantId], references: [id])

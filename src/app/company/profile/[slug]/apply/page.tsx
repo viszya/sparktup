@@ -11,10 +11,22 @@ import { useToast } from "@/app/_components/ui/use-toast";
 import { cn } from "@/server/utils";
 import { useSearchParams } from 'next/navigation'
 import { Icons } from "@/app/_components/icons";
+import Link from "next/link"
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+} from "@/app/_components/ui/alert-dialog"
+
 
 export default function JobApplicationForm() {
     const { toast } = useToast();
-    const [isLoading, setLoading] = useState(false); // Change to false
     const [isNextLoading, setIsNextLoading] = useState(false); // Change to false
     const [technicalSkills, setTechnicalSkills] = useState("");
     const [softSkills, setSoftSkills] = useState("");
@@ -30,7 +42,7 @@ export default function JobApplicationForm() {
     const [termsAndConditionsAgreement, setTermsAndConditionsAgreement] = useState(false); // Default value
     const searchParams = useSearchParams()
     const position = searchParams.get("job");
-    const jobId = searchParams.get("jobID");
+    const jobId = searchParams.get("jobId");
     const id = usePathname().slice(17, -6);
     console.log(id);
     const addApplication = api.application.addApplication.useMutation({
@@ -49,7 +61,9 @@ export default function JobApplicationForm() {
     const data = res.data;
     console.log(data);
 
-
+    function cancel() {
+        setIsNextLoading(false);
+    }
 
     function onSubmit() {
         setIsNextLoading(true);
@@ -69,20 +83,15 @@ export default function JobApplicationForm() {
             job: position,
             companyId: id,
         });
-        // setTechnicalSkills("");
-        // setSoftSkills("");
-        // setCertifications("");
-        // setStartDate("");
-        // setEmploymentType("");
-        // setDesiredWorkSchedule("");
-        // setAuthorizedToWork(true);
-        // setConvictedOfCrime("");
-        // setCoverLetter("");
-        // setInterestReason("");
-        // setSuitableCandidateReason("");
-        // setChallengingSituation("");
-        // setBackgroundCheckAuthorization(false);
-        // setTermsAndConditionsAgreement(false);
+        const response = fetch('/api/apply', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+               job: position,
+            }),
+        });
     }
 
 
@@ -104,6 +113,17 @@ export default function JobApplicationForm() {
                                 }}
                             >
                                 <div className="col-span-full">
+                                    <label className="block mb-3 text-lg font-medium text-primary">
+                                        Job Position: {position}
+                                    </label>
+                                    <label className="block mb-3 text-sm font-medium text-primary/90">
+                                        Your Profile is Linked
+                                    </label>
+                                    <Link href={"/company/profile/job/" + jobId} className={buttonVariants({variant: "outline"})}>
+                                        Go back to Job
+                                    </Link>
+                                </div>
+                                <div className="col-span-full">
                                     <label className="block mb-3 text-sm font-medium text-primary/90">
                                         Technical Skills
                                     </label>
@@ -111,6 +131,7 @@ export default function JobApplicationForm() {
                                         placeholder="Programming languages, tools, etc."
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         type="text"
+                                        required
                                         value={technicalSkills}
                                         onChange={(e) => setTechnicalSkills(e.target.value)}
                                     />
@@ -123,6 +144,7 @@ export default function JobApplicationForm() {
                                         placeholder="Communication, teamwork, etc."
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         type="text"
+                                        required
                                         value={softSkills}
                                         onChange={(e) => setSoftSkills(e.target.value)}
                                     />
@@ -135,6 +157,7 @@ export default function JobApplicationForm() {
                                         placeholder="Certifications earned"
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         type="text"
+                                        required
                                         value={certifications}
                                         onChange={(e) => setCertifications(e.target.value)}
                                     />
@@ -149,6 +172,7 @@ export default function JobApplicationForm() {
                                         placeholder="MM/DD/YYYY"
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         type="text"
+                                        required
                                         value={startDate}
                                         onChange={(e) => setStartDate(e.target.value)}
                                     />
@@ -161,6 +185,7 @@ export default function JobApplicationForm() {
                                         placeholder="Full-time/Part-time"
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         type="text"
+                                        required
                                         value={employmentType}
                                         onChange={(e) => setEmploymentType(e.target.value)}
                                     />
@@ -173,6 +198,7 @@ export default function JobApplicationForm() {
                                         placeholder="Weekdays, Weekends, etc."
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         type="text"
+                                        required
                                         value={desiredWorkSchedule}
                                         onChange={(e) => setDesiredWorkSchedule(e.target.value)}
                                     />
@@ -187,6 +213,7 @@ export default function JobApplicationForm() {
                                         placeholder="Yes/No"
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         type="text"
+                                        required
                                         value={convictedOfCrime}
                                         onChange={(e) => setConvictedOfCrime(e.target.value)}
                                     />
@@ -201,6 +228,7 @@ export default function JobApplicationForm() {
                                         placeholder="Your answer here..."
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         rows={4}
+                                        required
                                         value={interestReason}
                                         onChange={(e) => setInterestReason(e.target.value)}
                                     />
@@ -213,6 +241,7 @@ export default function JobApplicationForm() {
                                         placeholder="Your answer here..."
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         rows={4}
+                                        required
                                         value={suitableCandidateReason}
                                         onChange={(e) => setSuitableCandidateReason(e.target.value)}
                                     />
@@ -225,6 +254,7 @@ export default function JobApplicationForm() {
                                         placeholder="Your answer here..."
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         rows={4}
+                                        required
                                         value={challengingSituation}
                                         onChange={(e) => setChallengingSituation(e.target.value)}
                                     />
@@ -246,29 +276,56 @@ export default function JobApplicationForm() {
                                 <div className="col-span-full">
                                     <label className="block mb-3 text-sm font-medium text-gray-600">
                                         Agreement to the terms and conditions of the application process.
+                                        <Link href="/tos" className={cn("ml-2 text-black font-semibold underline p-2")}>
+                                            TOS
+                                        </Link>
                                     </label>
                                     <input
                                         className="mr-2"
                                         type="checkbox"
+                                        required
                                         checked={termsAndConditionsAgreement}
                                         onChange={() => setTermsAndConditionsAgreement(!termsAndConditionsAgreement)}
                                     />
                                     <span className="text-gray-600">Yes</span>
                                 </div>
-
                                 <div className="col-span-full justify-center flex">
-									<button
-										type="submit"
-										className={cn(buttonVariants({ variant: "outline" }), "max-w-60 w-60 items-center justify-center px-6 py-2.5 text-center text-secondary duration-200 bg-primary border-2 border-primary rounded-xl inline-flex hover:bg-transparent hover:border-primary hover:text-primary focus:outline-none focus-visible:outline-primary text-sm focus-visible:ring-primary")}
-										disabled={isLoading || isNextLoading}
-									>
-										{isNextLoading ? (
-											<Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-										) : (<></>
-										)}{" "}
-										Submit
-									</button>
-								</div>
+                                    <AlertDialog>
+                                        <AlertDialogTrigger>
+                                            <button
+
+                                                className={cn(buttonVariants({ variant: "outline" }), "max-w-60 w-60 items-center justify-center px-6 py-2.5 text-center text-secondary duration-200 bg-primary border-2 border-primary rounded-xl inline-flex hover:bg-transparent hover:border-primary hover:text-primary focus:outline-none focus-visible:outline-primary text-sm focus-visible:ring-primary")}
+                                                disabled={isNextLoading}
+                                            >
+                                                {isNextLoading ? (
+                                                    <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+                                                ) : (<></>
+                                                )}{" "}
+                                                Submit
+                                            </button>
+                                        </AlertDialogTrigger>
+                                        <AlertDialogContent>
+                                            <AlertDialogHeader>
+                                                <AlertDialogTitle>Are you absolutely sure to apply?</AlertDialogTitle>
+                                                <AlertDialogDescription>
+                                                    This form will be submitted to the company and your current profile will be linked.
+                                                </AlertDialogDescription>
+                                            </AlertDialogHeader>
+                                            <AlertDialogFooter>
+                                                <AlertDialogCancel>
+                                                    <button onClick={cancel}>
+                                                        Cancel
+                                                    </button>
+                                                </AlertDialogCancel>
+                                                <AlertDialogAction>
+                                                    <button type="submit">
+                                                        Continue
+                                                    </button>
+                                                </AlertDialogAction>
+                                            </AlertDialogFooter>
+                                        </AlertDialogContent>
+                                    </AlertDialog>
+                                </div>
                             </form>
                         </div>
                     </div>

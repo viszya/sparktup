@@ -5,6 +5,7 @@ import { api } from "@/trpc/react";
 import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn } from "@/server/utils";
+import { Input } from "@/app/_components/ui/input";
 
 interface FormProps {
 	onNextClick: () => void; // Define the type of onNextClick prop
@@ -91,7 +92,7 @@ export function Form3({ onNextClick }: FormProps) {
 								<label className="block mb-3 text-sm font-medium text-gray-600">
 									What is your resume link?  <span className="text-red-400">*optional</span>
 								</label>
-								<input
+								<Input
 									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
 									placeholder="https://example.com/resume.pdf"
 									type="text"
@@ -105,7 +106,7 @@ export function Form3({ onNextClick }: FormProps) {
 								</label>
 								{profileTags.map((description, index) => (
 									<div key={index} className="flex items-center space-x-3 mb-2">
-										<input
+										<Input
 											className="block w-full px-4 py-2 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
 											placeholder={`Tag #${index + 1}`}
 											type="text"
@@ -139,7 +140,7 @@ export function Form3({ onNextClick }: FormProps) {
 								</label>
 								{interestedTags.map((description, index) => (
 									<div key={index} className="flex items-center space-x-3 mb-2">
-										<input
+										<Input
 											className="block w-full px-4 py-2 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
 											placeholder={`Tag #${index + 1}`}
 											type="text"

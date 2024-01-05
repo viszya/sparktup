@@ -16,6 +16,7 @@ export default function AddContactInfo() {
 	const [username, setUsername] = useState("");
 	const [location, setLocation] = useState("");
 	const [proEmail, setProEmail] = useState("");
+	const [phone, setPhone] = useState("");
 	const [isLoading] = useState<boolean>(false)
 	const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
 
@@ -107,6 +108,19 @@ export default function AddContactInfo() {
 										value={proEmail}
 										className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
 										onChange={(e) => setProEmail(e.target.value)}
+										required
+									/>
+								</div>
+								<div className="col-span-full">
+									<label className="block mb-3 text-sm font-medium text-primary/90">
+										Phone Number
+									</label>
+									<Input
+										type="text"
+										placeholder="northcreek"
+										value={phone}
+										className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+										onChange={(e) => setPhone(e.target.value)}
 										required
 									/>
 								</div>

@@ -391,6 +391,11 @@ export const testRouter = createTRPCRouter({
                 },
             });
         }),
+    
+    getCareers: publicProcedure
+        .query(async ({ ctx }) => {
+            return ctx.db.careerOpportunity.findMany();
+        }),
 
 });
 

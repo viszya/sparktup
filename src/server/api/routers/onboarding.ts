@@ -70,5 +70,58 @@ export const onboadingRouter = createTRPCRouter({
                 },
             });
         }),
+
+    addAccountType: protectedProcedure
+        .input(z.object({
+            type: z.string(),
+        }))
+        .mutation(async ({ ctx, input }) => {
+            return ctx.db.user.update({
+                where: {
+                    id: ctx.session.user.id,
+                },
+                data: {
+                    accountType: input.type,
+                },
+            });
+        }),
+    addAccountStatus: protectedProcedure
+        .input(z.object({
+            status: z.boolean(),
+        }))
+        .mutation(async ({ ctx, input }) => {
+            return ctx.db.user.update({
+                where: {
+                    id: ctx.session.user.id,
+                },
+                data: {
+                    accountStatus: input.status,
+                },
+            });
+        }),
+
+    getAccountStatus: protectedProcedure
+        .query(async ({ ctx }) => {
+            return ctx.db.user.findUnique({
+                where: {
+                    id: ctx.session.user.id,
+                },
+                select: {
+                    accountStatus: true,
+                },
+            });
+        }),
+
+    getAccountType: protectedProcedure
+        .query(async ({ ctx }) => {
+            return ctx.db.user.findUnique({
+                where: {
+                    id: ctx.session.user.id,
+                },
+                select: {
+                    accountType: true,
+                },
+            });
+        }),
 });
 

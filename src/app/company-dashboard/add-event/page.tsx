@@ -33,8 +33,8 @@ export default function AddCareer() {
             // setIsNextLoading(false);
             toast({
                 title: "Success",
-                description: "Company Profile: Form 5 Completed",
-            });
+                description: "Event added at" + formatDate(new Date()),
+              });
         },
     });
 

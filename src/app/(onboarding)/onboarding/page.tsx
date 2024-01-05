@@ -14,16 +14,36 @@ import Link from "next/link"
 import { useState } from "react"
 import { getServerAuthSession } from "@/server/auth"
 import { redirect } from "next/navigation"
+import { api } from "@/trpc/react"
 
-export default async function Onboarding() {
-    const session = await getServerAuthSession()
-    if (!session) {
-        redirect("/unauthorized")
-    }
+export default function Onboarding() {
+    // const session = await getServerAuthSession()
+    // if (!session) {
+    //     redirect("/unauthorized")
+    // }
     const [isLoading] = useState<boolean>(false)
     const [isLoading2] = useState<boolean>(false)
     const [isApplicant, setApplicantLoading] = useState<boolean>(false)
     const [isCompany, setCompanyLoading] = useState<boolean>(false)
+    const [url, setUrl] = useState("/onboarding/applicant")
+    const addAccountType = api.onboarding.addAccountType.useMutation({
+        onSuccess: () => {
+            redirect(url)
+        },
+    })
+
+    function onClick1() {
+        addAccountType.mutate({
+            type: "applicant",
+        })
+    }
+
+    function onClick2() {
+        setUrl("/company-dashboard");
+        addAccountType.mutate({
+            type: "company",
+        })
+    }
 
     return (
         <div className="flex flex-row gap-x-10 justify-center items-center">
@@ -41,7 +61,7 @@ export default async function Onboarding() {
                             type="button"
                             className={cn(buttonVariants(), "rounded-full")}
                             onClick={() => {
-                                setApplicantLoading(true)
+                                setApplicantLoading(true), onClick1(),
                             }}
                             disabled={isLoading || isApplicant}
                         >
@@ -64,22 +84,20 @@ export default async function Onboarding() {
                     <CardDescription>Create an account as an company to post  jobs</CardDescription>
                 </CardHeader>
                 <CardContent>
-                <Link href="/onboarding/company">
-                        <button
-                            type="button"
-                            className={cn(buttonVariants(), "rounded-full")}
-                            onClick={() => {
-                                setCompanyLoading(true)
-                            }}
-                            disabled={isLoading2 || isCompany}
-                        >
-                            {isCompany ? (
-                                <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-                            ) : (<></>
-                            )}{" "}
-                            Create Account
-                        </button>
-                    </Link>
+                    <button
+                        type="button"
+                        className={cn(buttonVariants(), "rounded-full")}
+                        onClick={() => {
+                            setCompanyLoading(true), onClick2()
+                        }}
+                        disabled={isLoading2 || isCompany}
+                    >
+                        {isCompany ? (
+                            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+                        ) : (<></>
+                        )}{" "}
+                        Create Account
+                    </button>
                 </CardContent>
             </Card>
         </div>

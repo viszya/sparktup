@@ -31,7 +31,7 @@ export function Form1({ onNextClick, addFormVals }: any) {
         setIsLoading(false);
         toast({
             title: "Success",
-            description: "Company Profile: Form 5 Completed",
+            description: "Event Form 1 Completed",
         });
 
     }

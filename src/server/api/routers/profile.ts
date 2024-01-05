@@ -260,5 +260,16 @@ export const userRouter = createTRPCRouter({
             return user;
         }),
 
+    getProfiles: publicProcedure
+        .query(async ({ ctx }) => {
+            return await ctx.db.user.findMany({
+                include: {
+                    experiences: true,
+                    projects: true,
+                    topSkills: true,
+                    recommendations: true,
+                },
+            });
+        }),
 
 });

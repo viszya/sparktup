@@ -11,14 +11,20 @@ import { buttonVariants } from "@/app/_components/ui/button";
 import { cn } from "@/server/utils";
 import { getServerAuthSession } from "@/server/auth"
 import { redirect } from "next/navigation"
+import { api } from "@/trpc/react";
 
 export default async function Onboarding() {
-  const session = await getServerAuthSession()
-    if (!session) {
-        redirect("/unauthorized")
-    }
+  // const session = await getServerAuthSession()
+  //   if (!session) {
+  //       redirect("/unauthorized")
+  //   }
   const [activeTab, setActiveTab] = useState("profile"); // Initial active tab
   const router = useRouter();
+  const addAccountStatus = api.onboarding.addAccountStatus.useMutation({
+    onSuccess: () => {
+      router.push("/applicant-dashboard");
+    },
+  })
 
   function handleNextButtonClick() {
     const tabOrder = ["profile", "work", "tags"];
@@ -30,7 +36,9 @@ export default async function Onboarding() {
     }
 
     if (activeTab === "tags") {
-      router.push("/dashboard");
+      addAccountStatus.mutate({
+        status: true,
+      })
     }
   }
 
@@ -45,7 +53,7 @@ export default async function Onboarding() {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center my-8">
       <Tabs value={activeTab} className="flex flex-col justify-center items-center">
         <TabsList className="gap-x-6 px-4">
           <TabsTrigger value="profile">Profile</TabsTrigger>
@@ -67,7 +75,7 @@ export default async function Onboarding() {
 
       {/* Back Button */}
       {activeTab !== "profile" && (
-        <button onClick={handleBackButtonClick} className={cn(buttonVariants({variant: "outline"}), "rounded-full")}>
+        <button onClick={handleBackButtonClick} className={cn(buttonVariants({ variant: "outline" }), "rounded-full")}>
           Back
         </button>
       )}
