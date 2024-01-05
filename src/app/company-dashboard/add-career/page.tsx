@@ -6,23 +6,12 @@ import { Form1 } from "@/app/company-dashboard/add-career/(forms)/form-1";
 import { Form2 } from "@/app/company-dashboard/add-career/(forms)/form-2";
 import { Form3 } from "@/app/company-dashboard/add-career/(forms)/form-3";
 import { InputData } from "@/app/_components/inputdata";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { buttonVariants } from "@/app/_components/ui/button";
 import { api } from "@/trpc/react";
-import { toast } from "@/app/_components/ui/sonner";
-import { formatDate } from "@/server/utils";
-
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/app/_components/ui/card"
+import { useToast } from "@/app/_components/ui/use-toast";
 
 export default function AddCareer() {
+    const { toast } = useToast();
     const [position, setPosition] = useState("");
     const [location, setLocation] = useState("");
     const [applyLink, setApplyLink] = useState("");
@@ -39,14 +28,18 @@ export default function AddCareer() {
     const [companyAbout, setCompanyAbout] = useState("");
     const [activeTab, setActiveTab] = useState("profile");
     const tabOrder = ["profile", "contact", "socialmedia"];
-    const createCompanyProfile = api.test.createCompanyProfile.useMutation({
+    const company = api.test.getCompanyProfilePrivate.useQuery();
+    const companyData = company.data;
+    const createCareerOpportunity = api.test.createCareerOpportunity.useMutation({
         onSuccess: () => {
             // setIsNextLoading(false);
-            toast("Success", {
-                description: "Event has been created at " + formatDate(Date()),
+            toast({
+                title: "Success",
+                description: "Company Profile: Form 5 Completed",
             });
         },
     });
+
 
 
     function addForm1Vals(form1Vals: any) {
@@ -82,7 +75,8 @@ export default function AddCareer() {
     }
 
     function handleSubmitClick() {
-        createCompanyProfile.mutate({
+        createCareerOpportunity.mutate({
+            id: companyData.company[0].id,
             position,
             location,
             applyLink,

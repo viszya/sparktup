@@ -5,16 +5,19 @@ import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
-import { toast } from "@/app/_components/ui/sonner";
+import { useToast } from "@/app/_components/ui/use-toast";
 
 
 export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
+    const { toast } = useToast();
+
     const [about, setAbout] = useState("");
     const [pay, setPay] = useState("");
     const [companyAbout, setCompanyAbout] = useState("");
+    const [thumbnail, setThumbnail] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
-    const [submitted, setSubmitted] = useState(true);
+    const [submitted, setSubmitted] = useState(false);
 
     function onSubmit() {
         setIsLoading(true);
@@ -23,10 +26,13 @@ export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
             about,
             pay,
             companyAbout,
+            thumbnail,
         });
         setIsNextLoading(false);
-        toast("Success", {
-            description: "Career has been created at " + formatDate(Date()),
+        setIsLoading(false);
+        toast({
+            title: "Success",
+            description: "Company Profile: Form 5 Completed",
         });
     }
 
@@ -95,6 +101,19 @@ export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
                                     required
                                     value={companyAbout}
                                     onChange={(e) => setCompanyAbout(e.target.value)}
+                                />
+                            </div>
+                            <div className="col-span-full">
+                                <label className="block mb-3 text-sm font-medium text-primary/90" >
+                                    What is the thumbnail of the job?
+                                </label>
+                                <Input
+                                    placeholder="Thumbnail"
+                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                    type="text"
+                                    required
+                                    value={thumbnail}
+                                    onChange={(e) => setThumbnail(e.target.value)}
                                 />
                             </div>
                             <div className="col-span-full">

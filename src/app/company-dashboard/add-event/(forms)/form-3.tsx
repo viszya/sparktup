@@ -5,10 +5,11 @@ import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
-import { toast } from "@/app/_components/ui/sonner";
+import { useToast } from "@/app/_components/ui/use-toast";
 
 
 export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
+    const { toast } = useToast();
     const [seeSrc, setSeeSrc] = useState("");
     const [attendSrc, setAttendSrc] = useState("");
     const [photoSrc, setPhotoSrc] = useState("");
@@ -24,9 +25,10 @@ export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
             attendSrc,
             photoSrc,
         });
-        setIsNextLoading(false);
-        toast("Success", {
-            description: "Career has been created at " + formatDate(Date()),
+        setIsLoading(false);
+        toast({
+            title: "Success",
+            description: "Company Profile: Form 5 Completed",
         });
     }
 

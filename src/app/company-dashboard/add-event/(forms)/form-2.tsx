@@ -6,10 +6,11 @@ import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
-import { toast } from "@/app/_components/ui/sonner";
+import { useToast } from "@/app/_components/ui/use-toast";
 
 
 export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
+    const { toast } = useToast();
     const [viewLink, setViewLink] = useState("");
     const [eventType, setEventType] = useState("");
     const [eventBy, setEventBy] = useState("");
@@ -27,9 +28,10 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
             eventBy,
             about,
         });
-        setIsNextLoading(false);
-        toast("Success", {
-            description: "Career has been created at " + formatDate(Date()),
+        setIsLoading(false);
+        toast({
+            title: "Success",
+            description: "Company Profile: Form 5 Completed",
         });
     }
 

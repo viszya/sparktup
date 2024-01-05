@@ -10,10 +10,11 @@ import { Form5 } from "@/app/company-dashboard/update-profile/(forms)/form-5";
 import { InputData } from "@/app/_components/inputdata";
 import { useState } from "react";
 import { api } from "@/trpc/react";
-import { toast } from "@/app/_components/ui/sonner";
+import { useToast } from "@/app/_components/ui/use-toast";
 import { formatDate } from "@/server/utils";
 
 export default function AddCareer() {
+    const { toast } = useToast();
     const [companyName, setCompanyName] = useState("");
     const [linkedInMembers, setLinkedInMembers] = useState("");
     const [logoSrc, setLogoSrc] = useState("");
@@ -40,7 +41,8 @@ export default function AddCareer() {
     const createCompanyProfile = api.test.createCompanyProfile.useMutation({
         onSuccess: () => {
             // setIsNextLoading(false);
-            toast("Success", {
+            toast({
+                title: "Success", 
                 description: "Event has been created at " + formatDate(Date()),
             });
         },

@@ -6,10 +6,11 @@ import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
-import { toast } from "@/app/_components/ui/sonner";
+import { useToast } from "@/app/_components/ui/use-toast";
 
 
 export function Form4({ onNextClick, addFormVals, onBackClick }: any) {
+    const { toast } = useToast();
     const [keyBenefits, setKeyBenefits] = useState("");
     const [keyFeatures, setKeyFeatures] = useState("");
     const [companyCulture, setCompanyCulture] = useState("");
@@ -17,7 +18,7 @@ export function Form4({ onNextClick, addFormVals, onBackClick }: any) {
     const [privacyPolicyLink, setPrivacyPolicyLink] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
-    const [submitted, setSubmitted] = useState(true);
+    const [submitted, setSubmitted] = useState(false);
 
     function onSubmit() {
         setIsLoading(true);
@@ -29,9 +30,10 @@ export function Form4({ onNextClick, addFormVals, onBackClick }: any) {
             termsAndConditionsLink,
             privacyPolicyLink,
         });
-        setIsNextLoading(false);
-        toast("Success", {
-            description: "Career has been created at " + formatDate(Date()),
+        setIsLoading(false);
+        toast({
+            title: "Success",
+            description: "Company Profile: Form 4 Completed",
         });
     }
 
@@ -141,20 +143,20 @@ export function Form4({ onNextClick, addFormVals, onBackClick }: any) {
                     </div>
                 </div>
             </div>
-            {submitted ? (
-                <div className="flex justify-center items-center gap-x-4 ">
-                    <div className="border border-dashed border-primary/60 p-2 flex justify-center items-center gap-x-4 rounded-xl mt-2">
-                        <button onClick={onBackClick} className={cn(buttonVariants({ variant: "outline" }), " rounded-xl w-26")}>
-                            <Icons.chevronLeft className="h-5 w-5 mr-2" />
-                            Back
-                        </button>
+            <div className="flex justify-center items-center gap-x-4 ">
+                <div className="border border-dashed border-primary/60 p-2 flex justify-center items-center gap-x-4 rounded-xl mt-2">
+                    <button onClick={onBackClick} className={cn(buttonVariants({ variant: "outline" }), " rounded-xl w-26")}>
+                        <Icons.chevronLeft className="h-5 w-5 mr-2" />
+                        Back
+                    </button>
+                    {submitted ? (
                         <button onClick={onNextClick} className={cn(buttonVariants({ variant: "default" }), " rounded-xl w-26")}>
                             Next
                             <Icons.chevronRight className="h-5 w-5 ml-2" />
                         </button>
-                    </div>
+                    ) : (<></>)}
                 </div>
-            ) : (<></>)}
+            </div>
         </section>
     );
 }

@@ -6,10 +6,12 @@ import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
-import { toast } from "@/app/_components/ui/sonner";
+import { useToast } from "@/app/_components/ui/use-toast";
 
 
 export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
+    const { toast } = useToast();
+
     const [pricingDescription, setPricingDescription] = useState("");
     const [sizeDescription, setSizeDescription] = useState("");
     const [skills, setSkills] = useState("");
@@ -18,7 +20,7 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
     const [thumbnail, setThumbnail] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isNextLoading, setIsNextLoading] = useState<boolean>(false)
-    const [submitted, setSubmitted] = useState(true);
+    const [submitted, setSubmitted] = useState(false);
 
     function onSubmit() {
         setIsLoading(true);
@@ -32,8 +34,10 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
             thumbnail,
         });
         setIsNextLoading(false);
-        toast("Success", {
-            description: "Career has been created at " + formatDate(Date()),
+        setIsLoading(false);
+        toast({
+            title: "Success",
+            description: "Company Profile: Form 5 Completed",
         });
     }
 

@@ -8,6 +8,7 @@ import { DashboardNav } from "@/app/_components/nav"
 import { Footer } from "@/app/_components/dashboard-footer"
 import { UserAccountNav } from "@/app/_components/user-account-nav"
 import { Nav } from "@/app/_components/dashboard/nav"
+import { Toaster } from "@/app/_components/ui/toaster"
 
 import Link from 'next/link'
 import { buttonVariants } from '@/app/_components/ui/button'
@@ -160,6 +161,7 @@ export default function DashboardLayout({
         </main>
       </div>
       <Footer className="" />
+      <Toaster />
     </div >
   )
 }
