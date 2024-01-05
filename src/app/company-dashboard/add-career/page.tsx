@@ -105,19 +105,19 @@ export default function AddCareer() {
     return (
         <div className="flex flex-col px-8">
             <div>
-                <h2 className="text-3xl font-bold tracking-tight">Company Profile Creation</h2>
+                <h2 className="text-3xl font-bold tracking-tight">Add Careers To Your Company</h2>
                 <p className="text-muted-foreground">
-                    Go through the form processes to create a company profile
+                    Go through the form processes to create new careers for your Company
                 </p>
             </div>
             <div className="flex flex-col justify-center w-full ">
                 <Tabs value={activeTab} className="mt-5">
                     <TabsList className="flex flex-row gap-x-6 overflow-x-auto">
-                        <TabsTrigger value="profile">Company Profile</TabsTrigger>
+                        <TabsTrigger value="profile">Career Information</TabsTrigger>
                         <Icons.chevronRight className="text-gray-300 h-5 w-5" />
-                        <TabsTrigger value="contact">Contact Info</TabsTrigger>
+                        <TabsTrigger value="contact">Description/Pricing</TabsTrigger>
                         <Icons.chevronRight className="text-gray-300 h-5 w-5" />
-                        <TabsTrigger value="socialmedia">Social Media</TabsTrigger>
+                        <TabsTrigger value="socialmedia">About Job</TabsTrigger>
                     </TabsList>
                     <div className="w-full">
                         <TabsContent value="profile">

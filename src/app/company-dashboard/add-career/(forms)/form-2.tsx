@@ -49,17 +49,14 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                         <article>
                             <span className="inline-flex items-center text-primary rounded-xl">
                                 <span className="font-mono text-sm" aria-hidden="true">
-                                    01
+                                    02
                                 </span>
                             </span>
                             <div className="mt-3 text-3xl tracking-tighter text-primary">
-                                Welcome! Let&apos;s get started.
+                                Describe Careers and Pricing
                             </div>
                             <div className="mt-4 text-primary/80">
-                                Let&apos;s get started! Please fill out the following
-                                form to the best of your ability. All this information will be
-                                used to create your profile. You can always edit your profile
-                                later.
+                                Describe the career, skills required and the estimated pricing.
                             </div>
                         </article>
                         <form

@@ -131,9 +131,9 @@ export default function AddCareer() {
     return (
         <div className="flex flex-col px-8">
             <div>
-                <h2 className="text-3xl font-bold tracking-tight">Company Profile Creation</h2>
+                <h2 className="text-3xl font-bold tracking-tight">Update Your Company Profile</h2>
                 <p className="text-muted-foreground">
-                    Go through the form processes to create a company profile
+                    Go through the form processes to update your company profile
                 </p>
             </div>
             <div className="flex flex-col justify-center w-full ">

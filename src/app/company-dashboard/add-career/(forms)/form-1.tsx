@@ -50,12 +50,12 @@ export function Form1({ onNextClick, addFormVals }: any) {
                                 </span>
                             </span>
                             <div className="mt-3 text-3xl tracking-tighter text-primary">
-                                Welcome! Let&apos;s get started.
+                                Welcome, Let&apos;s Add Careers To Your Company!
                             </div>
                             <div className="mt-4 text-primary/80">
-                                Let&apos;s get started! Please fill out the following
+                                Please fill out the following
                                 form to the best of your ability. All this information will be
-                                used to create your profile. You can always edit your profile
+                                used to create a career in your company. You can always edit your careers
                                 later.
                             </div>
                         </article>
