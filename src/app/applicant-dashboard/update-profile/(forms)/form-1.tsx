@@ -48,7 +48,7 @@ export function Form1({ onNextClick, addFormVals }: any) {
                                 </span>
                             </span>
                             <div className="mt-3 text-3xl tracking-tighter text-primary">
-                                Update Company Profile
+                                Update Applicant Profile
                             </div>
                             <div className="mt-4 text-primary/80">
                                 Let&apos;s get started! Please fill out the following
@@ -66,10 +66,10 @@ export function Form1({ onNextClick, addFormVals }: any) {
                         >
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                   Profile About
+                                   What is your name?
                                 </label>
                                 <Input
-                                    placeholder="Google, Microsoft, etc."
+                                    placeholder="Jhon Doe"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -79,10 +79,10 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Job Title
+                                    What is your job title?
                                 </label>
                                 <Input
-                                    placeholder="Google, Microsoft, etc."
+                                    placeholder="Software Developer, Website Designer, etc."
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -92,10 +92,10 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Years of Experience
+                                    How many years of experience do you have?
                                 </label>
                                 <Input
-                                    placeholder="Google, Microsoft, etc."
+                                    placeholder="5+"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -105,7 +105,7 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             
                             <div className="col-span-full">
-								<label className="block mb-3 text-sm font-medium text-gray-600">
+								<label className="block mb-3 text-sm font-medium text-primary/900">
 									Are you available for work?
 								</label>
 								<input
@@ -118,8 +118,8 @@ export function Form1({ onNextClick, addFormVals }: any) {
 							</div>
 
                             <div className="col-span-full">
-								<label className="block mb-3 text-sm font-medium text-gray-600">
-									Do you have a job?
+								<label className="block mb-3 text-sm font-medium text-primary/90">
+									Do you currently have a job?
 								</label>
 								<input
 									className="mr-2"

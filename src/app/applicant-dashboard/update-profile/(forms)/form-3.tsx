@@ -45,11 +45,11 @@ export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
                         <article>
                             <span className="inline-flex items-center text-primary rounded-xl">
                                 <span className="font-mono text-sm" aria-hidden="true">
-                                    01
+                                    03
                                 </span>
                             </span>
                             <div className="mt-3 text-3xl tracking-tighter text-primary">
-                                Welcome! Let&apos;s get started.
+                                Add your Skills
                             </div>
                             <div className="mt-4 text-primary/80">
                                 Let&apos;s get started! Please fill out the following
