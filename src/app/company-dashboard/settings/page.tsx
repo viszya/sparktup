@@ -62,7 +62,7 @@ export default function AddContactInfo() {
 									</label>
 									<Input
 										type="text"
-										placeholder="northcreek"
+										placeholder="Northcreek"
 										value={name}
 										className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
 										onChange={(e) => setName(e.target.value)}
