@@ -59,16 +59,16 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                         <article>
                             <span className="inline-flex items-center text-primary rounded-xl">
                                 <span className="font-mono text-sm" aria-hidden="true">
-                                    01
+                                    02
                                 </span>
                             </span>
                             <div className="mt-3 text-3xl tracking-tighter text-primary">
-                                Welcome! Let&apos;s get started.
+                                Add More Information About Your Experience
                             </div>
                             <div className="mt-4 text-primary/80">
-                                Let&apos;s get started! Please fill out the following
+                            Let&apos;s get started! Please fill out the following
                                 form to the best of your ability. All this information will be
-                                used to create your profile. You can always edit your profile
+                                used to update your experience on your profile. You can always edit your profile
                                 later.
                             </div>
                         </article>
@@ -81,10 +81,10 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                         >
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Job Title
+                                    What was your job title at the company?
                                 </label>
                                 <Input
-                                    placeholder="Date"
+                                    placeholder="Website Developer"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -94,10 +94,10 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Location
+                                    Where was this company based out of?
                                 </label>
                                 <Input
-                                    placeholder="Date"
+                                    placeholder="Seattle"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -107,10 +107,10 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Time
+                                    What years did you work at the company?
                                 </label>
                                 <Input
-                                    placeholder="Date"
+                                    placeholder="2002-2007"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -120,7 +120,7 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Job Description
+                                    Job Associated With
                                 </label>
                                 <div className="flex flex-col gap-y-3">
                                     {jobDescriptions.map((jobDescription, index) => (
@@ -128,7 +128,7 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                                             <Input
                                                 key={index}
                                                 type="text"
-                                                placeholder="I worked on..."
+                                                placeholder="ReactJS"
                                                 value={jobDescription}
                                                 className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                                 onChange={(e) => {

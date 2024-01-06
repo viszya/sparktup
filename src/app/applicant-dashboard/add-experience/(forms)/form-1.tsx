@@ -47,12 +47,12 @@ export function Form1({ onNextClick, addFormVals }: any) {
                                 </span>
                             </span>
                             <div className="mt-3 text-3xl tracking-tighter text-primary">
-                                Welcome! Let&apos;s get started.
+                                Add Experience
                             </div>
                             <div className="mt-4 text-primary/80">
                                 Let&apos;s get started! Please fill out the following
                                 form to the best of your ability. All this information will be
-                                used to create your profile. You can always edit your profile
+                                used to update your experience on your profile. You can always edit your profile
                                 later.
                             </div>
                         </article>
@@ -65,10 +65,10 @@ export function Form1({ onNextClick, addFormVals }: any) {
                         >
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                Company Name
+                                What is the company&apos;s name?
                                 </label>
                                 <Input
-                                    placeholder="Date"
+                                    placeholder="Microsoft"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -78,10 +78,10 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                Company Logo
+                                What is the company logo
                                 </label>
                                 <Input
-                                    placeholder="Date"
+                                    placeholder=".png .jpeg"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -91,10 +91,10 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                Company Image
+                                What is the company website?
                                 </label>
                                 <Input
-                                    placeholder="Date"
+                                    placeholder="microsoft.com"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -104,10 +104,10 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                Engagement
+                                How many years did you work there?
                                 </label>
                                 <Input
-                                    placeholder="Date"
+                                    placeholder="5+"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -117,10 +117,10 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                Relative of Work
+                                How many employees does the company have?
                                 </label>
                                 <Input
-                                    placeholder="Date"
+                                    placeholder="100000+"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
