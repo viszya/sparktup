@@ -7,6 +7,7 @@ import { Button, buttonVariants } from "@/app/_components/ui/button";
 import { api } from "@/trpc/react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/app/_components/ui/carousel";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import {
     Drawer,
     DrawerClose,
@@ -23,9 +24,18 @@ import {
 export default function ProfilePage({ params }: { params: { slug: string } }) {
     console.log(params.slug)
     const res = api.test.getCompanyProfile2.useQuery({ id: params.slug });
+    const addView = api.test.addView.useMutation({});
+    const [addedView, setAddedView] = useState(false);
+    useEffect(() => {
+        addView.mutate({ id: params.slug });
+        console.log('i fire once');
+    }, [])
+
     if (res.isLoading) {
         return <div>Loading...</div>;
     }
+
+
     const data = res.data;
     console.log(data);
 

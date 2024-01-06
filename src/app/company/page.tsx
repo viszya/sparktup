@@ -21,7 +21,7 @@ import {
 
 export default function CompanyProfile() {
 
-  const res = api.profile.getCompanyProfiles.useQuery();
+  const res = api.test.getCompanyProfiles.useQuery();
   if (res.status === "loading") {
     return <div>Loading...</div>;
   }

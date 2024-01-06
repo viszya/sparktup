@@ -353,7 +353,7 @@ export const testRouter = createTRPCRouter({
                 },
             });
         }),
-       
+
 
     getCompanyProfiles: publicProcedure
         .query(async ({ ctx }) => {
@@ -367,7 +367,7 @@ export const testRouter = createTRPCRouter({
                 }
             });
         }),
-    
+
     getCompanyCareers: publicProcedure
         .input(z.object({
             id: z.string(),
@@ -391,10 +391,44 @@ export const testRouter = createTRPCRouter({
                 },
             });
         }),
-    
+
     getCareers: publicProcedure
         .query(async ({ ctx }) => {
             return ctx.db.careerOpportunity.findMany();
+        }),
+
+    addView: publicProcedure
+        .input(z.object({
+            id: z.string(),
+        }))
+        .mutation(async ({ ctx, input }) => {
+            return ctx.db.company.update({
+                where: {
+                    id: input.id,
+                },
+                data: {
+                    views: {
+                        increment: 1,
+                    },
+                },
+            });
+        }),
+
+    addApplicationCount: publicProcedure
+        .input(z.object({
+            id: z.string(),
+        }))
+        .mutation(async ({ ctx, input }) => {
+            return ctx.db.company.update({
+                where: {
+                    id: input.id,
+                },
+                data: {
+                    applications: {
+                        increment: 1,
+                    },
+                },
+            });
         }),
 
 });

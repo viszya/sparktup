@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Email } from "@/app/_components/email";
 import { Input } from "@/app/_components/ui/input";
 import { Textarea } from "@/app/_components/ui/textarea"
@@ -23,6 +22,7 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from "@/app/_components/ui/alert-dialog"
+import { useEffect, useState } from "react";
 
 
 export default function JobApplicationForm() {
@@ -54,13 +54,19 @@ export default function JobApplicationForm() {
             setIsNextLoading(false);
         }
     });
+    const addApplicationCount = api.test.addApplicationCount.useMutation({});
+    useEffect(()=>{
+        addApplicationCount.mutate({ id: id });
+        console.log('i fire once');
+    }, []) 
     const res = api.test.getCompanyProfile2.useQuery({ id: id });
     if (res.isLoading) {
         return <div>Loading...</div>;
     }
+    
     const data = res.data;
     console.log(data);
-
+    
     function cancel() {
         setIsNextLoading(false);
     }
