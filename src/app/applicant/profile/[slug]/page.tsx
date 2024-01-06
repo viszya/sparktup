@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Button } from "@/app/_components/ui/button";
 import { api } from "@/trpc/react";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { Drawer, DrawerClose, DrawerContent, DrawerFooter, DrawerHeader, DrawerTrigger } from "@/app/_components/ui/drawer";
 
 
@@ -13,6 +14,11 @@ import { Drawer, DrawerClose, DrawerContent, DrawerFooter, DrawerHeader, DrawerT
 export default function ProfilePage({ params }: { params: { slug: string } }) {
 
 	const res = api.user.getProfile.useQuery({ id: params.slug });
+	const addView = api.user.addView.useMutation({ id: params.slug });
+    useEffect(() => {
+        addView.mutate({ id: params.slug });
+        console.log('i fire once');
+    }, [])
 	if (res.isLoading) {
 		return <div>Loading...</div>;
 	}
@@ -101,7 +107,7 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
 						{data.avaiableForWork ? "Available for Work" : "Occupied"}
 					</div>
 					<div className="mt-5 w-full p-6 bg-primary/10 rounded-xl border-2 border-primary">
-						<div className="text-2xl font-medium leading-6">{data.yearsOfExperience}</div>
+						<div className="text-2xl font-medium leading-6">{data.views}</div>
 						<div className="font-light">Profile Views</div>
 					</div>
 					{/* <div className="mt-4 w-full flex flex-row justify-center items-center px-3 py-0.5 text-sm border border-green-300/60 bg-green-300/10 font-base text-green-500 duration-200 rounded-sm">
