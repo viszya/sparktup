@@ -1,7 +1,7 @@
 
 const data = [
     {
-    companyName: "Microsoft Corparation",
+    companyName: "Microsoft",
     linkedInMembers: "224,866 associated members",
     logoSrc: "/microsoft_logo.png",
     location: "San Francisco, CA, USA",
