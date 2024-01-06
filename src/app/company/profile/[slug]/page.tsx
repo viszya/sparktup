@@ -3,10 +3,11 @@
 import { twp, cn } from "@/server/utils"
 import { Icons } from "@/app/_components/icons";
 import Image from "next/image";
-import { Button } from "@/app/_components/ui/button";
+import { Button, buttonVariants } from "@/app/_components/ui/button";
 import { api } from "@/trpc/react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/app/_components/ui/carousel";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import {
     Drawer,
     DrawerClose,
@@ -23,9 +24,18 @@ import {
 export default function ProfilePage({ params }: { params: { slug: string } }) {
     console.log(params.slug)
     const res = api.test.getCompanyProfile2.useQuery({ id: params.slug });
+    const addView = api.test.addView.useMutation({});
+    const [addedView, setAddedView] = useState(false);
+    useEffect(() => {
+        addView.mutate({ id: params.slug });
+        console.log('i fire once');
+    }, [])
+
     if (res.isLoading) {
         return <div>Loading...</div>;
     }
+
+
     const data = res.data;
     console.log(data);
 
@@ -83,7 +93,7 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
                             </DrawerContent>
                         </Drawer>
                     </div>
-                    <Link href={"/company/profile/" + data.id + "/jobs"} className="text-md mt-6 items-center justify-center w-full px-6 py-12 text-center text-white duration-200 bg-black border-2 border-black rounded-lg inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black">
+                    <Link href={"/company/profile/" + data.id + "/jobs"} className="py-12 max-h-20 text-md mt-6 items-center justify-center w-full px-6  text-center text-white duration-200 bg-black border-2 border-black rounded-lg inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black">
                         <Icons.users className="h-4 w-4 mr-2" />
                         CONNECT TO JOBS
                     </Link>
@@ -225,12 +235,12 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
                         <div key={index} className="p-4 bg-gray-300/10 rounded-xl border-2 border-gray-200">
                             <p className="text-base text-black font-medium">{job.position}</p>
                             <p className="text-sm text-gray-500">{job.location}</p>
-                            <a href={job.applyLink} className="text-sm text-blue-500 hover:underline">Apply Now</a>
+                            <a href={"/company/profile/job/" + job.id} className="text-sm text-blue-500 hover:underline">Apply Now</a>
                         </div>
                     ))}
-                    <Button className="flex flex-row p-4 h-full rounded-xl">
+                    <Link href={"/company/profile/" + data.id + "/jobs"} className={cn(buttonVariants(), "flex flex-row p-4 h-full rounded-xl")}>
                         See More <Icons.arrowRight className="h-4 w-4 ml-2" />
-                    </Button>
+                    </Link>
                 </div>
             </section>
 

@@ -5,6 +5,7 @@ import { api } from "@/trpc/react";
 import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn } from "@/server/utils";
+import { Input } from "@/app/_components/ui/input";
 
 interface FormProps {
 	onNextClick: () => void; // Define the type of onNextClick prop
@@ -61,7 +62,7 @@ export function Form2({ onNextClick }: FormProps) {
 								<label className="block mb-3 text-sm font-medium text-gray-600">
 									Do you have a job? <em className="text-gray-400">Leave Un-Checked if don&apos;t have a job</em>
 								</label>
-								<input
+								<Input
 									className="mr-2"
 									type="checkbox"
 									checked={hasAJob}
@@ -73,7 +74,7 @@ export function Form2({ onNextClick }: FormProps) {
 								<label className="block mb-3 text-sm font-medium text-gray-600">
 									What is your main profession or job title? <span className="text-red-400">*optional</span>
 								</label>
-								<input
+								<Input
 									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
 									placeholder="Full Stack Developer, etc."
 									type="text"
@@ -85,7 +86,7 @@ export function Form2({ onNextClick }: FormProps) {
 								<label className="block mb-3 text-sm font-medium text-gray-600">
 									How many years of experience do you have? 
 								</label>
-								<input
+								<Input
 									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
 									placeholder="10+"
 									required
@@ -98,7 +99,7 @@ export function Form2({ onNextClick }: FormProps) {
 								<label className="block mb-3 text-sm font-medium text-gray-600">
 									Are you looking for a job? <em className="text-gray-400">Leave Un-Checked if you are not looking for a job</em>
 								</label>
-								<input
+								<Input
 									className="mr-2"
 									type="checkbox"
 									checked={availableForWork}

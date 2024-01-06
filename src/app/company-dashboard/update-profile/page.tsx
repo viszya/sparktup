@@ -42,8 +42,8 @@ export default function AddCareer() {
         onSuccess: () => {
             // setIsNextLoading(false);
             toast({
-                title: "Success", 
-                description: "Event has been created at " + formatDate(Date()),
+                title: "Success",
+                description: "Profile updated at" + formatDate(new Date()),
             });
         },
     });

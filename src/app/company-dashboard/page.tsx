@@ -56,7 +56,7 @@ export default function Dashboard() {
 			<div className="mt-4 mb-4">
 				<h2 className="text-xl font-bold tracking-tight">Recent Applications</h2>
 			</div>
-			<DataPage />
+			{/* <DataPage /> */}
 		</div>
 	);
 }

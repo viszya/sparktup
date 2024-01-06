@@ -32,7 +32,7 @@ export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
         setIsLoading(false);
         toast({
             title: "Success",
-            description: "Company Profile: Form 5 Completed",
+            description: "Career Form 3 Submitted ",
         });
     }
 
@@ -131,20 +131,22 @@ export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
                     </div>
                 </div>
             </div>
-            {submitted ? (
-                <div className="flex justify-center items-center gap-x-4 ">
-                    <div className="border border-dashed border-primary/60 p-2 flex justify-center items-center gap-x-4 rounded-xl mt-2">
-                        <button onClick={onBackClick} className={cn(buttonVariants({ variant: "outline" }), " rounded-xl w-26")}>
-                            <Icons.chevronLeft className="h-5 w-5 mr-2" />
-                            Back
-                        </button>
+            <div className="flex justify-center items-center gap-x-4 ">
+                <div className="border border-dashed border-primary/60 p-2 flex justify-center items-center gap-x-4 rounded-xl mt-2">
+                    <button onClick={onBackClick} className={cn(buttonVariants({ variant: "outline" }), " rounded-xl w-26")}>
+                        <Icons.chevronLeft className="h-5 w-5 mr-2" />
+                        Back
+                    </button>
+                    {submitted ? (
+
                         <button onClick={onSubmitClick} className={cn(buttonVariants({ variant: "default" }), " rounded-xl w-26")}>
                             Add to Profile
                             <Icons.chevronRight className="h-5 w-5 ml-2" />
                         </button>
-                    </div>
+                    ) : (<></>)}
+
                 </div>
-            ) : (<></>)}
+            </div>
         </section>
     );
 }

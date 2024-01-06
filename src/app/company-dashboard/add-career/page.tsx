@@ -9,6 +9,7 @@ import { InputData } from "@/app/_components/inputdata";
 import { useState } from "react";
 import { api } from "@/trpc/react";
 import { useToast } from "@/app/_components/ui/use-toast";
+import { formatDate } from "@/server/utils";
 
 export default function AddCareer() {
     const { toast } = useToast();
@@ -35,7 +36,7 @@ export default function AddCareer() {
             // setIsNextLoading(false);
             toast({
                 title: "Success",
-                description: "Company Profile: Form 5 Completed",
+                description: "Career Created at " + formatDate(new Date()),
             });
         },
     });

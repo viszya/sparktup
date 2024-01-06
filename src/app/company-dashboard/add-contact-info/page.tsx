@@ -25,8 +25,8 @@ export default function AddContactInfo() {
       setIsNextLoading(false);
       toast({
         title: "Success",
-        description: "Company Profile: Form 5 Completed",
-    });
+        description: "Contact Info added at" + formatDate(new Date()),
+      });
     },
   });
 
@@ -116,7 +116,7 @@ export default function AddContactInfo() {
           </div>
         </div>
       </div>
-    
+
     </div>
 
   );

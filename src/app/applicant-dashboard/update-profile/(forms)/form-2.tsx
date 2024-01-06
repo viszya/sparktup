@@ -75,16 +75,16 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                         <article>
                             <span className="inline-flex items-center text-primary rounded-xl">
                                 <span className="font-mono text-sm" aria-hidden="true">
-                                    01
+                                    02
                                 </span>
                             </span>
                             <div className="mt-3 text-3xl tracking-tighter text-primary">
-                                Welcome! Let&apos;s get started.
+                                Edit your Resume and Intrests
                             </div>
                             <div className="mt-4 text-primary/80">
-                                Let&apos;s get started! Please fill out the following
-                                form to the best of your ability. All this information will be
-                                used to create your profile. You can always edit your profile
+                                Edit your Resume link and change your current intrests.
+                                All this information will be
+                                used to create update your Resume and Interests. You can always edit your Resume/Interests
                                 later.
                             </div>
                         </article>
@@ -97,10 +97,10 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                         >
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Resume Link
+                                    What is your Resume&apos;s Link?
                                 </label>
                                 <Input
-                                    placeholder="Industry"
+                                    placeholder="https://google.com"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -111,7 +111,7 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
 
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Profile Tags
+                                    What tags do you want to add to your profile?
                                 </label>
                                 <div className="flex flex-col gap-y-3">
                                     {profileTags.map((profileTag, index) => (
@@ -119,7 +119,7 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                                             <Input
                                                 key={index}
                                                 type="text"
-                                                placeholder="I worked on..."
+                                                placeholder="ReactJS, HTML..."
                                                 value={profileTag}
                                                 className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                                 onChange={(e) => {
@@ -148,7 +148,7 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
 
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Interested Tags
+                                    What Interested Tags do you want to add to your profile?
                                 </label>
                                 <div className="flex flex-col gap-y-3">
                                     {interestedTags.map((interestedTag, index) => (
@@ -156,7 +156,7 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                                             <Input
                                                 key={index}
                                                 type="text"
-                                                placeholder="I worked on..."
+                                                placeholder="Drawing..."
                                                 value={interestedTag}
                                                 className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                                 onChange={(e) => {

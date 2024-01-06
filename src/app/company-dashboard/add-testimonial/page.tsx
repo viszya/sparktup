@@ -33,8 +33,8 @@ export default function AddContactInfo() {
             setIsNextLoading(false);
             toast({
                 title: "Success",
-                description: "Company Profile: Form 5 Completed",
-            });
+                description: "Testimonial added at" + formatDate(new Date()),
+              });
         },
     });
 

@@ -85,11 +85,11 @@ export default function CompanyProfile() {
               </Drawer>
             </div>
             <div className="flex flex-row gap-x-2">
-              <Link href={"/company/profile/" + data.id +"/jobs"} className="text-md mt-6 items-center justify-center w-full px-6 py-12 text-center text-white duration-200 bg-black border-2 border-black rounded-lg inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black">
+              <Link href={"/company/profile/" + data.id +"/jobs"} className="max-h-12 text-md mt-6 items-center justify-center w-full px-6 py-12 text-center text-white duration-200 bg-black border-2 border-black rounded-lg inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black">
                 <Icons.users className="h-4 w-4 mr-2" />
                 CONNECT TO JOBS
               </Link>
-              <Link href={"/company/profile/" + data.id } className="text-md mt-6 items-center justify-center w-full px-6 py-12 text-center text-white duration-200 bg-black border-2 border-black rounded-lg inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black">
+              <Link href={"/company/profile/" + data.id } className="max-h-12 text-md mt-6 items-center justify-center w-full px-6 py-12 text-center text-white duration-200 bg-black border-2 border-black rounded-lg inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black">
                 SEE MORE
               </Link>
             </div>

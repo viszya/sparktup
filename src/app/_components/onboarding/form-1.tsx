@@ -5,6 +5,8 @@ import { api } from "@/trpc/react";
 import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn } from "@/server/utils";
+import { Input } from "@/app/_components/ui/input";
+import { Textarea } from "@/app/_components/ui/textarea";
 
 interface FormProps {
 	onNextClick: () => void; // Define the type of onNextClick prop
@@ -15,6 +17,7 @@ export function Form1({ onNextClick }: FormProps) {
 	const [username, setUsername] = useState("");
 	const [location, setLocation] = useState("");
 	const [proEmail, setProEmail] = useState("");
+	const [phone, setPhone] = useState("");
 	const [about, setAbout] = useState("");
 	const [isLoading] = useState<boolean>(false)
 	const [isGitHubLoading, setIsGitHubLoading] = useState<boolean>(false)
@@ -70,7 +73,7 @@ export function Form1({ onNextClick }: FormProps) {
 								<label className="block mb-3 text-sm font-medium text-gray-600">
 									What is your full name (first / last)?
 								</label>
-								<input
+								<Input
 									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
 									placeholder="Jeff Bezos"
 									type="text"
@@ -83,7 +86,7 @@ export function Form1({ onNextClick }: FormProps) {
 								<label className="block mb-3 text-sm font-medium text-gray-600" >
 									What is your professional email address?
 								</label>
-								<input
+								<Input
 									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
 									placeholder="jeffbezos@example.com"
 									type="text"
@@ -96,7 +99,7 @@ export function Form1({ onNextClick }: FormProps) {
 								<label className="block mb-3 text-sm font-medium text-gray-600">
 									Choose a username
 								</label>
-								<input
+								<Input
 									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
 									placeholder="jeffbezos"
 									type="text"
@@ -109,7 +112,7 @@ export function Form1({ onNextClick }: FormProps) {
 								<label className="block mb-3 text-sm font-medium text-gray-600">
 									Where are you located?
 								</label>
-								<input
+								<Input
 									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
 									placeholder="Seattle, WA"
 									type="text"
@@ -118,20 +121,33 @@ export function Form1({ onNextClick }: FormProps) {
 									onChange={(e) => setLocation(e.target.value)}
 								/>
 							</div>
+							<div className="col-span-full">
+								<label className="block mb-3 text-sm font-medium text-gray-600">
+									What is your phone number?
+								</label>
+								<Input
+									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
+									placeholder="123-456-7890"
+									type="text"
+									value={phone}
+									required
+									onChange={(e) => setPhone(e.target.value)}
+								/>
+							</div>
 							<div>
 								<div>
 									<label className="block mb-3 text-sm font-medium text-gray-600">
 										Your Personal Statement / Profile Summary
 									</label>
 									<div className="mt-1">
-										<textarea
+										<Textarea
 											className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
 											placeholder="What are you working on?"
 											rows={4}
 											value={about}
 											required
 											onChange={(e) => setAbout(e.target.value)}
-										></textarea>
+										/>
 									</div>
 								</div>
 							</div>

@@ -28,7 +28,7 @@ export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
         setIsLoading(false);
         toast({
             title: "Success",
-            description: "Company Profile: Form 5 Completed",
+            description: "Event Form 3 Completed",
         });
     }
 
@@ -60,46 +60,46 @@ export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
                                 onSubmit();
                             }}
                         >
-                            
+
                             <div className="col-span-full">
-                                    <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        See Source
-                                    </label>
-                                    <Input
-                                        placeholder="See Source"
-                                        className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                        type="text"
-                                        required
-                                        value={seeSrc}
-                                        onChange={(e) => setSeeSrc(e.target.value)}
-                                    />
-                                </div>
-                                <div className="col-span-full">
-                                    <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Attend Source
-                                    </label>
-                                    <Input
-                                        placeholder="Attend Source"
-                                        className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                        type="text"
-                                        required
-                                        value={attendSrc}
-                                        onChange={(e) => setAttendSrc(e.target.value)}
-                                    />
-                                </div>
-                                <div className="col-span-full">
-                                    <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Photo Source
-                                    </label>
-                                    <Input
-                                        placeholder="Photo Source"
-                                        className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
-                                        type="text"
-                                        required
-                                        value={photoSrc}
-                                        onChange={(e) => setPhotoSrc(e.target.value)}
-                                    />
-                                </div>
+                                <label className="block mb-3 text-sm font-medium text-primary/90">
+                                    See Source
+                                </label>
+                                <Input
+                                    placeholder="See Source"
+                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                    type="text"
+                                    required
+                                    value={seeSrc}
+                                    onChange={(e) => setSeeSrc(e.target.value)}
+                                />
+                            </div>
+                            <div className="col-span-full">
+                                <label className="block mb-3 text-sm font-medium text-primary/90">
+                                    Attend Source
+                                </label>
+                                <Input
+                                    placeholder="Attend Source"
+                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                    type="text"
+                                    required
+                                    value={attendSrc}
+                                    onChange={(e) => setAttendSrc(e.target.value)}
+                                />
+                            </div>
+                            <div className="col-span-full">
+                                <label className="block mb-3 text-sm font-medium text-primary/90">
+                                    Photo Source
+                                </label>
+                                <Input
+                                    placeholder="Photo Source"
+                                    className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
+                                    type="text"
+                                    required
+                                    value={photoSrc}
+                                    onChange={(e) => setPhotoSrc(e.target.value)}
+                                />
+                            </div>
                             <div className="col-span-full">
                                 <button
                                     type="submit"
@@ -118,20 +118,22 @@ export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
                     </div>
                 </div>
             </div>
-            {submitted ? (
-                <div className="flex justify-center items-center gap-x-4 ">
-                    <div className="border border-dashed border-primary/60 p-2 flex justify-center items-center gap-x-4 rounded-xl mt-2">
-                        <button onClick={onBackClick} className={cn(buttonVariants({ variant: "outline" }), " rounded-xl w-26")}>
-                            <Icons.chevronLeft className="h-5 w-5 mr-2" />
-                            Back
-                        </button>
+            <div className="flex justify-center items-center gap-x-4 ">
+                <div className="border border-dashed border-primary/60 p-2 flex justify-center items-center gap-x-4 rounded-xl mt-2">
+                    <button onClick={onBackClick} className={cn(buttonVariants({ variant: "outline" }), " rounded-xl w-26")}>
+                        <Icons.chevronLeft className="h-5 w-5 mr-2" />
+                        Back
+                    </button>
+                    {submitted ? (
+
                         <button onClick={onSubmitClick} className={cn(buttonVariants({ variant: "default" }), " rounded-xl w-26")}>
                             Add Event
                             <Icons.chevronRight className="h-5 w-5 ml-2" />
                         </button>
-                    </div>
+                    ) : (<></>)}
+
                 </div>
-            ) : (<></>)}
+            </div>
         </section>
     );
 }

@@ -1,90 +1,25 @@
+"use client"
+
 import { cn } from "@/server/utils"
 import { Icons } from "@/app/_components/icons"
 import { twp } from "@/server/utils"
 import Image from "next/image";
 import { Button } from "@/app/_components/ui/button";
+import { api } from "@/trpc/react";
 
-const data = {
-    applicants: [
-        {
-            fullName: "Alexander Sandberg",
-            jobTitle: "Software Developer",
-            username: "alexander",
-            location: "Linz, Upper Austria, Austria",
-            connections: "500+",
-            yearsOfExperience: "8",
-            avaiableForWork: true,
-            companyLogoSrc: "/applelogo.png",
-            profileSrc: "/profile2.png",
-            currentJobTitle: "Senior iOS Developer",
-        },
-        {
-            fullName: "Sam Altman",
-            jobTitle: "OpenAI CEO",
-            username: "sam_altman",
-            location: "San Francisco, California",
-            connections: "10,000+",
-            yearsOfExperience: "10+",
-            avaiableForWork: true,
-            companyLogoSrc: "/openai_logo.png",
-            profileSrc: "/sam_altman.png",
-            currentJobTitle: "CEO",
-        },
-        {
-            fullName: "Steve Jobs",
-            jobTitle: "Co-founder of Apple Inc.",
-            username: "steve_jobs",
-            location: "Palo Alto, California, USA",
-            connections: "100000+",
-            yearsOfExperience: "30+",
-            avaiableForWork: true,
-            companyLogoSrc: "/applelogo.png",
-            profileSrc: "/steve.png",
-            currentJobTitle: "CEO",
-        },
-        {
-            fullName: "Satya Nadella",
-            jobTitle: "Microsoft CEO",
-            username: "satya_nadella",
-            location: "Washington, USA",
-            connections: "5,000+",
-            yearsOfExperience: "25+",
-            avaiableForWork: true,
-            companyLogoSrc: "/microsoft_logo.png",
-            profileSrc: "/satya.png",
-            currentJobTitle: "CEO",
-        },
-        {
-            fullName: "Marcus Aurelius",
-            jobTitle: "Roman Emperor",
-            username: "marcus_aurelius",
-            location: "Rome, Italy",
-            connections: "N/A",
-            yearsOfExperience: "20+",
-            avaiableForWork: true,
-            companyLogoSrc: "/roman_logo.jpeg",
-            profileSrc: "/marcus.png",
-            currentJobTitle: "Emperor",
-        },
-        {
-            fullName: "Beethoven",
-            jobTitle: "Composer and Pianist",
-            username: "beethoven",
-            location: "Vienna, Austria",
-            connections: "N/A",
-            yearsOfExperience: "30+",
-            avaiableForWork: true,
-            companyLogoSrc: "/music.png",
-            profileSrc: "/beethoven.png",
-            currentJobTitle: "Composer",
-        },
-    ],
-}
 export default function CompanyProfile() {
+
+    const res = api.user.getProfiles.useQuery();
+    if (res.status === "loading") {
+      return <div>Loading...</div>;
+    }
+    const data = res.data;
+    console.log(data);
+
     return (
         <div className={cn(twp().wrapper, "")}>
             <h2 className="mt-20 sm:mt-30 mb-11 text-center text-4xl font-semibold">Applicants</h2>
-            {data.applicants.map((applicant) => (
+            {data.map((applicant) => (
                 <div className="grid grid-flow-col grid-cols-2 md:grid-cols-1 gap-x-3 m-10 bg-gray-300/10 p-8 rounded-2xl border-2 border-gray-200">
                     <div className="max-w-[30rem]">
                         <div className="flex flex-row gap-x-8 mb-4">
