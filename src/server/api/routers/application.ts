@@ -74,6 +74,8 @@ export const applicationRouter = createTRPCRouter({
                 },
             });
 
+            if (basicProfile.applications.length === 0) return ([]);
+
             return ctx.db.application.findMany({
                 where: {
                     company: {
@@ -83,6 +85,15 @@ export const applicationRouter = createTRPCRouter({
             });
 
 
+        }),
+
+    getApplicationsFromUser: protectedProcedure
+        .query(async ({ ctx }) => {
+            return ctx.db.application.findMany({
+                where: {
+                    applicantId: ctx.session.user.id,
+                },
+            });
         }),
 
     setApplicationStatus: protectedProcedure
@@ -118,7 +129,7 @@ export const applicationRouter = createTRPCRouter({
             id: z.string(),
         }))
         .mutation(async ({ ctx, input }) => {
-           // increment acceptedApplication to the application tied to the id
+            // increment acceptedApplication to the application tied to the id
             const application = await ctx.db.application.findUnique({
                 where: {
                     id: input.id,
@@ -149,7 +160,7 @@ export const applicationRouter = createTRPCRouter({
                 where: {
                     id: ctx.session.user.id,
                 },
-                select : {
+                select: {
                     views: true,
                 },
             });
@@ -162,12 +173,12 @@ export const applicationRouter = createTRPCRouter({
             });
 
             return {
-                applicationCount: applicationCount?? 0,
+                applicationCount: applicationCount ?? 0,
                 views: views.views,
-                acceptedApplications: acceptedApplications?? 0,
+                acceptedApplications: acceptedApplications ?? 0,
             };
         }),
-   
+
 
 
 });

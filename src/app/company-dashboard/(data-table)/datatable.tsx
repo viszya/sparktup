@@ -31,12 +31,16 @@ function getTasks() {
 
 export  function DataPage() {
   const applications = api.application.getApplicationsFromCompany.useQuery()
-  const data = applications.data
+  let data = applications.data
   console.log(data)
 
   if (applications.isLoading == true) {
     return <div>Loading...</div>
   }
+
+  if (data.length = 0) {
+    data = {}
+  } 
 
 
   return (

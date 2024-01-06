@@ -33,12 +33,14 @@ export default function Onboarding() {
     })
 
     function onClick1() {
+        setApplicantLoading(true), 
         addAccountType.mutate({
             type: "applicant",
         })
     }
 
     function onClick2() {
+        setCompanyLoading(true), 
         setUrl("/company-dashboard");
         addAccountType.mutate({
             type: "company",
@@ -61,7 +63,7 @@ export default function Onboarding() {
                             type="button"
                             className={cn(buttonVariants(), "rounded-full")}
                             onClick={() => {
-                                setApplicantLoading(true), onClick1(),
+                                onClick1()
                             }}
                             disabled={isLoading || isApplicant}
                         >
@@ -88,7 +90,7 @@ export default function Onboarding() {
                         type="button"
                         className={cn(buttonVariants(), "rounded-full")}
                         onClick={() => {
-                            setCompanyLoading(true), onClick2()
+                            onClick2()
                         }}
                         disabled={isLoading2 || isCompany}
                     >

@@ -13,7 +13,7 @@ import { getServerAuthSession } from "@/server/auth"
 import { redirect } from "next/navigation"
 import { api } from "@/trpc/react";
 
-export default async function Onboarding() {
+export default function Onboarding() {
   // const session = await getServerAuthSession()
   //   if (!session) {
   //       redirect("/unauthorized")
