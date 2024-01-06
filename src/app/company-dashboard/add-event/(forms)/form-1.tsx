@@ -49,12 +49,12 @@ export function Form1({ onNextClick, addFormVals }: any) {
                                 </span>
                             </span>
                             <div className="mt-3 text-3xl tracking-tighter text-primary">
-                                Welcome! Let&apos;s get started.
+                                Add Event
                             </div>
                             <div className="mt-4 text-primary/80">
                                 Let&apos;s get started! Please fill out the following
                                 form to the best of your ability. All this information will be
-                                used to create your profile. You can always edit your profile
+                                used to create a Company Event. You can always edit this event
                                 later.
                             </div>
                         </article>
@@ -67,10 +67,10 @@ export function Form1({ onNextClick, addFormVals }: any) {
                         >
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Date
+                                    What is the date of the event?
                                 </label>
                                 <Input
-                                    placeholder="Date"
+                                    placeholder="1/6/24"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -80,10 +80,10 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Title
+                                    What is the name of the event?
                                 </label>
                                 <Input
-                                    placeholder="Title"
+                                    placeholder="iPhone launch event"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -93,10 +93,10 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Location
+                                    Where is the location the event will be held? (Can Be Online Event)
                                 </label>
                                 <Input
-                                    placeholder="Location"
+                                    placeholder="Spokane Library"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -106,10 +106,10 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Image Source
+                                    What is one image source for the event banner?
                                 </label>
                                 <Input
-                                    placeholder="Image Source"
+                                    placeholder=".png .jpeg"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -119,10 +119,10 @@ export function Form1({ onNextClick, addFormVals }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Attendees
+                                    How many people can attend?
                                 </label>
                                 <Input
-                                    placeholder="Attendees"
+                                    placeholder="50-60"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required

@@ -40,16 +40,16 @@ export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
                         <article>
                             <span className="inline-flex items-center text-primary rounded-xl">
                                 <span className="font-mono text-sm" aria-hidden="true">
-                                    01
+                                    03
                                 </span>
                             </span>
                             <div className="mt-3 text-3xl tracking-tighter text-primary">
-                                Welcome! Let&apos;s get started.
+                                Add Optional Information/Sources
                             </div>
                             <div className="mt-4 text-primary/80">
                                 Let&apos;s get started! Please fill out the following
                                 form to the best of your ability. All this information will be
-                                used to create your profile. You can always edit your profile
+                                used to create your Company Event. You can always edit your event
                                 later.
                             </div>
                         </article>
@@ -63,10 +63,10 @@ export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
 
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    See Source
+                                    Are There Any More Website or Companies to left to Mention?
                                 </label>
                                 <Input
-                                    placeholder="See Source"
+                                    placeholder="Microsoft"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -76,10 +76,10 @@ export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Attend Source
+                                    Live Stream Link
                                 </label>
                                 <Input
-                                    placeholder="Attend Source"
+                                    placeholder="youtube.com/live-stream"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -89,10 +89,10 @@ export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Photo Source
+                                    Any Additional Photos?
                                 </label>
                                 <Input
-                                    placeholder="Photo Source"
+                                    placeholder=".png .jpeg"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required

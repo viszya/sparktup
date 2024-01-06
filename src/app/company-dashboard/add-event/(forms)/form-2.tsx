@@ -43,16 +43,16 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                         <article>
                             <span className="inline-flex items-center text-primary rounded-xl">
                                 <span className="font-mono text-sm" aria-hidden="true">
-                                    01
+                                    02
                                 </span>
                             </span>
                             <div className="mt-3 text-3xl tracking-tighter text-primary">
-                                Welcome! Let&apos;s get started.
+                                Add Additional Event Information
                             </div>
                             <div className="mt-4 text-primary/80">
                                 Let&apos;s get started! Please fill out the following
                                 form to the best of your ability. All this information will be
-                                used to create your profile. You can always edit your profile
+                                used to create your Company Event. You can always edit your event
                                 later.
                             </div>
                         </article>
@@ -65,10 +65,10 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                         >
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    View Link
+                                    What is teh link to sign up for the event?
                                 </label>
                                 <Input
-                                    placeholder="View Link"
+                                    placeholder="eventsignup.com"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -78,10 +78,10 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Event Type
+                                    What is type of event?
                                 </label>
                                 <Input
-                                    placeholder="Event Type"
+                                    placeholder="Technological"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -91,10 +91,10 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    Event By
+                                    Who is the event hosted by?
                                 </label>
                                 <Input
-                                    placeholder="Event By"
+                                    placeholder="CEO"
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
@@ -104,10 +104,10 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                             </div>
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">
-                                    About
+                                    Write a small description about the event
                                 </label>
                                 <Input
-                                    placeholder="About"
+                                    placeholder="This event is about..."
                                     className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                     type="text"
                                     required
