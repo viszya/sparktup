@@ -85,6 +85,57 @@ export const applicationRouter = createTRPCRouter({
 
         }),
 
+    setApplicationStatus: protectedProcedure
+        .input(z.object({
+            id: z.string(),
+            status: z.string(),
+        }))
+        .mutation(async ({ ctx, input }) => {
+            return ctx.db.application.update({
+                where: {
+                    id: input.id,
+                },
+                data: {
+                    status: input.status,
+                },
+            });
+        }),
+
+    getApplication: protectedProcedure
+        .input(z.object({
+            id: z.string(),
+        }))
+        .query(async ({ ctx, input }) => {
+            return ctx.db.application.findUnique({
+                where: {
+                    id: input.id,
+                },
+            });
+        }),
+
+    addAcceptedApplication: protectedProcedure
+        .input(z.object({
+            id: z.string(),
+        }))
+        .mutation(async ({ ctx, input }) => {
+           // increment acceptedApplication to the application tied to the id
+            const application = await ctx.db.application.findUnique({
+                where: {
+                    id: input.id,
+                },
+            });
+            const company = await ctx.db.company.update({
+                where: {
+                    id: application.companyId,
+                },
+                data: {
+                    acceptedApplications: {
+                        increment: 1,
+                    },
+                },
+            });
+        }),
+
 
 });
 

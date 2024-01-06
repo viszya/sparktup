@@ -20,6 +20,8 @@ import {
 
 import { labels } from "../data/data"
 import { taskSchema } from "../data/schema"
+import { api } from "@/trpc/react"
+import { useToast } from "@/app/_components/ui/use-toast"
 
 interface DataTableRowActionsProps<TData> {
   row: Row<TData>
@@ -28,7 +30,34 @@ interface DataTableRowActionsProps<TData> {
 export function DataTableRowActions<TData>({
   row,
 }: DataTableRowActionsProps<TData>) {
+  const { toast } = useToast();
   const task = taskSchema.parse(row.original)
+  const addAcceptedApplication = api.application.addAcceptedApplication.useMutation()
+  const updateStatus = api.application.setApplicationStatus.useMutation({
+    onSuccess: () => {
+      toast({
+        title: "Success",
+        description: "Application status updated",
+      });
+    },
+  })
+
+  function acceptStatus() {
+    addAcceptedApplication.mutate({
+      id: task.id,
+    })
+    updateStatus.mutate({
+      id: task.id,
+      status: "Accepted",
+    })
+  }
+
+  function rejectStatus() {
+    updateStatus.mutate({
+      id: task.id,
+      status: "Rejected",
+    })
+  }
 
   return (
     <DropdownMenu>
@@ -42,27 +71,10 @@ export function DataTableRowActions<TData>({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[160px]">
-        <DropdownMenuItem>Edit</DropdownMenuItem>
-        <DropdownMenuItem>Make a copy</DropdownMenuItem>
-        <DropdownMenuItem>Favorite</DropdownMenuItem>
-        <DropdownMenuSeparator />
-        <DropdownMenuSub>
-          <DropdownMenuSubTrigger>Labels</DropdownMenuSubTrigger>
-          <DropdownMenuSubContent>
-            <DropdownMenuRadioGroup value={task.label}>
-              {labels.map((label) => (
-                <DropdownMenuRadioItem key={label.value} value={label.value}>
-                  {label.label}
-                </DropdownMenuRadioItem>
-              ))}
-            </DropdownMenuRadioGroup>
-          </DropdownMenuSubContent>
-        </DropdownMenuSub>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          Delete
-          <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
+        <DropdownMenuItem onClick={acceptStatus}>
+          Accept
         </DropdownMenuItem>
+        <DropdownMenuItem onClick={rejectStatus}>Reject</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )

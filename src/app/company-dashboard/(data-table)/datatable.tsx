@@ -7,6 +7,7 @@ import { z } from "zod"
 import { columns } from "./components/columns"
 import { DataTable } from "./components/data-table"
 import { api } from "@/trpc/react"
+import { Toaster } from "@/app/_components/ui/toaster"
 
 // Simulate a database read for tasks.
 function getTasks() {
@@ -37,9 +38,11 @@ export  function DataPage() {
     return <div>Loading...</div>
   }
 
+
   return (
     <>
         <DataTable data={data} columns={columns} />
+        <Toaster />
     </>
   )
 }

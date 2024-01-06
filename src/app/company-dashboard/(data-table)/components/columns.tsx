@@ -14,6 +14,8 @@ import Link from "next/link"
 import { cn } from "@/server/utils"
 import { api } from "@/trpc/react"
 
+
+
 export const columns: ColumnDef<Task>[] = [
   {
     id: "select",
@@ -125,33 +127,33 @@ export const columns: ColumnDef<Task>[] = [
       )
     },
   },
-  {
-    accessorKey: "priority",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Priority" />
-    ),
-    cell: ({ row }) => {
-      const priority = priorities.find(
-        (priority) => priority.value === row.getValue("priority")
-      )
+  // {
+  //   accessorKey: "priority",
+  //   header: ({ column }) => (
+  //     <DataTableColumnHeader column={column} title="Priority" />
+  //   ),
+  //   cell: ({ row }) => {
+  //     const priority = priorities.find(
+  //       (priority) => priority.value === row.getValue("priority")
+  //     )
 
-      if (!priority) {
-        return null
-      }
+  //     if (!priority) {
+  //       return null
+  //     }
 
-      return (
-        <div className="flex items-center">
-          {priority.icon && (
-            <priority.icon className="mr-2 h-4 w-4 text-muted-foreground" />
-          )}
-          <span>{priority.label}</span>
-        </div>
-      )
-    },
-    filterFn: (row, id, value) => {
-      return value.includes(row.getValue(id))
-    },
-  },
+  //     return (
+  //       <div className="flex items-center">
+  //         {priority.icon && (
+  //           <priority.icon className="mr-2 h-4 w-4 text-muted-foreground" />
+  //         )}
+  //         <span>{priority.label}</span>
+  //       </div>
+  //     )
+  //   },
+  //   filterFn: (row, id, value) => {
+  //     return value.includes(row.getValue(id))
+  //   },
+  // },
 
   {
     accessorKey: "applicantId",
@@ -160,11 +162,24 @@ export const columns: ColumnDef<Task>[] = [
     ),
     cell: ({ row }) => {
       // const label = labels.find((label) => label.value === row.original.label)
-
+      // const getId = api.test.getApplicantion.useQuery({ id: row.getValue("applicantId") })
+      // const changeStatus = api.test.changeStatus.useMutation()
+      // if (getId.isLoading) {
+      //   return (<div>Loading...</div>)
+      // }
+      // function statusViewed() {
+      //   console.log(getId.data)
+      //   console.log("HIHIH")
+      //   changeStatus.mutate({
+      //     id: getId.data.applicant[0].id,
+      //     status: "Viewed",
+      //   })
+      // }
       return (
+
         <div className="flex space-x-2">
           {/* {label && <Badge variant="outline">{label.label}</Badge>} */}
-          <Link href={"/applicant/profile/" + String(row.getValue("applicantId"))} className={cn(buttonVariants())}>
+          <Link href={"/applicant/profile/" + String(row.getValue("applicantId"))} className={cn(buttonVariants())} target="_blank">
             View
           </Link>
         </div>
@@ -172,7 +187,7 @@ export const columns: ColumnDef<Task>[] = [
     },
   },
   {
-    accessorKey: "applicationform",
+    accessorKey: "id",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Form" />
     ),
@@ -182,7 +197,7 @@ export const columns: ColumnDef<Task>[] = [
       return (
         <div className="flex space-x-2">
           {/* {label && <Badge variant="outline">{label.label}</Badge>} */}
-          <Link href="/" className={cn(buttonVariants({variant: "outline"}))}>
+          <Link href={"/company/application/" + String(row.getValue("id"))} className={cn(buttonVariants({ variant: "outline" }))}>
             View
           </Link>
         </div>

@@ -13,6 +13,7 @@ export const taskSchema = z.object({
   softSkills: z.string(),
   certifications: z.string(),
   startDate: z.string(),
+  id: z.string(),
   employmentType: z.string(),
   desiredWorkSchedule: z.string(),
   convictedOfCrime: z.string(),

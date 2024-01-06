@@ -2,10 +2,9 @@
 
 import { Icons } from "@/app/_components/icons";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/_components/ui/tabs";
-import { Form1 } from "@/app/company-dashboard/add-career/(forms)/form-1";
-import { Form2 } from "@/app/company-dashboard/add-career/(forms)/form-2";
-import { Form3 } from "@/app/company-dashboard/add-career/(forms)/form-3";
-import { InputData } from "@/app/_components/inputdata";
+import { Form1 } from "@/app/company-dashboard/add-event/(forms)/form-1";
+import { Form2 } from "@/app/company-dashboard/add-event/(forms)/form-2";
+import { Form3 } from "@/app/company-dashboard/add-event/(forms)/form-3";
 import { useState } from "react";
 import { api } from "@/trpc/react";
 import { formatDate } from "@/server/utils";
@@ -25,8 +24,8 @@ export default function AddCareer() {
     const [seeSrc, setSeeSrc] = useState("");
     const [attendSrc, setAttendSrc] = useState("");
     const [photoSrc, setPhotoSrc] = useState("");
-    const [activeTab, setActiveTab] = useState("profile");
-    const tabOrder = ["profile", "contact", "socialmedia"];
+    const [activeTab, setActiveTab] = useState("form1");
+    const tabOrder = ["form1", "form2", "form3"];
     const company = api.test.getCompanyProfilePrivate.useQuery();
     const createEvent = api.test.createEvent.useMutation({
         onSuccess: () => {
@@ -123,24 +122,21 @@ export default function AddCareer() {
             <div className="flex flex-col justify-center w-full ">
                 <Tabs value={activeTab} className="mt-5">
                     <TabsList className="flex flex-row gap-x-6 overflow-x-auto">
-                        <TabsTrigger value="profile">Company Profile</TabsTrigger>
+                        <TabsTrigger value="form1">Company Profile</TabsTrigger>
                         <Icons.chevronRight className="text-gray-300 h-5 w-5" />
-                        <TabsTrigger value="contact">Contact Info</TabsTrigger>
+                        <TabsTrigger value="form2">Contact Info</TabsTrigger>
                         <Icons.chevronRight className="text-gray-300 h-5 w-5" />
-                        <TabsTrigger value="socialmedia">Social Media</TabsTrigger>
+                        <TabsTrigger value="form3">Social Media</TabsTrigger>
                     </TabsList>
                     <div className="w-full">
-                        <TabsContent value="profile">
+                        <TabsContent value="form1">
                             <Form1 onNextClick={handleNextButtonClick} addFormVals={addForm1Vals} />
                         </TabsContent>
-                        <TabsContent value="contact">
+                        <TabsContent value="form2">
                             <Form2 onNextClick={handleNextButtonClick} addFormVals={addForm2Vals} onBackClick={handleBackButtonClick} />
                         </TabsContent>
-                        <TabsContent value="socialmedia">
+                        <TabsContent value="form3">
                             <Form3 onSubmitClick={handleSubmitClick} addFormVals={addForm3Vals} onBackClick={handleBackButtonClick} />
-                        </TabsContent>
-                        <TabsContent value="data">
-                            <InputData />
                         </TabsContent>
                     </div>
                 </Tabs>
