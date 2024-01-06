@@ -85,17 +85,38 @@ const data = [
     },
     careerOpportunities: [
       {
-        position: "Software Engineer",
-        location: "San Francisco, CA",
-        applyLink: "https://techsolutions.com/careers/software-engineer"
+        "position": "Software Engineer",
+        "location": "San Francisco, CA",
+        "applyLink": "https://techsolutions.com/careers/software-engineer",
+        "companyLogo": "/applelogo.png",
+        "description": "Microsoft · Redmond, WA · Reposted 1 week ago · Over 100 applicants",
+        "pricingDescription": "$112,000/yr - $238,600/yr · Hybrid · Full-time",
+        "sizeDescription": "10,001+ employees · Software Development",
+        "skills": "Music, Audio Recording, +8 more",
+        "jobLink": "/",
+        "seeSrc": "/",
+        "thumbnail": "/microsoft-event.png",
+        "about": "343 Industries is the developer of the blockbuster Halo series of video games. As part of Xbox Game Studios, the Halo franchise encompasses games, television series, novels, comics, licensed collectibles, apparel and more. We are looking for new Spartans to join our team to build the next generation of games and experiences in our award-winning sci-fi universe. Do you have experience delivering AAA audio experiences with audio post-production, music, sound design, dialogue recording and pipelines, and mixing? Do you want to build and develop an audio team and stable of partners that can work across stakeholders and products to consistently deliver world class audio to delight our fans?",
+        "pay": "$112,000/yr - $238,600/yr",
+        "companyAbout": "343 Industries is the developer of the blockbuster Halo series of video games. As part of Xbox Game Studios, the Halo franchise encompasses games, television series, novels, comics, licensed collectibles, apparel and more. We are looking for new Spartans to join our team to build the next generation of games and experiences in our award-winning sci-fi universe. Do you have experience delivering AAA audio experiences with audio post-production, music, sound design, dialogue recording and pipelines, and mixing? Do you want to build and develop an audio team and stable of partners that can work across stakeholders and products to consistently deliver world class audio to delight our fans?"
       },
       {
-        position: "Data Scientist",
-        location: "Remote",
-        applyLink: "https://techsolutions.com/careers/data-scientist"
+        "position": "Data Scientist",
+        "location": "Remote",
+        "applyLink": "https://techsolutions.com/careers/data-scientist",
+        "companyLogo": "/applelogo.png",
+        "description": "Microsoft · Redmond, WA · Reposted 1 week ago · Over 100 applicants",
+        "pricingDescription": "$112,000/yr - $238,600/yr · Hybrid · Full-time",
+        "sizeDescription": "10,001+ employees · Software Development",
+        "skills": "Music, Audio Recording, +8 more",
+        "jobLink": "/",
+        "seeSrc": "/",
+        "thumbnail": "/microsoft-event.png",
+        "about": "343 Industries is the developer of the blockbuster Halo series of video games. As part of Xbox Game Studios, the Halo franchise encompasses games, television series, novels, comics, licensed collectibles, apparel and more. We are looking for new Spartans to join our team to build the next generation of games and experiences in our award-winning sci-fi universe. Do you have experience delivering AAA audio experiences with audio post-production, music, sound design, dialogue recording and pipelines, and mixing? Do you want to build and develop an audio team and stable of partners that can work across stakeholders and products to consistently deliver world class audio to delight our fans?",
+        "pay": "$112,000/yr - $238,600/yr",
+        "companyAbout": "343 Industries is the developer of the blockbuster Halo series of video games. As part of Xbox Game Studios, the Halo franchise encompasses games, television series, novels, comics, licensed collectibles, apparel and more. We are looking for new Spartans to join our team to build the next generation of games and experiences in our award-winning sci-fi universe. Do you have experience delivering AAA audio experiences with audio post-production, music, sound design, dialogue recording and pipelines, and mixing? Do you want to build and develop an audio team and stable of partners that can work across stakeholders and products to consistently deliver world class audio to delight our fans"
       }
-      // Add more job openings as needed
-    ],
+    ],    
     mediaGallery: [
       "/office1-microsoftData.jpeg",
       "/office2-microsoftData.jpeg",
@@ -103,32 +124,75 @@ const data = [
     ],
     termsAndConditionsLink: "https://techsolutions.com/terms",
     privacyPolicyLink: "https://techsolutions.com/privacy",
-    eventData: [
+    eventData:[
       {
-        date: "Thu, Mar 16, 2023, 8:00 AM",
-        title: "The Future of Work: Reinventing Productivity with AI",
-        location: "Live Video",
-        imgsrc: "/future_of_work-microsoftData.jpeg",
-        attendees: "31,740 attendees",
-        viewLink: "https://example.com/event1",
+        "date": "Thu, Mar 16, 2023, 8:00 AM",
+        "title": "The Future of Work: Reinventing Productivity with AI",
+        "location": "Live Video",
+        "imgsrc": "/future_of_work-microsoftData.jpeg",
+        "attendees": "31,740 attendees",
+        "viewLink": "https://example.com/event1",
+        "speakers": [
+          {
+            "name": "John Smith",
+            "fallback": "CN",
+            "imgsrc": "/jhon-doe-microsoftData.jpeg",
+            "position": "CEO at Microsoft"
+          },
+          {
+            "name": "Jane Doe",
+            "fallback": "CN",
+            "imgsrc": "/jane-doe-microsoftData.jpeg",
+            "position": "CTO at Microsoft"
+          }
+        ]
       },
       {
-        date: "Tue, Nov 29, 2022, 5:00 PM",
-        title: "Microsoft Industry Fair 2022",
-        location: "Live Video",
-        imgsrc: "/microsoft-industry-fair-microsoftData.jpeg",
-        attendees: "102 attendees",
-        viewLink: "https://example.com/event2",
+        "date": "Tue, Nov 29, 2022, 5:00 PM",
+        "title": "Microsoft Industry Fair 2022",
+        "location": "Live Video",
+        "imgsrc": "/microsoft-industry-fair-microsoftData.jpeg",
+        "attendees": "102 attendees",
+        "viewLink": "https://example.com/event2",
+        "speakers": [
+          {
+            "name": "John Smith",
+            "fallback": "CN",
+            "imgsrc": "/jhon-doe-microsoftData.jpeg",
+            "position": "CEO at Microsoft"
+          },
+          {
+            "name": "Jane Doe",
+            "fallback": "CN",
+            "imgsrc": "/jane-doe-microsoftData.jpeg",
+            "position": "CTO at Microsoft"
+          }
+        ]
       },
       {
-        date: "Mon, Nov 14, 2022, 5:00 PM",
-        title: "Microsoft Hong Kong Cybersecurity Summit 2022",
-        location: "Live Video",
-        imgsrc: "/event3-microsoftData.jpeg",
-        attendees: "78 attendees",
-        viewLink: "https://example.com/event3",
-      },
+        "date": "Mon, Nov 14, 2022, 5:00 PM",
+        "title": "Microsoft Hong Kong Cybersecurity Summit 2022",
+        "location": "Live Video",
+        "imgsrc": "/event3-microsoftData.jpeg",
+        "attendees": "78 attendees",
+        "viewLink": "https://example.com/event3",
+        "speakers": [
+          {
+            "name": "John Smith",
+            "fallback": "CN",
+            "imgsrc": "/jhon-doe-microsoftData.jpeg",
+            "position": "CEO at Microsoft"
+          },
+          {
+            "name": "Jane Doe",
+            "fallback": "CN",
+            "imgsrc": "/jane-doe-microsoftData.jpeg",
+            "position": "CTO at Microsoft"
+          }
+        ]
+      }
     ],
+    
   
   },
   {
@@ -204,17 +268,39 @@ const data = [
       address: "1 Apple Park Way, Cupertino, CA, USA"
     },
     careerOpportunities: [
-        {
-            position: "Software Engineer",
-            location: "San Francisco, CA",
-            applyLink: "https://techsolutions.com/careers/software-engineer"
-          },
-          {
-            position: "Data Scientist",
-            location: "Remote",
-            applyLink: "https://techsolutions.com/careers/data-scientist"
-          }
-    ],
+      {
+        "position": "Software Engineer",
+        "location": "San Francisco, CA",
+        "applyLink": "https://techsolutions.com/careers/software-engineer",
+        "companyLogo": "/applelogo.png",
+        "description": "Company Name · San Francisco, CA · Reposted 1 week ago · Over 100 applicants",
+        "pricingDescription": "$112,000/yr - $238,600/yr · Hybrid · Full-time",
+        "sizeDescription": "10,001+ employees · Software Development",
+        "skills": "Programming, Problem Solving, +5 more",
+        "jobLink": "/",
+        "seeSrc": "/",
+        "thumbnail": "/company-event.png",
+        "about": "Join our dynamic team as a Software Engineer and be part of innovative projects that shape the future of technology. We are looking for talented individuals with a passion for coding and problem-solving. If you thrive in a fast-paced environment and enjoy collaborative teamwork, apply now and be a key player in our success!",
+        "pay": "$112,000/yr - $238,600/yr",
+        "companyAbout": "Company Name is a leading tech company dedicated to pushing the boundaries of innovation. Our diverse team of experts works on cutting-edge projects that impact industries and communities worldwide. Join us in our mission to create groundbreaking solutions and make a difference in the world."
+      },
+      {
+        "position": "Data Scientist",
+        "location": "Remote",
+        "applyLink": "https://techsolutions.com/careers/data-scientist",
+        "companyLogo": "/applelogo.png",
+        "description": "Company Name · Remote · Reposted 1 week ago · Over 100 applicants",
+        "pricingDescription": "$120,000/yr - $250,000/yr · Remote · Full-time",
+        "sizeDescription": "5,001-10,000 employees · Data Science",
+        "skills": "Data Analysis, Machine Learning, +7 more",
+        "jobLink": "/",
+        "seeSrc": "/",
+        "thumbnail": "/company-event.png",
+        "about": "Exciting opportunity for a talented Data Scientist to join our remote team. As a key member of our data science team, you will contribute to cutting-edge projects that leverage advanced analytics and machine learning. If you have a passion for data and enjoy solving complex problems, apply now and be part of our data-driven success!",
+        "pay": "$120,000/yr - $250,000/yr",
+        "companyAbout": "Company Name is a global tech company that values innovation and creativity. Our remote-friendly work environment allows our team members to collaborate from anywhere in the world. Join us in our mission to harness the power of data and drive impactful decisions for our organization and clients."
+      }
+    ],    
     mediaGallery: [
         "/office1-appleData.jpeg",
         "/office2-appleData.jpeg",
@@ -223,150 +309,76 @@ const data = [
     termsAndConditionsLink: "https://www.apple.com/legal/",
     privacyPolicyLink: "https://www.apple.com/legal/privacy/",
     eventData: [
-        {
-        date: "Thu, Sept 12, 2024, 5:00 PM",
-        title: "September iPhone Event",
-        location: "Live Video",
-        imgsrc: "/iphone16.jpeg",
-        attendees: "Online attendees",
-        viewLink: "https://example.com/event3",
-        },
-        {
-        date: "Thu, Sept 12, 2024, 5:00 PM",
-        title: "AirPods 4 Release",
-        location: "Live Video",
-        imgsrc: "/airpods4.jpeg",
-        attendees: "Online attendees",
-        viewLink: "https://example.com/event3",
-    },
-    {
-        date: "Thu, Sept 12, 2024, 5:00 PM",
-        title: "New iPad Releases",
-        location: "Live Video",
-        imgsrc: "/ipad.jpeg",
-        attendees: "Online attendees",
-        viewLink: "https://example.com/event3",
-    },
+      {
+        "date": "Thu, Sept 12, 2024, 5:00 PM",
+        "title": "September iPhone Event",
+        "location": "Live Video",
+        "imgsrc": "/iphone16.jpeg",
+        "attendees": "Online attendees",
+        "viewLink": "https://example.com/event3",
+        "speakers": [
+          {
+            "name": "Tim Cook",
+            "fallback": "CN",
+            "imgsrc": "/tim-cook.jpeg",
+            "position": "CEO at Apple"
+          },
+          {
+            "name": "Luca Maestri",
+            "fallback": "CN",
+            "imgsrc": "/luca-maestri.jpeg",
+            "position": "CFO at Apple"
+          }
+        ]
+      },
+      {
+        "date": "Thu, Sept 12, 2024, 5:00 PM",
+        "title": "AirPods 4 Release",
+        "location": "Live Video",
+        "imgsrc": "/airpods4.jpeg",
+        "attendees": "Online attendees",
+        "viewLink": "https://example.com/event3",
+        "speakers": [
+          {
+            "name": "Tim Cook",
+            "fallback": "CN",
+            "imgsrc": "/tim-cook.jpeg",
+            "position": "CEO at Apple"
+          },
+          {
+            "name": "Luca Maestri",
+            "fallback": "CN",
+            "imgsrc": "/luca-maestri.jpeg",
+            "position": "CFO at Apple"
+          }
+        ]
+      },
+      {
+        "date": "Thu, Sept 12, 2024, 5:00 PM",
+        "title": "New iPad Releases",
+        "location": "Live Video",
+        "imgsrc": "/ipad.jpeg",
+        "attendees": "Online attendees",
+        "viewLink": "https://example.com/event3",
+        "speakers": [
+          {
+            "name": "Tim Cook",
+            "fallback": "CN",
+            "imgsrc": "/tim-cook.jpeg",
+            "position": "CEO at Apple"
+          },
+          {
+            "name": "Luca Maestri",
+            "fallback": "CN",
+            "imgsrc": "/luca-maestri.jpeg",
+            "position": "CFO at Apple"
+          }
+        ]
+      }
     ],
-},
-{
-    {
-        companyName: "Google",
-        linkedInMembers: "Check LinkedIn for current figures",
-        logoSrc: "/google-logo.jpeg",
-        location: "Mountain View, CA, USA",
-        website: "https://www.google.com/",
-        industry: "Technology",
-        companySize: "Check current figures",
-        size: "Check current figures",
-        companyBannerImgSrc: "/google-office.jpeg",
-        foundingYear: "Founded in 1998",
-        missionValues: `Google's mission is to organize the world's information and make it universally accessible and useful. They strive to build products that improve the lives of as many people as possible.`,
-        missionAndValues: "Organizing the world's information, making it universally accessible and useful",
-        about: "Google, a multinational technology company, specializes in Internet-related services and products, including online advertising technologies, a search engine, cloud computing, software, and hardware.",
-        solutionsOverview: "Google offers a diverse range of products and services, including Google Search, Google Cloud, Android, YouTube, and a variety of software and digital content through platforms like Google Play Store.",
-        keyBenefits: " - Pioneering technology\n - Global information access\n - Strong emphasis on user experience\n - Leadership in AI and machine learning",
-        keyFeatures: " - Advanced search engine\n - Robust cloud services\n - Comprehensive digital ecosystem\n - User-centric product design",
-        testimonials: [
-            {
-                clientName: "Digital Horizon Solutions",
-                feedback: "Google's technologies have been pivotal in our digital strategy. Their search and cloud services have provided us with the tools necessary for effective online presence and data management."
-            },
-            {
-                clientName: "EduTech Innovators",
-                feedback: "Google's educational tools have transformed the way we teach and learn. Products like Google Classroom and G Suite for Education have fostered a more collaborative and accessible educational environment."
-            },
-            {
-                clientName: "Green Earth Advocates",
-                feedback: "Google's commitment to sustainability and green initiatives resonates deeply with our mission at Green Earth Advocates. Their efforts in using renewable energy and promoting sustainability are commendable."
-            },
-            {
-                clientName: "Healthway Clinics",
-                feedback: "Google's AI-driven health analytics tools have greatly enhanced our medical research and patient care services. Their innovative approach to healthcare technology is truly groundbreaking."
-            },
-            {
-                clientName: "NextGen Gaming",
-                feedback: "As a game developer, Google's platforms like Android and Google Play have allowed us to reach a wider audience. Their continuous innovation in technology keeps us ahead in the competitive gaming industry."
-            },    
-            
-        ],
-        specialties: [
-          "Search Engine",
-          "Cloud Computing",
-          "Artificial Intelligence",
-          "YouTube",
-          "Android",
-          "Consumer Hardware",
-          "Digital Advertising",
-          "Google Play",
-          "Machine Learning",
-          "Internet of Things",
-          "Sustainability Initiatives"
-          // And more...
-        ],
-        teamMembers: [
-            {
-                name: "Sundar Pichai",
-                role: "CEO",
-                photoSrc: "/sundar-pichai.jpeg"
-              },
-              // Add more team members as needed
-        ],
-        companyCulture: "Google is known for its innovative, inclusive, and open culture, fostering creativity and collaboration among its employees, with a strong focus on maintaining a positive work environment and work-life balance.",
-        contactInformation: {
-          email: "contact@google.com",
-          phone: "1-800-GOOGLE",
-          address: "1600 Amphitheatre Parkway, Mountain View, CA, USA"
-        },
-        careerOpportunities: [
-            {
-                position: "Software Engineer",
-                location: "Mountain View, CA",
-                applyLink: "https://careers.google.com/jobs/results/?distance=50&location=Mountain%20View,%20CA,%20USA"
-              },
-              {
-                position: "Data Scientist",
-                location: "Remote",
-                applyLink: "https://careers.google.com/jobs/results/?location=Remote"
-              }
-              // Add more job openings as needed
-        ],
-        mediaGallery: [
-            "/google-campus1.jpeg",
-            "/google-campus2.jpeg",
-            "/google-campus3.jpeg"
-        ],
-        termsAndConditionsLink: "https://policies.google.com/terms",
-        privacyPolicyLink: "https://policies.google.com/privacy",
-        eventData: [
-            {
-                date: "Wed, May 18, 2024, 10:00 AM",
-                title: "Google I/O Developer Conference 2024",
-                location: "Live Video",
-                imgsrc: "/google-io.jpeg",
-                attendees: "Online attendees",
-                viewLink: "https://example.com/googleio2024",
-            },
-            {
-                date: "Tue, Oct 4, 2024, 1:00 PM",
-                title: "Pixel 8 Launch Event",
-                location: "Live Video",
-                imgsrc: "/pixel8.jpeg",
-                attendees: "Online attendees",
-                viewLink: "https://example.com/pixel8launch",
-            },
-            {
-                date: "Fri, Dec 2, 2024, 11:00 AM",
-                title: "Google Cloud Summit 2024",
-                location: "Live Video",
-                imgsrc: "/google-cloud-summit.jpeg",
-                attendees: "Online attendees",
-                viewLink: "https://example.com/googlecloud2024",
-            },  
-        ],
-    }
     
-
+},
+   
 ]
 
   
