@@ -36,7 +36,7 @@ export default function Dashboard() {
 			<Separator />
 
 			<div className="mt-4">
-				<h2 className="text-xl font-bold tracking-tight">Anaylytics</h2>
+				<h2 className="text-xl font-bold tracking-tight">Analytics</h2>
 			</div>
 			<Stats />
 			

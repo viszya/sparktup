@@ -1,6 +1,6 @@
 
-const data = [
-    {
+export const data2 = [
+  {
     companyName: "Microsoft",
     linkedInMembers: "224,866 associated members",
     logoSrc: "/microsoft_logo.png",
@@ -18,26 +18,26 @@ const data = [
     keyBenefits: " - Scalable and flexible solutions\n - Robust security measures\n - Dedicated customer support\n - Continuous innovation and updates",
     keyFeatures: " - Customized software development\n - Cloud infrastructure management\n - Data-driven insights and analytics\n - Strategic consulting and planning",
     testimonials: [
-        {
-            clientName: "Innovatech Solutions",
-            feedback: "Microsoft's cloud services have transformed our data management systems. Their Azure platform offers both flexibility and security, enabling us to scale our operations efficiently and securely."
-        },
-        {
-            clientName: "Bright Future Education",
-            feedback: "Implementing Microsoft's educational tools has empowered our educators and students alike. Tools like Microsoft Teams and OneNote have facilitated a more interactive and collaborative learning environment."
-        },
-        {
-            clientName: "EcoGreen Initiatives",
-            feedback: "Microsoft's commitment to sustainability is evident in their operations and products. Their support in helping us achieve our environmental goals through sustainable IT solutions has been invaluable."
-        },
-        {
-            clientName: "Digital Health Corp",
-            feedback: "Leveraging Microsoft's AI and machine learning capabilities has significantly advanced our health data analytics. Their technology has enabled us to provide more personalized and effective healthcare solutions."
-        },
-        {
-            clientName: "Creative World Studios",
-            feedback: "As a digital media company, we rely heavily on Microsoft's software solutions. Their Windows operating system and Office suite are integral to our daily operations, providing reliability and seamless workflow."
-        },
+      {
+        clientName: "Innovatech Solutions",
+        feedback: "Microsoft's cloud services have transformed our data management systems. Their Azure platform offers both flexibility and security, enabling us to scale our operations efficiently and securely."
+      },
+      {
+        clientName: "Bright Future Education",
+        feedback: "Implementing Microsoft's educational tools has empowered our educators and students alike. Tools like Microsoft Teams and OneNote have facilitated a more interactive and collaborative learning environment."
+      },
+      {
+        clientName: "EcoGreen Initiatives",
+        feedback: "Microsoft's commitment to sustainability is evident in their operations and products. Their support in helping us achieve our environmental goals through sustainable IT solutions has been invaluable."
+      },
+      {
+        clientName: "Digital Health Corp",
+        feedback: "Leveraging Microsoft's AI and machine learning capabilities has significantly advanced our health data analytics. Their technology has enabled us to provide more personalized and effective healthcare solutions."
+      },
+      {
+        clientName: "Creative World Studios",
+        feedback: "As a digital media company, we rely heavily on Microsoft's software solutions. Their Windows operating system and Office suite are integral to our daily operations, providing reliability and seamless workflow."
+      },
     ],
     specialties: [
       "Business Software",
@@ -116,7 +116,7 @@ const data = [
         "pay": "$112,000/yr - $238,600/yr",
         "companyAbout": "343 Industries is the developer of the blockbuster Halo series of video games. As part of Xbox Game Studios, the Halo franchise encompasses games, television series, novels, comics, licensed collectibles, apparel and more. We are looking for new Spartans to join our team to build the next generation of games and experiences in our award-winning sci-fi universe. Do you have experience delivering AAA audio experiences with audio post-production, music, sound design, dialogue recording and pipelines, and mixing? Do you want to build and develop an audio team and stable of partners that can work across stakeholders and products to consistently deliver world class audio to delight our fans"
       }
-    ],    
+    ],
     mediaGallery: [
       "/office1-microsoftData.jpeg",
       "/office2-microsoftData.jpeg",
@@ -124,7 +124,7 @@ const data = [
     ],
     termsAndConditionsLink: "https://techsolutions.com/terms",
     privacyPolicyLink: "https://techsolutions.com/privacy",
-    eventData:[
+    eventData: [
       {
         "date": "Thu, Mar 16, 2023, 8:00 AM",
         "title": "The Future of Work: Reinventing Productivity with AI",
@@ -132,6 +132,12 @@ const data = [
         "imgsrc": "/future_of_work-microsoftData.jpeg",
         "attendees": "31,740 attendees",
         "viewLink": "https://example.com/event1",
+        "eventType": "Live", // or Held,
+        "seeSrc": "/",
+        "eventBy": "Event by Microsoft",
+        "about": "Join us for a special event with Satya Nadella and Jared Spataro to learn how AI will power a whole new way of working for every person and organization. The live stream starts at 8 AM Pacific Time on March 16.",
+        "attendSrc": "/",
+        "photoSrc": "/",
         "speakers": [
           {
             "name": "John Smith",
@@ -154,6 +160,12 @@ const data = [
         "imgsrc": "/microsoft-industry-fair-microsoftData.jpeg",
         "attendees": "102 attendees",
         "viewLink": "https://example.com/event2",
+        "eventType": "Live", // or Held,
+        "seeSrc": "/",
+        "eventBy": "Event by Microsoft",
+        "about": "Join us for a special event with Satya Nadella and Jared Spataro to learn how AI will power a whole new way of working for every person and organization. The live stream starts at 8 AM Pacific Time on March 16.",
+        "attendSrc": "/",
+        "photoSrc": "/",
         "speakers": [
           {
             "name": "John Smith",
@@ -176,6 +188,12 @@ const data = [
         "imgsrc": "/event3-microsoftData.jpeg",
         "attendees": "78 attendees",
         "viewLink": "https://example.com/event3",
+        "eventType": "Live", // or Held,
+        "seeSrc": "/",
+        "eventBy": "Event by Microsoft",
+        "about": "Join us for a special event with Satya Nadella and Jared Spataro to learn how AI will power a whole new way of working for every person and organization. The live stream starts at 8 AM Pacific Time on March 16.",
+        "attendSrc": "/",
+        "photoSrc": "/",
         "speakers": [
           {
             "name": "John Smith",
@@ -192,8 +210,8 @@ const data = [
         ]
       }
     ],
-    
-  
+
+
   },
   {
     companyName: "Apple Inc.",
@@ -213,27 +231,27 @@ const data = [
     keyBenefits: " - Cutting-edge technology\n - Strong brand reputation\n - High customer loyalty\n - Robust ecosystem of products and services",
     keyFeatures: " - Advanced hardware design\n - Secure and intuitive software\n - Comprehensive ecosystem\n - Wide range of applications and services",
     testimonials: [
-        {
-            clientName: "Global Design Solutions",
-            feedback: "Apple's innovative technology has revolutionized the way we work at Global Design Solutions. Their reliable and user-friendly devices have streamlined our creative processes, enhancing productivity and creativity across our team."
-        },
-        {
-            clientName: "NextGen Education",
-            feedback: "Incorporating Apple's products into our educational programs has been a game-changer. Their intuitive interfaces and robust educational apps have greatly enriched our teaching methods and student engagement."
-        },
-        {
-            clientName: "EcoTech Enterprises",
-            feedback: "Apple's commitment to sustainability aligns perfectly with our environmental mission at EcoTech Enterprises. Their energy-efficient devices and recycling programs demonstrate a forward-thinking approach that we greatly admire and support."
-        },
-        {
-            clientName: "HealthBridge Medical",
-            feedback: "Apple's advanced technology, particularly in wearables, has significantly contributed to our health monitoring initiatives. Their devices offer unparalleled accuracy and user-friendliness, making them a valuable asset in patient care."
-        },
-        {
-            clientName: "Creative Media Hub",
-            feedback: "As a creative agency, our reliance on cutting-edge technology is paramount. Apple's ecosystem offers seamless integration across devices, ensuring that our creative workflow is smooth and uninterrupted."
-        },    
-        
+      {
+        clientName: "Global Design Solutions",
+        feedback: "Apple's innovative technology has revolutionized the way we work at Global Design Solutions. Their reliable and user-friendly devices have streamlined our creative processes, enhancing productivity and creativity across our team."
+      },
+      {
+        clientName: "NextGen Education",
+        feedback: "Incorporating Apple's products into our educational programs has been a game-changer. Their intuitive interfaces and robust educational apps have greatly enriched our teaching methods and student engagement."
+      },
+      {
+        clientName: "EcoTech Enterprises",
+        feedback: "Apple's commitment to sustainability aligns perfectly with our environmental mission at EcoTech Enterprises. Their energy-efficient devices and recycling programs demonstrate a forward-thinking approach that we greatly admire and support."
+      },
+      {
+        clientName: "HealthBridge Medical",
+        feedback: "Apple's advanced technology, particularly in wearables, has significantly contributed to our health monitoring initiatives. Their devices offer unparalleled accuracy and user-friendliness, making them a valuable asset in patient care."
+      },
+      {
+        clientName: "Creative Media Hub",
+        feedback: "As a creative agency, our reliance on cutting-edge technology is paramount. Apple's ecosystem offers seamless integration across devices, ensuring that our creative workflow is smooth and uninterrupted."
+      },
+
     ],
     specialties: [
       "Consumer Electronics",
@@ -250,16 +268,16 @@ const data = [
       // And more...
     ],
     teamMembers: [
-        {
-            name: "Tim Cook",
-            role: "CEO",
-            photoSrc: "/tim-cook.jpeg"
-          },
-          {
-            name: "Luca Maestri",
-            role: "CFO",
-            photoSrc: "/luca-maestri.jpeg"
-          },
+      {
+        name: "Tim Cook",
+        role: "CEO",
+        photoSrc: "/tim-cook.jpeg"
+      },
+      {
+        name: "Luca Maestri",
+        role: "CFO",
+        photoSrc: "/luca-maestri.jpeg"
+      },
     ],
     companyCulture: "Apple Inc. fosters a culture of innovation, diversity, and inclusion, with a strong focus on creativity and pushing the boundaries of technology.",
     contactInformation: {
@@ -300,11 +318,11 @@ const data = [
         "pay": "$120,000/yr - $250,000/yr",
         "companyAbout": "Company Name is a global tech company that values innovation and creativity. Our remote-friendly work environment allows our team members to collaborate from anywhere in the world. Join us in our mission to harness the power of data and drive impactful decisions for our organization and clients."
       }
-    ],    
+    ],
     mediaGallery: [
-        "/office1-appleData.jpeg",
-        "/office2-appleData.jpeg",
-        "/office3-appleData.jpeg"
+      "/office1-appleData.jpeg",
+      "/office2-appleData.jpeg",
+      "/office3-appleData.jpeg"
     ],
     termsAndConditionsLink: "https://www.apple.com/legal/",
     privacyPolicyLink: "https://www.apple.com/legal/privacy/",
@@ -316,6 +334,12 @@ const data = [
         "imgsrc": "/iphone16.jpeg",
         "attendees": "Online attendees",
         "viewLink": "https://example.com/event3",
+        "eventType": "Live", // or Held,
+        "seeSrc": "/",
+        "eventBy": "Event by Microsoft",
+        "about": "Join us for a special event with Satya Nadella and Jared Spataro to learn how AI will power a whole new way of working for every person and organization. The live stream starts at 8 AM Pacific Time on March 16.",
+        "attendSrc": "/",
+        "photoSrc": "/",
         "speakers": [
           {
             "name": "Tim Cook",
@@ -338,6 +362,12 @@ const data = [
         "imgsrc": "/airpods4.jpeg",
         "attendees": "Online attendees",
         "viewLink": "https://example.com/event3",
+        "eventType": "Live", // or Held,
+        "seeSrc": "/",
+        "eventBy": "Event by Microsoft",
+        "about": "Join us for a special event with Satya Nadella and Jared Spataro to learn how AI will power a whole new way of working for every person and organization. The live stream starts at 8 AM Pacific Time on March 16.",
+        "attendSrc": "/",
+        "photoSrc": "/",
         "speakers": [
           {
             "name": "Tim Cook",
@@ -360,6 +390,12 @@ const data = [
         "imgsrc": "/ipad.jpeg",
         "attendees": "Online attendees",
         "viewLink": "https://example.com/event3",
+        "eventType": "Live", // or Held,
+        "seeSrc": "/",
+        "eventBy": "Event by Microsoft",
+        "about": "Join us for a special event with Satya Nadella and Jared Spataro to learn how AI will power a whole new way of working for every person and organization. The live stream starts at 8 AM Pacific Time on March 16.",
+        "attendSrc": "/",
+        "photoSrc": "/",
         "speakers": [
           {
             "name": "Tim Cook",
@@ -376,9 +412,8 @@ const data = [
         ]
       }
     ],
-    
-},
-   
+
+  },
+
 ]
 
-  

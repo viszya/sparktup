@@ -22,10 +22,10 @@ export default function CompanyProfile() {
         <div className={cn(twp().wrapper, "")}>
             <h2 className="mt-20 sm:mt-30 mb-11 text-center text-4xl font-semibold">Applicants</h2>
             {data.map((applicant) => (
-                < div className=" grid grid-flow-col grid-cols-2 md:grid-cols-1 gap-x-6 bg-gray-300/10 p-8 rounded-2xl border-2 border-gray-200" >
+                < div className="mb-10  grid grid-flow-col grid-cols-2 md:grid-cols-1 gap-x-6 bg-gray-300/10 p-8 rounded-2xl border-2 border-gray-200" >
                     <div className="max-w-[30rem]">
                         <div className="flex flex-row gap-x-8 mb-4">
-                            <Image src="/profile2.png" alt="profile" width={100} height={50} className="rounded-full overflow-hidden" />
+                            <Image src={applicant.profileSrc} alt="profile" width={100} height={50} className="rounded-full overflow-hidden" />
                             <div>
                                 <div className="mt-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">{applicant.fullName}</div>
                                 <div className="mt-2 mb-4 flex flex-row items-center">
@@ -55,11 +55,6 @@ export default function CompanyProfile() {
                     </div>
                 </div>
             ))}
-            <div className="flex flex-row justify-center items-center">
-                <Button className="px-10 py-6 mt-10 rounded-full text-base">
-                    Show More
-                </Button>
-            </div>
         </div >
     )
 }

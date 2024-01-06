@@ -14,6 +14,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { getServerAuthSession } from "@/server/auth"
 import { redirect } from "next/navigation"
+import { useRouter } from "next/navigation";
 import { api } from "@/trpc/react"
 
 export default function Onboarding() {
@@ -21,6 +22,7 @@ export default function Onboarding() {
     // if (!session) {
     //     redirect("/unauthorized")
     // }
+    const router = useRouter();
     const [isLoading] = useState<boolean>(false)
     const [isLoading2] = useState<boolean>(false)
     const [isApplicant, setApplicantLoading] = useState<boolean>(false)
@@ -29,10 +31,15 @@ export default function Onboarding() {
     const addAccountType = api.onboarding.addAccountType.useMutation({
         onSuccess: () => {
             redirect(url)
+
         },
     })
+    const addAccountStatus = api.onboarding.addAccountStatus.useMutation();
 
     function onClick1() {
+        addAccountStatus.mutate({
+            status: true,
+        })
         setApplicantLoading(true), 
         addAccountType.mutate({
             type: "applicant",
@@ -40,11 +47,15 @@ export default function Onboarding() {
     }
 
     function onClick2() {
+        addAccountStatus.mutate({
+            status: true,
+        })
         setCompanyLoading(true), 
-        setUrl("/company-dashboard");
         addAccountType.mutate({
             type: "company",
         })
+        router.push("/company-dashboard")
+
     }
 
     return (

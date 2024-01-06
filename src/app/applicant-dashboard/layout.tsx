@@ -64,7 +64,7 @@ export default function DashboardLayout({
                 </button></DropdownMenuLabel>
                 <DropdownMenuLabel><Link
                   className={cn(buttonVariants({ variant: "outline" }), "rounded-2xl w-full")}
-                  href='/company-dashboard/settings'
+                  href='/applicant-dashboard/settings'
                 >
                   Settings
                 </Link></DropdownMenuLabel>

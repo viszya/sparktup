@@ -103,6 +103,45 @@ export const settingsRouter = createTRPCRouter({
             });
         }),
 
+    settingsForm11: protectedProcedure
+        .input(z.object({
+            fullName: z.string(),
+            proEmail: z.string(),
+            username: z.string(),
+            location: z.string(),
+            about: z.string(),
+            jobTitle: z.string(),
+            yearsOfExperience: z.string(),
+            availableForWork: z.boolean(),
+            hasAJob: z.boolean(),
+            resumeLink: z.string(),
+            profileTags: z.array(z.string()),
+            interestedTags: z.array(z.string()),
+            profileSrc: z.string(),
+        }))
+        .mutation(async ({ ctx, input }) => {
+            return ctx.db.user.update({
+                where: {
+                    id: ctx.session.user.id,
+                },
+                data: {
+                    fullName: input.fullName,
+                    proEmail: input.proEmail,
+                    username: input.username,
+                    location: input.location,
+                    about: input.about,
+                    jobTitle: input.jobTitle,
+                    yearsOfExperience: input.yearsOfExperience,
+                    availableForWork: input.availableForWork,
+                    hasAJob: input.hasAJob,
+                    resumeLink: input.resumeLink,
+                    profileTags: input.profileTags,
+                    interestedTags: input.interestedTags,
+                    profileSrc: input.profileSrc,
+                },
+            });
+        }),
+
     updateProfile2: protectedProcedure
         .input(z.object({
             about: z.string(),

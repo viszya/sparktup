@@ -62,7 +62,7 @@ export function Form2({ onNextClick }: FormProps) {
 								<label className="block mb-3 text-sm font-medium text-gray-600">
 									Do you have a job? <em className="text-gray-400">Leave Un-Checked if don&apos;t have a job</em>
 								</label>
-								<Input
+								<input
 									className="mr-2"
 									type="checkbox"
 									checked={hasAJob}
@@ -99,7 +99,7 @@ export function Form2({ onNextClick }: FormProps) {
 								<label className="block mb-3 text-sm font-medium text-gray-600">
 									Are you looking for a job? <em className="text-gray-400">Leave Un-Checked if you are not looking for a job</em>
 								</label>
-								<Input
+								<input
 									className="mr-2"
 									type="checkbox"
 									checked={availableForWork}

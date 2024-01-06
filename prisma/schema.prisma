@@ -52,6 +52,7 @@ model User {
   accounts          Account[]
   sessions          Session[]
   phone             String?
+  profileSrc        String?          @default("/profile2.png")
   fullName          String?
   jobTitle          String?
   username          String?
