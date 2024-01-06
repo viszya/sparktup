@@ -22,11 +22,11 @@ export const dashboardConfig: DashboardConfig = {
       href: "/applicant-dashboard/profile",
       icon: "usercircle",
     },
-    {
-      title: "Edit Profile Items",
-      href: "/applicant-dashboard/edit",
-      icon: "edit",
-    },
+    // {
+    //   title: "Edit Profile Items",
+    //   href: "/applicant-dashboard/edit",
+    //   icon: "edit",
+    // },
     {
       title: "Update Profile",
       href: "/applicant-dashboard/update-profile",
@@ -82,11 +82,11 @@ export const dashboardCompanyConfig: DashboardConfig = {
       href: "/company-dashboard/update-profile",
       icon: "cog",
     },
-    {
-      title: "Edit Careers & Events",
-      href: "/company-dashboard/edit",
-      icon: "edit",
-    },
+    // {
+    //   title: "Edit Careers & Events",
+    //   href: "/company-dashboard/edit",
+    //   icon: "edit",
+    // },
     {
       title: "Add Career",
       href: "/company-dashboard/add-career",
@@ -98,12 +98,12 @@ export const dashboardCompanyConfig: DashboardConfig = {
       icon: "calendarclock",
     },
     {
-      title: "Add/Edit Team Member",
+      title: "Add Team Member",
       href: "/company-dashboard/add-team-member",
       icon: "UserPlus",
     },
     {
-      title: "Add/Edit Testimonial",
+      title: "Add Testimonial",
       href: "/company-dashboard/add-testimonial",
       icon: "messagesquare",
     },

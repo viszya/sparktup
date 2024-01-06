@@ -1,13 +1,12 @@
 "use client"
 
-import { useState } from "react";
+import { use, useState } from "react";
 import { api } from "@/trpc/react";
 import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { cn, formatDate } from "@/server/utils";
 import { Input } from "@/app/_components/ui/input";
 import { useToast } from "@/app/_components/ui/use-toast";
-
 
 export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
     const { toast } = useToast();
@@ -28,6 +27,7 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
             eventBy,
             about,
         });
+        setIsNextLoading(false);
         setIsLoading(false);
         toast({
             title: "Success",
@@ -140,13 +140,12 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                         Back
                     </button>
                     {submitted ? (
-
                         <button onClick={onNextClick} className={cn(buttonVariants({ variant: "default" }), " rounded-xl w-26")}>
-                            Next
-                            <Icons.chevronRight className="h-5 w-5 ml-2" />
+                           Next
+                           <Icons.chevronRight className="h-5 w-5 ml-2" />
+                        
                         </button>
                     ) : (<></>)}
-
                 </div>
             </div>
         </section>

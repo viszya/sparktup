@@ -431,5 +431,47 @@ export const testRouter = createTRPCRouter({
             });
         }),
 
+    getCompanyStats: protectedProcedure
+        .query(async ({ ctx }) => {
+            return ctx.db.user.findUnique({
+                where: {
+                    id: ctx.session.user.id,
+                },
+                include: {
+                    company: true,
+                },
+            });
+        }),
+
+    changeStatus: protectedProcedure
+        .input(z.object({
+            id: z.string(),
+            status: z.string(),
+        }))
+        .mutation(async ({ ctx, input }) => {
+            return ctx.db.application.update({
+                where: {
+                    id: input.id,
+                },
+                data: {
+                    status: input.status,
+                },
+            });
+        }),
+
+    getApplicantion: protectedProcedure
+        .input(z.object({
+            id: z.string(),
+        }))
+        .query(async ({ ctx, input }) => {
+            return ctx.db.application.findUnique({
+                where: {
+                    applicantId: input.id,
+                },
+            });
+        }),
+
+
+
 });
 

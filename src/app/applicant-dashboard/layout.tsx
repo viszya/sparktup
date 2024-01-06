@@ -94,11 +94,6 @@ export default function DashboardLayout({
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/applicant-dashboard/edit">
-                   Edit Profile Items
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
                   <Link href="/applicant-dashboard/add-experience">
                     Add Experience
                   </Link>
@@ -120,7 +115,7 @@ export default function DashboardLayout({
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/applicants">
+                  <Link href="/applicant">
                     Applicants
                   </Link>
                 </DropdownMenuItem>

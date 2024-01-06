@@ -26,8 +26,12 @@ export function Form3({ onSubmitClick, addFormVals, onBackClick }: any) {
         setIsLoading(true);
         setSubmitted(true);
         addFormVals({
-            specialties,
-            mediaGallery,
+            skillName1,
+            description1,
+            skillName2,
+            description2,
+            skillName3,
+            description3,
         });
         setIsNextLoading(false);
         setIsLoading(false);

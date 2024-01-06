@@ -121,7 +121,7 @@ export default function AddContactInfo() {
                     </div>
                 </div>
             </div>
-            <div className="mt-5 border border-dased border-secondary rounded-xl p-2">
+            {/* <div className="mt-5 border border-dased border-secondary rounded-xl p-2">
                 <Card>
                     <CardHeader>
                         <CardTitle>Edit or Delete Testimonials</CardTitle>
@@ -131,7 +131,7 @@ export default function AddContactInfo() {
 
                     </CardContent>
                 </Card>
-            </div>
+            </div> */}
         </div>
 
     );

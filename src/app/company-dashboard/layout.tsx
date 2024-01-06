@@ -111,7 +111,7 @@ export default function DashboardLayout({
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/company-dashboard/add-testmonial">
+                  <Link href="/company-dashboard/add-testimonial">
                     Add Testimonial
                   </Link>
                 </DropdownMenuItem>
@@ -122,17 +122,17 @@ export default function DashboardLayout({
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
-                  <Link href="/job-positions">
+                  <Link href="/company/positions">
                     Job Positions
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/applicants">
+                  <Link href="/applicant">
                     Applicants
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/companies">
+                  <Link href="/company">
                     Companies
                   </Link>
                 </DropdownMenuItem>

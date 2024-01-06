@@ -1,3 +1,5 @@
+"use client"
+
 import { getServerAuthSession } from "@/server/auth";
 import { Icons } from "@/app/_components/icons"
 import { Home } from "@/app/_components/dashboard/home";
@@ -5,6 +7,7 @@ import Nav from "@/app/_components/main-nav"
 import { Toaster } from "@/app/_components/ui/toaster"
 import { redirect } from "next/navigation"
 import { Separator } from "@/app/_components/ui/separator"
+
 import {
 	Card,
 	CardContent,
@@ -14,9 +17,13 @@ import {
 	CardTitle,
 } from "@/app/_components/ui/card"
 import { DataPage } from "@/app/company-dashboard/(data-table)/datatable"
+import { api } from "@/trpc/react"
+import { Stats } from "@/app/_components/company-stats"
 
 
 export default function Dashboard() {
+
+
 	return (
 		<div className="flex flex-col px-8">
 			<div className="mb-4">
@@ -31,32 +38,13 @@ export default function Dashboard() {
 			<div className="mt-4">
 				<h2 className="text-xl font-bold tracking-tight">Anaylytics</h2>
 			</div>
-			<div className="grid grid-cols-3 gap-x-2 w-full max-w-5xl p-2 border border-secondary rounded-xl mt-2">
-				<Card className="border-red-300">
-					<CardHeader>
-						<CardTitle>2,435</CardTitle>
-						<CardDescription>Profile Views</CardDescription>
-					</CardHeader>
-				</Card>
-				<Card>
-					<CardHeader>
-						<CardTitle>239</CardTitle>
-						<CardDescription>Applications Submitted</CardDescription>
-					</CardHeader>
-				</Card>
-				<Card>
-					<CardHeader>
-						<CardTitle>23</CardTitle>
-						<CardDescription>Applications Accepted</CardDescription>
-					</CardHeader>
-				</Card>
-
-			</div>
+			<Stats />
+			
 
 			<div className="mt-4 mb-4">
 				<h2 className="text-xl font-bold tracking-tight">Recent Applications</h2>
 			</div>
-			{/* <DataPage /> */}
+			<DataPage />
 		</div>
 	);
 }

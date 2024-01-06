@@ -74,6 +74,8 @@ export const applicationRouter = createTRPCRouter({
                 },
             });
 
+            if (basicProfile.applications.length === 0) return ([]);
+
             return ctx.db.application.findMany({
                 where: {
                     company: {
@@ -84,6 +86,99 @@ export const applicationRouter = createTRPCRouter({
 
 
         }),
+
+    getApplicationsFromUser: protectedProcedure
+        .query(async ({ ctx }) => {
+            return ctx.db.application.findMany({
+                where: {
+                    applicantId: ctx.session.user.id,
+                },
+            });
+        }),
+
+    setApplicationStatus: protectedProcedure
+        .input(z.object({
+            id: z.string(),
+            status: z.string(),
+        }))
+        .mutation(async ({ ctx, input }) => {
+            return ctx.db.application.update({
+                where: {
+                    id: input.id,
+                },
+                data: {
+                    status: input.status,
+                },
+            });
+        }),
+
+    getApplication: protectedProcedure
+        .input(z.object({
+            id: z.string(),
+        }))
+        .query(async ({ ctx, input }) => {
+            return ctx.db.application.findUnique({
+                where: {
+                    id: input.id,
+                },
+            });
+        }),
+
+    addAcceptedApplication: protectedProcedure
+        .input(z.object({
+            id: z.string(),
+        }))
+        .mutation(async ({ ctx, input }) => {
+            // increment acceptedApplication to the application tied to the id
+            const application = await ctx.db.application.findUnique({
+                where: {
+                    id: input.id,
+                },
+            });
+            const company = await ctx.db.company.update({
+                where: {
+                    id: application.companyId,
+                },
+                data: {
+                    acceptedApplications: {
+                        increment: 1,
+                    },
+                },
+            });
+        }),
+
+    // get the number of applications from a user
+    getNumberOfApplications: protectedProcedure
+        .query(async ({ ctx }) => {
+            const applicationCount = await ctx.db.application.count({
+                where: {
+                    applicantId: ctx.session.user.id,
+                },
+            });
+
+            const views = await ctx.db.user.findUnique({
+                where: {
+                    id: ctx.session.user.id,
+                },
+                select: {
+                    views: true,
+                },
+            });
+
+            const acceptedApplications = await ctx.db.application.count({
+                where: {
+                    applicantId: ctx.session.user.id,
+                    status: 'accepted',
+                },
+            });
+
+            return {
+                applicationCount: applicationCount ?? 0,
+                views: views.views,
+                acceptedApplications: acceptedApplications ?? 0,
+            };
+        }),
+
 
 
 });

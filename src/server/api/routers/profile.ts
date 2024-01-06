@@ -272,4 +272,27 @@ export const userRouter = createTRPCRouter({
             });
         }),
 
+    addView: publicProcedure
+        .input(z.object({ id: z.string() }))
+        .mutation(async ({ ctx, input }) => {
+            const user = await ctx.db.user.findUnique({
+                where: {
+                    id: input.id,
+                },
+            });
+
+            if (!user) {
+                throw new Error(`Profile with username ${input.id} not found`);
+            }
+
+            return ctx.db.user.update({
+                where: {
+                    id: input.id,
+                },
+                data: {
+                    views: user.views + 1,
+                },
+            });
+        }),
+
 });
