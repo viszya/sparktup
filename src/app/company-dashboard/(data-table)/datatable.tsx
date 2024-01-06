@@ -38,7 +38,8 @@ export  function DataPage() {
     return <div>Loading...</div>
   }
 
-  if (data.length = 0) {
+
+  if (data.length == 0) {
     data = {}
   } 
 

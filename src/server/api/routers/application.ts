@@ -73,8 +73,12 @@ export const applicationRouter = createTRPCRouter({
                     company: true,
                 },
             });
-
-            if (basicProfile.applications.length === 0) return ([]);
+            if (basicProfile.company.length == 0) {
+                return [];
+            }
+            if (basicProfile.company[0].applications == 0) {
+                return [];
+            }
 
             return ctx.db.application.findMany({
                 where: {
