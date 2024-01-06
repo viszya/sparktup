@@ -44,7 +44,7 @@ export default function AddContactInfo() {
             <div>
                 <h2 className="text-3xl font-bold tracking-tight">Add Recommendation</h2>
                 <p className="text-muted-foreground">
-                    Edit Your Personal Accounts Settings
+                    Edit Your Recommendations
                 </p>
             </div>
             <div className="flex flex-col justify-center w-full max-w-5xl">
@@ -60,11 +60,11 @@ export default function AddContactInfo() {
                             >
                                 <div className="col-span-full">
                                     <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Reccomendation Person's Name
+                                        What is the individual&apos;s name who recommended you?
                                     </label>
                                     <Input
                                         type="text"
-                                        placeholder="northcreek"
+                                        placeholder="Jhon Doe"
                                         value={name}
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         onChange={(e) => setName(e.target.value)}
@@ -73,11 +73,11 @@ export default function AddContactInfo() {
                                 </div>
                                 <div className="col-span-full">
                                     <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Job Title
+                                        What is their job title?
                                     </label>
                                     <Input
                                         type="text"
-                                        placeholder="northcreek"
+                                        placeholder="Manager"
                                         value={jobTitle}
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         onChange={(e) => setJobTitle(e.target.value)}
@@ -86,11 +86,11 @@ export default function AddContactInfo() {
                                 </div>
                                 <div className="col-span-full">
                                     <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Image URL
+                                        Who is their current employer?
                                     </label>
                                     <Input
                                         type="text"
-                                        placeholder="northcreek"
+                                        placeholder="Google"
                                         value={srcImage}
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         onChange={(e) => setSrcImage(e.target.value)}
@@ -99,10 +99,10 @@ export default function AddContactInfo() {
                                 </div>
                                 <div className="col-span-full">
                                     <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Message
+                                        Recommendation Letter
                                     </label>
                                     <Textarea 
-                                     placeholder="northcreek"
+                                     placeholder=".pdf"
                                      value={message}
                                      className="rounded-2xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                      onChange={(e) => setMessage(e.target.value)}

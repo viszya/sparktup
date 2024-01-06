@@ -61,11 +61,11 @@ export default function AddContactInfo() {
 							>
 								<div className="col-span-full">
 									<label className="block mb-3 text-sm font-medium text-primary/90">
-										Full Name (First and Last)
+										What is your Full Name? (First and Last)
 									</label>
 									<Input
 										type="text"
-										placeholder="northcreek"
+										placeholder="Jhon Doe"
 										value={fullName}
 										className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
 										onChange={(e) => setFullName(e.target.value)}
@@ -74,11 +74,11 @@ export default function AddContactInfo() {
 								</div>
 								<div className="col-span-full">
 									<label className="block mb-3 text-sm font-medium text-primary/90">
-										Username
+										What is your username?
 									</label>
 									<Input
 										type="text"
-										placeholder="northcreek"
+										placeholder="JhonTheDesigner41"
 										value={username}
 										className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
 										onChange={(e) => setUsername(e.target.value)}
@@ -87,11 +87,11 @@ export default function AddContactInfo() {
 								</div>
 								<div className="col-span-full">
 									<label className="block mb-3 text-sm font-medium text-primary/90">
-										Location
+										Where are you Located?
 									</label>
 									<Input
 										type="text"
-										placeholder="northcreek"
+										placeholder="Atlanta, Georgia"
 										value={location}
 										className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
 										onChange={(e) => setLocation(e.target.value)}
@@ -100,11 +100,11 @@ export default function AddContactInfo() {
 								</div>
 								<div className="col-span-full">
 									<label className="block mb-3 text-sm font-medium text-primary/90">
-										Professional Email
+										What is your professional email?
 									</label>
 									<Input
 										type="text"
-										placeholder="northcreek"
+										placeholder="jhondoe@gmail.com"
 										value={proEmail}
 										className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
 										onChange={(e) => setProEmail(e.target.value)}
@@ -113,11 +113,11 @@ export default function AddContactInfo() {
 								</div>
 								<div className="col-span-full">
 									<label className="block mb-3 text-sm font-medium text-primary/90">
-										Phone Number
+										What is your phone number?
 									</label>
 									<Input
 										type="text"
-										placeholder="northcreek"
+										placeholder="123-456-7890"
 										value={phone}
 										className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
 										onChange={(e) => setPhone(e.target.value)}

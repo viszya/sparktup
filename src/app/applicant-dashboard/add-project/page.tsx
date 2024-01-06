@@ -41,7 +41,7 @@ export default function AddContactInfo() {
             <div>
                 <h2 className="text-3xl font-bold tracking-tight">Add Project</h2>
                 <p className="text-muted-foreground">
-                    Edit Your Personal Accounts Settings
+                    Add Projects You Have Worked On To Your Profile
                 </p>
             </div>
             <div className="flex flex-col justify-center w-full max-w-5xl">
@@ -57,11 +57,11 @@ export default function AddContactInfo() {
                             >
                                 <div className="col-span-full">
                                     <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Project Name
+                                        What was the project&apos;s name?
                                     </label>
                                     <Input
                                         type="text"
-                                        placeholder="northcreek"
+                                        placeholder="Project 365"
                                         value={name}
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         onChange={(e) => setName(e.target.value)}
@@ -70,11 +70,11 @@ export default function AddContactInfo() {
                                 </div>
                                 <div className="col-span-full">
                                     <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Project Link
+                                        What is the project&apos;s description?
                                     </label>
                                     <Input
                                         type="text"
-                                        placeholder="https://northcreek.ca"
+                                        placeholder="The project is based around..."
                                         value={link}
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         onChange={(e) => setLink(e.target.value)}
@@ -83,11 +83,11 @@ export default function AddContactInfo() {
                                 </div>
                                 <div className="col-span-full">
                                     <label className="block mb-3 text-sm font-medium text-primary/90">
-                                        Project Image Source
+                                        Project image source/logo
                                     </label>
                                     <Input
                                         type="text"
-                                        placeholder="https://northcreek.ca"
+                                        placeholder=".png .jpeg"
                                         value={src}
                                         className="rounded-xl px-6 py-3 placeholder:text-primary/40 border-primary/20"
                                         onChange={(e) => setSrc(e.target.value)}
