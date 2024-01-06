@@ -8,7 +8,7 @@ import { Input } from "@/app/_components/ui/input";
 import { useToast } from "@/app/_components/ui/use-toast";
 
 
-export function Form2({ onSubmitClick, addFormVals, onBackClick }: any) {
+export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
     const { toast } = useToast();
     const [jobTitle, setJobTitle] = useState("");
     const [location, setLocation] = useState("");
@@ -180,10 +180,10 @@ export function Form2({ onSubmitClick, addFormVals, onBackClick }: any) {
                         Back
                     </button>
                     {submitted ? (
-                        <button onClick={onSubmitClick} className={cn(buttonVariants({ variant: "default" }), "rounded-xl w-26")}>
-                        Add Experience
-                        <Icons.chevronRight className="h-5 w-5 ml-2" />
-                    </button>
+                        <button onClick={onNextClick} className={cn(buttonVariants({ variant: "default" }), " rounded-xl w-26")}>
+                            Update Profile
+                            <Icons.chevronRight className="h-5 w-5 ml-2" />
+                        </button>
                     ) : (<></>)}
                 </div>
             </div>

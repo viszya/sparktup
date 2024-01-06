@@ -136,6 +136,39 @@ export const applicationRouter = createTRPCRouter({
             });
         }),
 
+    // get the number of applications from a user
+    getNumberOfApplications: protectedProcedure
+        .query(async ({ ctx }) => {
+            const applicationCount = await ctx.db.application.count({
+                where: {
+                    applicantId: ctx.session.user.id,
+                },
+            });
+
+            const views = await ctx.db.user.findUnique({
+                where: {
+                    id: ctx.session.user.id,
+                },
+                select : {
+                    views: true,
+                },
+            });
+
+            const acceptedApplications = await ctx.db.application.count({
+                where: {
+                    applicantId: ctx.session.user.id,
+                    status: 'accepted',
+                },
+            });
+
+            return {
+                applicationCount: applicationCount?? 0,
+                views: views.views,
+                acceptedApplications: acceptedApplications?? 0,
+            };
+        }),
+   
+
 
 });
 

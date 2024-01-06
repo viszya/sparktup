@@ -13,7 +13,8 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/app/_components/ui/card"
-import { DataPage } from "@/app/company-dashboard/(data-table)/datatable"
+import { DataPage } from "@/app/applicant-dashboard/(data-table)/datatable"
+import { Stats } from "@/app/_components/applicant-stats"
 
 
 export default function Dashboard() {
@@ -31,30 +32,13 @@ export default function Dashboard() {
 			<div className="mt-4">
 				<h2 className="text-xl font-bold tracking-tight">Anaylytics</h2>
 			</div>
-			<div className="grid grid-cols-3 gap-x-2 w-full max-w-5xl p-2 border border-secondary rounded-xl mt-2">
-				<Card className="border-red-300">
-					<CardHeader>
-						<CardTitle>2,435</CardTitle>
-						<CardDescription>Profile Views</CardDescription>
-					</CardHeader>
-				</Card>
-				<Card>
-					<CardHeader>
-						<CardTitle>239</CardTitle>
-						<CardDescription>Applications Submitted</CardDescription>
-					</CardHeader>
-				</Card>
-				<Card>
-					<CardHeader>
-						<CardTitle>23</CardTitle>
-						<CardDescription>Applications Accepted</CardDescription>
-					</CardHeader>
-				</Card>
-
-			</div>
+			<Stats />
 
 			<div className="mt-4 mb-4">
 				<h2 className="text-xl font-bold tracking-tight">Recent Applications</h2>
+				<p className="text-muted-foreground text-xs">
+					Check your email for updates on your applications
+				</p>
 			</div>
 			<DataPage />
 		</div>

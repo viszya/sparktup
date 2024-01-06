@@ -22,11 +22,11 @@ export const dashboardConfig: DashboardConfig = {
       href: "/applicant-dashboard/profile",
       icon: "usercircle",
     },
-    {
-      title: "Edit Profile Items",
-      href: "/applicant-dashboard/edit",
-      icon: "edit",
-    },
+    // {
+    //   title: "Edit Profile Items",
+    //   href: "/applicant-dashboard/edit",
+    //   icon: "edit",
+    // },
     {
       title: "Update Profile",
       href: "/applicant-dashboard/update-profile",
