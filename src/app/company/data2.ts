@@ -13,20 +13,31 @@ const data = [
     foundingYear: "Founded in 1975",
     missionValues: `Every company has a mission. What's ours? To empower every person and every organization to achieve more. We believe technology can and should be a force for good and that meaningful innovation contributes to a brighter world in the future and today. Our culture doesn’t just encourage curiosity; it embraces it. Each day we make progress together by showing up as our authentic selves. We show up with a learn-it-all mentality. We show up cheering on others, knowing their success doesn't diminish our own. We show up every day open to learning our own biases, changing our behavior, and inviting in differences. Because impact matters.`,
     missionAndValues: "Empowering innovation through cutting-edge technology solutions",
-    about: "Tech Solutions Inc. is a leading technology company that specializes in providing innovative solutions to businesses of all sizes. With a team of dedicated professionals, we strive to empower our clients to achieve their goals through the use of cutting-edge technology.",
+    about: "Microsoft is a leading technology company that specializes in providing innovative solutions to businesses of all sizes. With a team of dedicated professionals, we strive to empower our clients to achieve their goals through the use of cutting-edge technology.",
     solutionsOverview: "Our solutions cover a wide range of services, including software development, cloud computing, data analytics, and more. We tailor our offerings to meet the unique needs of each client, ensuring seamless integration and maximum impact.",
     keyBenefits: " - Scalable and flexible solutions\n - Robust security measures\n - Dedicated customer support\n - Continuous innovation and updates",
     keyFeatures: " - Customized software development\n - Cloud infrastructure management\n - Data-driven insights and analytics\n - Strategic consulting and planning",
     testimonials: [
         {
-            clientName: "ABC Corporation",
-            feedback: "Tech Solutions Inc. has been an invaluable partner in our digital transformation journey. Their expertise and commitment to excellence have significantly contributed to our success."
-          },
-          {
-            clientName: "XYZ Enterprises",
-            feedback: "We chose Tech Solutions Inc. for their innovative solutions and they exceeded our expectations. Their team is responsive, knowledgeable, and always ready to tackle new challenges."
-          },
-        
+            clientName: "Innovatech Solutions",
+            feedback: "Microsoft's cloud services have transformed our data management systems. Their Azure platform offers both flexibility and security, enabling us to scale our operations efficiently and securely."
+        },
+        {
+            clientName: "Bright Future Education",
+            feedback: "Implementing Microsoft's educational tools has empowered our educators and students alike. Tools like Microsoft Teams and OneNote have facilitated a more interactive and collaborative learning environment."
+        },
+        {
+            clientName: "EcoGreen Initiatives",
+            feedback: "Microsoft's commitment to sustainability is evident in their operations and products. Their support in helping us achieve our environmental goals through sustainable IT solutions has been invaluable."
+        },
+        {
+            clientName: "Digital Health Corp",
+            feedback: "Leveraging Microsoft's AI and machine learning capabilities has significantly advanced our health data analytics. Their technology has enabled us to provide more personalized and effective healthcare solutions."
+        },
+        {
+            clientName: "Creative World Studios",
+            feedback: "As a digital media company, we rely heavily on Microsoft's software solutions. Their Windows operating system and Office suite are integral to our daily operations, providing reliability and seamless workflow."
+        },
     ],
     specialties: [
       "Business Software",
@@ -66,9 +77,9 @@ const data = [
       },
       // Add more team members as needed
     ],
-    companyCulture: "At Tech Solutions Inc., we foster a culture of collaboration, continuous learning, and diversity. Our team members are our greatest asset, and we prioritize their well-being, growth, and work-life balance. Join us in shaping the future of technology!",
+    companyCulture: "At Microsoft, we foster a culture of collaboration, continuous learning, and diversity. Our team members are our greatest asset, and we prioritize their well-being, growth, and work-life balance. Join us in shaping the future of technology!",
     contactInformation: {
-      email: "info@techsolutions.com",
+      email: "info@microsoft.com",
       phone: "+1 (555) 123-4567",
       address: "123 Tech Street, San Francisco, CA"
     },
@@ -238,6 +249,123 @@ const data = [
     },
     ],
 },
+{
+    {
+        companyName: "Google",
+        linkedInMembers: "Check LinkedIn for current figures",
+        logoSrc: "/google-logo.jpeg",
+        location: "Mountain View, CA, USA",
+        website: "https://www.google.com/",
+        industry: "Technology",
+        companySize: "Check current figures",
+        size: "Check current figures",
+        companyBannerImgSrc: "/google-office.jpeg",
+        foundingYear: "Founded in 1998",
+        missionValues: `Google's mission is to organize the world's information and make it universally accessible and useful. They strive to build products that improve the lives of as many people as possible.`,
+        missionAndValues: "Organizing the world's information, making it universally accessible and useful",
+        about: "Google, a multinational technology company, specializes in Internet-related services and products, including online advertising technologies, a search engine, cloud computing, software, and hardware.",
+        solutionsOverview: "Google offers a diverse range of products and services, including Google Search, Google Cloud, Android, YouTube, and a variety of software and digital content through platforms like Google Play Store.",
+        keyBenefits: " - Pioneering technology\n - Global information access\n - Strong emphasis on user experience\n - Leadership in AI and machine learning",
+        keyFeatures: " - Advanced search engine\n - Robust cloud services\n - Comprehensive digital ecosystem\n - User-centric product design",
+        testimonials: [
+            {
+                clientName: "Digital Horizon Solutions",
+                feedback: "Google's technologies have been pivotal in our digital strategy. Their search and cloud services have provided us with the tools necessary for effective online presence and data management."
+            },
+            {
+                clientName: "EduTech Innovators",
+                feedback: "Google's educational tools have transformed the way we teach and learn. Products like Google Classroom and G Suite for Education have fostered a more collaborative and accessible educational environment."
+            },
+            {
+                clientName: "Green Earth Advocates",
+                feedback: "Google's commitment to sustainability and green initiatives resonates deeply with our mission at Green Earth Advocates. Their efforts in using renewable energy and promoting sustainability are commendable."
+            },
+            {
+                clientName: "Healthway Clinics",
+                feedback: "Google's AI-driven health analytics tools have greatly enhanced our medical research and patient care services. Their innovative approach to healthcare technology is truly groundbreaking."
+            },
+            {
+                clientName: "NextGen Gaming",
+                feedback: "As a game developer, Google's platforms like Android and Google Play have allowed us to reach a wider audience. Their continuous innovation in technology keeps us ahead in the competitive gaming industry."
+            },    
+            
+        ],
+        specialties: [
+          "Search Engine",
+          "Cloud Computing",
+          "Artificial Intelligence",
+          "YouTube",
+          "Android",
+          "Consumer Hardware",
+          "Digital Advertising",
+          "Google Play",
+          "Machine Learning",
+          "Internet of Things",
+          "Sustainability Initiatives"
+          // And more...
+        ],
+        teamMembers: [
+            {
+                name: "Sundar Pichai",
+                role: "CEO",
+                photoSrc: "/sundar-pichai.jpeg"
+              },
+              // Add more team members as needed
+        ],
+        companyCulture: "Google is known for its innovative, inclusive, and open culture, fostering creativity and collaboration among its employees, with a strong focus on maintaining a positive work environment and work-life balance.",
+        contactInformation: {
+          email: "contact@google.com",
+          phone: "1-800-GOOGLE",
+          address: "1600 Amphitheatre Parkway, Mountain View, CA, USA"
+        },
+        careerOpportunities: [
+            {
+                position: "Software Engineer",
+                location: "Mountain View, CA",
+                applyLink: "https://careers.google.com/jobs/results/?distance=50&location=Mountain%20View,%20CA,%20USA"
+              },
+              {
+                position: "Data Scientist",
+                location: "Remote",
+                applyLink: "https://careers.google.com/jobs/results/?location=Remote"
+              }
+              // Add more job openings as needed
+        ],
+        mediaGallery: [
+            "/google-campus1.jpeg",
+            "/google-campus2.jpeg",
+            "/google-campus3.jpeg"
+        ],
+        termsAndConditionsLink: "https://policies.google.com/terms",
+        privacyPolicyLink: "https://policies.google.com/privacy",
+        eventData: [
+            {
+                date: "Wed, May 18, 2024, 10:00 AM",
+                title: "Google I/O Developer Conference 2024",
+                location: "Live Video",
+                imgsrc: "/google-io.jpeg",
+                attendees: "Online attendees",
+                viewLink: "https://example.com/googleio2024",
+            },
+            {
+                date: "Tue, Oct 4, 2024, 1:00 PM",
+                title: "Pixel 8 Launch Event",
+                location: "Live Video",
+                imgsrc: "/pixel8.jpeg",
+                attendees: "Online attendees",
+                viewLink: "https://example.com/pixel8launch",
+            },
+            {
+                date: "Fri, Dec 2, 2024, 11:00 AM",
+                title: "Google Cloud Summit 2024",
+                location: "Live Video",
+                imgsrc: "/google-cloud-summit.jpeg",
+                attendees: "Online attendees",
+                viewLink: "https://example.com/googlecloud2024",
+            },  
+        ],
+    }
+    
 
 ]
 
