@@ -253,6 +253,7 @@ const data = [
       yearsOfExperience: "6",
       about: "Creative and detail-oriented UX/UI Designer with a passion for creating intuitive and user-friendly digital experiences. My focus is on designing for both functionality and aesthetic appeal.",
       avaiableForWork: false,
+      profileSrc: "/applicant3.jpeg",
       hasAJob: true,
       experiences: [
         {
@@ -323,6 +324,7 @@ const data = [
       phone: "+1 555 789 012",
       location: "Toronto, Canada",
       connections: "200+",
+      profileSrc: "/applicant4.jpeg",
       yearsOfExperience: "3",
       about: "Eager Full Stack Developer with a strong foundation in both front-end and back-end technologies, especially in the MERN stack. I love to solve complex problems with efficient and elegant code.",
       avaiableForWork: true,
@@ -391,6 +393,7 @@ const data = [
     {
       fullName: "Elena Torres",
       jobTitle: "Backend Engineer",
+      profilrSrc: "/applicant5.jpeg",
       proEmail: "elena.torres@example.com",
       username: "elenatorres",
       phone: "+44 234 567 890",
@@ -464,6 +467,7 @@ const data = [
     {
     fullName: "Alex Johnson",
     jobTitle: "Software Engineer",
+    profileSrc:"/applicant6.jpeg",
     proEmail: "alex.johnson@example.com",
     username: "alexjohnson",
     phone: "+1 123 456 7890",

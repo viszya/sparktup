@@ -23,7 +23,7 @@ export default function Dashboard() {
 			<div className="mb-4">
 				<h2 className="text-3xl font-bold tracking-tight">Home</h2>
 				<p className="text-muted-foreground">
-					Welcome Back! View your recent applicantions and messages
+					Welcome Back! View your recent applications and messages
 				</p>
 			</div>
 
