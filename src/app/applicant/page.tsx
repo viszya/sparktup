@@ -39,7 +39,7 @@ export default function CompanyProfile() {
                             <div className="w-full flex flex-row justify-center items-center px-3 py-0.5 text-sm border font-medium text-gray-500 duration-200 rounded-sm ">
                                 <Icons.pin className="h-4 w-4 mr-2" /> {applicant.location}
                             </div>
-                            <Link href={applicant.resumeLink} className="w-full flex flex-row justify-center items-center px-3 py-0.5 text-sm border font-medium text-gray-500 duration-200 rounded-sm hover:text-red-300 hover:border-red-400 hover:scale-95 hover:cursor-pointer">
+                            <Link href="/" className="w-full flex flex-row justify-center items-center px-3 py-0.5 text-sm border font-medium text-gray-500 duration-200 rounded-sm hover:text-red-300 hover:border-red-400 hover:scale-95 hover:cursor-pointer">
                                 <Icons.contact className="h-4 w-4 mr-2" /> View Resume
                             </Link>
 

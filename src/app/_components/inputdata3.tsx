@@ -332,7 +332,7 @@ export  function InputData2() {
             role: data.teamMembers[1].role,
             photoSrc: data.teamMembers[1].photoSrc,
         });
-        
+
 
         createEvent.mutate({
             id: companyData.company[1].id,

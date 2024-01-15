@@ -98,14 +98,14 @@ const data = [
                 jobTitle: "Founder of Versoly.com",
                 srcImage: "/profile2.png",
                 message: "Snowflake is a cloud data platform that enables data storage, processing, and analytics solutions for businesses. With the Data Cloud platform, Snowflake manages the complexities of data storage infrastructure, enabling organizations to focus on building data-driven solutions",
-    
+
             },
             {
                 name: "Amrit Nagi",
                 jobTitle: "Founder of Tailwind Toolbox",
                 srcImage: "/profile2.png",
                 message: "Upswing securities passively index inverse bondholders capitalization financial health Moody's debt managed. Receive bondholders called capitalization investment grade bonds bills management district stocks. Potential funds consulting expenses.",
-    
+
             },
             {
                 name: "Mike Jones",
@@ -558,95 +558,95 @@ export function InputData() {
     const addExperience = api.settings.addExperience.useMutation();
     function onSubmit() {
         profile.mutate({
-            fullName: data[1].fullName,
-            proEmail: data[1].proEmail,
-            username: data[1].username,
-            location: data[1].location,
-            about: data[1].about,
-            jobTitle: data[1].jobTitle,
-            yearsOfExperience: data[1].yearsOfExperience,
-            availableForWork: data[1].avaiableForWork,
-            hasAJob: data[1].hasAJob,
-            resumeLink: data[1].resumeLink,
-            profileTags: data[1].profileTags,
-            interestedTags: data[1].interestedTags,
-            profileSrc: data[1].profileSrc,
+            fullName: data[0].fullName,
+            proEmail: data[0].proEmail,
+            username: data[0].username,
+            location: data[0].location,
+            about: data[0].about,
+            jobTitle: data[0].jobTitle,
+            yearsOfExperience: data[0].yearsOfExperience,
+            availableForWork: data[0].avaiableForWork,
+            hasAJob: data[0].hasAJob,
+            resumeLink: data[0].resumeLink,
+            profileTags: data[0].profileTags,
+            interestedTags: data[0].interestedTags,
+            profileSrc: data[0].profileSrc,
         });
         addSkill.mutate({
-            skillName: data[1].topSkills[0].skillName,
-            skillDescription: data[1].topSkills[0].skillDescription,
-            color: data[1].topSkills[0].color,
+            skillName: data[0].topSkills[0].skillName,
+            skillDescription: data[0].topSkills[0].skillDescription,
+            color: data[0].topSkills[0].color,
         });
         addSkill.mutate({
-            skillName: data[1].topSkills[1].skillName,
-            skillDescription: data[1].topSkills[1].skillDescription,
-            color: data[1].topSkills[1].color,
+            skillName: data[0].topSkills[1].skillName,
+            skillDescription: data[0].topSkills[1].skillDescription,
+            color: data[0].topSkills[1].color,
         });
         addSkill.mutate({
-            skillName: data[1].topSkills[2].skillName,
-            skillDescription: data[1].topSkills[2].skillDescription,
-            color: data[1].topSkills[2].color,
+            skillName: data[0].topSkills[2].skillName,
+            skillDescription: data[0].topSkills[2].skillDescription,
+            color: data[0].topSkills[2].color,
         });
         addRecommendation.mutate({
-            name: data[1].recommendations[0].name,
-            jobTitle: data[1].recommendations[0].jobTitle,
-            srcImage: data[1].recommendations[0].srcImage,
-            message: data[1].recommendations[0].message,
+            name: data[0].recommendations[0].name,
+            jobTitle: data[0].recommendations[0].jobTitle,
+            srcImage: data[0].recommendations[0].srcImage,
+            message: data[0].recommendations[0].message,
         });
-        addRecommendation.mutate({
-            name: data[1].recommendations[1].name,
-            jobTitle: data[1].recommendations[1].jobTitle,
-            srcImage: data[1].recommendations[1].srcImage,
-            message: data[1].recommendations[1].message,
-        });
-        addRecommendation.mutate({
-            name: data[1].recommendations[2].name,
-            jobTitle: data[1].recommendations[2].jobTitle,
-            srcImage: data[1].recommendations[2].srcImage,
-            message: data[1].recommendations[2].message,
-        });
+        // addRecommendation.mutate({
+        //     name: data[0].recommendations[1].name,
+        //     jobTitle: data[0].recommendations[1].jobTitle,
+        //     srcImage: data[0].recommendations[1].srcImage,
+        //     message: data[0].recommendations[1].message,
+        // });
+        // addRecommendation.mutate({
+        //     name: data[0].recommendations[2].name,
+        //     jobTitle: data[0].recommendations[2].jobTitle,
+        //     srcImage: data[0].recommendations[2].srcImage,
+        //     message: data[0].recommendations[2].message,
+        // });
         addProject.mutate({
-            name: data[1].projects[0].name,
-            src: data[1].projects[0].src,
-            link: data[1].projects[0].link,
+            name: data[0].projects[0].name,
+            src: data[0].projects[0].src,
+            link: data[0].projects[0].link,
         });
-        addProject.mutate({
-            name: data[1].projects[1].name,
-            src: data[1].projects[1].src,
-            link: data[1].projects[1].link,
-        });
-        addProject.mutate({
-            name: data[1].projects[2].name,
-            src: data[1].projects[2].src,
-            link: data[1].projects[2].link,
-        });
-        addProject.mutate({
-            name: data[1].projects[3].name,
-            src: data[1].projects[3].src,
-            link: data[1].projects[3].link,
-        });
+        // addProject.mutate({
+        //     name: data[0].projects[1].name,
+        //     src: data[0].projects[1].src,
+        //     link: data[0].projects[1].link,
+        // });
+        // addProject.mutate({
+        //     name: data[0].projects[2].name,
+        //     src: data[0].projects[2].src,
+        //     link: data[0].projects[2].link,
+        // });
+        // addProject.mutate({
+        //     name: data[0].projects[3].name,
+        //     src: data[0].projects[3].src,
+        //     link: data[0].projects[3].link,
+        // });
         addExperience.mutate({
-            companyLogoSrc: data[1].experiences[0].companyLogoSrc,
-            companyName: data[1].experiences[0].companyName,
-            companyImgSrc: data[1].experiences[0].companyImgSrc,
-            engagement: data[1].experiences[0].engagement,
-            relativeOfWork: data[1].experiences[0].relativeOfWork,
-            jobTitle: data[1].experiences[0].jobTitle,
-            location: data[1].experiences[0].location,
-            time: data[1].experiences[0].time,
-            jobDescriptions: data[1].experiences[0].jobDescriptions,
+            companyLogoSrc: data[0].experiences[0].companyLogoSrc,
+            companyName: data[0].experiences[0].companyName,
+            companyImgSrc: data[0].experiences[0].companyImgSrc,
+            engagement: data[0].experiences[0].engagement,
+            relativeOfWork: data[0].experiences[0].relativeOfWork,
+            jobTitle: data[0].experiences[0].jobTitle,
+            location: data[0].experiences[0].location,
+            time: data[0].experiences[0].time,
+            jobDescriptions: data[0].experiences[0].jobDescriptions,
         });
-        addExperience.mutate({
-            companyLogoSrc: data[1].experiences[1].companyLogoSrc,
-            companyName: data[1].experiences[1].companyName,
-            companyImgSrc: data[1].experiences[1].companyImgSrc,
-            engagement: data[1].experiences[1].engagement,
-            relativeOfWork: data[1].experiences[1].relativeOfWork,
-            jobTitle: data[1].experiences[1].jobTitle,
-            location: data[1].experiences[1].location,
-            time: data[1].experiences[1].time,
-            jobDescriptions: data[1].experiences[1].jobDescriptions,
-        });
+        // addExperience.mutate({
+        //     companyLogoSrc: data[0].experiences[1].companyLogoSrc,
+        //     companyName: data[0].experiences[1].companyName,
+        //     companyImgSrc: data[0].experiences[1].companyImgSrc,
+        //     engagement: data[0].experiences[1].engagement,
+        //     relativeOfWork: data[0].experiences[1].relativeOfWork,
+        //     jobTitle: data[0].experiences[1].jobTitle,
+        //     location: data[0].experiences[1].location,
+        //     time: data[0].experiences[1].time,
+        //     jobDescriptions: data[0].experiences[1].jobDescriptions,
+        // });
         toast({
             title: "Data Inputted!",
         });
