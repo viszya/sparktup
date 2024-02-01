@@ -164,7 +164,7 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
           <div className="my-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">
             Experiences
           </div>
-          <div className="mx-auto max-w-7xl items-center rounded-2xl border-2 border-white bg-white p-8 px-14 py-4">
+          <div className="mx-auto max-w-7xl items-center rounded-2xl border-2 border-black bg-white p-8 px-14 py-4">
             <ul className="divide-mercury-300 w-full divide-y" role="list">
               {data.experiences.map((data: any) => (
                 <li className="py-4 lg:py-8">
