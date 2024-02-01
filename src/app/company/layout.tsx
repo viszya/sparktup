@@ -14,7 +14,6 @@ export default async function MarketingLayout({
     <div className="flex min-h-screen flex-col">
         <Nav />
         {children}
-        <CTA />
         <Footer className={twp().wrapper} />
     </div>
   )

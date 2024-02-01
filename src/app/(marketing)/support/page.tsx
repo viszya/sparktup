@@ -21,10 +21,10 @@ export default function SupportForm() {
   }
 
   return (
-    <section className="flex flex-col justify-center items-center mt-10 ">
-      <h2 className="text-3xl font-bold tracking-tight">Support Ticket</h2>
-      <div className=" max-w-3xl w-full">
-        <div className="flex flex-col mt-5 p-5 border border-secondary rounded-xl border-dashed">
+    <section className="landing-bg flex flex-col justify-center items-center mt-10 ">
+      <h2 className="text-3xl font-bold tracking-tight mt-10 mb-10">Support Ticket</h2>
+      <div className=" max-w-3xl w-full mb-40">
+        <div className="flex flex-col mt-5 p-5 border border-secondary rounded-xl border-dashed bg-white">
           <div className="flex flex-col justify-center text-center md:flex-row md:text-left">
             <div className="flex flex-col justify-center w-full max-w-3xl space-y-12">
               <form

@@ -32,7 +32,7 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
     <div className={cn("applicant-bg")}>
       <div className={cn("mb-20", twp().wrapper)}>
         {/* Profile Headline */}
-        <div className="mt-10 grid grid-flow-col grid-cols-2 gap-x-6 rounded-2xl border-2 border-black bg-black text-white p-8 md:grid-cols-1">
+        <div className="mt-10 grid grid-flow-col grid-cols-2 gap-x-6 rounded-2xl border-2 border-black bg-black/90 text-white p-8 md:grid-cols-1">
           <div className=" max-w-[30rem]">
             <div className="mb-4 flex flex-row gap-x-8">
               <Image
@@ -61,37 +61,37 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
               </div>
               <Link
                 href={data.resumeLink}
-                className="flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-white/80 duration-200 hover:scale-95 hover:cursor-pointer hover:border-red-400 hover:text-red-300"
+                className="flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-white/80 duration-200 hover:scale-95 hover:cursor-pointer hover:border-teal-400 hover:text-teal-300"
               >
                 <Icons.contact className="mr-2 h-4 w-4" /> View Resume
               </Link>
             </div>
             <Drawer>
-              <DrawerTrigger className="text-md mt-6 inline-flex w-full items-center justify-center rounded-lg border-2 border-black bg-white px-6 py-2.5 text-center text-black duration-200 hover:border-black hover:bg-transparent hover:text-black focus:outline-none focus-visible:outline-black focus-visible:ring-black">
+              <DrawerTrigger className="text-md mt-6 inline-flex w-full items-center justify-center rounded-lg border-2 border-white bg-white px-6 py-2.5 text-center text-black duration-200 hover:border-white hover:bg-transparent hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black">
                 <Icons.user className="mr-2 h-4 w-4" />
                 CONNECT
               </DrawerTrigger>
-              <DrawerContent className="flex flex-col items-center justify-center">
+              <DrawerContent className="flex flex-col items-center justify-center bg-black">
                 <DrawerHeader className="flex max-w-5xl flex-col items-center justify-center">
                   <section className="m-10 flex flex-col items-center justify-center">
-                    <div className="mt-8 text-xl font-medium tracking-tight text-black sm:text-2xl">
+                    <div className="mt-8 text-xl font-medium tracking-tight text-white sm:text-2xl">
                       Contact Information
                     </div>
                     <div className="mt-4 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                       <div className="rounded-xl border-2 border-gray-200 bg-gray-300/10 p-4">
-                        <p className="text-base font-medium text-black">
+                        <p className="text-base font-medium text-white">
                           {data.proEmail}
                         </p>
                         <p className="text-sm text-white/80">Email</p>
                       </div>
                       <div className="rounded-xl border-2 border-gray-200 bg-gray-300/10 p-4">
-                        <p className="text-base font-medium text-black">
+                        <p className="text-base font-medium text-white">
                           PHONE
                         </p>
                         <p className="text-sm text-white/80">Phone</p>
                       </div>
                       <div className="rounded-xl border-2 border-gray-200 bg-gray-300/10 p-4">
-                        <p className="text-base font-medium text-black">
+                        <p className="text-base font-medium text-white">
                           {data.location}
                         </p>
                         <p className="text-sm text-white/80">Location</p>
@@ -107,7 +107,7 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
               </DrawerContent>
             </Drawer>
             {/* <div className="flex flex-row my-4 gap-x-4">
-                                <div className="w-full p-6 bg-red-100/50 rounded-xl border-2 border-red-100">
+                                <div className="w-full p-6 bg-teal-100/50 rounded-xl border-2 border-teal-100">
                                     <div className="text-2xl font-medium leading-6">{data.connections}</div>
                                     <div className="font-light">Connections</div>
                                 </div>
@@ -138,7 +138,7 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
               </span>
               {data.avaiableForWork ? "Available for Work" : "Occupied"}
             </div>
-            <div className="mt-5 w-full rounded-xl border-2 border-black/80 bg-primary/10 p-6">
+            <div className="mt-5 w-full rounded-xl border-2 border-white/80 bg-primary/10 p-6">
               <div className="text-2xl font-medium leading-6">{data.views}</div>
               <div className="font-light">Profile Views</div>
             </div>
@@ -164,16 +164,16 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
           <div className="my-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">
             Experiences
           </div>
-          <div className="mx-auto max-w-7xl items-center rounded-2xl border-2 border-black bg-white p-8 px-14 py-4">
+          <div className="mx-auto max-w-7xl items-center rounded-2xl border-2 border-black bg-black text-white  p-8 px-14 py-4">
             <ul className="divide-mercury-300 w-full divide-y" role="list">
               {data.experiences.map((data: any) => (
                 <li className="py-4 lg:py-8">
                   <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-3 lg:gap-24">
                     <div className="lg:order-last lg:col-span-2">
-                      <p className="text-lg font-medium leading-6 text-black">
+                      <p className="text-lg font-medium leading-6 text-white">
                         {data.jobTitle}
                       </p>
-                      <ul className="mt-2 space-y-2 text-gray-500">
+                      <ul className="mt-2 space-y-2 text-white/80">
                         {data.jobDescriptions.map((description: String) => (
                           <li> - {description}</li>
                         ))}
@@ -186,13 +186,13 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
                           className="h-10 w-10 rounded-full object-cover lg:h-16 lg:w-16"
                           src={data.companyLogoSrc}
                         />
-                        <p className="text-lg font-medium leading-6 text-black">
+                        <p className="text-lg font-medium leading-6 text-white">
                           {data.companyName}
                         </p>
                       </div>
                       <div className="mb-4 min-w-0 flex-1">
-                        <p className="text-sm text-gray-500">
-                          <span className="text-base text-black">
+                        <p className="text-sm text-white/80">
+                          <span className="text-base text-white">
                             {data.engangment} · {data.relativeOfWork}
                           </span>{" "}
                           <br />
@@ -226,24 +226,24 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
           <div className="mb-4 mt-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">
             Top Skills
           </div>
-          <div className="relative mx-auto w-full max-w-7xl items-center rounded-2xl border-2 border-black bg-white p-8 px-2 py-10 md:px-12 lg:px-20">
+          <div className="relative mx-auto w-full max-w-7xl items-center rounded-2xl border-2 border-black bg-black text-white p-8 px-2 py-10 md:px-12 lg:px-20">
             <div className="mx-auto grid w-full grid-cols-1 lg:grid-cols-3">
               {data.topSkills.map((data: any) => (
                 <div className="mx-auto max-w-md p-6">
                   <div className="gap-3 lg:inline-flex lg:items-center">
                     <div
                       className={cn(
-                        "flex h-12 w-12 items-center justify-center rounded-xl text-black",
+                        "flex h-12 w-12 items-center justify-center rounded-xl text-white",
                         `bg-primary/20`,
                       )}
                     >
                       ❖
                     </div>
-                    <p className="mt-4 text-lg font-medium leading-6 text-black lg:mt-0">
+                    <p className="mt-4 text-lg font-medium leading-6 text-white lg:mt-0">
                       {data.skillName}
                     </p>
                   </div>
-                  <p className="mt-3 text-base text-gray-500">
+                  <p className="mt-3 text-base text-white/80">
                     {data.skillDescription}
                   </p>
                 </div>
@@ -254,16 +254,16 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
 
         {/* Reccomendations */}
         <section className="">
-          <div className="my-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">
+          <div className="my-4 text-2xl font-medium tracking-tight text-white sm:text-4xl">
             Reccomendations
           </div>
-          <div className="mx-auto max-w-7xl items-center rounded-2xl border-2 border-black bg-white p-8 px-14 py-4">
+          <div className="mx-auto max-w-7xl items-center rounded-2xl border-2 border-black bg-black text-white  p-8 px-14 py-4">
             <ul className="divide-mercury-300 w-full divide-y" role="list">
               {data.recommendations.map((data: any) => (
                 <li className="py-4 lg:py-8">
                   <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-3 lg:gap-24">
                     <div className="lg:order-last lg:col-span-2">
-                      <p className="text-base text-gray-500">{data.message}</p>
+                      <p className="text-base text-white/80">{data.message}</p>
                     </div>
                     <div className="inline-flex items-center gap-3">
                       <div className="flex-shrink-0">
@@ -274,10 +274,10 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
                         />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <p className="text-lg font-medium leading-6 text-black">
+                        <p className="text-lg font-medium leading-6 text-white">
                           {data.name}
                         </p>
-                        <p className="text-sm text-gray-500">{data.jobTitle}</p>
+                        <p className="text-sm text-white/80">{data.jobTitle}</p>
                       </div>
                     </div>
                   </div>
@@ -289,10 +289,10 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
 
         {/* Projects */}
         <section className="">
-          <div className="my-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">
+          <div className="my-4 text-2xl font-medium tracking-tight text-white sm:text-4xl">
             Projects
           </div>
-          <div className="rounded-2xl border-2 border-gray-200 bg-gray-300/10 p-8">
+          <div className="rounded-2xl border-2 border-black bg-gray-300/10 p-8">
             <div className="relative mx-auto w-full max-w-7xl items-center px-5 py-2 md:px-4 lg:px-8">
               <div className="col-span-2 grid grid-cols-2 gap-8">
                 {data.projects.map((data: any) => (
@@ -317,7 +317,7 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
 
         {/* View Resume */}
         <section className="">
-          <div className="my-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">
+          <div className="my-4 text-2xl font-medium tracking-tight text-white sm:text-4xl">
             Resume
           </div>
           <div className="rounded-2xl border-2 border-black bg-black p-8">
@@ -330,7 +330,7 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
                 </div>
                 <Link
                   href={data.resumeLink}
-                  className="text-md inline-flex w-40 items-center justify-center rounded-2xl border-2 border-white bg-white px-6 py-2.5 text-center text-black duration-200 hover:border-black hover:bg-transparent hover:text-black focus:outline-none focus-visible:outline-black focus-visible:ring-black"
+                  className="text-md inline-flex w-40 items-center justify-center rounded-2xl border-2 border-white bg-white px-6 py-2.5 text-center text-black duration-200 hover:border-white hover:bg-transparent hover:text-white focus:outline-none focus-visible:outline-black focus-visible:ring-black"
                 >
                   View
                   <Icons.export className="ml-4 h-4 w-4" />
