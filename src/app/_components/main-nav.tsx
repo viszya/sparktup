@@ -12,8 +12,8 @@ const Nav = async () => {
 
   return (<>
 
-    <div className="sticky inset-x-0 top-0 z-30 w-full mx-auto border-b bg-white/70 backdrop-blur-lg transition-all">
-      <div className={cn(twp().wrapper, "relative flex flex-col w-full p-5 mx-auto  md:items-center md:justify-between md:flex-row md:px-6 lg:px-8")}>
+    <div className="sticky inset-x-0 top-0 z-30 w-full mx-auto  bg-white backdrop-blur-lg transition-all">
+      <div className={cn(twp().wrapper, "relative flex flex-col w-full px-5 py-3 mx-auto  md:items-center md:justify-between md:flex-row md:px-6 lg:px-8")}>
         <div className="flex flex-row items-center justify-between lg:justify-start">
           <a className="text-lg tracking-tight text-black uppercase focus:outline-none focus:ring focus:ring-gray-300/25 rounded-full px-4 lg:text-2xl" href="/">
             <span className="lg:text-lg uppecase font-semibold tracking-widest">
@@ -31,45 +31,45 @@ const Nav = async () => {
           <div className='flex-1 mx-4'>
             <Link
               href='/solutions'
-              className="px-2 py-2 text-sm text-gray-900 lg:px-6 md:px-3 hover:text-red-400 transition-colors delay-75 rounded-2xl hover:bg-red-400/10">
+              className="px-2 py-2 text-sm text-gray-900 font-medium lg:px-6 md:px-3 hover:text-black/40 transition-colors delay-75 rounded-2xl">
               Solutions
             </Link>
             <Link
               href='/company'
-              className="px-2 py-2 text-sm text-gray-900 lg:px-6 md:px-3 hover:text-red-400 transition-colors delay-75 rounded-2xl hover:bg-red-400/10">
+              className="px-2 py-2 text-sm text-gray-900 font-medium lg:px-6 md:px-3 hover:text-black/40 transition-colors delay-75 rounded-2xl ">
               Companies
             </Link>
             <Link
               href='/company/positions'
-              className="px-2 py-2 text-sm text-gray-900 lg:px-6 md:px-3 hover:text-red-400 transition-colors delay-75 rounded-2xl hover:bg-red-400/10">
+              className="px-2 py-2 text-sm text-gray-900 font-medium lg:px-6 md:px-3 hover:text-black/40 transition-colors delay-75 rounded-2xl">
               Job Positions
             </Link>
             <Link
               href='/applicant'
-              className="px-2 py-2 text-sm text-gray-900 lg:px-6 md:px-3 hover:text-red-400 transition-colors delay-75 rounded-2xl hover:bg-red-400/10">
+              className="px-2 py-2 text-sm text-gray-900 font-medium lg:px-6 md:px-3 hover:text-black/40 transition-colors delay-75 rounded-2xl">
               Applicants
             </Link>
             <Link
               href='/faq'
-              className="px-2 py-2 text-sm text-gray-900 lg:px-6 md:px-3 hover:text-red-400 transition-colors delay-75 rounded-2xl hover:bg-red-400/10">
+              className="px-2 py-2 text-sm text-gray-900 font-medium lg:px-6 md:px-3 hover:text-black/40 transition-colors delay-75 rounded-2xl ">
               FAQ
             </Link>
             <Link
               href='/support'
-              className="px-2 py-2 text-sm text-gray-900 lg:px-6 transition-colors delay-75 rounded-2xl hover:bg-red-400/10 md:px-3 hover:text-red-400 ">
+              className="px-2 py-2 text-sm text-gray-900 font-medium lg:px-6 transition-colors delay-75 rounded-2xl  md:px-3 hover:text-black/40 ">
               Support
             </Link>
           </div>
           <div className="inline-flex items-center gap-2 list-none">
             <Link
               href="/signin"
-              className="block px-4 py-2 mt-2 text-sm text-black bg-red-400/10 rounded-full font-semibold border-red-300 border-2  md:mt-0 hover:bg-red-300 transision-all delay-75 :focus:outline-none focus:shadow-outline"
+              className="block px-4 py-2 mt-2 text-sm text-black bg-black/5 rounded-xl font-medium md:mt-0 transision-all delay-75 :focus:outline-none focus:shadow-outline"
             >
               Sign in
             </Link>
             <Link
               href="/signup"
-              className="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-black rounded-full group focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-gray-900 active:bg-gray-800 active:text-white focus-visible:outline-black"
+              className="inline-flex items-center justify-center px-4 py-2 text-sm text-white font-medium bg-black rounded-xl group focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-gray-900 active:bg-gray-800 active:text-white focus-visible:outline-black"
             >
               Sign up
             </Link>
