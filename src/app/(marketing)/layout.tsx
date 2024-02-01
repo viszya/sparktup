@@ -12,7 +12,7 @@ export default function MarketingLayout({
   children,
 }: MarketingLayoutProps) {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col ">
         <Nav />
         {children}
         <Footer />

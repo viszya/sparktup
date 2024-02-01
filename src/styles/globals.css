@@ -74,8 +74,24 @@
     height: 1000px;
   }
 
+  .hero-image-4 {
+    background-image: url("/hero-bg-2.webp");
+    background-size: 100% 600px;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 600px;
+  }
+
   .hero-image-3 {
     background-image: url("/hero-bg-2.jpg");
     width: 100%;
+  }
+
+  .applicant-bg {
+    background-image: url("/applicant-bg.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100%;
   }
 }
