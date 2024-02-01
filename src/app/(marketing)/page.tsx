@@ -3,189 +3,157 @@ import { cn } from "@/server/utils";
 import { twp } from "@/server/utils";
 import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
-import Image from "next/image"
-
+import Image from "next/image";
 
 export default function Home() {
-  return (<main className={cn("mb-12 mt-28 sm:mt-20 flex flex-col items-center justify-center text-center", twp().wrapper)}>
+  return (
+    <main
+      className={cn(
+        "mb-12 flex flex-col items-center justify-center text-center",
+        // twp().wrapper,
+      )}
+    >
+      {/* Hero Section */}
+      <section className="hero-image flex flex-col items-center justify-center text-center ">
+        <h1 className="lg:text:8xl mb-2 mt-32 text-6xl font-semibold text-black md:text-7xl">
+          Simplify and accelerate code review
+        </h1>
+        <p className="mb-2 mt-5 max-w-prose text-2xl text-primary">
+          Finally: the stacked PRs workflow - securely and seamlessly integrated
+          with GitHub. <br />
+          Graphite parallelizes review and development, giving you more time to
+          build.
+        </p>
+        <div className="mt-4 flex flex-row">
+          <Link
+            href="/solutions/company"
+            className={buttonVariants({
+              variant: "heroButton2",
+              size: "lg",
+              className:
+                "duration-250 mx-auto mb-4 mr-5  flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-xl border-2 border-black bg-transparent px-7 py-2 text-black shadow-md backdrop-blur transition-colors ease-in-out hover:bg-black hover:text-white hover:shadow-xl",
+            })}
+          >
+            For Companies <Icons.arrowRight className="ml-2 h-5 w-5" />
+          </Link>
 
-    {/* Hero Section */}
-    <h1 className="max-w-4xl text-5xl mb-2 mt-10 font-semibold md:text-6xl text-black lg:text:7xl">
-      Ignite Your Tech Career!
-    </h1>
-    <p className="mt-5 max-w-prose mb-2 text-zinc-700 sm:text-lg">
-      Spark your tech career with ease and growth. Join Sparktup!
-    </p>
-    <div className="flex flex-row mt-4">
-      <Link href="/signup" className={buttonVariants({ size: "lg", className: "mr-5 bg-black ease-in-out duration-200 hover:text-white hover:bg-black hover:shadow-xl rounded-2xl" })}>
-        Get Started <Icons.arrowRight className="ml-2 h-5 w-5" />
-      </Link>
-      <Link href="/solutions/company" className={buttonVariants({ variant: "heroButton2", size: "lg", className: 'ml-5 mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden text-black rounded-2xl border border-black bg-white ease-in-out px-7 py-2 shadow-md backdrop-blur transition-all hover:bg-white hover:shadow-xl hover:border-red-400 hover:text-red-300' })}>
-        For Companies <Icons.arrowRight className="ml-2 h-5 w-5" />
-      </Link>
-    </div>
-
-    {/* Example Section */}
-    <div className="mx-auto w-full max-w-screen-xl px-2.5 ">
-      <div className='relative isolate'>
-        <div
-          aria-hidden='true'
-          className='pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu orveflow-hidden blur-3xl sm:-top-80'>
-          <div
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
-            className='relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-red-300 to-red-400 opacity-40 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]'
-          />
+          <Link
+            href="/signup"
+            className={buttonVariants({
+              size: "lg",
+              className:
+                " ml-5 rounded-xl border-2 border-black bg-black duration-200 ease-in-out hover:border-black  hover:bg-white hover:text-black hover:shadow-xl ",
+            })}
+          >
+            Get Started <Icons.arrowRight className="ml-2 h-5 w-5" />
+          </Link>
         </div>
 
-        <div className='mx-auto max-w-6xl px-6 lg:px-8'>
-          <div className='mt-16 flow-root sm:mt-24'>
-            <div className='-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
-              <Image
-                priority={true}
-                src='/applicants.png'
-                alt='product preview'
-                width={1364}
-                height={866}
-                quality={100}
-                className='rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10'
-              />
+        {/* Example Section */}
+        <div className="mx-auto w-full max-w-screen-xl px-2.5 ">
+          <div className="relative isolate">
+            <div className="mx-auto max-w-6xl px-6 lg:px-8">
+              <div className="mt-16 flow-root sm:mt-24">
+                <div className="-m-2 rounded-xl bg-white/50 p-2 ring-1 ring-inset ring-white lg:-m-4 lg:rounded-2xl lg:p-4">
+                  <Image
+                    priority={true}
+                    src="/applicants.png"
+                    alt="product preview"
+                    width={1364}
+                    height={866}
+                    quality={100}
+                    className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <div
-          aria-hidden='true'
-          className='pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80'>
-          <div
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
-            className='relative left-[calc(50%-13rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-red-500 to-yellow-300 opacity-30 sm:left-[calc(50%-36rem)] sm:w-[72.1875rem]'
-          />
-        </div>
-      </div>
-    </div>
+      <section className="relative h-96">
+        <Image
+          src="/logo-bg.svg"
+          alt="bg-svg"
+          width={800}
+          height={600}
+          className=" opacity-30 absolute"
+        />
+        <h1 className="mb-2 mt-10 text-xl uppercase text-primary/75">
+          Trusted By 500+ of the Best Companies
+        </h1>
+      </section>
 
-    {/* Features */}
+      {/* Features */}
 
-    <section>
-      <div className="relative items-center w-full px-5 py-24 mx-auto md:px-12 lg:px-16 max-w-7xl border-1 mt-11 rounded-2xl ">
-        <div className="w-full mx-auto text-left">
-          <div className="relative flex-col items-center m-auto align-middle">
-            <div className="items-center gap-12 text-left lg:gap-24 lg:inline-flex">
-              <div className="order-first block w-full mt-12 aspect-square lg:mt-0">
-                <div className='mx-auto max-w-6xl px-6 lg:px-8'>
-                  <div className='mt-16 flow-root sm:mt-24'>
-                    <div className='-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
-                      <Image
-                        priority={true}
-                        src='/l2.png'
-                        alt='product preview'
-                        width={1364}
-                        height={866}
-                        quality={100}
-                        className='rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10'
-                      />
+      <section className="hero-image-2 flex flex-col items-center justify-center text-center">
+        <h1 className="lg:text:7xl mb-2 mt-10  text-4xl font-semibold text-black md:text-6xl">
+          Features
+        </h1>
+        <div className="border-1 relative mx-auto mt-11 w-full max-w-7xl items-center rounded-2xl px-5 py-24 md:px-12 lg:px-16 ">
+          <div className="mx-auto w-full text-left">
+            <div className="relative m-auto flex-col items-center align-middle">
+              <div className="items-center gap-12 text-left lg:inline-flex lg:gap-24">
+                <div className="order-first mt-12 block aspect-square w-full lg:mt-0">
+                  <div className="mx-auto max-w-6xl px-6 lg:px-8">
+                    <div className="mt-16 flow-root sm:mt-24">
+                      <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
+                        <Image
+                          priority={true}
+                          src="/l2.png"
+                          alt="product preview"
+                          width={1364}
+                          height={866}
+                          quality={100}
+                          className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col mt-6 lg:mt-0">
-                <div className="max-w-xl">
-                  <div>
-                    <p className="text-2xl font-medium tracking-tight text-black sm:text-4xl">
-                      Features
-                    </p>
-                  </div>
-                </div>
-                <div className="mx-auto mt-6 lg:max-w-7xl">
-                  <ul role="list" className="grid grid-cols-2 gap-4 list-none lg:grid-cols-1 lg:gap-3">
-                    <li>
-                      <div>
-                        <p className="mt-5 text-lg font-medium leading-6 text-black">
-                          Smart Connections
-                        </p>
-
-                      </div>
-                      <div className="mt-2 text-base text-gray-500">
-                        Instantly connect with top tech talent or exciting job opportunities, driven by our intelligent matchmaking system.
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <p className="mt-5 text-lg font-medium leading-6 text-black">
-                          Personalized Matches
-                        </p>
-                      </div>
-                      <div className="mt-2 text-base text-gray-500">
-                        Tailored algorithms ensure businesses find ideal candidates, and individuals discover opportunities aligned with their skills and aspirations.
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <p className="mt-5 text-lg font-medium leading-6 text-black">
-                          Effortless Experience
-                        </p>
-                      </div>
-                      <div className="mt-2 text-base text-gray-500">
-                        Streamlined platform navigation for businesses to post jobs seamlessly and individuals to apply with just a few clicks.
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <p className="mt-5 text-lg font-medium leading-6 text-black">
-                          Vibrant Tech Ecosystem
-                        </p>
-                      </div>
-
-                      <div className="mt-2 text-base text-gray-500">
-                        Join a collaborative community fostering innovation and growth, connecting businesses and individuals in the dynamic world of tech.
-                      </div>
-
-                    </li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
+      <section className="bg-black w-full py-32">
+      <h1 className="text-3xl text-white ">
+          Get started with a free <br /> Sparktup account today
+        </h1>
+      </section>
 
-    {/* About Us */}
-    <div className="sm:flex items-center max-w-screen-xl">
-      <div className="sm:w-1/2 p-10">
-        <div className='mx-auto max-w-6xl px-6 lg:px-8'>
-          <div className='mt-16 flow-root sm:mt-24'>
-            <div className='-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
-              <Image
-                priority={true}
-                src='/l3.png'
-                alt='product preview'
-                width={1364}
-                height={866}
-                quality={100}
-                className='rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10'
-              />
-            </div>
-          </div>
+      <Image alt="bg-design" className="w-full bg-black" src="/bg-2.webp" width={1920} height={200} />
+
+      {/* About Us */}
+      <section className="mb-20 flex flex-col items-center justify-center bg-white">
+        <h1 className="lg:text:7xl mb-2  text-5xl font-semibold text-black md:text-6xl">
+          Get started with a free <br /> Sparktup account today
+        </h1>
+        <div className="mt-4 flex flex-row">
+          <Link
+            href="/solutions/company"
+            className={buttonVariants({
+              variant: "heroButton2",
+              size: "lg",
+              className:
+                " duration-250 mx-auto mb-4 mr-5  flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-xl border-2 border-black bg-transparent px-7 py-2 text-black shadow-md backdrop-blur transition-colors ease-in-out hover:bg-black hover:text-white hover:shadow-xl",
+            })}
+          >
+            For Companies <Icons.arrowRight className="ml-2 h-5 w-5" />
+          </Link>
+          <Link
+            href="/signup"
+            className={buttonVariants({
+              size: "lg",
+              className:
+                " ml-5 rounded-xl border-2 border-black bg-black duration-200 ease-in-out hover:border-black  hover:bg-white hover:text-black hover:shadow-xl ",
+            })}
+          >
+            Get Started <Icons.arrowRight className="ml-2 h-5 w-5" />
+          </Link>
         </div>
-      </div>
-      <div className="sm:w-1/2 p-5">
-        <div className="text">
-          <span className="text-gray-500 border-b-2 border-red-400 uppercase">Our Mission</span>
-          <h2 className="my-4 font-bold text-3xl  sm:text-4xl ">Igniting Tech Futures at <span className="text-red-400">Sparktup</span>
-          </h2>
-          <p className="text-gray-700">
-            At Sparktup, we are passionate about catalyzing growth and innovation in the dynamic world of technology. Born from a collective vision of connecting businesses with top-tier tech talent and empowering individuals to spark their careers, Sparktup is more than a platform—it&apos;s a vibrant community.
-          </p>
-        </div>
-      </div>
-    </div>
-  </main>);
+      </section>
+    </main>
+  );
 }
