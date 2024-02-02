@@ -35,7 +35,7 @@ export default function CompanySolutions() {
                 </h2>
                 <p className="w-full text-black/60">
                   Streamline your workflow and enhance productivity with our
-                  cutting-edge solutions.
+                  cutting-edge applicant filtering systems.
                 </p>
               </div>
 
@@ -46,8 +46,7 @@ export default function CompanySolutions() {
                   Drive Growth
                 </h2>
                 <p className="w-full text-black/60">
-                  Accelerate your business growth with scalable and efficient
-                  technologies.
+                  Accelerate your business growth with new and experienced talent.
                 </p>
               </div>
 
@@ -55,11 +54,10 @@ export default function CompanySolutions() {
               <div className="items-left flex flex-col rounded-2xl border border-orange-300 bg-white/50 p-6 text-left backdrop-blur-2xl">
                 <Icons.ShieldCheck className="mb-4 h-8 w-8 text-black" />
                 <h2 className="mb-2 text-xl font-black text-black">
-                  Ensure Security
+                  Ease of Use
                 </h2>
                 <p className="w-full text-black/60">
-                  Protect your data and ensure the highest level of security for
-                  your business.
+                  A streamlined and user-friendly platform that simplifies the recruitment process, saving you time and effort.
                 </p>
               </div>
             </div>
@@ -74,9 +72,7 @@ export default function CompanySolutions() {
             How Sparktup Works for Companies
           </h1>
           <div className="mb-8 inline-flex max-w-4xl items-center justify-center text-lg">
-            Graphite gives you all of the reviewer tools that you’ve been
-            missing on GitHub, culminating in a review platform that enables you
-            to review stacks of pull requests as fast as they’re shipped.
+          Unlocking Efficiency: Navigating the Operational Dynamics of Sparktup for Companies
           </div>
           <div className="grid grid-cols-1 gap-8 text-left lg:grid-cols-2">
             {/* Step 1 */}
@@ -139,9 +135,7 @@ export default function CompanySolutions() {
             Key Features of Sparktup for Companies
           </h1>
           <div className="mb-8 inline-flex max-w-4xl items-center justify-center text-lg">
-            Graphite gives you all of the reviewer tools that you’ve been
-            missing on GitHub, culminating in a review platform that enables you
-            to review stacks of pull requests as fast as they’re shipped.
+          Empower Your Company: Unveiling the Essential Features of Sparktup for Companies
           </div>
           <div className="mx-6 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Feature 1 */}
