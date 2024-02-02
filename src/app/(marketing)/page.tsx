@@ -228,7 +228,7 @@ export default function Home() {
               " duration-250 mx-auto mb-4 mr-5  flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-xl border-2 border-white bg-transparent px-7 py-2 text-white shadow-md backdrop-blur transition-colors ease-in-out hover:bg-white hover:text-black hover:shadow-xl",
           })}
         >
-          Learn More <Icons.arrowRight className="ml-2 h-5 w-5" />
+          Learn More on Company Benefits <Icons.arrowRight className="ml-2 h-5 w-5" />
         </Link>
       </section>
 

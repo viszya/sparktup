@@ -19,9 +19,9 @@ export default function Solutions() {
 							<p className="text-white/80">Explore our solutions designed for businesses and organizations.</p>
 						</div>
 					</div>
-					<Link href="../solutions/company" >
+					<Link href="../solutions/company">
           <Button className="mt-6 text-md items-center justify-center w-full px-6 py-3 text-center duration-200 bg-white text-black border-2 border-white rounded-lg inline-flex hover:bg-transparent hover:border-white-400 hover:text-white-400 focus:outline-none focus-visible:outline-white-400 focus-visible:ring-white-400 hover:text-white">
-							See Company Benefits <Icons.arrowRight className="ml-2 h-4 w-4" />
+							Read More <Icons.arrowRight className="ml-2 h-4 w-4" />
 						</Button>
 					</Link>
 				</div>
@@ -39,7 +39,7 @@ export default function Solutions() {
 					</div>
 					<Link href="../solutions/applicant">
 						<Button className="mt-6 text-md items-center justify-center w-full px-6 py-3 text-center duration-200 bg-white text-black border-2 border-white rounded-lg inline-flex hover:bg-transparent hover:border-white-400 hover:text-white-400 focus:outline-none focus-visible:outline-white-400 focus-visible:ring-white-400 hover:text-white">
-							See Application Benefits <Icons.arrowRight className="ml-2 h-4 w-4" />
+							Read More <Icons.arrowRight className="ml-2 h-4 w-4" />
 						</Button>
 					</Link>
 				</div>
