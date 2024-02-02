@@ -10,7 +10,7 @@ import { cn } from "@/server/utils";
 export default function Page() {
     return (
         <div className={cn("landing-bg flex flex-col justify-center items-center")}>
-            <div className={cn(twp().wrapper, "flex flex-col justify-center items-center")}>
+            <div className={cn(twp().wrapper, "flex flex-col justify-center items-center max-w-6xl")}>
                 <h2 className="text-3xl font-bold tracking-tight mt-10 mb-5">FAQ</h2>
                 <Accordion type="single" collapsible className="bg-white mb-20 text-left w-full  mt-2 rounded-xl border border-dashed border-secondary p-4 px-6">
                     {/* Question 1 */}
