@@ -32,7 +32,7 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
     <div className={cn("applicant-bg")}>
       <div className={cn("mb-20", twp().wrapper)}>
         {/* Profile Headline */}
-        <div className="mt-10 grid grid-flow-col grid-cols-2 gap-x-6 rounded-2xl border-2 border-black bg-black/90 text-white p-8 md:grid-cols-1">
+        <div className="mt-10 grid grid-flow-col grid-cols-2 gap-x-6 rounded-2xl border-2 border-black bg-black text-white p-8 md:grid-cols-1">
           <div className=" max-w-[30rem]">
             <div className="mb-4 flex flex-row gap-x-8">
               <Image
@@ -289,10 +289,10 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
 
         {/* Projects */}
         <section className="">
-          <div className="my-4 text-2xl font-medium tracking-tight text-white sm:text-4xl">
+          <div className="my-4 text-2xl font-medium tracking-tight text-white  sm:text-4xl">
             Projects
           </div>
-          <div className="rounded-2xl border-2 border-black bg-gray-300/10 p-8">
+          <div className="rounded-2xl border-2 border-black bg-black p-8">
             <div className="relative mx-auto w-full max-w-7xl items-center px-5 py-2 md:px-4 lg:px-8">
               <div className="col-span-2 grid grid-cols-2 gap-8">
                 {data.projects.map((data: any) => (

@@ -4,7 +4,7 @@ import { twp } from "@/server/utils"
 export default function PrivacyPolicy() {
     return (
         <div className={cn(twp().wrapper, "mt-20")}>
-            <div className="mx-20">
+            <div className="mx-2 sm:mx-6 md:mx-8 lg:mx-20">
                 <article>
                     <div className="mt-10 text-5xl tracking-tighter text-white">
                         Privacy Policy for Sparktup

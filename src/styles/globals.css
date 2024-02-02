@@ -57,6 +57,32 @@
 
   body {
     @apply bg-background text-foreground;
+    animation: fadein 1s;
+  }
+
+  .movein {
+    animation: movein 1s;
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0.5;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+
+  @keyframes movein {
+    from {
+      translate: translate(0px, -20px);
+    }
+
+    to {
+      opacity: translate(0px, 0px);
+    }
   }
 
   .hero-image {
@@ -102,5 +128,32 @@
     background-repeat: no-repeat;
     width: 100vw;
     height: 100%;
+  }
+
+  .gradient-bg {
+    background-image: url("/gradient-p1.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100%;
+  }
+
+  .gradient-bg-2 {
+    background-image: url("/gradient-p2.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100%;
+  }
+  .gradient-bg-3 {
+    background-image: url("/gradient-p3.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100%;
+  }
+
+  .gradient-bt {
+    background: linear-gradient(90deg,#cc00004d,#ff74374d,#ffe86d4d,#5bdcf94d,#2e73fc4d,#000aff4d);
   }
 }

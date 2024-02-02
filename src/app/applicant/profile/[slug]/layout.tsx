@@ -14,9 +14,7 @@ export default async function MarketingLayout({
 }: MarketingLayoutProps) {
   return (
     <div className="flex min-h-screen flex-col bg-black">
-        <Nav />
         <Suspense fallback={<Loading />}>{children}</Suspense>
-        <Footer className={twp().wrapper} />
     </div>
   )
 }

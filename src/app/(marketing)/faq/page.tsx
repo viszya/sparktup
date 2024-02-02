@@ -12,7 +12,7 @@ export default function Page() {
         <div className={cn("landing-bg flex flex-col justify-center items-center")}>
             <div className={cn(twp().wrapper, "flex flex-col justify-center items-center")}>
                 <h2 className="text-3xl font-bold tracking-tight mt-10 mb-5">FAQ</h2>
-                <Accordion type="single" collapsible className="bg-white mb-20 text-left w-full max-w-md md:max-w-lg lg:max-w-2xl sm:max-w-3xl mt-2 rounded-xl border border-dashed border-secondary p-4 px-6">
+                <Accordion type="single" collapsible className="bg-white mb-20 text-left w-full  mt-2 rounded-xl border border-dashed border-secondary p-4 px-6">
                     {/* Question 1 */}
                     <AccordionItem value="item-1">
                         <AccordionTrigger className="text-left">How can my company partner with Sparktup for hiring?</AccordionTrigger>
