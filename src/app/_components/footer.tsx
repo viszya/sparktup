@@ -19,16 +19,16 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
                         </div>
                         <div className="flex justify-center sm:block">
                         <nav className="flex gap-8 mt-11 justify-start">
-                            <Link className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm text-gray-500 hover:text-white transition-colors duration-150 " href="/faq">
+                            <Link className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm text-white/80 hover:text-white transition-colors duration-150 " href="/faq">
                                 FAQ
                             </Link>
-                            <Link className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm text-gray-500 hover:text-white transition-colors duration-150 " href="/about">
+                            <Link className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm  text-white/80 hover:text-white transition-colors duration-150 " href="/about">
                                 About
                             </Link>
-                            <Link className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm text-gray-500 hover:text-white transition-colors duration-150" href="/tos">
+                            <Link className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm  text-white/80 hover:text-white transition-colors duration-150" href="/tos">
                                 Terms
                             </Link>
-                            <Link className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm text-gray-500 hover:text-white transition-colors duration-150" href="/privacy">
+                            <Link className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm  text-white/80 hover:text-white transition-colors duration-150" href="/privacy">
                                 Privacy Policy
                             </Link>
                         </nav>
