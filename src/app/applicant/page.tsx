@@ -26,7 +26,7 @@ export default function CompanyProfile() {
 
   return (
     <div className="applicant-bg-2">
-      <div className={cn(twp().wrapper, "text-white pb-20")}>
+      <div className={cn(twp().wrapper, "text-white pb-20 pt-10")}>
         <h1 className="movein mb-2 mt-12 text-center text-5xl font-bold text-black ">
           Applicants
         </h1>
