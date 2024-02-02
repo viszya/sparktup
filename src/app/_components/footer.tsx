@@ -36,7 +36,7 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
 
                     </div>
                     <div className="relative flex items-center self-stretch p-3 -mx-4 transition-colors group hover:bg-gray-200/30 sm:self-auto sm:rounded-2xl lg:mx-0 lg:self-auto lg:p-4">
-                        <div className="relative flex items-center justify-center flex-none w-24 h-24 bg-gradient-to-br from-cyan-300/30 to-cyan-400/50 rounded-xl  from">
+                        <div className="relative flex items-center justify-center flex-none w-24 h-24 bg-gradient-to-br from-gray-300/30 to-gray-400/50 rounded-xl  from">
                             <Icons.twitter />
                         </div>
                         <Link href="https://twitter.com/" target="_blank" className="ml-8 lg:w-64">
@@ -52,7 +52,7 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
                 </div>
                 <div className="flex flex-col items-center pt-4 pb-4 md:flex-row-reverse md:justify-between ">
                     <p className=" text-sm text-white/70 md:mt-0">
-                        SparktUp © Copyright 2023 All Rights Reserved
+                        SparktUp © Copyright 2024 All Rights Reserved
                     </p>
                 </div>
             </div>

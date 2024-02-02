@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export default function Solutions() {
 	return (
-		<div className={cn("bg-black hero-image-4")}>
-			<div className={cn("grid grid-cols-2 gap-8 mt-32 mb-10 mx-8 ", twp().wrapper)}>
+		<div className={cn("bg-black hero-image-4 mb-10 sm:mb-0")}>
+			<div className={cn("grid grid-cols-1 sm:grid-cols-2 gap-8 mt-10 sm:mt-32 mb-10 mx-8 ", twp().wrapper)}>
 				{/* Company Solutions Box */}
 				<div key="company" className=" p-8 rounded-2xl border-2 border-black bg-black text-white">
 					<div className="text-2xl font-medium tracking-tight primary sm:text-4xl mb-4">

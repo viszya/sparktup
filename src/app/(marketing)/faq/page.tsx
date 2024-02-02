@@ -19,10 +19,12 @@ export default function Page() {
         <h1 className="movein mb-2 mt-12 text-center text-5xl font-bold text-black ">
           FAQ
         </h1>
-        <div className="mb-8 inline-flex max-w-4xl items-center justify-center">
+        <div className="mb-8 inline-flex max-w-4xl items-center justify-center text-center mx-2">
           Submit a support ticket and we will get back to you as soon as
           possible.
         </div>
+        <div className="mx-2">
+
         <Accordion
           type="single"
           collapsible
@@ -261,6 +263,8 @@ export default function Page() {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
+        </div>
+
       </div>
     </div>
   );

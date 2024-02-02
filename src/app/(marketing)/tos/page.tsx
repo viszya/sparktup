@@ -3,10 +3,10 @@ import { twp } from "@/server/utils";
 
 export default function TermsOfService() {
 	return (
-		<div className={cn(twp().wrapper, "mt-20")}>
-			<div className="mx-2 sm:mx-6 md:mx-8 lg:mx-20">
+		<div className={cn(twp().wrapper, "mt-8 sm:mt-20")}>
+			<div className="mx-4 sm:mx-6 md:mx-8 lg:mx-20">
 				<article>
-					<div className="mt-10 text-5xl tracking-tighter text-white">
+					<div className="mt-0 sm:mt-10 text-5xl tracking-tighter text-white">
 						Terms of Service for Sparktup
 					</div>
 					<div className="mt-4 text-white/80 text-lg">

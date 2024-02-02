@@ -44,7 +44,7 @@ export function Form1({ onNextClick }: FormProps) {
 		<section>
 			<div className="flex flex-col justify-center m-auto">
 				<div className="flex flex-col justify-center text-center md:flex-row md:text-left">
-					<div className="flex flex-col justify-center max-w-2xl p-10 space-y-12 bg-white/70 rounded-2xl">
+					<div className="flex flex-col justify-center max-w-2xl p-4 pb-10 sm:pb-0 sm:p-10 space-y-12 bg-white/70 rounded-2xl">
 						<article>
 							<span className="inline-flex items-center text-black rounded-xl">
 								<span className="font-mono text-sm" aria-hidden="true">
@@ -74,11 +74,11 @@ export function Form1({ onNextClick }: FormProps) {
 									What is your full name (first / last)?
 								</label>
 								<Input
-									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-cyan-300 focus:outline-none focus:ring-cyan-300 sm:text-sm"
+									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-black focus:outline-none focus:ring-black sm:text-sm"
 									placeholder="Jeff Bezos"
 									type="text"
 									value={fullName}
-									requicyan
+									required
 									onChange={(e) => setFullName(e.target.value)}
 								/>
 							</div>
@@ -87,11 +87,11 @@ export function Form1({ onNextClick }: FormProps) {
 									What is your professional email address?
 								</label>
 								<Input
-									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-cyan-300 focus:outline-none focus:ring-cyan-300 sm:text-sm"
+									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-black focus:outline-none focus:ring-black sm:text-sm"
 									placeholder="jeffbezos@example.com"
 									type="text"
 									value={proEmail}
-									requicyan
+									required
 									onChange={(e) => setProEmail(e.target.value)}
 								/>
 							</div>
@@ -100,11 +100,11 @@ export function Form1({ onNextClick }: FormProps) {
 									Choose a username
 								</label>
 								<Input
-									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-cyan-300 focus:outline-none focus:ring-cyan-300 sm:text-sm"
+									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-black focus:outline-none focus:ring-black sm:text-sm"
 									placeholder="jeffbezos"
 									type="text"
 									value={username}
-									requicyan
+									required
 									onChange={(e) => setUsername(e.target.value)}
 								/>
 							</div>
@@ -113,11 +113,11 @@ export function Form1({ onNextClick }: FormProps) {
 									Where are you located?
 								</label>
 								<Input
-									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-cyan-300 focus:outline-none focus:ring-cyan-300 sm:text-sm"
+									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-black focus:outline-none focus:ring-black sm:text-sm"
 									placeholder="Seattle, WA"
 									type="text"
 									value={location}
-									requicyan
+									required
 									onChange={(e) => setLocation(e.target.value)}
 								/>
 							</div>
@@ -126,11 +126,11 @@ export function Form1({ onNextClick }: FormProps) {
 									What is your phone number?
 								</label>
 								<Input
-									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-cyan-300 focus:outline-none focus:ring-cyan-300 sm:text-sm"
+									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-black focus:outline-none focus:ring-black sm:text-sm"
 									placeholder="123-456-7890"
 									type="text"
 									value={phone}
-									requicyan
+									required
 									onChange={(e) => setPhone(e.target.value)}
 								/>
 							</div>
@@ -141,11 +141,11 @@ export function Form1({ onNextClick }: FormProps) {
 									</label>
 									<div className="mt-1">
 										<Textarea
-											className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-cyan-300 focus:outline-none focus:ring-cyan-300 sm:text-sm"
+											className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-black focus:outline-none focus:ring-black sm:text-sm"
 											placeholder="What are you working on?"
 											rows={4}
 											value={about}
-											requicyan
+											required
 											onChange={(e) => setAbout(e.target.value)}
 										/>
 									</div>

@@ -69,7 +69,7 @@ export function Form3({ onNextClick }: FormProps) {
 		<section>
 			<div className="flex flex-col justify-center m-auto">
 				<div className="flex flex-col justify-center text-center md:flex-row md:text-left">
-					<div className="flex flex-col justify-center max-w-2xl p-10 space-y-12 bg-white/70 rounded-2xl">
+					<div className="flex flex-col justify-center max-w-2xl p-4 pb-10 sm:pb-0 sm:p-10 space-y-12 bg-white/70 rounded-2xl">
 						<article>
 							<span className="inline-flex items-center text-black rounded-xl">
 								<span className="font-mono text-sm" aria-hidden="true">
@@ -102,7 +102,7 @@ export function Form3({ onNextClick }: FormProps) {
 							</div>
 							<div className="col-span-full">
 								<label className="block mb-3 text-sm font-medium text-gray-600">
-									Your Profile Tags  <span className="text-cyan-400">*at least 1 requicyan</span>
+									Your Profile Tags  <span className="text-cyan-400">*at least 1 required</span>
 								</label>
 								{profileTags.map((description, index) => (
 									<div key={index} className="flex items-center space-x-3 mb-2">
@@ -110,7 +110,7 @@ export function Form3({ onNextClick }: FormProps) {
 											className="block w-full px-4 py-2 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-cyan-300 focus:outline-none focus:ring-cyan-300 sm:text-sm"
 											placeholder={`Tag #${index + 1}`}
 											type="text"
-											requicyan
+											required
 											value={description}
 											onChange={(e) =>
 												updateProfileTags(index, e.target.value)
@@ -136,7 +136,7 @@ export function Form3({ onNextClick }: FormProps) {
 
 							<div className="col-span-full">
 								<label className="block mb-3 text-sm font-medium text-gray-600">
-									Your Interested Tags <span className="text-cyan-400">*at least 1 requicyan</span>
+									Your Interested Tags <span className="text-cyan-400">*at least 1 required</span>
 								</label>
 								{interestedTags.map((description, index) => (
 									<div key={index} className="flex items-center space-x-3 mb-2">
@@ -144,7 +144,7 @@ export function Form3({ onNextClick }: FormProps) {
 											className="block w-full px-4 py-2 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-cyan-300 focus:outline-none focus:ring-cyan-300 sm:text-sm"
 											placeholder={`Tag #${index + 1}`}
 											type="text"
-											requicyan
+											required
 											value={description}
 											onChange={(e) =>
 												updateInterestedTags(index, e.target.value)

@@ -39,7 +39,7 @@ export function Form2({ onNextClick }: FormProps) {
 		<section>
 			<div className="flex flex-col justify-center m-auto">
 				<div className="flex flex-col justify-center text-center md:flex-row md:text-left">
-					<div className="flex flex-col justify-center max-w-2xl p-10 space-y-12 bg-white/70 rounded-2xl">
+					<div className="flex flex-col justify-center max-w-2xl p-4 pb-10 sm:pb-0 sm:p-10 space-y-12 bg-white/70 rounded-2xl">
 						<article>
 							<span className="inline-flex items-center text-black rounded-xl">
 								<span className="font-mono text-sm" aria-hidden="true">
@@ -89,7 +89,7 @@ export function Form2({ onNextClick }: FormProps) {
 								<Input
 									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-cyan-300 focus:outline-none focus:ring-cyan-300 sm:text-sm"
 									placeholder="10+"
-									requicyan
+									required
 									type="text"
 									value={yearsOfExperience}
 									onChange={(e) => setYearsOfExperience(e.target.value)}

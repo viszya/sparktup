@@ -53,9 +53,9 @@ export default function Onboarding() {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center my-8">
-      <Tabs value={activeTab} className="flex flex-col justify-center items-center">
-        <TabsList className="gap-x-6 px-4">
+    <div className="flex flex-col justify-center items-center mb-0 mt-8 sm:mb-8">
+      <Tabs value={activeTab} className=" flex flex-col justify-center items-center">
+        <TabsList className="gap-x-6 px-4 hidden md:block">
           <TabsTrigger value="profile">Profile</TabsTrigger>
           <Icons.chevronRight className="text-gray-300 h-5 w-5" />
           <TabsTrigger value="work">Work</TabsTrigger>
@@ -75,7 +75,7 @@ export default function Onboarding() {
 
       {/* Back Button */}
       {activeTab !== "profile" && (
-        <button onClick={handleBackButtonClick} className={cn(buttonVariants({ variant: "outline" }), "rounded-full")}>
+        <button onClick={handleBackButtonClick} className={cn(buttonVariants({ variant: "outline" }), " my-4 rounded-full")}>
           Back
         </button>
       )}

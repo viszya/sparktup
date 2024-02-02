@@ -10,7 +10,7 @@ export default function About() {
             <h2 className="mb-5 mt-10 text-center text-3xl font-bold tracking-tight">
               About Sparktup
             </h2>
-            <div className="mt-4 rounded-xl border-2 border-white/80 bg-white p-4 text-base text-black md:mt-6 md:text-lg ">
+            <div className="mt-4 rounded-xl border-2 border-black bg-black p-4 text-base text-white md:mt-6 md:text-lg ">
               Welcome to Sparktup, where innovation meets opportunity. Founded
               by Vedant Lad, Vishwa Anand, and Akshay Burra, Sparktup was born
               out of a shared vision to revolutionize the way individuals and
@@ -27,9 +27,9 @@ export default function About() {
             <h2 className="mb-5 mt-10 text-center text-3xl font-bold tracking-tight">
               Mission and Goals
             </h2>
-            <div className="mt-4 rounded-xl border-2 border-white/80 bg-white p-4 text-base text-black/80 md:mt-6 md:text-lg">
+            <div className="mt-4 rounded-xl border-2 border-black bg-black p-4 text-base text-white/80 md:mt-6 md:text-lg">
               <div>
-                <span className="text-lg tracking-tighter text-black md:text-xl">
+                <span className="text-lg tracking-tighter text-white md:text-xl">
                   Our Mission:
                 </span>{" "}
                 <br />
@@ -37,27 +37,27 @@ export default function About() {
                 individuals to ignite and advance their tech careers.
               </div>
               <div className="mt-4">
-                <span className="text-lg tracking-tighter text-black md:text-xl">
+                <span className="text-lg tracking-tighter text-white md:text-xl">
                   Our Goals:
                 </span>
                 <br />
                 <ul className="space-y-2">
                   <li>
-                    <span className="text-base tracking-tighter text-black md:text-lg">
+                    <span className="text-base tracking-tighter text-white md:text-lg">
                       &nbsp; - &nbsp;Empowerment:
                     </span>{" "}
                     Empower individuals to take control of their tech journeys
                     by providing access to exciting opportunities and resources.
                   </li>
                   <li>
-                    <span className="text-base tracking-tighter text-black md:text-lg">
+                    <span className="text-base tracking-tighter text-white md:text-lg">
                       &nbsp; - &nbsp;Innovation:
                     </span>{" "}
                     Foster a vibrant tech ecosystem that encourages
                     collaboration, innovation, and continuous learning.
                   </li>
                   <li>
-                    <span className="text-base tracking-tighter text-black md:text-lg">
+                    <span className="text-base tracking-tighter text-white md:text-lg">
                       &nbsp; - &nbsp;Simplicity:
                     </span>{" "}
                     Streamline the process for businesses to find the right
@@ -65,7 +65,7 @@ export default function About() {
                     opportunities with ease.
                   </li>
                   <li>
-                    <span className="text-base tracking-tighter text-black md:text-lg">
+                    <span className="text-base tracking-tighter text-white md:text-lg">
                       &nbsp; - &nbsp;Community:
                     </span>{" "}
                     Cultivate a supportive community where success is shared,
@@ -79,7 +79,7 @@ export default function About() {
             <h2 className="mb-5 mt-10 text-center text-3xl font-bold tracking-tight">
               Join Us in Sparking Tech Success
             </h2>
-            <div className="mt-4 rounded-xl border-2 border-white/80 bg-white p-4 text-base text-black/80 md:mt-6 md:text-lg">
+            <div className="mt-4 rounded-xl border-2 border-black bg-black p-4 text-base text-white md:mt-6 md:text-lg">
               Whether you&apos;re a business seeking top tech talent or an
               individual ready to ignite your tech career, Sparktup is your
               go-to platform. Join us in shaping the future of technology—where
