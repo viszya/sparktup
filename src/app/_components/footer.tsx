@@ -19,16 +19,16 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
                         </div>
                         <div className="flex justify-center sm:block">
                         <nav className="flex gap-8 mt-11 justify-start">
-                            <Link className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm text-white/80 hover:text-white transition-colors duration-150 " href="/faq">
+                            <Link className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm text-white/70 hover:text-white transition-colors duration-150 " href="/faq">
                                 FAQ
                             </Link>
-                            <Link className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm  text-white/80 hover:text-white transition-colors duration-150 " href="/about">
+                            <Link className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm  text-white/70 hover:text-white transition-colors duration-150 " href="/about">
                                 About
                             </Link>
-                            <Link className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm  text-white/80 hover:text-white transition-colors duration-150" href="/tos">
+                            <Link className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm  text-white/70 hover:text-white transition-colors duration-150" href="/tos">
                                 Terms
                             </Link>
-                            <Link className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm  text-white/80 hover:text-white transition-colors duration-150" href="/privacy">
+                            <Link className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm  text-white/70 hover:text-white transition-colors duration-150" href="/privacy">
                                 Privacy Policy
                             </Link>
                         </nav>
@@ -44,14 +44,14 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
                                 <span className="absolute inset-0 sm:rounded-2xl"></span>Stay
                                     updated
                             </p>
-                            <p className="mt-1 text-sm text-gray-500 hover:text-white">
+                            <p className="mt-1 text-sm text-white/70 hover:text-white">
                                 Follow us for social media for news and updates
                             </p>
                         </Link>
                     </div>
                 </div>
                 <div className="flex flex-col items-center pt-4 pb-4 md:flex-row-reverse md:justify-between ">
-                    <p className=" text-sm text-gray-500 md:mt-0">
+                    <p className=" text-sm text-white/70 md:mt-0">
                         SparktUp © Copyright 2023 All Rights Reserved
                     </p>
                 </div>
