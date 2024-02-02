@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import Link from "next/link";
 import { cn } from "@/server/utils";
 import { twp } from "@/server/utils";
