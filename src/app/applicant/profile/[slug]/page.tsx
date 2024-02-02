@@ -298,8 +298,9 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
                 {data.projects.map((data: any) => (
                   <Link
                     href={data.link}
-                    className="flex flex-col items-center justify-center rounded-2xl border-2 border-black bg-white p-2 hover:bg-gray-300/20"
-                  >
+                    className="flex flex-col items-center justify-center rounded-2xl border-2 border-black bg-white p-2 hover:border-white hover:bg-gray-200 transition"
+                    >
+
                     <div className="my-4 text-xl ">{data.name}</div>
                     <Image
                       className="rounded-2xl"

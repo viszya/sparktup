@@ -38,8 +38,8 @@ export function Form1({ onNextClick, addFormVals }: any) {
 
     return (
         <section>
-            <div className="flex flex-col mt-5 p-5 border border-secondary rounded-xl">
-                <div className="flex flex-col justify-center text-center md:flex-row md:text-left">
+            <div className="flex flex-col mt-5 p-5 border border-secondary rounded-xl bg-white/70 ">
+                <div className="flex flex-col justify-center text-center md:flex-row md:text-left ">
                     <div className="flex flex-col justify-center max-w-5xl w-full  space-y-12">
                         <article>
                             <span className="inline-flex items-center text-primary rounded-xl">
@@ -103,7 +103,7 @@ export function Form1({ onNextClick, addFormVals }: any) {
                                     onChange={(e) => setYearsOfExperience(e.target.value)}
                                 />
                             </div>
-                            
+
                             <div className="col-span-full">
 								<label className="block mb-3 text-sm font-medium text-primary/900">
 									Are you available for work?
@@ -129,7 +129,7 @@ export function Form1({ onNextClick, addFormVals }: any) {
 								/>
 								<span className="text-gray-600">Yes, I am available for work</span>
 							</div>
-                            
+
                             <div className="col-span-full">
                                 <button
                                     type="submit"

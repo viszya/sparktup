@@ -5,7 +5,7 @@ import { Icons } from "@/app/_components/icons"
 import { Home } from "@/app/_components/dashboard/home";
 import Nav from "@/app/_components/main-nav"
 import { Toaster } from "@/app/_components/ui/toaster"
-import { redirect } from "next/navigation"
+import { cyanirect } from "next/navigation"
 import { Separator } from "@/app/_components/ui/separator"
 
 import {
@@ -39,7 +39,7 @@ export default function Dashboard() {
 				<h2 className="text-xl font-bold tracking-tight">Analytics</h2>
 			</div>
 			<Stats />
-			
+
 
 			<div className="mt-4 mb-4">
 				<h2 className="text-xl font-bold tracking-tight">Recent Applications</h2>

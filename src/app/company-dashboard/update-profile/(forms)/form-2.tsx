@@ -40,7 +40,7 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
 
     return (
         <section>
-            <div className="flex flex-col mt-5 p-5 border border-secondary rounded-xl">
+            <div className="flex flex-col mt-5 p-5 border border-secondary rounded-xl bg-white/70">
                 <div className="flex flex-col justify-center text-center md:flex-row md:text-left">
                     <div className="flex flex-col justify-center max-w-5xl w-full  space-y-12">
                         <article>
@@ -165,7 +165,7 @@ export function Form2({ onNextClick, addFormVals, onBackClick }: any) {
                         <button onClick={onNextClick} className={cn(buttonVariants({ variant: "default" }), " rounded-xl w-26")}>
                            Next
                            <Icons.chevronRight className="h-5 w-5 ml-2" />
-                        
+
                         </button>
                     ) : (<></>)}
                 </div>

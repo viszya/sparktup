@@ -121,6 +121,14 @@
     height: 100%;
   }
 
+  .applicant-bg-2 {
+    background-image: url("/applicant-bg-2.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100%;
+  }
+
 
   .landing-bg {
     background-image: url("/l-bg.jpg");
@@ -147,6 +155,14 @@
   }
   .gradient-bg-3 {
     background-image: url("/gradient-p3.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100%;
+  }
+
+  .company-bg-2 {
+    background-image: url("/company-bg-2.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 100vw;

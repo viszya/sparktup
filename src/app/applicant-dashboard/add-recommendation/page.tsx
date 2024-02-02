@@ -48,8 +48,8 @@ export default function AddContactInfo() {
                 </p>
             </div>
             <div className="flex flex-col justify-center w-full max-w-5xl">
-                <div className="flex flex-col mt-5 p-5 border border-secondary rounded-xl">
-                    <div className="flex flex-col justify-center text-center md:flex-row md:text-left">
+                <div className="flex flex-col mt-5 p-5 border border-secondary rounded-xl bg-white/70 ">
+                    <div className="flex flex-col justify-center text-center md:flex-row md:text-left ">
                         <div className="flex flex-col justify-center max-w-5xl w-full  space-y-12">
                             <form
                                 className="flex flex-col gap-y-9"
@@ -101,7 +101,7 @@ export default function AddContactInfo() {
                                     <label className="block mb-3 text-sm font-medium text-primary/90">
                                         Recommendation Letter
                                     </label>
-                                    <Textarea 
+                                    <Textarea
                                      placeholder=".pdf"
                                      value={message}
                                      className="rounded-2xl px-6 py-3 placeholder:text-primary/40 border-primary/20"

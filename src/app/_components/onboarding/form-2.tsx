@@ -72,10 +72,10 @@ export function Form2({ onNextClick }: FormProps) {
 							</div>
 							<div className="col-span-full">
 								<label className="block mb-3 text-sm font-medium text-gray-600">
-									What is your main profession or job title? <span className="text-red-400">*optional</span>
+									What is your main profession or job title? <span className="text-cyan-400">*optional</span>
 								</label>
 								<Input
-									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
+									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-cyan-300 focus:outline-none focus:ring-cyan-300 sm:text-sm"
 									placeholder="Full Stack Developer, etc."
 									type="text"
 									value={jobTitle}
@@ -84,12 +84,12 @@ export function Form2({ onNextClick }: FormProps) {
 							</div>
 							<div className="col-span-full">
 								<label className="block mb-3 text-sm font-medium text-gray-600">
-									How many years of experience do you have? 
+									How many years of experience do you have?
 								</label>
 								<Input
-									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
+									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-cyan-300 focus:outline-none focus:ring-cyan-300 sm:text-sm"
 									placeholder="10+"
-									required
+									requicyan
 									type="text"
 									value={yearsOfExperience}
 									onChange={(e) => setYearsOfExperience(e.target.value)}

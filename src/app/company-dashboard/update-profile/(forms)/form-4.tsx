@@ -39,7 +39,7 @@ export function Form4({ onNextClick, addFormVals, onBackClick }: any) {
 
     return (
         <section>
-            <div className="flex flex-col mt-5 p-5 border border-secondary rounded-xl">
+            <div className="flex flex-col mt-5 p-5 border border-secondary rounded-xl bg-white/70">
                 <div className="flex flex-col justify-center text-center md:flex-row md:text-left">
                     <div className="flex flex-col justify-center max-w-5xl w-full  space-y-12">
                         <article>
@@ -52,7 +52,7 @@ export function Form4({ onNextClick, addFormVals, onBackClick }: any) {
                                 Unveiling Your Key Benefits, Features, and Culture
                             </div>
                             <div className="mt-4 text-primary/80">
-                                What are your company&apos;s key Benefits, and Features? & What is your Company&apos;s Culture? 
+                                What are your company&apos;s key Benefits, and Features? & What is your Company&apos;s Culture?
                             </div>
                         </article>
                         <form
@@ -62,7 +62,7 @@ export function Form4({ onNextClick, addFormVals, onBackClick }: any) {
                                 onSubmit();
                             }}
                         >
-                            
+
 
                             <div className="col-span-full">
                                 <label className="block mb-3 text-sm font-medium text-primary/90">What are your Company&apos;s Key Benefits?</label>

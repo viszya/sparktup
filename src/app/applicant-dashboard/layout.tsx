@@ -35,7 +35,7 @@ export default function DashboardLayout({
   const [isGitHubLoading, setIsGitHubLoading] = useState<boolean>(false)
 
   return (
-    <div className="flex min-h-screen flex-col space-y-6 bg-white">
+    <div className="flex min-h-screen flex-col space-y-6 bg-white gradient-bg-2">
       <header className="sticky top-0 z-40 border-b bg-background">
         <div className="mx-32 lg:mx-10 md:mx-8 sm:mx-2  flex h-16 items-center justify-between py-4">
           <MainNav items={dashboardConfig.mainNav} />

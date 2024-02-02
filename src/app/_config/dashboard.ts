@@ -38,7 +38,7 @@ export const dashboardConfig: DashboardConfig = {
       icon: "sparkles",
     },
     {
-      title: "Add Recommendations",
+      title: "Recommendations",
       href: "/applicant-dashboard/add-recommendation",
       icon: "usercheck",
     },

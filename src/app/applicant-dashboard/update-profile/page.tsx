@@ -32,7 +32,7 @@ export default function UpdateProfilePage() {
     const updateProfile2 = api.settings.updateProfile2.useMutation({
         onSuccess: () => {
             toast({
-                title: "Success", 
+                title: "Success",
                 description: "Profile has been updated at " + formatDate(Date()),
             });
         },
@@ -74,23 +74,23 @@ export default function UpdateProfilePage() {
     }
 
     function handleSubmitClick() {
-        
+
         settingsForm2.mutate({
             skillName: skillName1,
             skillDescription: description1,
-            color: "red",
+            color: "cyan",
         });
         settingsForm2.mutate({
             skillName: skillName2,
             skillDescription: description2,
-            color: "red",
+            color: "cyan",
         });
         settingsForm2.mutate({
             skillName: skillName3,
             skillDescription: description3,
-            color: "red",
+            color: "cyan",
         });
-        
+
         updateProfile2.mutate({
             about,
             jobTitle,

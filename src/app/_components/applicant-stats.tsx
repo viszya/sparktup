@@ -18,22 +18,22 @@ export function Stats() {
 
     return (
         <div className="grid grid-cols-3 gap-x-2 w-full max-w-5xl p-2 border border-secondary rounded-xl mt-2">
-            <Card className="border-red-300">
+            <Card className="border-cyan-300 bg-black text-white">
 					<CardHeader>
 						<CardTitle>{getStats.data.views}</CardTitle>
-						<CardDescription>Profile Views</CardDescription>
+						<CardDescription className="text-white/70">Profile Views</CardDescription>
 					</CardHeader>
 				</Card>
-				<Card>
-					<CardHeader>
+				<Card className="bg-black text-white">
+					<CardHeader >
 						<CardTitle>{getStats.data.applicationCount}</CardTitle>
-						<CardDescription>Applications Submitted</CardDescription>
+						<CardDescription className="text-white/70">Applications Submitted</CardDescription>
 					</CardHeader>
 				</Card>
-				<Card>
+				<Card  className="bg-black text-white">
 					<CardHeader>
 						<CardTitle>{getStats.data.acceptedApplications}</CardTitle>
-						<CardDescription>Applications Accepted</CardDescription>
+						<CardDescription className="text-white/70">Applications Accepted</CardDescription>
 					</CardHeader>
 				</Card>
         </div>

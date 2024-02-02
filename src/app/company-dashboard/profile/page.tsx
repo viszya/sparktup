@@ -52,7 +52,7 @@ export default function MyProfile() {
                                     {data.size}
                                 </div>
                                 <Drawer>
-                                    <DrawerTrigger className="w-full flex flex-row justify-center items-center px-3 py-0.5 text-sm border font-medium text-gray-500 duration-200 rounded-sm hover:text-red-300 hover:border-red-400 hover:scale-95 hover:cursor-pointer">
+                                    <DrawerTrigger className="w-full flex flex-row justify-center items-center px-3 py-0.5 text-sm border font-medium text-gray-500 duration-200 rounded-sm hover:text-cyan-300 hover:border-cyan-400 hover:scale-95 hover:cursor-pointer">
                                         <Icons.contact className="h-4 w-4 mr-2" />
                                         Contact Us
                                     </DrawerTrigger>
@@ -329,8 +329,8 @@ export default function MyProfile() {
                             <div className="grid grid-cols-3 gap-8">
                                 <div className="col-span-1 p-4 bg-gray-300/10 rounded-xl border-2 border-gray-200">
                                     <div className="flex items-center space-x-2 mb-4 ">
-                                        <Icons.heart className="h-4 w-4 text-red-500" />
-                                        <span className="text-lg font-semibold">Featured</span>
+                                        <Icons.heart className="h-4 w-4 text-cyan-500" />
+                                        <span className="text-lg font-semibold">Featucyan</span>
                                     </div>
                                     <ul className="space-y-2">
                                         <li className="text-sm font-medium text-gray-700">Environmental sustainability</li>
@@ -348,7 +348,7 @@ export default function MyProfile() {
                                     <p className="text-sm text-gray-700 mb-4">
                                         Microsoft has public, time-bound commitments to become carbon negative, water positive, and zero waste in
                                         our operations by 2030. Microsoft is accelerating progress toward a more sustainable future by measuring and
-                                        reducing our environmental footprint, accelerating research, helping our customers build sustainable
+                                        cyanucing our environmental footprint, accelerating research, helping our customers build sustainable
                                         solutions, and advocating for policies that combat climate change and promote environmental justice.
                                     </p>
                                 </div>

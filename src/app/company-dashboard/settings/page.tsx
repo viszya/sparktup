@@ -46,7 +46,7 @@ export default function AddContactInfo() {
 				</p>
 			</div>
 			<div className="flex flex-col justify-center w-full max-w-5xl">
-				<div className="flex flex-col mt-5 p-5 border border-secondary rounded-xl">
+				<div className="flex flex-col mt-5 p-5 border border-secondary rounded-xl bg-white/70">
 					<div className="flex flex-col justify-center text-center md:flex-row md:text-left">
 						<div className="flex flex-col justify-center max-w-5xl w-full  space-y-12">
 							<form

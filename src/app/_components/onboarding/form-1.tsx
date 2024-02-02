@@ -74,11 +74,11 @@ export function Form1({ onNextClick }: FormProps) {
 									What is your full name (first / last)?
 								</label>
 								<Input
-									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
+									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-cyan-300 focus:outline-none focus:ring-cyan-300 sm:text-sm"
 									placeholder="Jeff Bezos"
 									type="text"
 									value={fullName}
-									required
+									requicyan
 									onChange={(e) => setFullName(e.target.value)}
 								/>
 							</div>
@@ -87,11 +87,11 @@ export function Form1({ onNextClick }: FormProps) {
 									What is your professional email address?
 								</label>
 								<Input
-									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
+									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-cyan-300 focus:outline-none focus:ring-cyan-300 sm:text-sm"
 									placeholder="jeffbezos@example.com"
 									type="text"
 									value={proEmail}
-									required
+									requicyan
 									onChange={(e) => setProEmail(e.target.value)}
 								/>
 							</div>
@@ -100,11 +100,11 @@ export function Form1({ onNextClick }: FormProps) {
 									Choose a username
 								</label>
 								<Input
-									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
+									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-cyan-300 focus:outline-none focus:ring-cyan-300 sm:text-sm"
 									placeholder="jeffbezos"
 									type="text"
 									value={username}
-									required
+									requicyan
 									onChange={(e) => setUsername(e.target.value)}
 								/>
 							</div>
@@ -113,11 +113,11 @@ export function Form1({ onNextClick }: FormProps) {
 									Where are you located?
 								</label>
 								<Input
-									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
+									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-cyan-300 focus:outline-none focus:ring-cyan-300 sm:text-sm"
 									placeholder="Seattle, WA"
 									type="text"
 									value={location}
-									required
+									requicyan
 									onChange={(e) => setLocation(e.target.value)}
 								/>
 							</div>
@@ -126,11 +126,11 @@ export function Form1({ onNextClick }: FormProps) {
 									What is your phone number?
 								</label>
 								<Input
-									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
+									className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-cyan-300 focus:outline-none focus:ring-cyan-300 sm:text-sm"
 									placeholder="123-456-7890"
 									type="text"
 									value={phone}
-									required
+									requicyan
 									onChange={(e) => setPhone(e.target.value)}
 								/>
 							</div>
@@ -141,11 +141,11 @@ export function Form1({ onNextClick }: FormProps) {
 									</label>
 									<div className="mt-1">
 										<Textarea
-											className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-red-300 focus:outline-none focus:ring-red-300 sm:text-sm"
+											className="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-cyan-300 focus:outline-none focus:ring-cyan-300 sm:text-sm"
 											placeholder="What are you working on?"
 											rows={4}
 											value={about}
-											required
+											requicyan
 											onChange={(e) => setAbout(e.target.value)}
 										/>
 									</div>
