@@ -3,7 +3,7 @@
 import { twp, cn } from "@/server/utils";
 import { Icons } from "@/app/_components/icons";
 import Image from "next/image";
-import { Button } from "@/app/_components/ui/button";
+import { Button, buttonVariants } from "@/app/_components/ui/button";
 import { api } from "@/trpc/react";
 import {
   Carousel,

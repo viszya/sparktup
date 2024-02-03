@@ -11,6 +11,7 @@ import { cn } from "@/server/utils";
 import { useSearchParams } from "next/navigation";
 import { Icons } from "@/app/_components/icons";
 import { Skeleton } from "@/app/_components/ui/skeleton";
+import { Button } from "@/app/_components/ui/button";
 import Link from "next/link";
 import {
   AlertDialog,
@@ -56,6 +57,10 @@ export default function JobApplicationForm() {
       setIsNextLoading(false);
     },
   });
+
+
+
+
   const addApplicationCount = api.test.addApplicationCount.useMutation({});
   useEffect(() => {
     addApplicationCount.mutate({ id: id });
@@ -160,6 +165,36 @@ export default function JobApplicationForm() {
       }),
     });
   }
+
+  function updateFormValuesWithExampleData() {
+    const exampleData = {
+      technicalSkills: "JavaScript, React",
+      softSkills: "Communication, Teamwork",
+      certifications: "Certified Developer",
+      startDate: "01/01/2023",
+      employmentType: "Full-time",
+      desiredWorkSchedule: "Weekdays",
+      convictedOfCrime: "No",
+      interestReason: "I love the company's mission.",
+      suitableCandidateReason: "I have relevant experience.",
+      challengingSituation: "Handled tight project deadlines successfully.",
+      backgroundCheckAuthorization: true,
+      termsAndConditionsAgreement: true,
+    };
+
+    setTechnicalSkills(exampleData.technicalSkills);
+    setSoftSkills(exampleData.softSkills);
+    setCertifications(exampleData.certifications);
+    setStartDate(exampleData.startDate);
+    setEmploymentType(exampleData.employmentType);
+    setDesiredWorkSchedule(exampleData.desiredWorkSchedule);
+    setConvictedOfCrime(exampleData.convictedOfCrime);
+    setInterestReason(exampleData.interestReason);
+    setSuitableCandidateReason(exampleData.suitableCandidateReason);
+    setChallengingSituation(exampleData.challengingSituation);
+    setBackgroundCheckAuthorization(exampleData.backgroundCheckAuthorization);
+    setTermsAndConditionsAgreement(exampleData.termsAndConditionsAgreement);
+  };
 
   return (
     <div className="gradient-bg-2 bg-white">
@@ -429,6 +464,9 @@ export default function JobApplicationForm() {
                     </AlertDialog>
                   </div>
                 </form>
+                <Button className="rounded-2xl w-24" onClick={updateFormValuesWithExampleData}>
+                    Input Data
+                </Button>
               </div>
             </div>
           </div>
