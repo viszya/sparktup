@@ -65,7 +65,18 @@ const Nav = async () => {
                 <DropdownMenuLabel>MENU</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
-                  <Link href="/company/positions">
+                  <Link href="/signin">
+                    Sign In
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/signup">
+                    Sign Up
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  <Link href="/solutions">
                     Solutions
                   </Link>
                 </DropdownMenuItem>
