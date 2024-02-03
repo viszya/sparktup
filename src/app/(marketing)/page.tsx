@@ -201,17 +201,7 @@ export default function Home() {
       </section>
 
       <section className="w-full bg-black py-32">
-        <div className=" rounded-xl bg-gray-900/5 p-4 ring-1 ring-inset ring-gray-900/10  lg:rounded-2xl">
-          <Image
-            priority={true}
-            src="/company-pre.png"
-            alt="product preview"
-            width={1000}
-            height={200}
-            quality={100}
-            className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
-          />
-        </div>
+
         <h1 className="text-3xl text-white ">
           <span className="text-7xl font-semibold">Are you a company?</span>{" "}
           <br />
