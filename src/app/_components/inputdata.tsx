@@ -6,131 +6,131 @@ import { useState } from "react";
 import { api } from "@/trpc/react";
 
 const data = [
-    {
-        fullName: "Alexander Sandberg",
-        jobTitle: "Software Developer",
-        proEmail: "alexandr@gmail.com",
-        username: "alexander",
-        phone: "+43 123 456 789",
-        location: "Linz, Upper Austria, Austria",
-        connections: "500+",
-        yearsOfExperience: "8",
-        about: "I'm a self-taught, product-minded iOS/macOS Engineer with a background in web development and product design. Due to my curiosity for both design and development, I love working on meaningful products in close collaboration with designers and product people, and being part of the 'why'",
-        avaiableForWork: true,
-        hasAJob: true,
-        profileSrc: "/profile2.png",
-        experiences: [
-            {
-                companyLogoSrc: "/applelogo.png",
-                companyName: "Apple",
-                companyImgSrc: "/apple.png",
-                engagement: "Full-Time",
-                relativeOfWork: "Remote",
-                jobTitle: "Senior iOS Developer",
-                location: "Linz, Upper Austria, Austria",
-                time: "Nov 2021 - Sep 2023 · 1 yr 11 mos",
-                jobDescriptions: [
-                    "Designed, developed, and owned the administrative tool for Apple's internal systems; Apple Admin Hub",
-                    "Led the development and successful launch of iPadOS support for the Apple News app",
-                    "Spearheaded the development, release, and ongoing management of the Apple News app for iOS devices",
-                    "Collaborated closely with the iOS development team to ensure the implementation of clean and concise code",
-                ],
-            },
-            {
-                companyLogoSrc: "/applelogo.png",
-                companyName: "Apple",
-                companyImgSrc: "/apple.png",
-                engagement: "Full-Time",
-                relativeOfWork: "Remote",
-                jobTitle: "Senior iOS Developer",
-                location: "Linz, Upper Austria, Austria",
-                time: "Nov 2021 - Sep 2023 · 1 yr 11 mos",
-                jobDescriptions: [
-                    "Designed, developed, and owned the administrative tool for Apple's internal systems; Apple Admin Hub",
-                    "Led the development and successful launch of iPadOS support for the Apple News app",
-                    "Spearheaded the development, release, and ongoing management of the Apple News app for iOS devices",
-                    "Collaborated closely with the iOS development team to ensure the implementation of clean and concise code",
-                ],
-            },
-        ],
-        projects: [
-            {
-                name: "UI Masterclass",
-                src: "/dashboard-preview.png",
-                link: "https://google.com",
-            },
-            {
-                name: "UI Masterclass",
-                src: "/dashboard-preview.png",
-                link: "https://google.com",
-            },
-            {
-                name: "UI Masterclass",
-                src: "/dashboard-preview.png",
-                link: "https://google.com",
-            },
-            {
-                name: "UI Masterclass",
-                src: "/dashboard-preview.png",
-                link: "https://google.com",
-            },
-        ],
-        topSkills: [
-            {
-                skillName: "iOS Development",
-                color: "red",
-                skillDescription: "Proficient in iOS development with a focus on creating seamless and engaging mobile experiences for users.",
-            },
-            {
-                skillName: "Next.js Development",
-                color: "purple",
-                skillDescription: "Skilled in building robust and scalable web applications using Next.js for efficient server-side rendering.",
-            },
-            {
-                skillName: "React Development",
-                color: "teal",
-                skillDescription: "Experienced in building dynamic and interactive user interfaces using React for modern web applications.",
-            },
-        ],
-        recommendations: [
-            {
-                name: "Volkan Kaya",
-                jobTitle: "Founder of Versoly.com",
-                srcImage: "/profile2.png",
-                message: "Snowflake is a cloud data platform that enables data storage, processing, and analytics solutions for businesses. With the Data Cloud platform, Snowflake manages the complexities of data storage infrastructure, enabling organizations to focus on building data-driven solutions",
+    // {
+    //     fullName: "Alexander Sandberg",
+    //     jobTitle: "Software Developer",
+    //     proEmail: "alexandr@gmail.com",
+    //     username: "alexander",
+    //     phone: "+43 123 456 789",
+    //     location: "Linz, Upper Austria, Austria",
+    //     connections: "500+",
+    //     yearsOfExperience: "8",
+    //     about: "I'm a self-taught, product-minded iOS/macOS Engineer with a background in web development and product design. Due to my curiosity for both design and development, I love working on meaningful products in close collaboration with designers and product people, and being part of the 'why'",
+    //     avaiableForWork: true,
+    //     hasAJob: true,
+    //     profileSrc: "/profile2.png",
+    //     experiences: [
+    //         {
+    //             companyLogoSrc: "/applelogo.png",
+    //             companyName: "Apple",
+    //             companyImgSrc: "/apple.png",
+    //             engagement: "Full-Time",
+    //             relativeOfWork: "Remote",
+    //             jobTitle: "Senior iOS Developer",
+    //             location: "Linz, Upper Austria, Austria",
+    //             time: "Nov 2021 - Sep 2023 · 1 yr 11 mos",
+    //             jobDescriptions: [
+    //                 "Designed, developed, and owned the administrative tool for Apple's internal systems; Apple Admin Hub",
+    //                 "Led the development and successful launch of iPadOS support for the Apple News app",
+    //                 "Spearheaded the development, release, and ongoing management of the Apple News app for iOS devices",
+    //                 "Collaborated closely with the iOS development team to ensure the implementation of clean and concise code",
+    //             ],
+    //         },
+    //         {
+    //             companyLogoSrc: "/applelogo.png",
+    //             companyName: "Apple",
+    //             companyImgSrc: "/apple.png",
+    //             engagement: "Full-Time",
+    //             relativeOfWork: "Remote",
+    //             jobTitle: "Senior iOS Developer",
+    //             location: "Linz, Upper Austria, Austria",
+    //             time: "Nov 2021 - Sep 2023 · 1 yr 11 mos",
+    //             jobDescriptions: [
+    //                 "Designed, developed, and owned the administrative tool for Apple's internal systems; Apple Admin Hub",
+    //                 "Led the development and successful launch of iPadOS support for the Apple News app",
+    //                 "Spearheaded the development, release, and ongoing management of the Apple News app for iOS devices",
+    //                 "Collaborated closely with the iOS development team to ensure the implementation of clean and concise code",
+    //             ],
+    //         },
+    //     ],
+    //     projects: [
+    //         {
+    //             name: "UI Masterclass",
+    //             src: "/dashboard-preview.png",
+    //             link: "https://google.com",
+    //         },
+    //         {
+    //             name: "UI Masterclass",
+    //             src: "/dashboard-preview.png",
+    //             link: "https://google.com",
+    //         },
+    //         {
+    //             name: "UI Masterclass",
+    //             src: "/dashboard-preview.png",
+    //             link: "https://google.com",
+    //         },
+    //         {
+    //             name: "UI Masterclass",
+    //             src: "/dashboard-preview.png",
+    //             link: "https://google.com",
+    //         },
+    //     ],
+    //     topSkills: [
+    //         {
+    //             skillName: "iOS Development",
+    //             color: "red",
+    //             skillDescription: "Proficient in iOS development with a focus on creating seamless and engaging mobile experiences for users.",
+    //         },
+    //         {
+    //             skillName: "Next.js Development",
+    //             color: "purple",
+    //             skillDescription: "Skilled in building robust and scalable web applications using Next.js for efficient server-side rendering.",
+    //         },
+    //         {
+    //             skillName: "React Development",
+    //             color: "teal",
+    //             skillDescription: "Experienced in building dynamic and interactive user interfaces using React for modern web applications.",
+    //         },
+    //     ],
+    //     recommendations: [
+    //         {
+    //             name: "Volkan Kaya",
+    //             jobTitle: "Founder of Versoly.com",
+    //             srcImage: "/profile2.png",
+    //             message: "Snowflake is a cloud data platform that enables data storage, processing, and analytics solutions for businesses. With the Data Cloud platform, Snowflake manages the complexities of data storage infrastructure, enabling organizations to focus on building data-driven solutions",
 
-            },
-            {
-                name: "Amrit Nagi",
-                jobTitle: "Founder of Tailwind Toolbox",
-                srcImage: "/profile2.png",
-                message: "Upswing securities passively index inverse bondholders capitalization financial health Moody's debt managed. Receive bondholders called capitalization investment grade bonds bills management district stocks. Potential funds consulting expenses.",
+    //         },
+    //         {
+    //             name: "Amrit Nagi",
+    //             jobTitle: "Founder of Tailwind Toolbox",
+    //             srcImage: "/profile2.png",
+    //             message: "Upswing securities passively index inverse bondholders capitalization financial health Moody's debt managed. Receive bondholders called capitalization investment grade bonds bills management district stocks. Potential funds consulting expenses.",
 
-            },
-            {
-                name: "Mike Jones",
-                jobTitle: "Blogger at Raspada",
-                srcImage: "/profile2.png",
-                message: "Debt bills lucrative capitalization municipal bonds government 401k bear bull credit corporate bonds called NYSE finance. Managed prices bondholders federal risk NASDAQ hedge fund expenses municipal bonds management.",
-            },
-        ],
-        profileTags: [
-            "ios",
-            "developer",
-            "apple"
-        ],
-        interestedTags: [
-            "DSFDFS",
-            "developer",
-            "apple"
-        ],
-        resumeLink: "https://google.com",
-    },
+    //         },
+    //         {
+    //             name: "Mike Jones",
+    //             jobTitle: "Blogger at Raspada",
+    //             srcImage: "/profile2.png",
+    //             message: "Debt bills lucrative capitalization municipal bonds government 401k bear bull credit corporate bonds called NYSE finance. Managed prices bondholders federal risk NASDAQ hedge fund expenses municipal bonds management.",
+    //         },
+    //     ],
+    //     profileTags: [
+    //         "ios",
+    //         "developer",
+    //         "apple"
+    //     ],
+    //     interestedTags: [
+    //         "DSFDFS",
+    //         "developer",
+    //         "apple"
+    //     ],
+    //     resumeLink: "https://google.com",
+    // },
     {
       fullName: "Emma Clarke",
       jobTitle: "Frontend Developer",
       proEmail: "emma_clarke@gmail.com",
-      profileSrc: "/applicant2.png",
+      profileSrc: "/wp4.jpeg",
       username: "emmaclarke",
       phone: "+44 752 334 5678",
       location: "Manchester, England, UK",
@@ -253,7 +253,7 @@ const data = [
       yearsOfExperience: "6",
       about: "Creative and detail-oriented UX/UI Designer with a passion for creating intuitive and user-friendly digital experiences. My focus is on designing for both functionality and aesthetic appeal.",
       avaiableForWork: false,
-      profileSrc: "/applicant3.jpeg",
+      profileSrc: "/wp2.jpeg",
       hasAJob: true,
       experiences: [
         {
@@ -324,7 +324,7 @@ const data = [
       phone: "+1 555 789 012",
       location: "Toronto, Canada",
       connections: "200+",
-      profileSrc: "/applicant4.jpeg",
+      profileSrc: "/wp1.jpeg",
       yearsOfExperience: "3",
       about: "Eager Full Stack Developer with a strong foundation in both front-end and back-end technologies, especially in the MERN stack. I love to solve complex problems with efficient and elegant code.",
       avaiableForWork: true,
@@ -391,9 +391,9 @@ const data = [
       resumeLink: "https://google.com/",
     },
     {
-      fullName: "Elena Torres",
+      fullName: "Elan Torras",
       jobTitle: "Backend Engineer",
-      profilrSrc: "/applicant5.jpeg",
+      profilrSrc: "/wp3.jpeg",
       proEmail: "elena.torres@example.com",
       username: "elenatorres",
       phone: "+44 234 567 890",
@@ -467,7 +467,7 @@ const data = [
     {
     fullName: "Alex Johnson",
     jobTitle: "Software Engineer",
-    profileSrc:"/applicant6.jpeg",
+    profileSrc:"/wp5.jpeg",
     proEmail: "alex.johnson@example.com",
     username: "alexjohnson",
     phone: "+1 123 456 7890",

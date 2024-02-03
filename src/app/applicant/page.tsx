@@ -210,8 +210,8 @@ export default function CompanyProfile() {
         <h1 className="movein mb-10 mt-4 text-center text-5xl font-bold text-black sm:mb-2 sm:mt-12 ">
           Applicants
         </h1>
-        {data.map((applicant) => (
-          <div className="m-4 mb-0 flex flex-col justify-between gap-x-6 rounded-2xl border-2 border-gray-100 bg-white p-8 sm:m-10 sm:mb-10 sm:flex-row ">
+        {data.map((applicant, index) => (
+          index > 0 && ( <div className="m-4 mb-0 flex flex-col justify-between gap-x-6 rounded-2xl border-2 border-gray-100 bg-white p-8 sm:m-10 sm:mb-10 sm:flex-row ">
             <div className="max-w-[30rem]">
               <div className="mb-4 flex flex-col gap-x-8 sm:flex-row">
                 <Image
@@ -259,7 +259,7 @@ export default function CompanyProfile() {
               </div>
               <div className="mt-2 text-gray-500">{applicant.about}</div>
             </div>
-          </div>
+          </div>)
         ))}
       </div>
     </div>

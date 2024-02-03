@@ -200,7 +200,7 @@ import { create } from "domain";
 //         },
 //     ],
 // };
-const data = data2[1];
+const data = data2[0];
 
 export  function InputData2() {
     const { toast } = useToast();

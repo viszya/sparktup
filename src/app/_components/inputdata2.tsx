@@ -199,7 +199,7 @@ import { data2 } from "@/app/company/data2";
 //         },
 //     ],
 // };
-const data = data2[1];
+const data = data2[0];
 
 export  function InputData() {
     const { toast } = useToast();
