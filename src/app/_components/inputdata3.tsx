@@ -200,7 +200,7 @@ import { create } from "domain";
 //         },
 //     ],
 // };
-const data = data2[0];
+const data = data2[1];
 
 export  function InputData2() {
     const { toast } = useToast();
@@ -250,135 +250,135 @@ export  function InputData2() {
         //     companyCulture: data.companyCulture,
         // });
 
-        createContactInformation.mutate({
-            id: companyData.company[0].id,
-            email: data.contactInformation.email,
-            phone: data.contactInformation.phone,
-            address: data.contactInformation.address,
-        });
+        // createContactInformation.mutate({
+        //     id: companyData.company[0].id,
+        //     email: data.contactInformation.email,
+        //     phone: data.contactInformation.phone,
+        //     address: data.contactInformation.address,
+        // });
 
         createCareerOpportunity.mutate({
             id: companyData.company[0].id,
-            position: data.careerOpportunities[0].position,
-            location: data.careerOpportunities[0].location,
-            applyLink: data.careerOpportunities[0].applyLink,
-            companyLogo: data.careerOpportunities[0].companyLogo,
-            description: data.careerOpportunities[0].description,
-            pricingDescription: data.careerOpportunities[0].pricingDescription,
-            sizeDescription: data.careerOpportunities[0].sizeDescription,
-            skills: data.careerOpportunities[0].skills,
-            jobLink: data.careerOpportunities[0].jobLink,
-            seeSrc: data.careerOpportunities[0].seeSrc,
-            thumbnail: data.careerOpportunities[0].thumbnail,
-            about: data.careerOpportunities[0].about,
-            pay: data.careerOpportunities[0].pay,
-            companyAbout: data.careerOpportunities[0].companyAbout,
+            position: data.careerOpportunities[4].position,
+            location: data.careerOpportunities[4].location,
+            applyLink: data.careerOpportunities[4].applyLink,
+            companyLogo: data.careerOpportunities[4].companyLogo,
+            description: data.careerOpportunities[4].description,
+            pricingDescription: data.careerOpportunities[4].pricingDescription,
+            sizeDescription: data.careerOpportunities[4].sizeDescription,
+            skills: data.careerOpportunities[4].skills,
+            jobLink: data.careerOpportunities[4].jobLink,
+            seeSrc: data.careerOpportunities[4].seeSrc,
+            thumbnail: data.careerOpportunities[4].thumbnail,
+            about: data.careerOpportunities[4].about,
+            pay: data.careerOpportunities[4].pay,
+            companyAbout: data.careerOpportunities[4].companyAbout,
         });
-        createCareerOpportunity.mutate({
-            id: companyData.company[0].id,
-            position: data.careerOpportunities[1].position,
-            location: data.careerOpportunities[1].location,
-            applyLink: data.careerOpportunities[1].applyLink,
-            companyLogo: data.careerOpportunities[1].companyLogo,
-            description: data.careerOpportunities[1].description,
-            pricingDescription: data.careerOpportunities[1].pricingDescription,
-            sizeDescription: data.careerOpportunities[1].sizeDescription,
-            skills: data.careerOpportunities[1].skills,
-            jobLink: data.careerOpportunities[1].jobLink,
-            seeSrc: data.careerOpportunities[1].seeSrc,
-            thumbnail: data.careerOpportunities[1].thumbnail,
-            about: data.careerOpportunities[1].about,
-            pay: data.careerOpportunities[1].pay,
-            companyAbout: data.careerOpportunities[1].companyAbout,
-        });
+        // createCareerOpportunity.mutate({
+        //     id: companyData.company[0].id,
+        //     position: data.careerOpportunities[1].position,
+        //     location: data.careerOpportunities[1].location,
+        //     applyLink: data.careerOpportunities[1].applyLink,
+        //     companyLogo: data.careerOpportunities[1].companyLogo,
+        //     description: data.careerOpportunities[1].description,
+        //     pricingDescription: data.careerOpportunities[1].pricingDescription,
+        //     sizeDescription: data.careerOpportunities[1].sizeDescription,
+        //     skills: data.careerOpportunities[1].skills,
+        //     jobLink: data.careerOpportunities[1].jobLink,
+        //     seeSrc: data.careerOpportunities[1].seeSrc,
+        //     thumbnail: data.careerOpportunities[1].thumbnail,
+        //     about: data.careerOpportunities[1].about,
+        //     pay: data.careerOpportunities[1].pay,
+        //     companyAbout: data.careerOpportunities[1].companyAbout,
+        // });
 
-        createTestimonial.mutate({
-            id: companyData.company[0].id,
-            clientName: data.testimonials[0].clientName,
-            feedback: data.testimonials[0].feedback,
-        });
-        createTestimonial.mutate({
-            id: companyData.company[0].id,
-            clientName: data.testimonials[1].clientName,
-            feedback: data.testimonials[1].feedback,
-        });
-        createTestimonial.mutate({
-            id: companyData.company[0].id,
-            clientName: data.testimonials[2].clientName,
-            feedback: data.testimonials[2].feedback,
-        });
-        createTestimonial.mutate({
-            id: companyData.company[0].id,
-            clientName: data.testimonials[3].clientName,
-            feedback: data.testimonials[3].feedback,
-        });
-        createTestimonial.mutate({
-            id: companyData.company[0].id,
-            clientName: data.testimonials[4].clientName,
-            feedback: data.testimonials[4].feedback,
-        });
-
-
-
-        createTeamMember.mutate({
-            id: companyData.company[0].id,
-            name: data.teamMembers[0].name,
-            role: data.teamMembers[0].role,
-            photoSrc: data.teamMembers[0].photoSrc,
-        });
-        createTeamMember.mutate({
-            id: companyData.company[0].id,
-            name: data.teamMembers[1].name,
-            role: data.teamMembers[1].role,
-            photoSrc: data.teamMembers[1].photoSrc,
-        });
+        // createTestimonial.mutate({
+        //     id: companyData.company[0].id,
+        //     clientName: data.testimonials[0].clientName,
+        //     feedback: data.testimonials[0].feedback,
+        // });
+        // createTestimonial.mutate({
+        //     id: companyData.company[0].id,
+        //     clientName: data.testimonials[1].clientName,
+        //     feedback: data.testimonials[1].feedback,
+        // });
+        // createTestimonial.mutate({
+        //     id: companyData.company[0].id,
+        //     clientName: data.testimonials[2].clientName,
+        //     feedback: data.testimonials[2].feedback,
+        // });
+        // createTestimonial.mutate({
+        //     id: companyData.company[0].id,
+        //     clientName: data.testimonials[3].clientName,
+        //     feedback: data.testimonials[3].feedback,
+        // });
+        // createTestimonial.mutate({
+        //     id: companyData.company[0].id,
+        //     clientName: data.testimonials[4].clientName,
+        //     feedback: data.testimonials[4].feedback,
+        // });
 
 
-        createEvent.mutate({
-            id: companyData.company[0].id,
-            date: data.eventData[0].date,
-            eventType: data.eventData[0].eventType,
-            seeSrc: data.eventData[0].seeSrc,
-            title: data.eventData[0].title,
-            location: data.eventData[0].location,
-            eventBy: data.eventData[0].eventBy,
-            imgsrc: data.eventData[0].imgsrc,
-            about: data.eventData[0].about,
-            attendees: data.eventData[0].attendees,
-            viewLink: data.eventData[0].viewLink,
-            attendSrc: data.eventData[0].attendSrc,
-            photoSrc: data.eventData[0].photoSrc,
-        });
-        createEvent.mutate({
-            id: companyData.company[0].id,
-            date: data.eventData[1].date,
-            eventType: data.eventData[1].eventType,
-            seeSrc: data.eventData[1].seeSrc,
-            title: data.eventData[1].title,
-            location: data.eventData[1].location,
-            eventBy: data.eventData[1].eventBy,
-            imgsrc: data.eventData[1].imgsrc,
-            about: data.eventData[1].about,
-            attendees: data.eventData[1].attendees,
-            viewLink: data.eventData[1].viewLink,
-            attendSrc: data.eventData[1].attendSrc,
-            photoSrc: data.eventData[1].photoSrc,
-        });
-        createEvent.mutate({
-            id: companyData.company[0].id,
-            date: data.eventData[2].date,
-            eventType: data.eventData[2].eventType,
-            seeSrc: data.eventData[2].seeSrc,
-            title: data.eventData[2].title,
-            location: data.eventData[2].location,
-            eventBy: data.eventData[2].eventBy,
-            imgsrc: data.eventData[2].imgsrc,
-            about: data.eventData[2].about,
-            attendees: data.eventData[2].attendees,
-            viewLink: data.eventData[2].viewLink,
-            attendSrc: data.eventData[2].attendSrc,
-            photoSrc: data.eventData[2].photoSrc,
-        });
+
+        // createTeamMember.mutate({
+        //     id: companyData.company[0].id,
+        //     name: data.teamMembers[0].name,
+        //     role: data.teamMembers[0].role,
+        //     photoSrc: data.teamMembers[0].photoSrc,
+        // });
+        // createTeamMember.mutate({
+        //     id: companyData.company[0].id,
+        //     name: data.teamMembers[1].name,
+        //     role: data.teamMembers[1].role,
+        //     photoSrc: data.teamMembers[1].photoSrc,
+        // });
+
+
+        // createEvent.mutate({
+        //     id: companyData.company[0].id,
+        //     date: data.eventData[0].date,
+        //     eventType: data.eventData[0].eventType,
+        //     seeSrc: data.eventData[0].seeSrc,
+        //     title: data.eventData[0].title,
+        //     location: data.eventData[0].location,
+        //     eventBy: data.eventData[0].eventBy,
+        //     imgsrc: data.eventData[0].imgsrc,
+        //     about: data.eventData[0].about,
+        //     attendees: data.eventData[0].attendees,
+        //     viewLink: data.eventData[0].viewLink,
+        //     attendSrc: data.eventData[0].attendSrc,
+        //     photoSrc: data.eventData[0].photoSrc,
+        // });
+        // createEvent.mutate({
+        //     id: companyData.company[0].id,
+        //     date: data.eventData[1].date,
+        //     eventType: data.eventData[1].eventType,
+        //     seeSrc: data.eventData[1].seeSrc,
+        //     title: data.eventData[1].title,
+        //     location: data.eventData[1].location,
+        //     eventBy: data.eventData[1].eventBy,
+        //     imgsrc: data.eventData[1].imgsrc,
+        //     about: data.eventData[1].about,
+        //     attendees: data.eventData[1].attendees,
+        //     viewLink: data.eventData[1].viewLink,
+        //     attendSrc: data.eventData[1].attendSrc,
+        //     photoSrc: data.eventData[1].photoSrc,
+        // });
+        // createEvent.mutate({
+        //     id: companyData.company[0].id,
+        //     date: data.eventData[2].date,
+        //     eventType: data.eventData[2].eventType,
+        //     seeSrc: data.eventData[2].seeSrc,
+        //     title: data.eventData[2].title,
+        //     location: data.eventData[2].location,
+        //     eventBy: data.eventData[2].eventBy,
+        //     imgsrc: data.eventData[2].imgsrc,
+        //     about: data.eventData[2].about,
+        //     attendees: data.eventData[2].attendees,
+        //     viewLink: data.eventData[2].viewLink,
+        //     attendSrc: data.eventData[2].attendSrc,
+        //     photoSrc: data.eventData[2].photoSrc,
+        // });
 
         toast({
             title: "Data Inputted!",

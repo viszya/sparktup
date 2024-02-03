@@ -318,7 +318,59 @@ export const data2 = [
         "about": "Exciting opportunity for a talented Software Tester to join our remote team. As a key member of our testing team, you will contribute to cutting-edge projects that leverage advanced analytics and machine learning. If you have a passion for testing and enjoy solving complex problems, apply now and be part of our success!",
         "pay": "$120,000/yr - $250,000/yr",
         "companyAbout": "Company Name is a global tech company that values innovation and creativity. Our remote-friendly work environment allows our team members to collaborate from anywhere in the world. Join us in our mission to harness the power of data and drive impactful decisions for our organization and clients."
+      },
+      {
+        "position": "Data Scientist",
+        "location": "New York, NY",
+        "applyLink": "https://techsolutions.com/careers/data-scientist",
+        "companyLogo": "/applelogo.png",
+        "description": "Tech Innovations Co. · New York, NY · Posted 2 weeks ago · 85 applicants",
+        "pricingDescription": "$120,000/yr - $250,000/yr · Remote · Full-time",
+        "sizeDescription": "500-1000 employees · Data Scientist",
+        "skills": "Data Analysis, Machine Learning, Statistical Modeling, +3 more",
+        "jobLink": "/",
+        "seeSrc": "/",
+        "thumbnail": "/data.png",
+        "about": "Join our dynamic team as a Data Scientist and contribute to cutting-edge projects at the forefront of data-driven innovation. We're seeking individuals with a passion for extracting insights from complex datasets and turning them into actionable solutions. If you excel in analytical thinking and thrive in a collaborative environment, apply now to be part of our data-driven success story!",
+        "pay": "$120,000/yr - $250,000/yr",
+        "companyAbout": "Tech Innovations Co. is a pioneering tech firm committed to driving progress through data-driven solutions. Our team of experts collaborates on projects that shape industries and empower businesses. Be part of our journey to harness the power of data for positive change."
+      },
+      {
+        "position": "UX/UI Designer",
+        "location": "Seattle, WA",
+        "applyLink": "https://techsolutions.com/careers/ux-ui-designer",
+        "companyLogo": "/applelogo.png",
+        "description": "Creative Designs Inc. · Seattle, WA · Fresh posting · 120 applicants",
+        "pricingDescription": "$90,000/yr - $180,000/yr · On-site · Full-time",
+        "sizeDescription": "100-500 employees · UX/UI Designer",
+        "skills": "User Experience Design, UI Prototyping, Adobe Creative Suite, +2 more",
+        "jobLink": "/",
+        "seeSrc": "/",
+        "thumbnail": "/ux.png",
+        "about": "Join our innovative team as a UX/UI Designer and contribute to the creation of visually stunning and user-friendly interfaces. We're seeking individuals with a keen eye for design and a passion for delivering exceptional user experiences. If you're ready to shape the digital landscape, apply now to be a key player in our design-driven success!",
+        "pay": "$90,000/yr - $180,000/yr",
+        "companyAbout": "Creative Designs Inc. is a cutting-edge design firm dedicated to crafting impactful user experiences. Our diverse team collaborates on projects that redefine user interactions and elevate brands. Join us in our mission to blend creativity with functionality."
+      },
+      {
+        "position": "Cybersecurity Analyst",
+        "location": "Austin, TX",
+        "applyLink": "https://techsolutions.com/careers/cybersecurity-analyst",
+        "companyLogo": "/applelogo.png",
+        "description": "Secure Systems Tech · Austin, TX · Just posted · 75 applicants",
+        "pricingDescription": "$100,000/yr - $200,000/yr · Hybrid · Full-time",
+        "sizeDescription": "1000-5000 employees · Cybersecurity Analyst",
+        "skills": "Network Security, Incident Response, Penetration Testing, +2 more",
+        "jobLink": "/",
+        "seeSrc": "/",
+        "thumbnail": "/security.png",
+        "about": "Join our cybersecurity team as a Cybersecurity Analyst and play a crucial role in safeguarding digital assets. We're looking for individuals with a strong understanding of cybersecurity principles and a commitment to proactive threat mitigation. If you're passionate about keeping systems secure, apply now to be part of our cybersecurity success story!",
+        "pay": "$100,000/yr - $200,000/yr",
+        "companyAbout": "Secure Systems Tech is a leading provider of cybersecurity solutions, dedicated to fortifying digital landscapes against evolving threats. Our expert team collaborates on projects that enhance security measures and protect businesses from cyber risks. Join us in our mission to build a safer digital future."
       }
+
+
+
+
     ],
     mediaGallery: [
       "/office1-appleData.jpeg",

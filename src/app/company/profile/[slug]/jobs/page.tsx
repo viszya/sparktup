@@ -32,6 +32,7 @@ import {
   DrawerTrigger,
 } from "@/app/_components/ui/drawer";
 import { usePathname } from "next/navigation";
+import { Skeleton } from "@/app/_components/ui/skeleton";
 
 export default function Jobs() {
   const id = usePathname().slice(17, -5);
@@ -39,20 +40,247 @@ export default function Jobs() {
 
   const res = api.test.getCompanyCareers.useQuery({ id: id });
   if (res.isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="gradient-bg-2 bg-white">
+        <div className={cn(twp().wrapper, "pt-10")}>
+          <h1 className="movein mb-2 mt-0 text-center text-5xl font-bold text-black sm:mt-12 ">
+            Job Positions
+          </h1>
+
+          <div className="justify-between relative z-10 mx-4 my-10 flex flex-col gap-x-2 rounded-3xl border border-gray-100 bg-white p-4 sm:mx-0 sm:flex-row">
+            <div className="">
+              <div className="flex flex-col space-y-1.5 p-6">
+                <div className="flex items-center space-x-2">
+                  <Skeleton className="h-5 w-5 rounded-full" />
+                    <Skeleton className="h-[20px] w-[300px]" />
+                </div>
+                <div className="p-6 pt-0">
+                  <Skeleton className="h-[16px] w-[200px]" />
+                </div>
+              </div>
+              <div className="p-6 pt-0">
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-2">
+                      <Skeleton className="h-[16px] w-[100px]" />
+                  </div>
+                  <div className="flex items-center space-x-2">
+                      <Skeleton className="h-[16px] w-[100px]" />
+                  </div>
+                  <div className="flex items-center space-x-2">
+                       <Skeleton className="h-[16px] w-[150px]" />
+                  </div>
+                  <div className="flex items-center space-x-2">
+                       <Skeleton className="h-[16px] w-[150px]" />
+                  </div>
+                  <div className="flex items-center space-x-2"></div>
+                </div>
+              </div>
+              <div className="items-center p-6 pt-0 flex space-x-4">
+                <Skeleton
+                  style={{ width: "80px", height: "30px" }}
+                />
+              </div>
+            </div>
+            <div className="flex max-h-80 items-center justify-center overflow-hidden rounded-3xl">
+              <Skeleton
+                className="rounded-3xl"
+                style={{ width: "600px", height: "400px" }}
+              />
+            </div>
+          </div>
+          <div className="justify-between relative z-10 mx-4 my-10 flex flex-col gap-x-2 rounded-3xl border border-gray-100 bg-white p-4 sm:mx-0 sm:flex-row">
+            <div className="">
+              <div className="flex flex-col space-y-1.5 p-6">
+                <div className="flex items-center space-x-2">
+                  <Skeleton className="h-5 w-5 rounded-full" />
+                    <Skeleton className="h-[20px] w-[300px]" />
+                </div>
+                <div className="p-6 pt-0">
+                  <Skeleton className="h-[16px] w-[200px]" />
+                </div>
+              </div>
+              <div className="p-6 pt-0">
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-2">
+                      <Skeleton className="h-[16px] w-[100px]" />
+                  </div>
+                  <div className="flex items-center space-x-2">
+                      <Skeleton className="h-[16px] w-[100px]" />
+                  </div>
+                  <div className="flex items-center space-x-2">
+                       <Skeleton className="h-[16px] w-[150px]" />
+                  </div>
+                  <div className="flex items-center space-x-2">
+                       <Skeleton className="h-[16px] w-[150px]" />
+                  </div>
+                  <div className="flex items-center space-x-2"></div>
+                </div>
+              </div>
+              <div className="items-center p-6 pt-0 flex space-x-4">
+                <Skeleton
+                  style={{ width: "80px", height: "30px" }}
+                />
+              </div>
+            </div>
+            <div className="flex max-h-80 items-center justify-center overflow-hidden rounded-3xl">
+              <Skeleton
+                className="rounded-3xl"
+                style={{ width: "600px", height: "400px" }}
+              />
+            </div>
+          </div>
+          <div className="justify-between relative z-10 mx-4 my-10 flex flex-col gap-x-2 rounded-3xl border border-gray-100 bg-white p-4 sm:mx-0 sm:flex-row">
+            <div className="">
+              <div className="flex flex-col space-y-1.5 p-6">
+                <div className="flex items-center space-x-2">
+                  <Skeleton className="h-5 w-5 rounded-full" />
+                    <Skeleton className="h-[20px] w-[300px]" />
+                </div>
+                <div className="p-6 pt-0">
+                  <Skeleton className="h-[16px] w-[200px]" />
+                </div>
+              </div>
+              <div className="p-6 pt-0">
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-2">
+                      <Skeleton className="h-[16px] w-[100px]" />
+                  </div>
+                  <div className="flex items-center space-x-2">
+                      <Skeleton className="h-[16px] w-[100px]" />
+                  </div>
+                  <div className="flex items-center space-x-2">
+                       <Skeleton className="h-[16px] w-[150px]" />
+                  </div>
+                  <div className="flex items-center space-x-2">
+                       <Skeleton className="h-[16px] w-[150px]" />
+                  </div>
+                  <div className="flex items-center space-x-2"></div>
+                </div>
+              </div>
+              <div className="items-center p-6 pt-0 flex space-x-4">
+                <Skeleton
+                  style={{ width: "80px", height: "30px" }}
+                />
+              </div>
+            </div>
+            <div className="flex max-h-80 items-center justify-center overflow-hidden rounded-3xl">
+              <Skeleton
+                className="rounded-3xl"
+                style={{ width: "600px", height: "400px" }}
+              />
+            </div>
+          </div>
+          <div className="justify-between relative z-10 mx-4 my-10 flex flex-col gap-x-2 rounded-3xl border border-gray-100 bg-white p-4 sm:mx-0 sm:flex-row">
+            <div className="">
+              <div className="flex flex-col space-y-1.5 p-6">
+                <div className="flex items-center space-x-2">
+                  <Skeleton className="h-5 w-5 rounded-full" />
+                    <Skeleton className="h-[20px] w-[300px]" />
+                </div>
+                <div className="p-6 pt-0">
+                  <Skeleton className="h-[16px] w-[200px]" />
+                </div>
+              </div>
+              <div className="p-6 pt-0">
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-2">
+                      <Skeleton className="h-[16px] w-[100px]" />
+                  </div>
+                  <div className="flex items-center space-x-2">
+                      <Skeleton className="h-[16px] w-[100px]" />
+                  </div>
+                  <div className="flex items-center space-x-2">
+                       <Skeleton className="h-[16px] w-[150px]" />
+                  </div>
+                  <div className="flex items-center space-x-2">
+                       <Skeleton className="h-[16px] w-[150px]" />
+                  </div>
+                  <div className="flex items-center space-x-2"></div>
+                </div>
+              </div>
+              <div className="items-center p-6 pt-0 flex space-x-4">
+                <Skeleton
+                  style={{ width: "80px", height: "30px" }}
+                />
+              </div>
+            </div>
+            <div className="flex max-h-80 items-center justify-center overflow-hidden rounded-3xl">
+              <Skeleton
+                className="rounded-3xl"
+                style={{ width: "600px", height: "400px" }}
+              />
+            </div>
+          </div>
+          <div className="justify-between relative z-10 mx-4 my-10 flex flex-col gap-x-2 rounded-3xl border border-gray-100 bg-white p-4 sm:mx-0 sm:flex-row">
+            <div className="">
+              <div className="flex flex-col space-y-1.5 p-6">
+                <div className="flex items-center space-x-2">
+                  <Skeleton className="h-5 w-5 rounded-full" />
+                    <Skeleton className="h-[20px] w-[300px]" />
+                </div>
+                <div className="p-6 pt-0">
+                  <Skeleton className="h-[16px] w-[200px]" />
+                </div>
+              </div>
+              <div className="p-6 pt-0">
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-2">
+                      <Skeleton className="h-[16px] w-[100px]" />
+                  </div>
+                  <div className="flex items-center space-x-2">
+                      <Skeleton className="h-[16px] w-[100px]" />
+                  </div>
+                  <div className="flex items-center space-x-2">
+                       <Skeleton className="h-[16px] w-[150px]" />
+                  </div>
+                  <div className="flex items-center space-x-2">
+                       <Skeleton className="h-[16px] w-[150px]" />
+                  </div>
+                  <div className="flex items-center space-x-2"></div>
+                </div>
+              </div>
+              <div className="items-center p-6 pt-0 flex space-x-4">
+                <Skeleton
+                  style={{ width: "80px", height: "30px" }}
+                />
+              </div>
+            </div>
+            <div className="flex max-h-80 items-center justify-center overflow-hidden rounded-3xl">
+              <Skeleton
+                className="rounded-3xl"
+                style={{ width: "600px", height: "400px" }}
+              />
+            </div>
+          </div>
+
+          {/* <div className="flex flex-row items-center justify-center">
+          <Button className="mt-10 rounded-full px-10 py-6 text-base">
+            Show More
+          </Button>
+        </div> */}
+        </div>
+        <Image
+          alt="bg-design"
+          className="-z-10 -mt-40 w-full rotate-180 bg-black "
+          src="/bg-2.webp"
+          width={1920}
+          height={100}
+        />
+      </div>
+    );
   }
   const data = res.data;
   console.log(data);
 
   return (
-    <div className=" bg-white">
-      <div className={cn(twp().wrapper, "")}>
-        <h1 className="movein mb-2 mt-12 text-center text-5xl font-bold text-black ">
-         Microsoft Job Positions
+    <div className="gradient-bg-2 bg-white">
+      <div className={cn(twp().wrapper, "pt-10")}>
+        <h1 className="movein mb-2 mt-0 text-center text-5xl font-bold text-black sm:mt-12 ">
+          Job Positions
         </h1>
 
         {data.map((data: any) => (
-          <Card className=" my-10 flex flex-row gap-x-2 rounded-3xl border border-gray-100 bg-white/ p-4">
+          <Card className="relative z-10 mx-4 my-10 flex flex-col gap-x-2 rounded-3xl border border-gray-100 bg-white p-4 sm:mx-0 sm:flex-row">
             <div className="">
               <CardHeader>
                 <div className="flex items-center space-x-2">

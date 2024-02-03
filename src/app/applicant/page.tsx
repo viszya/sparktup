@@ -211,7 +211,7 @@ export default function CompanyProfile() {
           Applicants
         </h1>
         {data.map((applicant, index) => (
-          index > 0 && ( <div className="m-4 mb-0 flex flex-col justify-between gap-x-6 rounded-2xl border-2 border-gray-100 bg-white p-8 sm:m-10 sm:mb-10 sm:flex-row ">
+          (index != 0 && index != 2)  && ( <div className="m-4 mb-0 flex flex-col justify-between gap-x-6 rounded-2xl border-2 border-gray-100 bg-white p-8 sm:m-10 sm:mb-10 sm:flex-row ">
             <div className="max-w-[30rem]">
               <div className="mb-4 flex flex-col gap-x-8 sm:flex-row">
                 <Image
