@@ -175,7 +175,7 @@ export const applicationRouter = createTRPCRouter({
             const acceptedApplications = await ctx.db.application.count({
                 where: {
                     applicantId: ctx.session.user.id,
-                    status: 'accepted',
+                    status: 'Accepted',
                 },
             });
 

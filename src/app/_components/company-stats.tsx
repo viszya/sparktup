@@ -25,7 +25,7 @@ export function Stats() {
         <Card className="bg-black text-white">
           <CardHeader>
             <CardTitle>{getStats.data.company[0].applications ?? 0}</CardTitle>
-            <CardDescription className="text-white/70">Applications Submitted</CardDescription>
+            <CardDescription className="text-white/70">Applications Received</CardDescription>
           </CardHeader>
         </Card>
         <Card className="bg-black text-white">

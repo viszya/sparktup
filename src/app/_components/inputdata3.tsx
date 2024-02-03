@@ -251,14 +251,14 @@ export  function InputData2() {
         // });
 
         createContactInformation.mutate({
-            id: companyData.company[1].id,
+            id: companyData.company[0].id,
             email: data.contactInformation.email,
             phone: data.contactInformation.phone,
             address: data.contactInformation.address,
         });
 
         createCareerOpportunity.mutate({
-            id: companyData.company[1].id,
+            id: companyData.company[0].id,
             position: data.careerOpportunities[0].position,
             location: data.careerOpportunities[0].location,
             applyLink: data.careerOpportunities[0].applyLink,
@@ -275,7 +275,7 @@ export  function InputData2() {
             companyAbout: data.careerOpportunities[0].companyAbout,
         });
         createCareerOpportunity.mutate({
-            id: companyData.company[1].id,
+            id: companyData.company[0].id,
             position: data.careerOpportunities[1].position,
             location: data.careerOpportunities[1].location,
             applyLink: data.careerOpportunities[1].applyLink,
@@ -293,27 +293,27 @@ export  function InputData2() {
         });
 
         createTestimonial.mutate({
-            id: companyData.company[1].id,
+            id: companyData.company[0].id,
             clientName: data.testimonials[0].clientName,
             feedback: data.testimonials[0].feedback,
         });
         createTestimonial.mutate({
-            id: companyData.company[1].id,
+            id: companyData.company[0].id,
             clientName: data.testimonials[1].clientName,
             feedback: data.testimonials[1].feedback,
         });
         createTestimonial.mutate({
-            id: companyData.company[1].id,
+            id: companyData.company[0].id,
             clientName: data.testimonials[2].clientName,
             feedback: data.testimonials[2].feedback,
         });
         createTestimonial.mutate({
-            id: companyData.company[1].id,
+            id: companyData.company[0].id,
             clientName: data.testimonials[3].clientName,
             feedback: data.testimonials[3].feedback,
         });
         createTestimonial.mutate({
-            id: companyData.company[1].id,
+            id: companyData.company[0].id,
             clientName: data.testimonials[4].clientName,
             feedback: data.testimonials[4].feedback,
         });
@@ -321,13 +321,13 @@ export  function InputData2() {
 
 
         createTeamMember.mutate({
-            id: companyData.company[1].id,
+            id: companyData.company[0].id,
             name: data.teamMembers[0].name,
             role: data.teamMembers[0].role,
             photoSrc: data.teamMembers[0].photoSrc,
         });
         createTeamMember.mutate({
-            id: companyData.company[1].id,
+            id: companyData.company[0].id,
             name: data.teamMembers[1].name,
             role: data.teamMembers[1].role,
             photoSrc: data.teamMembers[1].photoSrc,
@@ -335,7 +335,7 @@ export  function InputData2() {
 
 
         createEvent.mutate({
-            id: companyData.company[1].id,
+            id: companyData.company[0].id,
             date: data.eventData[0].date,
             eventType: data.eventData[0].eventType,
             seeSrc: data.eventData[0].seeSrc,
@@ -350,7 +350,7 @@ export  function InputData2() {
             photoSrc: data.eventData[0].photoSrc,
         });
         createEvent.mutate({
-            id: companyData.company[1].id,
+            id: companyData.company[0].id,
             date: data.eventData[1].date,
             eventType: data.eventData[1].eventType,
             seeSrc: data.eventData[1].seeSrc,
@@ -365,7 +365,7 @@ export  function InputData2() {
             photoSrc: data.eventData[1].photoSrc,
         });
         createEvent.mutate({
-            id: companyData.company[1].id,
+            id: companyData.company[0].id,
             date: data.eventData[2].date,
             eventType: data.eventData[2].eventType,
             seeSrc: data.eventData[2].seeSrc,
