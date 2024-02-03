@@ -25,14 +25,13 @@ function getTasks() {
   // const tasks = JSON.parse(data.toString())
 
   // return z.array(taskSchema).parse(tasks)
-  
+
 
 }
 
 export  function DataPage() {
   const applications = api.application.getApplicationsFromCompany.useQuery()
   let data = applications.data
-  console.log(data)
 
   if (applications.isLoading == true) {
     return <div>Loading...</div>
@@ -41,7 +40,7 @@ export  function DataPage() {
 
   if (data.length == 0) {
     data = {}
-  } 
+  }
 
 
   return (

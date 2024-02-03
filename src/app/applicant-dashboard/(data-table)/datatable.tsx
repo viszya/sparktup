@@ -25,7 +25,7 @@ function getTasks() {
   // const tasks = JSON.parse(data.toString())
 
   // return z.array(taskSchema).parse(tasks)
-  
+
 
 }
 
@@ -33,17 +33,23 @@ export  function DataPage() {
   const applications = api.application.getApplicationsFromUser.useQuery()
   let data = applications.data
 
+
+
   if (applications.isLoading == true) {
     return <div>Loading...</div>
   }
-  
+
   if (data.length = 0) {
     data = {}
-  } 
+  }
+
+  // console.log("BUDFSHUFDS")
+  // console.log(data.Application)
+  // console.log("BUDFSHUFDS")
 
   return (
     <>
-        <DataTable data={data} columns={columns} />
+        <DataTable data={data.Application} columns={columns} />
         <Toaster />
     </>
   )

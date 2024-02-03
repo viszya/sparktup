@@ -83,7 +83,7 @@ export const applicationRouter = createTRPCRouter({
             return ctx.db.application.findMany({
                 where: {
                     company: {
-                        id: basicProfile.company[0].id,
+                      id: basicProfile.company[0].id,
                     },
                 },
             });
@@ -93,9 +93,12 @@ export const applicationRouter = createTRPCRouter({
 
     getApplicationsFromUser: protectedProcedure
         .query(async ({ ctx }) => {
-            return ctx.db.application.findMany({
+            return ctx.db.user.findUnique({
                 where: {
-                    applicantId: ctx.session.user.id,
+                    id: ctx.session.user.id,
+                },
+                include: {
+                    Application: true,
                 },
             });
         }),
