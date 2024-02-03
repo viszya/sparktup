@@ -61,7 +61,7 @@ const Nav = async () => {
               <DropdownMenuTrigger className='block md:hidden ml-2 text-black transition-all duration-100'>
                 <Icons.menu className="w-6 h-6 text-primary" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="mr-2">
+              <DropdownMenuContent className="">
                 <DropdownMenuLabel>MENU</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
