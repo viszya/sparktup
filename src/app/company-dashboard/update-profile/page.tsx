@@ -138,7 +138,7 @@ export default function AddCareer() {
             </div>
             <div className="flex flex-col justify-center w-full ">
                 <Tabs value={activeTab} className="mt-5">
-                    <TabsList className="flex flex-row gap-x-6 overflow-x-auto">
+                    <TabsList className="hidden sm:flex flex-row gap-x-6 overflow-x-auto">
                         <TabsTrigger value="form1">Company Profile</TabsTrigger>
                         <Icons.chevronRight className="text-gray-300 h-5 w-5" />
                         <TabsTrigger value="form2">Company Industry</TabsTrigger>

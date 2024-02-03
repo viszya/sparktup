@@ -41,15 +41,14 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
 
     return (
         <div className={cn("bg-white ")}>
-          <Image alt="bg-design" className="-mt-2 w-full -z-10" src="/bg-2.webp" width={1920} height={100} />
 
             <div className={cn(twp().wrapper)}>
 
 
                 {/* Company Headline */}
-                <div className="-mt-72 relative z-10 grid grid-flow-col grid-cols-2 md:grid-cols-1 gap-x-6 m-2 bg-black p-8 rounded-2xl border-2 border-black">
-                    <div className=" max-w-[30rem]">
-                        <div className="flex flex-row gap-x-8 mb-4">
+                <div className="mt-4 sm:mt-10 flex justify-between flex-col sm:flex-row gap-x-6 m-2 bg-black p-8 rounded-2xl border-2 border-black">
+                    <div className="max-w-[30rem] mb-4 sm:mb-0 w-full">
+                        <div className="flex flex-col sm:flex-row gap-x-8 mb-4">
                             <Image src={data.logoSrc} alt="company-logo" width={100} height={50} className="rounded-full overflow-hidden" />
                             <div>
                                 <div className="mt-4 text-2xl font-medium tracking-tight text-white sm:text-4xl">{data.companyName}</div>
@@ -59,8 +58,8 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-row gap-x-4">
-                            <div className="w-full flex flex-row justify-center items-center px-3 py-0.5 text-sm border font-medium text-white/80 duration-200 rounded-sm">
+                        <div className="flex flex-col sm:flex-row gap-x-4">
+                            <div className="mb-2 sm:mb-0 w-full flex flex-row justify-center items-center px-3 py-0.5 text-sm border font-medium text-white/80 duration-200 rounded-sm">
                                 <Icons.user className="h-4 w-4 mr-2" />
                                 {data.size}
                             </div>
@@ -120,10 +119,10 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
                     <p className="mt-2 text-black/80">{data.solutionsOverview}</p>
                   </div>
 
-                    <div className="mt-2 flex flex-row justify-center items-center bg-black p-8 rounded-2xl border-2 border-black">
-                        <section className="m-2 w-full">
+                    <div className="mt-2 flex flex-col sm:flex-row justify-center items-center bg-black p-8 rounded-2xl border-2 border-black">
+                        <section className="m-0 sm:m-2 w-full">
                             <div className=" text-xl font-medium tracking-tight text-white sm:text-2xl">Key Features for Companies</div>
-                            <div className=" bg-black p-8 rounded-2xl border-2 border-black">
+                            <div className=" bg-black p-2 sm:p-8 rounded-2xl border-2 border-black">
                                 <ul className="list-disc list-inside text-white/80">
                                     {data.keyFeatures.split("\n").map((feature, index) => (
                                         <li key={index}>{feature}</li>
@@ -131,9 +130,9 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
                                 </ul>
                             </div>
                         </section>
-                        <section className="m-2 w-full">
+                        <section className="m-0 sm:m-2 w-full">
                             <div className="text-xl font-medium tracking-tight text-white sm:text-2xl">Key Benefits </div>
-                            <div className=" bg-black p-8 rounded-2xl border-2 border-black">
+                            <div className=" bg-black p-2 sm:p-8 rounded-2xl border-2 border-black">
                                 <ul className="list-disc list-inside text-white/80">
                                     {data.keyBenefits.split("\n").map((feature, index) => (
                                         <li key={index}>{feature}</li>
@@ -163,7 +162,7 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
                     <Carousel className="w-full mx-auto mt-4">
                         <CarouselContent>
                             {data.eventData.map((event, index) => (
-                                <CarouselItem key={index} className="p-4 md:px-4 lg:px-8 basis-1/2 h-full"> {/* Set a fixed height */}
+                                <CarouselItem key={index} className="  p-4 md:px-4 lg:px-8  sm:basis-1/2 h-full"> {/* Set a fixed height */}
                                     <div className="bg-black rounded-xl border-2 border-black flex flex-col">
                                         {/* Event Date */}
                                         <div className="flex items-center justify-between p-4">
@@ -196,8 +195,8 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
-                        <CarouselPrevious />
-                        <CarouselNext />
+                        <CarouselPrevious className="hidden sm:block"/>
+                        <CarouselNext className="hidden sm:block"/>
                     </Carousel>
                 </section>
 
@@ -239,7 +238,7 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
                     <div className="mt-4 text-xl font-medium tracking-tight text-black sm:text-2xl">Career Opportunities</div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 bg-black rounded-xl border-2 border-black p-4">
                         {data.careerOpportunities.map((job, index) => (
-                            <div key={index} className="p-4 bg-black rounded-xl border-2 border-black">
+                            <div key={index} className="p-4 bg-white/10 rounded-xl border-2 border-black">
                                 <p className="text-base text-white font-medium">{job.position}</p>
                                 <p className="text-sm text-white/80">{job.location}</p>
                                 <a href={"/company/profile/job/" + job.id} className="text-sm text-blue-500 hover:underline">Apply Now</a>
@@ -342,8 +341,8 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
                 <section className="m-2 relative z-10">
                     <div className="mt-4 text-xl font-medium tracking-tight text-black sm:text-2xl">Commitments</div>
                     <div className="mt-4 p-4 bg-black rounded-xl border-2 border-black">
-                        <div className="grid grid-cols-3 gap-8">
-                            <div className="col-span-1 p-4 bg-black rounded-xl border-2 border-black">
+                        <div className="flex flex-col sm:flex-row ">
+                            <div className="col-span-1 p-4 bg-black rounded-xl border-2 border-black w-full">
                                 <div className="flex items-center space-x-2 mb-4 ">
                                     <Icons.heart className="h-4 w-4 text-cyan-500" />
                                     <span className="text-lg font-semibold text-white">Features</span>

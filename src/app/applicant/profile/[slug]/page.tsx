@@ -32,9 +32,9 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
     <div className={cn("applicant-bg")}>
       <div className={cn("mb-20", twp().wrapper)}>
         {/* Profile Headline */}
-        <div className="mt-10 grid grid-flow-col grid-cols-2 gap-x-6 rounded-2xl border-2 border-black bg-black text-white p-8 md:grid-cols-1">
-          <div className=" max-w-[30rem]">
-            <div className="mb-4 flex flex-row gap-x-8">
+        <div className="m-4 justify-between sm:m-0 sm:mt-10 flex flex-col sm:flex-row gap-x-6 rounded-2xl border-2 border-black bg-black text-white p-8 md:grid-cols-1">
+          <div className=" max-w-[30rem] mb-4 sm:mb-0">
+            <div className="mb-4 flex flex-col sm:flex-row gap-x-8">
               <Image
                 src={data?.profileSrc}
                 alt="profile"
@@ -55,8 +55,8 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
                 </div>
               </div>
             </div>
-            <div className="flex flex-row gap-x-4">
-              <div className="flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-white/80 duration-200 ">
+            <div className="flex flex-col sm:flex-row gap-x-4">
+              <div className="mb-2 sm:mb-0 flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-white/80 duration-200 ">
                 <Icons.pin className="mr-2 h-4 w-4" /> {data.location}
               </div>
               <Link
@@ -160,16 +160,16 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
         </div>
 
         {/* Experiences */}
-        <section className="">
+        <section className="m-4 sm:m-0">
           <div className="my-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">
             Experiences
           </div>
-          <div className="mx-auto max-w-7xl items-center rounded-2xl border-2 border-black bg-black text-white  p-8 px-14 py-4">
+          <div className="mx-auto max-w-7xl items-center rounded-2xl border-2 border-black bg-black text-white  p-8 px-8 sm:px-14 py-4">
             <ul className="divide-mercury-300 w-full divide-y" role="list">
               {data.experiences.map((data: any) => (
-                <li className="py-4 lg:py-8">
+                <li className="py-4 lg:py-8 my-4">
                   <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-3 lg:gap-24">
-                    <div className="lg:order-last lg:col-span-2">
+                    <div className="order-last lg:order-last lg:col-span-2">
                       <p className="text-lg font-medium leading-6 text-white">
                         {data.jobTitle}
                       </p>
@@ -222,18 +222,18 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
         </section>
 
         {/* Top 3 Skills */}
-        <section className="">
+        <section className="m-4 sm:m-0">
           <div className="mb-4 mt-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">
             Top Skills
           </div>
-          <div className="relative mx-auto w-full max-w-7xl items-center rounded-2xl border-2 border-black bg-black text-white p-8 px-2 py-10 md:px-12 lg:px-20">
+          <div className="relative mx-auto w-full max-w-7xl items-center rounded-2xl border-2 border-black bg-black text-white p-8 px-2 py-2 sm:py-10 md:px-12 lg:px-20">
             <div className="mx-auto grid w-full grid-cols-1 lg:grid-cols-3">
               {data.topSkills.map((data: any) => (
                 <div className="mx-auto max-w-md p-6">
                   <div className="gap-3 lg:inline-flex lg:items-center">
                     <div
                       className={cn(
-                        "flex h-12 w-12 items-center justify-center rounded-xl text-white",
+                        "hidden sm:flex h-12 w-12 items-center justify-center rounded-xl text-white",
                         `bg-primary/20`,
                       )}
                     >
@@ -253,11 +253,11 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
         </section>
 
         {/* Reccomendations */}
-        <section className="">
+        <section className="m-4 sm:m-0">
           <div className="my-4 text-2xl font-medium tracking-tight text-white sm:text-4xl">
             Reccomendations
           </div>
-          <div className="mx-auto max-w-7xl items-center rounded-2xl border-2 border-black bg-black text-white  p-8 px-14 py-4">
+          <div className="mx-auto max-w-7xl items-center rounded-2xl border-2 border-black bg-black text-white  p-8 px-8 sm:px-14 py-4">
             <ul className="divide-mercury-300 w-full divide-y" role="list">
               {data.recommendations.map((data: any) => (
                 <li className="py-4 lg:py-8">
@@ -288,13 +288,13 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
         </section>
 
         {/* Projects */}
-        <section className="">
+        <section className="m-4 sm:m-0">
           <div className="my-4 text-2xl font-medium tracking-tight text-white  sm:text-4xl">
             Projects
           </div>
-          <div className="rounded-2xl border-2 border-black bg-black p-8">
+          <div className="rounded-2xl border-2 border-black bg-black px-2 sm:px-8 py-9">
             <div className="relative mx-auto w-full max-w-7xl items-center px-5 py-2 md:px-4 lg:px-8">
-              <div className="col-span-2 grid grid-cols-2 gap-8">
+              <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {data.projects.map((data: any) => (
                   <Link
                     href={data.link}
@@ -317,15 +317,15 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
         </section>
 
         {/* View Resume */}
-        <section className="">
+        <section className="mx-4 sm:mx-0">
           <div className="my-4 text-2xl font-medium tracking-tight text-white sm:text-4xl">
             Resume
           </div>
           <div className="rounded-2xl border-2 border-black bg-black p-8">
             <div className="mx-auto max-w-7xl px-4 py-6  lg:px-8">
-              <div className="flex flex-row items-center rounded-2xl border-2 border-white bg-white/10 px-6 py-6 sm:px-40">
+              <div className="flex flex-col sm:flex-row items-center rounded-2xl border-2 border-white bg-white/10 px-6 py-6 sm:px-40">
                 <div className="xl:w-0 xl:flex-1">
-                  <p className="flex flex-row items-center text-5xl text-white ">
+                  <p className="flex flex-col sm:flex-row items-cente text-3xl mb-4 sm:mb-0 sm:text-5xl text-white ">
                     View Resume
                   </p>
                 </div>

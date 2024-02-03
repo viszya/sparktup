@@ -37,7 +37,7 @@ export default function DashboardLayout({
   return (
     <div className="flex min-h-screen flex-col space-y-6 bg-white gradient-bg-2">
       <header className="sticky top-0 z-40 border-b bg-background">
-        <div className="mx-32 lg:mx-10 md:mx-8 sm:mx-2  flex h-16 items-center justify-between py-4">
+        <div className="mx-2 mr-5 lg:mx-8 md:mx-10 sm:mx-32 flex h-16 items-center justify-between py-4">
           <MainNav items={dashboardConfig.mainNav} />
           <div className='flex justify-center items-center'>
             <DropdownMenu>
@@ -140,7 +140,7 @@ export default function DashboardLayout({
         </div>
       </header >
 
-      <div className="mx-2 sm:mx-8 grid flex-1 gap-12 md:grid-cols-[150px_1fr]">
+      <div className="mx-0 sm:mx-8 grid flex-1 gap-12 md:grid-cols-[150px_1fr]">
         <aside className="hidden w-[200px] flex-col md:flex">
           <DashboardNav items={dashboardConfig.sidebarNav} />
         </aside>

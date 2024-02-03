@@ -32,9 +32,9 @@ export default function CompanyProfile() {
 
         {/* Company Headline */}
         {data?.map((data: any) => (
-          <div className="m-10 grid grid-flow-col grid-cols-2 gap-x-6 rounded-2xl border-2 border-gray-100 bg-white p-8 md:grid-cols-1">
-            <div className=" max-w-[30rem]">
-              <div className="mb-4 flex flex-row gap-x-8">
+          <div className="mx-2 my-10 sm:mx-10 flex justify-between flex-col sm:flex-row gap-x-6 rounded-2xl border-2 border-gray-100 bg-white p-8 md:grid-cols-1">
+            <div className=" max-w-[30rem] w-full">
+              <div className="mb-4 flex flex-col sm:flex-row gap-x-8">
                 <Image
                   src={data.logoSrc}
                   alt="company-logo"
@@ -52,8 +52,8 @@ export default function CompanyProfile() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-row gap-x-4">
-                <div className="flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-gray-500 duration-200">
+              <div className="flex flex-col sm:flex-row gap-x-4">
+                <div className="mb-2 sm:mb-0 flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-gray-500 duration-200">
                   <Icons.user className="mr-2 h-4 w-4" />
                   {data.size}
                 </div>
@@ -98,16 +98,16 @@ export default function CompanyProfile() {
                   </DrawerContent>
                 </Drawer>
               </div>
-              <div className="flex flex-row gap-x-2">
+              <div className="flex flex-col sm:flex-row gap-x-2 mb-4 sm:mb-0">
                 <Link
                   href={"/company/profile/" + data.id}
-                  className="text-md mt-6 inline-flex max-h-12 w-full items-center justify-center rounded-lg border-2 border-black bg-black px-6 py-12 text-center text-white duration-200 hover:border-black hover:bg-transparent hover:text-black focus:outline-none focus-visible:outline-black"
+                  className="text-md mt-6 inline-flex max-h-4 sm:max-h-12 w-full items-center justify-center rounded-lg border-2 border-black bg-black px-6 py-4 sm:py-12 text-center text-white duration-200 hover:border-black hover:bg-transparent hover:text-black focus:outline-none focus-visible:outline-black"
                 >
                   VIEW COMPANY
                 </Link>
                 <Link
                   href={"/company/profile/" + data.id + "/jobs"}
-                  className="text-md mt-6 inline-flex max-h-12 w-full items-center justify-center rounded-lg border-2 border-black bg-black px-6 py-12 text-center text-white duration-200 hover:border-black hover:bg-transparent hover:text-black focus:outline-none focus-visible:outline-black"
+                  className="text-md mt-2 sm:mt-6 inline-flex max-h-4 sm:max-h-12 w-full items-center justify-center rounded-lg border-2 border-black bg-black px-6 py-4 sm:py-12 text-center text-white duration-200 hover:border-black hover:bg-transparent hover:text-black focus:outline-none focus-visible:outline-black"
                 >
                   <Icons.users className="mr-2 h-4 w-4" />
                   CONNECT TO JOBS

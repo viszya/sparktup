@@ -49,7 +49,7 @@ export function MainNav({ items, children }: MainNavProps) {
           SPARKTUP
         </span>
       </Link>
-      <nav className="-ml-2 hidden md:flex">
+      <nav className="ml-0 sm:-ml-2 hidden md:flex">
         {/* {items?.map((item, index) => (
             <Link
               key={index}
@@ -104,7 +104,7 @@ export function MainNav({ items, children }: MainNavProps) {
           </Link>
         </div>
       </nav>
-      <button
+      {/* <button
         className="flex items-center space-x-2 md:hidden"
         onClick={() => setShowMobileMenu(!showMobileMenu)}
       >
@@ -113,7 +113,7 @@ export function MainNav({ items, children }: MainNavProps) {
       </button>
       {showMobileMenu && items && (
         <MobileNav items={items}>{children}</MobileNav>
-      )}
+      )} */}
     </div>
   );
 }

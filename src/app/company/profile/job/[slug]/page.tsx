@@ -25,9 +25,9 @@ export default function Job({ params }: { params: { slug: string } }) {
   console.log(data);
 
   return (
-    <div className="w-full bg-white">
+    <div className=" w-full bg-white">
       <div className={cn(twp().wrapper, " text-white")}>
-        <Card className="my-10 flex flex-row gap-x-2 rounded-3xl border-2 border-black bg-black p-4">
+        <Card className="mx-4 my-10 flex flex-col gap-x-2 rounded-3xl border-2 border-black bg-black p-4 sm:mx-0 sm:flex-row">
           <div className="">
             <CardHeader>
               <div className="flex items-center space-x-2">
@@ -46,23 +46,21 @@ export default function Job({ params }: { params: { slug: string } }) {
               <div className="space-y-4">
                 <div className="flex items-center space-x-2">
                   <BriefcaseIcon className="h-5 w-5 text-white/60" />
-                  <p className="text-sm text-white/50">
+                  <p className="text-sm text-white">
                     {data.pricingDescription}
                   </p>
                 </div>
                 <div className="flex items-center space-x-2">
                   <BuildingIcon className="h-5 w-5 text-white/60" />
-                  <p className="text-sm text-white/50">
-                    {data.sizeDescription}
-                  </p>
+                  <p className="text-sm text-white">{data.sizeDescription}</p>
                 </div>
                 <div className="flex items-center space-x-2">
                   <MusicIcon className="h-5 w-5 text-white/60" />
-                  <p className="text-sm text-white/50">Skills: {data.skills}</p>
+                  <p className="text-sm text-white">Skills: {data.skills}</p>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircleIcon className="h-5 w-5 text-white/60" />
-                  <p className="text-sm text-white/50">
+                  <p className="text-sm text-white">
                     View verifications related to this job post.{" "}
                     <Link className="text-blue-600" href={data.jobLink}>
                       Show all
@@ -77,7 +75,10 @@ export default function Job({ params }: { params: { slug: string } }) {
                   pathname: "/company/profile/" + data.companyId + "/apply",
                   query: { job: data.position, jobId: data.id },
                 }}
-                className={cn(" text-white", buttonVariants({variant: "secondary"}))}
+                className={cn(
+                  " text-white",
+                  buttonVariants({ variant: "secondary" }),
+                )}
               >
                 Apply
               </Link>
@@ -93,7 +94,7 @@ export default function Job({ params }: { params: { slug: string } }) {
           </div>
         </Card>
 
-        <div className="rounded-3xl border-2 border-black bg-black p-4">
+        <div className="mx-4 rounded-3xl border-2 border-black bg-black p-4 sm:mx-0 sm:p-8">
           <div className="mb-2 mt-4 text-lg font-semibold tracking-tight text-white">
             About The Job
           </div>
@@ -153,12 +154,12 @@ export default function Job({ params }: { params: { slug: string } }) {
           <p className="mt-2 text-sm text-white/80">{data.companyAbout}</p>
         </div>
 
-        <div className="mt-10 w-full">
-          <div className="rounded-3xl border-2 border-black bg-black p-4">
+        <div className="mx-4 mt-10 sm:mx-0 ">
+          <div className="rounded-3xl border-2 border-black bg-black p-4 sm:p-8">
             <div className="grid grid-cols-3 gap-8">
               <div className="col-span-2">
                 <div className="mb-4 border-b border-gray-300 pb-4">
-                  <div className="flex justify-between text-sm text-white/80">
+                  <div className="grid grid-cols-3 text-sm text-white/80 sm:flex sm:justify-between">
                     <div>
                       Date posted{" "}
                       <span className="font-semibold">Oct 10, 2023</span>
@@ -271,7 +272,7 @@ export default function Job({ params }: { params: { slug: string } }) {
               <h2 className="mb-2 text-xl font-semibold text-white">
                 Qualifications
               </h2>
-              <div className="grid grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
                 <div>
                   <h3 className="mb-2 font-semibold">
                     Required/Minimum Qualifications
@@ -329,14 +330,14 @@ export default function Job({ params }: { params: { slug: string } }) {
                     Certain roles may be eligible for benefits and other
                     compensation. Find additional benefits and pay information
                     here:{" "}
-                    <a className="text-blue-600" href="#">
+                    {/* <a className="text-blue-600" href="#">
                       https://careers.microsoft.com/us/en/us-corporate-pay
-                    </a>
+                    </a> */}
                   </p>
-                  <div className="mt-4 flex space-x-2">
+                  {/* <div className="mt-4 flex space-x-2">
                     <Badge variant="default">#gamingjobs</Badge>
                     <Badge variant="default">#343careers</Badge>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -372,41 +373,41 @@ export default function Job({ params }: { params: { slug: string } }) {
               pathname: "/company/profile/" + data.companyId + "/apply",
               query: { job: data.position, jobId: data.id },
             }}
-            className={cn("bg-red-400 text-white", buttonVariants())}
+            className={cn(" text-cyan-300", buttonVariants())}
           >
             Apply
           </Link>
         </div>
-        <div className="text-black">
-          <div className="mb-6">
+        <div className="mx-4 mb-10 mt-10 grid grid-cols-2 gap-x-8 gap-y-2 text-black sm:mx-0 sm:grid-cols-3 md:grid-cols-4">
+          <div className="mb-6 w-full rounded-xl border-black bg-black p-4 text-white shadow-lg">
             <h2 className="mb-2 text-xl font-semibold">Date posted</h2>
             <p>Oct 10, 2023</p>
           </div>
-          <div className="mb-6">
+          <div className="mb-6 w-full rounded-xl border-black bg-black p-4 text-white shadow-lg">
             <h2 className="mb-2 text-xl font-semibold">Job number</h2>
             <p>1633829</p>
           </div>
-          <div className="mb-6">
+          <div className="mb-6 w-full rounded-xl border-black bg-black p-4 text-white shadow-lg">
             <h2 className="mb-2 text-xl font-semibold">Travel</h2>
             <p>0-25 %</p>
           </div>
-          <div className="mb-6">
+          <div className="mb-6 w-full rounded-xl border-black bg-black p-4 text-white shadow-lg">
             <h2 className="mb-2 text-xl font-semibold">Role type</h2>
             <p>People Manager</p>
           </div>
-          <div className="mb-6">
+          <div className="mb-6 w-full rounded-xl border-black bg-black p-4 text-white shadow-lg">
             <h2 className="mb-2 text-xl font-semibold">Discipline</h2>
             <p>Audio Design</p>
           </div>
-          <div className="mb-6">
+          <div className="mb-6 w-full rounded-xl border-black bg-black p-4 text-white shadow-lg">
             <h2 className="mb-2 text-xl font-semibold">Employment type</h2>
             <p>Full-Time</p>
           </div>
-          <div className="mb-6">
+          <div className="mb-6 w-full rounded-xl border-black bg-black p-4 text-white shadow-lg">
             <h2 className="mb-2 text-xl font-semibold">Work site</h2>
             <p>Up to 50% work from home</p>
           </div>
-          <div className="mb-6">
+          <div className="mb-6 w-full rounded-xl border-black bg-black p-4 text-white shadow-lg">
             <h2 className="mb-2 text-xl font-semibold">Profession</h2>
             <p>Design & Creative</p>
           </div>

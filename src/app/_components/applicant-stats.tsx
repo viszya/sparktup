@@ -17,7 +17,7 @@ export function Stats() {
     console.log(getStats.data)
 
     return (
-        <div className="grid grid-cols-3 gap-x-2 w-full max-w-5xl p-2 border border-secondary rounded-xl mt-2">
+        <div className="bg-white/30 grid gap-y-2 sm:gap-y-0 grid-cols-1 sm:grid-cols-3 gap-x-2 w-full max-w-5xl p-2 border border-secondary rounded-xl mt-2">
             <Card className="border-cyan-300 bg-black text-white">
 					<CardHeader>
 						<CardTitle>{getStats.data.views}</CardTitle>

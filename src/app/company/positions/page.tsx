@@ -27,12 +27,12 @@ export default function CompanyProfile() {
   return (
     <div className="gradient-bg-2 bg-white">
       <div className={cn(twp().wrapper, "pt-10")}>
-        <h1 className="movein mb-2 mt-12 text-center text-5xl font-bold text-black ">
+        <h1 className="movein mb-2 mt-0 sm:mt-12 text-center text-5xl font-bold text-black ">
           Job Positions
         </h1>
 
         {data.map((data: any) => (
-          <Card className="relative z-10 my-10 flex flex-row gap-x-2 rounded-3xl border border-gray-100 bg-white p-4">
+          <Card className="mx-4 sm:mx-0 relative z-10 my-10 flex flex-col sm:flex-row gap-x-2 rounded-3xl border border-gray-100 bg-white p-4">
             <div className="">
               <CardHeader>
                 <div className="flex items-center space-x-2">
