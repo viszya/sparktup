@@ -21,10 +21,7 @@ export default function Home() {
           Simplify and accelerate your job network
         </h1>
         <p className="movein mb-2 mt-5 max-w-prose text-2xl text-primary">
-          Finally: the stacked PRs workflow - securely and seamlessly integrated
-          with GitHub. <br />
-          Graphite parallelizes review and development, giving you more time to
-          build.
+        Streamline and expedite your professional connections with Sparktup's simplified job networking platform.
         </p>
         <div className="mt-4 flex flex-row">
           <Link
@@ -116,7 +113,7 @@ export default function Home() {
             <div className=" rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:rounded-2xl">
               <Image
                 priority={true}
-                src="/l2.png"
+                src="/s32.png"
                 alt="product preview"
                 width={400}
                 height={200}
@@ -129,7 +126,7 @@ export default function Home() {
             <div className=" rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10  lg:rounded-2xl">
               <Image
                 priority={true}
-                src="/l2.png"
+                src="/s14.png"
                 alt="product preview"
                 width={400}
                 height={200}
@@ -137,13 +134,13 @@ export default function Home() {
                 className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
               />
               <div className="mt-2 rounded-lg bg-white/70 text-xl font-bold text-black backdrop-blur-xl">
-                Bi-Connect Network
+                Real Time Dashboard
               </div>
             </div>
             <div className=" rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:rounded-2xl ">
               <Image
                 priority={true}
-                src="/l2.png"
+                src="/4.png"
                 alt="product preview"
                 width={400}
                 height={200}
@@ -151,13 +148,13 @@ export default function Home() {
                 className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
               />
               <div className="mt-2 rounded-lg bg-white/70 text-xl font-bold text-black backdrop-blur-xl">
-                Bi-Connect Network
+                View Job Positions Real Time
               </div>
             </div>
             <div className=" rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10  lg:rounded-2xl ">
               <Image
                 priority={true}
-                src="/l2.png"
+                src="/9.png"
                 alt="product preview"
                 width={400}
                 height={200}
@@ -165,13 +162,13 @@ export default function Home() {
                 className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
               />
               <div className="mt-2 rounded-lg bg-white/70 text-xl font-bold text-black backdrop-blur-xl">
-                Bi-Connect Network
+                Apply Through Website
               </div>
             </div>
-            <div className=" rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10  lg:rounded-2xl ">
+            <div className=" rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:rounded-2xl ">
               <Image
                 priority={true}
-                src="/l2.png"
+                src="/6.png"
                 alt="product preview"
                 width={400}
                 height={200}
@@ -179,13 +176,13 @@ export default function Home() {
                 className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
               />
               <div className="mt-2 rounded-lg bg-white/70 text-xl font-bold text-black backdrop-blur-xl">
-                Bi-Connect Network
+                Connect With Other Professionals
               </div>
             </div>
             <div className=" rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10  lg:rounded-2xl">
               <Image
                 priority={true}
-                src="/l2.png"
+                src="/8.png"
                 alt="product preview"
                 width={400}
                 height={200}
@@ -193,7 +190,7 @@ export default function Home() {
                 className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
               />
               <div className="mt-2 rounded-lg bg-white/70 text-xl font-bold text-black backdrop-blur-xl">
-                Bi-Connect Network
+                Post Job Positions
               </div>
             </div>
           </div>

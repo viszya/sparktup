@@ -115,13 +115,12 @@ export default function JobApplicationForm() {
                   <span className="inline-flex items-center rounded-xl text-black">
                   </span>
                   <div className="mt-3 text-3xl tracking-tighter text-black">
-                    Let&apos;s get started!
+                    Job Application For {data.companyName}
                   </div>
                   <div className="mt-4 text-gray-500">
-                    Let&apos;s get to know each other. Please fill out the
+                    Please fill out the
                     following form to the best of your ability. All this
-                    information will be used to create your profile. You can
-                    always edit your profile later.
+                    information will be used to create your job application and to link you with {data.companyName}&apos;s hiring team for any further communication.
                   </div>
                 </article>
 

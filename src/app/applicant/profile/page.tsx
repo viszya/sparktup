@@ -123,7 +123,7 @@ export default function Profile() {
 	// const data = api.profile.getData.query();
 
 	return (
-		<div className={cn("", twp().wrapper)}>
+		<div className={cn("", twp().wrapper)} >
 
 			{/* Profile Headline */}
 			<div className="grid grid-flow-col grid-cols-2 md:grid-cols-1 gap-x-6 m-10 bg-gray-300/10 p-8 rounded-2xl border-2 border-gray-200">
