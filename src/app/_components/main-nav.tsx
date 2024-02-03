@@ -6,6 +6,15 @@ import { twp, cn } from "@/server/utils";
 // import MobileNav from './MobileNav'
 import { getServerAuthSession } from "@/server/auth";
 // import { api } from "@/trpc/server";
+import { Icons } from "@/app/_components/icons"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuTrigger,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+} from "@/app/_components/ui/dropdown-menu"
 
 const Nav = async () => {
   const session = await getServerAuthSession();
@@ -48,29 +57,45 @@ const Nav = async () => {
                 SPARKTUP
               </span>
             </a>
-            <button className="inline-flex items-center justify-center p-2 text-gray-400 hover:text-black focus:text-black focus:outline-none md:hidden">
-              <svg
-                className="h-6 w-6"
-                stroke="currentColor"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  className="inline-flex"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-                <path
-                  className="hidden"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                ></path>
-              </svg>
-            </button>
+            <DropdownMenu>
+              <DropdownMenuTrigger className='block md:hidden ml-2 text-black transition-all duration-100'>
+                <Icons.menu className="w-6 h-6 text-primary" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="mr-2">
+                <DropdownMenuLabel>MENU</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  <Link href="/company/positions">
+                    Solutions
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/company">
+                    Companies
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/company/positions">
+                    Job Positions
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/applicant">
+                    Applicants
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/support">
+                    Support
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/faq">
+                    FAQ
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
           <nav className="hidden flex-grow flex-col items-center md:flex md:flex-row md:justify-end md:pb-0">
             <div className="mx-4 flex-1">
