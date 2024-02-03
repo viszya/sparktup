@@ -13,7 +13,7 @@ export default function Page() {
       <div
         className={cn(
           twp().wrapper,
-          "flex max-w-6xl flex-col items-center justify-center pt-10",
+          "flex max-w-4xl flex-col items-center justify-center pt-10",
         )}
       >
         <h1 className="movein mb-2 mt-12 text-center text-5xl font-bold text-black ">

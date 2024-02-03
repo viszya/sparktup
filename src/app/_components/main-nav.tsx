@@ -43,7 +43,7 @@ const Nav = () => {
       await accountTypeQuery.refetch(); // Refetch the data
       if (accountTypeQuery.data?.accountType === "applicant") {
         setState("applicant");
-      } else {
+      } else if (accountTypeQuery.data?.accountType === "company") {
         setState("company");
       }
       setIsLoading(false);
