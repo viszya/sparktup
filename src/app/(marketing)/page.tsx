@@ -53,13 +53,13 @@ export default function Home() {
           <div className="relative isolate">
             <div className="mx-auto  px-6 lg:px-8">
               <div className="mt-16 flow-root sm:mt-24">
-                <div className=" rounded-xl bg-white/70 p-2 ring-1 ring-inset ring-white lg:-m-4 lg:rounded-2xl lg:p-4">
+                <div className="flex justify-center items-center rounded-xl bg-white/70 p-2 ring-1 ring-inset ring-white lg:-m-4 lg:rounded-2xl lg:p-4">
                   <Image
                     priority={true}
                     src="/landing-pre.png"
                     alt="product preview"
-                    width={1800}
-                    height={600}
+                    width={1120}
+                    height={220}
                     quality={100}
                     className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
                   />
@@ -70,7 +70,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative flex h-full w-full flex-col items-center justify-center bg-white">
+      <section className="px-2 relative flex h-full w-full flex-col items-center justify-center bg-white">
         {/* <Image
           src="/logo-bg.svg"
           alt="bg-svg"
@@ -100,16 +100,17 @@ export default function Home() {
             applicants <Icons.arrowRight className="ml-2 h-5 w-5" />
           </div>
         </Link>
+
       </section>
 
       {/* Features */}
 
       <section className="hero-image-2 flex flex-col items-center justify-center text-center">
-        <h1 className="lg:text:7xl mt-10  text-4xl font-semibold text-black md:text-6xl">
+        <h1 className="lg:text:7xl mt-10 text-4xl font-semibold text-black md:text-6xl">
           Features
         </h1>
-        <div className="border-1 relative mx-auto items-center rounded-2xl px-5 py-24 md:px-12 lg:px-16 ">
-          <div className="grid grid-cols-3 gap-8">
+        <div className="border-1 mx-auto items-center rounded-2xl px-5 py-24 md:px-12 lg:px-16 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             <div className=" rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:rounded-2xl">
               <Image
                 priority={true}
@@ -126,7 +127,7 @@ export default function Home() {
             <div className=" rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10  lg:rounded-2xl">
               <Image
                 priority={true}
-                src="/s14.png"
+                src="/lp2.png"
                 alt="product preview"
                 width={400}
                 height={200}
@@ -182,7 +183,7 @@ export default function Home() {
             <div className=" rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10  lg:rounded-2xl">
               <Image
                 priority={true}
-                src="/8.png"
+                src="/lp3.png"
                 alt="product preview"
                 width={400}
                 height={200}
@@ -190,7 +191,7 @@ export default function Home() {
                 className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
               />
               <div className="mt-2 rounded-lg bg-white/70 text-xl font-bold text-black backdrop-blur-xl">
-                Post Job Positions
+                Collect Applications Efficiently
               </div>
             </div>
           </div>

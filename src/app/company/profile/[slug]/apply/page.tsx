@@ -10,6 +10,7 @@ import { useToast } from "@/app/_components/ui/use-toast";
 import { cn } from "@/server/utils";
 import { useSearchParams } from "next/navigation";
 import { Icons } from "@/app/_components/icons";
+import { Skeleton } from "@/app/_components/ui/skeleton";
 import Link from "next/link";
 import {
   AlertDialog,
@@ -62,7 +63,66 @@ export default function JobApplicationForm() {
   }, []);
   const res = api.test.getCompanyProfile2.useQuery({ id: id });
   if (res.isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="gradient-bg-2 bg-white flex flex-col justify-center items-center px-4">
+        <section className="mb-10 mt-10 flex flex-col items-center justify-center">
+          <h2 className="text-3xl font-bold tracking-tight">Apply to ...</h2>
+        </section>
+        <div className="mb-10 mt-10 w-full max-w-3xl rounded-2xl border border-black bg-white/80">
+          <div className=" flex flex-col rounded-xl border border-dashed border-secondary p-5 px-2 sm:px-8">
+            <div className="flex flex-col justify-center text-center md:flex-row md:text-left">
+              <div className="flex w-full max-w-3xl flex-col justify-center space-y-12">
+                <article>
+                  <span className="inline-flex items-center rounded-xl text-black">
+                    <Skeleton className="h-6 w-6" />
+                  </span>
+                  <div className="mt-3 text-3xl tracking-tighter text-black">
+                    <Skeleton className="h-10 w-[300px]" />
+                  </div>
+                  <div className="mt-4 text-gray-500">
+                    <Skeleton count={3} />
+                  </div>
+                </article>
+
+                <form
+                  className="flex flex-col gap-y-4 "
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    onSubmit();
+                  }}
+                >
+                  <div className="col-span-full">
+                    <label className="mb-3 block text-lg font-medium text-primary">
+                      <Skeleton className="h-6 w-[200px]" />
+                    </label>
+                    <Skeleton className="h-8 w-[100px]" />
+                  </div>
+                  <div>
+                  <Skeleton className="h-6 w-[200px] mb-2" />
+                  <Skeleton className="h-8 w-[400px] sm:w-[600px] mb-6" />
+                  <Skeleton className="h-6 w-[200px] mb-2" />
+                  <Skeleton className="h-8 w-[400px] sm:w-[600px] mb-6" />
+                  <Skeleton className="h-6 w-[200px] mb-2" />
+                  <Skeleton className="h-8 w-[400px] sm:w-[600px] mb-6" />
+                  <Skeleton className="h-6 w-[200px] mb-2" />
+                  <Skeleton className="h-8 w-[400px] sm:w-[600px] mb-6" />
+                  <Skeleton className="h-6 w-[200px] mb-2" />
+                  <Skeleton className="h-8 w-[400px] sm:w-[600px] mb-6" />
+
+                  </div>
+                  {/* ... (Repeat similar structure for other form fields) ... */}
+
+                  {/* Submit Button */}
+                  <div className="col-span-full flex justify-center">
+                    <Skeleton className="h-10 w-[200px]" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   const data = res.data;
@@ -102,25 +162,25 @@ export default function JobApplicationForm() {
   }
 
   return (
-    <div className="bg-white gradient-bg-2">
-      <section className="mt-10 flex flex-col items-center justify-center mb-10">
+    <div className="gradient-bg-2 bg-white">
+      <section className="mb-10 mt-10 flex flex-col items-center justify-center">
         <h2 className="text-3xl font-bold tracking-tight">
           Apply To {data.companyName}
         </h2>
-        <div className=" w-full max-w-3xl bg-white/80 border-black border rounded-2xl mt-10">
+        <div className=" mt-10 w-full max-w-3xl rounded-2xl border border-black bg-white/80">
           <div className=" flex flex-col rounded-xl border border-dashed border-secondary p-5 px-8">
             <div className="flex flex-col justify-center text-center md:flex-row md:text-left">
               <div className="flex w-full max-w-3xl flex-col justify-center space-y-12">
                 <article>
-                  <span className="inline-flex items-center rounded-xl text-black">
-                  </span>
+                  <span className="inline-flex items-center rounded-xl text-black"></span>
                   <div className="mt-3 text-3xl tracking-tighter text-black">
                     Job Application For {data.companyName}
                   </div>
                   <div className="mt-4 text-gray-500">
-                    Please fill out the
-                    following form to the best of your ability. All this
-                    information will be used to create your job application and to link you with {data.companyName}&apos;s hiring team for any further communication.
+                    Please fill out the following form to the best of your
+                    ability. All this information will be used to create your
+                    job application and to link you with {data.companyName}
+                    &apos;s hiring team for any further communication.
                   </div>
                 </article>
 
