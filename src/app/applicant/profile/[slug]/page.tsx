@@ -15,6 +15,7 @@ import {
   DrawerHeader,
   DrawerTrigger,
 } from "@/app/_components/ui/drawer";
+import { Skeleton } from "@/app/_components/ui/skeleton";
 
 export default function ProfilePage({ params }: { params: { slug: string } }) {
   const res = api.user.getProfile.useQuery({ id: params.slug });
@@ -24,7 +25,65 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
     console.log("i fire once");
   }, []);
   if (res.isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className={cn("applicant-bg")}>
+        <div className={cn("mb-20 pb-[20rem]", twp().wrapper)}>
+          {/* Profile Headline */}
+          <div className="m-4 flex flex-col justify-between gap-x-6 rounded-2xl border-2 border-black bg-black p-8 text-white sm:m-0 sm:mt-10 sm:flex-row md:grid-cols-1">
+            <div className=" mb-4 max-w-[30rem] sm:mb-0">
+              <div className="mb-4 flex flex-col gap-x-8 sm:flex-row">
+                <Skeleton className="h-20 w-20 rounded-full sm:h-32 sm:w-32" />
+                <div>
+                  <div className="mt-4 text-2xl font-medium tracking-tight text-white sm:text-4xl">
+                    <Skeleton className="mb-2 h-[30px] w-[200px]" />
+                  </div>
+                  <div className="mb-4 mt-2 flex flex-row items-center">
+                    <div className=" text-lg font-medium leading-6 text-white">
+                      <Skeleton className="mr-1 h-[20px] w-[150px]" />
+                    </div>
+                    <Skeleton className="mx-1 h-4 w-4 text-white/80" />
+                    <div className="text-white/80">
+                      <Skeleton className="h-[20px] w-[100px]" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col gap-x-4 sm:flex-row">
+                <div className="mb-2 flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-white/80 duration-200 sm:mb-0 ">
+                  <Skeleton className="h-[20px] w-[150px]" />
+                </div>
+                <div className="mb-2 flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-white/80 duration-200 sm:mb-0 ">
+                  <Skeleton className="h-[20px] w-[150px]" />
+                </div>
+              </div>
+              <div className="mt-2 text-white/80">
+                <Skeleton className="h-[40px] w-[400px]" />
+              </div>
+              <div>
+                <div className="mt-2 text-white/80">
+                  <Skeleton className="h-[100px] w-[500px]" />
+                </div>
+              </div>
+            </div>
+            <div>
+              <Skeleton
+                className="rounded-2xl"
+                style={{ width: "400px", height: "150px" }}
+              />
+
+              <div className="mt-5 w-full rounded-xl border-2 border-white/80 bg-primary/10 p-6">
+                <div className="text-2xl font-medium leading-6">
+                  <Skeleton style={{ width: "300px", height: "50px" }} />
+                </div>
+                <div className="font-light"></div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    );
   }
   const data = res.data;
 
@@ -32,9 +91,9 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
     <div className={cn("applicant-bg")}>
       <div className={cn("mb-20", twp().wrapper)}>
         {/* Profile Headline */}
-        <div className="m-4 justify-between sm:m-0 sm:mt-10 flex flex-col sm:flex-row gap-x-6 rounded-2xl border-2 border-black bg-black text-white p-8 md:grid-cols-1">
-          <div className=" max-w-[30rem] mb-4 sm:mb-0">
-            <div className="mb-4 flex flex-col sm:flex-row gap-x-8">
+        <div className="m-4 flex flex-col justify-between gap-x-6 rounded-2xl border-2 border-black bg-black p-8 text-white sm:m-0 sm:mt-10 sm:flex-row md:grid-cols-1">
+          <div className=" mb-4 max-w-[30rem] sm:mb-0">
+            <div className="mb-4 flex flex-col gap-x-8 sm:flex-row">
               <Image
                 src={data?.profileSrc}
                 alt="profile"
@@ -55,8 +114,8 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-x-4">
-              <div className="mb-2 sm:mb-0 flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-white/80 duration-200 ">
+            <div className="flex flex-col gap-x-4 sm:flex-row">
+              <div className="mb-2 flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-white/80 duration-200 sm:mb-0 ">
                 <Icons.pin className="mr-2 h-4 w-4" /> {data.location}
               </div>
               <Link
@@ -164,10 +223,10 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
           <div className="my-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">
             Experiences
           </div>
-          <div className="mx-auto max-w-7xl items-center rounded-2xl border-2 border-black bg-black text-white  p-8 px-8 sm:px-14 py-4">
+          <div className="mx-auto max-w-7xl items-center rounded-2xl border-2 border-black bg-black p-8  px-8 py-4 text-white sm:px-14">
             <ul className="divide-mercury-300 w-full divide-y" role="list">
               {data.experiences.map((data: any) => (
-                <li className="py-4 lg:py-8 my-4">
+                <li className="my-4 py-4 lg:py-8">
                   <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-3 lg:gap-24">
                     <div className="order-last lg:order-last lg:col-span-2">
                       <p className="text-lg font-medium leading-6 text-white">
@@ -226,14 +285,14 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
           <div className="mb-4 mt-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">
             Top Skills
           </div>
-          <div className="relative mx-auto w-full max-w-7xl items-center rounded-2xl border-2 border-black bg-black text-white p-8 px-2 py-2 sm:py-10 md:px-12 lg:px-20">
+          <div className="relative mx-auto w-full max-w-7xl items-center rounded-2xl border-2 border-black bg-black p-8 px-2 py-2 text-white sm:py-10 md:px-12 lg:px-20">
             <div className="mx-auto grid w-full grid-cols-1 lg:grid-cols-3">
               {data.topSkills.map((data: any) => (
                 <div className="mx-auto max-w-md p-6">
                   <div className="gap-3 lg:inline-flex lg:items-center">
                     <div
                       className={cn(
-                        "hidden sm:flex h-12 w-12 items-center justify-center rounded-xl text-white",
+                        "hidden h-12 w-12 items-center justify-center rounded-xl text-white sm:flex",
                         `bg-primary/20`,
                       )}
                     >
@@ -257,7 +316,7 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
           <div className="my-4 text-2xl font-medium tracking-tight text-white sm:text-4xl">
             Reccomendations
           </div>
-          <div className="mx-auto max-w-7xl items-center rounded-2xl border-2 border-black bg-black text-white  p-8 px-8 sm:px-14 py-4">
+          <div className="mx-auto max-w-7xl items-center rounded-2xl border-2 border-black bg-black p-8  px-8 py-4 text-white sm:px-14">
             <ul className="divide-mercury-300 w-full divide-y" role="list">
               {data.recommendations.map((data: any) => (
                 <li className="py-4 lg:py-8">
@@ -292,15 +351,14 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
           <div className="my-4 text-2xl font-medium tracking-tight text-white  sm:text-4xl">
             Projects
           </div>
-          <div className="rounded-2xl border-2 border-black bg-black px-2 sm:px-8 py-9">
+          <div className="rounded-2xl border-2 border-black bg-black px-2 py-9 sm:px-8">
             <div className="relative mx-auto w-full max-w-7xl items-center px-5 py-2 md:px-4 lg:px-8">
-              <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div className="col-span-2 grid grid-cols-1 gap-8 sm:grid-cols-2">
                 {data.projects.map((data: any) => (
                   <Link
                     href={data.link}
-                    className="flex flex-col items-center justify-center rounded-2xl border-2 border-black bg-white p-2 hover:border-white hover:bg-gray-200 transition"
-                    >
-
+                    className="flex flex-col items-center justify-center rounded-2xl border-2 border-black bg-white p-2 transition hover:border-white hover:bg-gray-200"
+                  >
                     <div className="my-4 text-xl ">{data.name}</div>
                     <Image
                       className="rounded-2xl"
@@ -323,9 +381,9 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
           </div>
           <div className="rounded-2xl border-2 border-black bg-black p-8">
             <div className="mx-auto max-w-7xl px-4 py-6  lg:px-8">
-              <div className="flex flex-col sm:flex-row items-center rounded-2xl border-2 border-white bg-white/10 px-6 py-6 sm:px-40">
+              <div className="flex flex-col items-center rounded-2xl border-2 border-white bg-white/10 px-6 py-6 sm:flex-row sm:px-40">
                 <div className="xl:w-0 xl:flex-1">
-                  <p className="flex flex-col sm:flex-row items-cente text-3xl mb-4 sm:mb-0 sm:text-5xl text-white ">
+                  <p className="items-cente mb-4 flex flex-col text-3xl text-white sm:mb-0 sm:flex-row sm:text-5xl ">
                     View Resume
                   </p>
                 </div>

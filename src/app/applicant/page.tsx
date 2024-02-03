@@ -7,6 +7,8 @@ import Image from "next/image";
 import { Button } from "@/app/_components/ui/button";
 import { api } from "@/trpc/react";
 import Link from "next/link";
+import { Skeleton } from "@/app/_components/ui/skeleton";
+
 import {
   Drawer,
   DrawerClose,
@@ -19,21 +21,199 @@ import {
 export default function CompanyProfile() {
   const res = api.user.getProfiles.useQuery();
   if (res.status === "loading") {
-    return <div>Loading...</div>;
+    return (
+      <div className="applicant-bg-2">
+        <div className={cn(twp().wrapper, "pb-8 pt-10 text-white sm:pb-20")}>
+          <h1 className="movein mb-10 mt-4 text-center text-5xl font-bold text-black sm:mb-2 sm:mt-12 ">
+            Applicants
+          </h1>
+          <div className="m-4 mb-0 flex flex-col justify-between gap-x-6 rounded-2xl border-2 border-gray-100 bg-white p-8 sm:m-10 sm:mb-10 sm:flex-row ">
+            <div className="max-w-[30rem]">
+              <div className="mb-4 flex flex-col gap-x-8 sm:flex-row">
+                <Skeleton className="h-[50px] w-[100px] rounded-full" />
+                <div>
+                  <div className="mt-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">
+                    <Skeleton className="h-[30px] w-[200px]" />
+                  </div>
+                  <div className="mb-4 mt-2 flex flex-row items-center">
+                    <div className="text-lg font-medium leading-6 text-black">
+                      <Skeleton className="h-[20px] w-[150px]" />
+                    </div>
+                    <Icons.dot className="mx-1 h-4 w-4 text-gray-500" />
+                    <div className="text-gray-500">
+                      <Skeleton className="h-[20px] w-[100px]" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col gap-x-4 sm:flex-row">
+                <Skeleton className="h-[20px] w-[100px]" />
+                <Skeleton className="h-[20px] w-[100px]" />
+              </div>
+              <Skeleton className="mt-10 h-[40px] w-[400px]" />
+            </div>
+            <div className="w-full max-w-[30rem]">
+              <div className="mt-8 text-xl font-medium tracking-tight text-black sm:text-2xl">
+                <Skeleton className="h-[20px] w-[100px]" />
+              </div>
+              <div className="mt-2 text-gray-500">
+                <Skeleton className="h-[100px] w-full" />
+              </div>
+            </div>
+          </div>
+          <div className="m-4 mb-0 flex flex-col justify-between gap-x-6 rounded-2xl border-2 border-gray-100 bg-white p-8 sm:m-10 sm:mb-10 sm:flex-row ">
+            <div className="max-w-[30rem]">
+              <div className="mb-4 flex flex-col gap-x-8 sm:flex-row">
+                <Skeleton className="h-[50px] w-[100px] rounded-full" />
+                <div>
+                  <div className="mt-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">
+                    <Skeleton className="h-[30px] w-[200px]" />
+                  </div>
+                  <div className="mb-4 mt-2 flex flex-row items-center">
+                    <div className="text-lg font-medium leading-6 text-black">
+                      <Skeleton className="h-[20px] w-[150px]" />
+                    </div>
+                    <Icons.dot className="mx-1 h-4 w-4 text-gray-500" />
+                    <div className="text-gray-500">
+                      <Skeleton className="h-[20px] w-[100px]" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col gap-x-4 sm:flex-row">
+                <Skeleton className="h-[20px] w-[100px]" />
+                <Skeleton className="h-[20px] w-[100px]" />
+              </div>
+              <Skeleton className="mt-10 h-[40px] w-[400px]" />
+            </div>
+            <div className="w-full max-w-[30rem]">
+              <div className="mt-8 text-xl font-medium tracking-tight text-black sm:text-2xl">
+                <Skeleton className="h-[20px] w-[100px]" />
+              </div>
+              <div className="mt-2 text-gray-500">
+                <Skeleton className="h-[100px] w-full" />
+              </div>
+            </div>
+          </div>
+          <div className="m-4 mb-0 flex flex-col justify-between gap-x-6 rounded-2xl border-2 border-gray-100 bg-white p-8 sm:m-10 sm:mb-10 sm:flex-row ">
+            <div className="max-w-[30rem]">
+              <div className="mb-4 flex flex-col gap-x-8 sm:flex-row">
+                <Skeleton className="h-[50px] w-[100px] rounded-full" />
+                <div>
+                  <div className="mt-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">
+                    <Skeleton className="h-[30px] w-[200px]" />
+                  </div>
+                  <div className="mb-4 mt-2 flex flex-row items-center">
+                    <div className="text-lg font-medium leading-6 text-black">
+                      <Skeleton className="h-[20px] w-[150px]" />
+                    </div>
+                    <Icons.dot className="mx-1 h-4 w-4 text-gray-500" />
+                    <div className="text-gray-500">
+                      <Skeleton className="h-[20px] w-[100px]" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col gap-x-4 sm:flex-row">
+                <Skeleton className="h-[20px] w-[100px]" />
+                <Skeleton className="h-[20px] w-[100px]" />
+              </div>
+              <Skeleton className="mt-10 h-[40px] w-[400px]" />
+            </div>
+            <div className="w-full max-w-[30rem]">
+              <div className="mt-8 text-xl font-medium tracking-tight text-black sm:text-2xl">
+                <Skeleton className="h-[20px] w-[100px]" />
+              </div>
+              <div className="mt-2 text-gray-500">
+                <Skeleton className="h-[100px] w-full" />
+              </div>
+            </div>
+          </div>
+          <div className="m-4 mb-0 flex flex-col justify-between gap-x-6 rounded-2xl border-2 border-gray-100 bg-white p-8 sm:m-10 sm:mb-10 sm:flex-row ">
+            <div className="max-w-[30rem]">
+              <div className="mb-4 flex flex-col gap-x-8 sm:flex-row">
+                <Skeleton className="h-[50px] w-[100px] rounded-full" />
+                <div>
+                  <div className="mt-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">
+                    <Skeleton className="h-[30px] w-[200px]" />
+                  </div>
+                  <div className="mb-4 mt-2 flex flex-row items-center">
+                    <div className="text-lg font-medium leading-6 text-black">
+                      <Skeleton className="h-[20px] w-[150px]" />
+                    </div>
+                    <Icons.dot className="mx-1 h-4 w-4 text-gray-500" />
+                    <div className="text-gray-500">
+                      <Skeleton className="h-[20px] w-[100px]" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col gap-x-4 sm:flex-row">
+                <Skeleton className="h-[20px] w-[100px]" />
+                <Skeleton className="h-[20px] w-[100px]" />
+              </div>
+              <Skeleton className="mt-10 h-[40px] w-[400px]" />
+            </div>
+            <div className="w-full max-w-[30rem]">
+              <div className="mt-8 text-xl font-medium tracking-tight text-black sm:text-2xl">
+                <Skeleton className="h-[20px] w-[100px]" />
+              </div>
+              <div className="mt-2 text-gray-500">
+                <Skeleton className="h-[100px] w-full" />
+              </div>
+            </div>
+          </div>
+          <div className="m-4 mb-0 flex flex-col justify-between gap-x-6 rounded-2xl border-2 border-gray-100 bg-white p-8 sm:m-10 sm:mb-10 sm:flex-row ">
+            <div className="max-w-[30rem]">
+              <div className="mb-4 flex flex-col gap-x-8 sm:flex-row">
+                <Skeleton className="h-[50px] w-[100px] rounded-full" />
+                <div>
+                  <div className="mt-4 text-2xl font-medium tracking-tight text-black sm:text-4xl">
+                    <Skeleton className="h-[30px] w-[200px]" />
+                  </div>
+                  <div className="mb-4 mt-2 flex flex-row items-center">
+                    <div className="text-lg font-medium leading-6 text-black">
+                      <Skeleton className="h-[20px] w-[150px]" />
+                    </div>
+                    <Icons.dot className="mx-1 h-4 w-4 text-gray-500" />
+                    <div className="text-gray-500">
+                      <Skeleton className="h-[20px] w-[100px]" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col gap-x-4 sm:flex-row">
+                <Skeleton className="h-[20px] w-[100px]" />
+                <Skeleton className="h-[20px] w-[100px]" />
+              </div>
+              <Skeleton className="mt-10 h-[40px] w-[400px]" />
+            </div>
+            <div className="w-full max-w-[30rem]">
+              <div className="mt-8 text-xl font-medium tracking-tight text-black sm:text-2xl">
+                <Skeleton className="h-[20px] w-[100px]" />
+              </div>
+              <div className="mt-2 text-gray-500">
+                <Skeleton className="h-[100px] w-full" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
   const data = res.data;
   console.log(data);
 
   return (
     <div className="applicant-bg-2">
-      <div className={cn(twp().wrapper, "text-white pb-8 sm:pb-20 pt-10")}>
-        <h1 className="movein mb-10 sm:mb-2 mt-4 sm:mt-12 text-center text-5xl font-bold text-black ">
+      <div className={cn(twp().wrapper, "pb-8 pt-10 text-white sm:pb-20")}>
+        <h1 className="movein mb-10 mt-4 text-center text-5xl font-bold text-black sm:mb-2 sm:mt-12 ">
           Applicants
         </h1>
         {data.map((applicant) => (
-          <div className="m-4 sm:m-10 border-gray-100 mb-0 sm:mb-10 flex flex-col sm:flex-row justify-between gap-x-6 rounded-2xl border-2 bg-white p-8 ">
+          <div className="m-4 mb-0 flex flex-col justify-between gap-x-6 rounded-2xl border-2 border-gray-100 bg-white p-8 sm:m-10 sm:mb-10 sm:flex-row ">
             <div className="max-w-[30rem]">
-              <div className="mb-4 flex flex-col sm:flex-row gap-x-8">
+              <div className="mb-4 flex flex-col gap-x-8 sm:flex-row">
                 <Image
                   src={applicant.profileSrc}
                   alt="profile"
@@ -54,8 +234,8 @@ export default function CompanyProfile() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-x-4">
-                <div className="mb-2 sm:mb-0 flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-gray-500 duration-200 ">
+              <div className="flex flex-col gap-x-4 sm:flex-row">
+                <div className="mb-2 flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-gray-500 duration-200 sm:mb-0 ">
                   <Icons.pin className="mr-2 h-4 w-4" /> {applicant.location}
                 </div>
                 <Link
