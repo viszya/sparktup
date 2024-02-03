@@ -8,6 +8,7 @@ import { columns } from "./components/columns"
 import { DataTable } from "./components/data-table"
 import { api } from "@/trpc/react"
 import { Toaster } from "@/app/_components/ui/toaster"
+import { Skeleton } from "@/app/_components/ui/skeleton"
 
 // Simulate a database read for tasks.
 function getTasks() {
@@ -34,7 +35,9 @@ export  function DataPage() {
   let data = applications.data
 
   if (applications.isLoading == true) {
-    return <div>Loading...</div>
+    return (
+      <Skeleton className="w-full h-96 rounded-2xl"/>
+    )
   }
 
 

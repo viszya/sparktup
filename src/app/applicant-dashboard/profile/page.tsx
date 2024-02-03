@@ -16,11 +16,66 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/app/_components/ui/drawer";
+import { Skeleton } from "@/app/_components/ui/skeleton";
 
 export default function MyProfile() {
   const res = api.user.getProfilePrivate.useQuery();
   if (res.isLoading) {
-    return <div>Loading...</div>;
+    return (
+        <div className={cn("mb-20 ", twp().wrapper)}>
+          {/* Profile Headline */}
+          <div className="m-4 flex flex-col justify-between gap-x-6 rounded-2xl border-2 border-black bg-black p-8 text-white sm:m-0 sm:mt-10 sm:flex-row md:grid-cols-1">
+            <div className=" mb-4 max-w-[30rem] sm:mb-0">
+              <div className="mb-4 flex flex-col gap-x-8 sm:flex-row">
+                <Skeleton className="h-20 w-20 rounded-full sm:h-32 sm:w-32" />
+                <div>
+                  <div className="mt-4 text-2xl font-medium tracking-tight text-white sm:text-4xl">
+                    <Skeleton className="mb-2 h-[30px] w-[200px]" />
+                  </div>
+                  <div className="mb-4 mt-2 flex flex-row items-center">
+                    <div className=" text-lg font-medium leading-6 text-white">
+                      <Skeleton className="mr-1 h-[20px] w-[150px]" />
+                    </div>
+                    <Skeleton className="mx-1 h-4 w-4 text-white/80" />
+                    <div className="text-white/80">
+                      <Skeleton className="h-[20px] w-[100px]" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col gap-x-4 sm:flex-row">
+                <div className="mb-2 flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-white/80 duration-200 sm:mb-0 ">
+                  <Skeleton className="h-[20px] w-[150px]" />
+                </div>
+                <div className="mb-2 flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-white/80 duration-200 sm:mb-0 ">
+                  <Skeleton className="h-[20px] w-[150px]" />
+                </div>
+              </div>
+              <div className="mt-2 text-white/80">
+                <Skeleton className="h-[40px] w-[400px]" />
+              </div>
+              <div>
+                <div className="mt-2 text-white/80">
+                  <Skeleton className="h-[100px] w-[500px]" />
+                </div>
+              </div>
+            </div>
+            <div>
+              <Skeleton
+                className="rounded-2xl"
+                style={{ width: "400px", height: "150px" }}
+              />
+
+              <div className="mt-5 w-full rounded-xl border-2 border-white/80 bg-primary/10 p-6">
+                <div className="text-2xl font-medium leading-6">
+                  <Skeleton style={{ width: "300px", height: "50px" }} />
+                </div>
+                <div className="font-light"></div>
+              </div>
+            </div>
+          </div>
+      </div>
+    );
   }
   const data = res.data;
 
