@@ -12,7 +12,7 @@ export default function About() {
             </h2>
             <div className="mt-4 rounded-xl border-2 border-black bg-black p-4 text-base text-white md:mt-6 md:text-lg ">
               Welcome to Sparktup, where innovation meets opportunity. Founded
-              by Vedant Lad, Vishwa Anand, Sparktup was born
+              by Vedant Lad, Vishwa Anand, Sparktup was bornj
               out of a shared vision to revolutionize the way individuals and
               businesses connect in the dynamic world of technology. <br />{" "}
               <br />
