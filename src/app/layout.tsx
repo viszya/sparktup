@@ -10,6 +10,15 @@ import { ThemeProvider } from "@/app/_components/theme-provider";
 import { Toaster } from "@/app/_components/ui/toaster";
 import Head from "next/head";
 import Script from "next/script";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/app/_components/ui/dropdown-menu";
+import Image from "next/image";
 
 // Metadata
 export const metadata = {
@@ -63,7 +72,29 @@ export default function RootLayout({
             <Toaster />
           </ThemeProvider>
         </TRPCReactProvider>
-
+        <DropdownMenu>
+          <DropdownMenuTrigger className=" sticky bottom-0 right-0 ml-4 mr-4 pb-12">
+            <Image
+              alt="Bot Image"
+              src="/bot.png"
+              width={65}
+              height={100}
+              className="rounded-full border-4 border-black"
+            />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="mb-4 ml-4 w-[30rem]">
+            <div className="relative">
+              <iframe
+                src="https://www.chatbase.co/chatbot-iframe/dDmgRnfL5zdFPyWQT0-q9"
+                width="100%"
+                style={{ height: "100%", minHeight: "700px" }}
+                frameBorder="0"
+                title="My Chatbot Iframe"
+              ></iframe>
+              <div className="absolute bottom-0 right-40 h-10 w-48 bg-white"></div>
+            </div>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </body>
 
       <Head>

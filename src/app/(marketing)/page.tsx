@@ -275,7 +275,7 @@ export default function Home() {
 
         </div>
       </section>
-      <DropdownMenu>
+      {/* <DropdownMenu>
           <DropdownMenuTrigger className=" ml-auto sticky bottom-0 mr-4 pb-4">
             <Image
             alt="Bot Image"
@@ -300,7 +300,7 @@ export default function Home() {
             </div>
 
           </DropdownMenuContent>
-        </DropdownMenu>
+        </DropdownMenu> */}
     </main>
   );
 }
