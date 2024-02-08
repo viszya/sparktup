@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { cn } from "@/server/utils";
 import { buttonVariants } from "@/app/_components/ui/button";
+import { Icons} from "@/app/_components/icons";
 import Image from "next/image";
 
 export default function Home() {
