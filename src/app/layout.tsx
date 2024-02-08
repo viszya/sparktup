@@ -10,15 +10,6 @@ import { ThemeProvider } from "@/app/_components/theme-provider";
 import { Toaster } from "@/app/_components/ui/toaster";
 import Head from "next/head";
 import Script from "next/script";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/app/_components/ui/dropdown-menu";
-import Image from "next/image";
 
 // Metadata
 export const metadata = {

@@ -1,7 +1,6 @@
 import { Footer } from "@/app/_components/footer";
 import { twp } from "@/server/utils";
 import Nav from "@/app/_components/main-nav";
-import { CTA } from "@/app/_components/cta";
 import Loading  from "@/app/applicant/profile/[slug]/loading"
 import { Suspense } from "react";
 

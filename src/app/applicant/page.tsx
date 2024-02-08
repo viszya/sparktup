@@ -4,19 +4,9 @@ import { cn } from "@/server/utils";
 import { Icons } from "@/app/_components/icons";
 import { twp } from "@/server/utils";
 import Image from "next/image";
-import { Button } from "@/app/_components/ui/button";
 import { api } from "@/trpc/react";
 import Link from "next/link";
 import { Skeleton } from "@/app/_components/ui/skeleton";
-
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTrigger,
-} from "@/app/_components/ui/drawer";
 
 export default function CompanyProfile() {
   const res = api.user.getProfiles.useQuery();

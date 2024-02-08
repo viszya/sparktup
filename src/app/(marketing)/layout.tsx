@@ -1,14 +1,9 @@
 import { Footer } from "@/app/_components/footer";
-import { twp } from "@/server/utils";
 import Nav from "@/app/_components/main-nav";
-import { CTA } from "@/app/_components/cta";
 import { Toaster } from "@/app/_components/ui/sonner";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/app/_components/ui/dropdown-menu";
 import Image from "next/image";

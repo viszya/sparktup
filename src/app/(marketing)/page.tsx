@@ -3,20 +3,8 @@
 
 import Link from "next/link";
 import { cn } from "@/server/utils";
-import { twp } from "@/server/utils";
-import { Icons } from "@/app/_components/icons";
 import { buttonVariants } from "@/app/_components/ui/button";
-// import App from '@sendbird/uikit-react/App';
 import Image from "next/image";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/app/_components/ui/dropdown-menu";
-
 
 export default function Home() {
   return (
@@ -266,41 +254,8 @@ export default function Home() {
           >
             Get Started <Icons.arrowRight className="ml-2 h-5 w-5" />
           </Link>
-          {/* <App
-                // Add the two lines below.
-                appId={"C2039636-7F79-4664-968D-456DDEC8499C"}   // You can find your Sendbird application ID
-                                      // on the Sendbird dashboard.
-                userId={"USER_ID"}      // Specify your user ID.
-            /> */}
-
         </div>
       </section>
-      {/* <DropdownMenu>
-          <DropdownMenuTrigger className=" ml-auto sticky bottom-0 mr-4 pb-4">
-            <Image
-            alt="Bot Image"
-            src="/bot.png"
-            width={65}
-            height={100}
-            className="rounded-full border-4 border-black"
-            />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="mr-4 w-[30rem] mb-4">
-            <div className="relative">
-            <iframe
-              src="https://www.chatbase.co/chatbot-iframe/dDmgRnfL5zdFPyWQT0-q9"
-              width="100%"
-              style={{ height: "100%", minHeight: "700px" }}
-              frameBorder="0"
-              title="My Chatbot Iframe"
-            ></iframe>
-            <div className="bg-white w-48 h-10 absolute bottom-0 right-40">
-
-            </div>
-            </div>
-
-          </DropdownMenuContent>
-        </DropdownMenu> */}
     </main>
   );
 }
