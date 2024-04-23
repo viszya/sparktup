@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { cn } from "@/server/utils";
 import { buttonVariants } from "@/app/_components/ui/button";
-import { Icons} from "@/app/_components/icons";
+import { Icons } from "@/app/_components/icons";
 import Image from "next/image";
 
 export default function Home() {
@@ -17,21 +17,24 @@ export default function Home() {
     >
       {/* Hero Section */}
       <section className="hero-image flex flex-col items-center justify-center text-center ">
-        <h1 className="lg:text:8xl movein mb-2 mt-32 text-6xl font-semibold text-black md:text-7xl">
-          Simplify and accelerate your job network
-        </h1>
-        <p className="movein mb-2 mt-5 max-w-prose text-2xl text-primary">
-          Streamline and expedite your professional connections with Sparktup's
-          simplified job networking platform.
-        </p>
-        <div className="mt-4 flex flex-row">
+        <div className="mx-4 sm:mx-0">
+          <h1 className="lg:text:8xl movein mb-2 mt-32 text-4xl font-semibold text-black md:text-7xl">
+            Simplify and accelerate your job network
+          </h1>
+          <p className="movein mb-2 mt-5 max-w-prose text-sm sm:text-2xl text-primary">
+            Streamline and expedite your professional connections with
+            Sparktup's simplified job networking platform.
+          </p>
+        </div>
+
+        <div className="mt-4 flex flex-col sm:flex-row">
           <Link
             href="/solutions/company"
             className={buttonVariants({
               variant: "heroButton2",
               size: "lg",
               className:
-                "duration-250 mx-auto mb-4 mr-5  flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-xl border-2 border-black bg-transparent px-7 py-2 text-black shadow-md backdrop-blur transition-colors ease-in-out hover:bg-black hover:text-white hover:shadow-xl",
+                "duration-250 mx-auto mb-4 mr-0 flex  max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-xl border-2 border-black bg-transparent px-7 py-2 text-black shadow-md backdrop-blur transition-colors ease-in-out hover:bg-black hover:text-white hover:shadow-xl sm:mr-5",
             })}
           >
             For Companies <Icons.arrowRight className="ml-2 h-5 w-5" />
@@ -42,7 +45,7 @@ export default function Home() {
             className={buttonVariants({
               size: "lg",
               className:
-                " ml-5 rounded-xl border-2 border-black bg-black duration-200 ease-in-out hover:border-black  hover:bg-white hover:text-black hover:shadow-xl ",
+                "ml-0 rounded-xl border-2 border-black bg-black duration-200 ease-in-out hover:border-black hover:bg-white  hover:text-black hover:shadow-xl sm:ml-5 ",
             })}
           >
             Get Started <Icons.arrowRight className="ml-2 h-5 w-5" />
