@@ -274,7 +274,7 @@ const Nav = () => {
   } else {
     return (
       <>
-        <div className="sticky inset-x-0 top-0 z-30 mx-auto w-full sm:bg-white backdrop-blur-lg transition-all">
+        <div className="sticky inset-x-0 top-0 z-30 mx-auto w-full bg-white backdrop-blur-lg transition-all">
           <div
             className={cn(
               twp().wrapper,
