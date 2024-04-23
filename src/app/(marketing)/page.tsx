@@ -53,9 +53,9 @@ export default function Home() {
         </div>
 
         {/* Example Section */}
-        <div className="mx-auto w-full max-w-screen-xl px-2.5 ">
+        <div className="mx-auto w-full max-w-screen-xl px-0 sm:px-2.5 ">
           <div className="relative isolate">
-            <div className="mx-auto  px-6 lg:px-8">
+            <div className="mx-auto  px-0 sm:px-6 lg:px-8">
               <div className="mt-16 flow-root sm:mt-24">
                 <div className="flex items-center justify-center rounded-xl bg-white/70 p-2 ring-1 ring-inset ring-white lg:-m-4 lg:rounded-2xl lg:p-4">
                   <Image
@@ -203,10 +203,10 @@ export default function Home() {
 
       <section className="w-full bg-black py-32">
         <h1 className="text-3xl text-white ">
-          <span className="text-7xl font-semibold">Are you a company?</span>{" "}
+          <span className="text-4xl sm:text-7xl font-semibold">Are you a company?</span>{" "}
           <br />
         </h1>
-        <h2 className="my-4 text-3xl text-white">
+        <h2 className="my-4 text-lg sm:text-3xl text-white">
           Check out our powerful solutions for companies
         </h2>
         <Link
@@ -215,7 +215,7 @@ export default function Home() {
             variant: "heroButton2",
             size: "lg",
             className:
-              " duration-250 mx-auto mb-4 mr-5  flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-xl border-2 border-white bg-transparent px-7 py-2 text-white shadow-md backdrop-blur transition-colors ease-in-out hover:bg-white hover:text-black hover:shadow-xl",
+              " duration-250 mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-xl border-2 border-white bg-transparent px-7 py-2 text-white shadow-md backdrop-blur transition-colors ease-in-out hover:bg-white hover:text-black hover:shadow-xl",
           })}
         >
           Learn More on Company Benefits{" "}
@@ -232,18 +232,18 @@ export default function Home() {
       />
 
       {/* About Us */}
-      <section className="flex w-full flex-col items-center justify-center bg-white pb-40">
-        <h1 className="lg:text:7xl mb-2  text-5xl font-semibold text-black md:text-6xl">
+      <section className="flex w-full flex-col items-center justify-center bg-white pb-20 sm:pb-40">
+        <h1 className="lg:text:7xl mb-2 pt-12 sm:pt-0 text-4xl font-semibold text-black md:text-6xl">
           Get started with a free <br /> Sparktup account today
         </h1>
-        <div className="mt-4 flex flex-row">
+        <div className="mt-4 flex flex-col sm:flex-row">
           <Link
             href="/solutions/company"
             className={buttonVariants({
               variant: "heroButton2",
               size: "lg",
               className:
-                " duration-250 mx-auto mb-4 mr-5  flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-xl border-2 border-black bg-transparent px-7 py-2 text-black shadow-md backdrop-blur transition-colors ease-in-out hover:bg-black hover:text-white hover:shadow-xl",
+                " duration-250 mx-auto mb-4 mr-0 sm:mr-5 mt-10 sm:mt-0  flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-xl border-2 border-black bg-transparent px-7 py-2 text-black shadow-md backdrop-blur transition-colors ease-in-out hover:bg-black hover:text-white hover:shadow-xl",
             })}
           >
             For Companies <Icons.arrowRight className="ml-2 h-5 w-5" />
@@ -253,7 +253,7 @@ export default function Home() {
             className={buttonVariants({
               size: "lg",
               className:
-                " ml-5 rounded-xl border-2 border-black bg-black duration-200 ease-in-out hover:border-black  hover:bg-white hover:text-black hover:shadow-xl ",
+                "ml-0 sm:ml-5 rounded-xl border-2 border-black bg-black duration-200 ease-in-out hover:border-black  hover:bg-white hover:text-black hover:shadow-xl ",
             })}
           >
             Get Started <Icons.arrowRight className="ml-2 h-5 w-5" />
