@@ -11,17 +11,17 @@ export default function Home() {
   return (
     <main
       className={cn(
-        "mb-12 flex flex-col items-center justify-center text-center",
+        "mb-12 flex flex-col items-center justify-center text-center ",
         // twp().wrapper,
       )}
     >
       {/* Hero Section */}
       <section className="hero-image flex flex-col items-center justify-center text-center ">
-        <div className="mx-4 sm:mx-0">
+        <div className="mx-4 sm:mx-0 text-center flex flex-col justify-center items-center">
           <h1 className="lg:text:8xl movein mb-2 mt-20 sm:mt-32 text-4xl font-semibold text-black md:text-7xl">
             Simplify and accelerate your job network
           </h1>
-          <p className="movein mb-2 mt-5 max-w-prose text-sm sm:text-2xl text-primary">
+          <p className="movein mb-2 mt-5 max-w-prose text-sm sm:text-2xl text-primary text-center">
             Streamline and expedite your professional connections with
             Sparktup's simplified job networking platform.
           </p>
@@ -114,7 +114,7 @@ export default function Home() {
         </h1>
         <div className="border-1 mx-auto items-center rounded-2xl px-5 py-24 md:px-12 lg:px-16 ">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
-            <div className=" rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:rounded-2xl">
+            <div className=" rounded-xl bg-white/90 p-2 ring-1 ring-inset ring-gray-900/10 lg:rounded-2xl">
               <Image
                 priority={true}
                 src="/s32.png"
@@ -123,11 +123,11 @@ export default function Home() {
                 height={200}
                 className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
               />
-              <div className="mt-2 rounded-lg bg-white/70 text-xl font-bold text-black backdrop-blur-xl">
+              <div className="mt-4 rounded-lg bg-transparent text-xl uppercase font-light text-black">
                 Bi-Connect Network
               </div>
             </div>
-            <div className=" rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10  lg:rounded-2xl">
+            <div className=" rounded-xl bg-white/90 p-2 ring-1 ring-inset ring-gray-900/10  lg:rounded-2xl">
               <Image
                 priority={true}
                 src="/lp2.png"
@@ -137,25 +137,25 @@ export default function Home() {
                 quality={100}
                 className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
               />
-              <div className="mt-2 rounded-lg bg-white/70 text-xl font-bold text-black backdrop-blur-xl">
+              <div className="mt-4 rounded-lg bg-transparent text-xl uppercase font-light text-black">
                 Real Time Dashboard
               </div>
             </div>
-            <div className=" rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:rounded-2xl ">
+            <div className=" rounded-xl bg-white/90 p-2 ring-1 ring-inset ring-gray-900/10 lg:rounded-2xl ">
               <Image
                 priority={true}
-                src="/4.png"
+                src="/jobpositions7.png"
                 alt="product preview"
                 width={400}
                 height={200}
                 quality={100}
                 className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
               />
-              <div className="mt-2 rounded-lg bg-white/70 text-xl font-bold text-black backdrop-blur-xl">
+              <div className="mt-4 rounded-lg bg-transparent text-xl uppercase font-light text-black">
                 View Job Positions Real Time
               </div>
             </div>
-            <div className=" rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10  lg:rounded-2xl ">
+            <div className=" rounded-xl bg-white/90 p-2 ring-1 ring-inset ring-gray-900/10  lg:rounded-2xl ">
               <Image
                 priority={true}
                 src="/9.png"
@@ -165,11 +165,11 @@ export default function Home() {
                 quality={100}
                 className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
               />
-              <div className="mt-2 rounded-lg bg-white/70 text-xl font-bold text-black backdrop-blur-xl">
+              <div className="mt-4 rounded-lg bg-transparent text-xl uppercase font-light text-black">
                 Apply Through Website
               </div>
             </div>
-            <div className=" rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:rounded-2xl ">
+            <div className=" rounded-xl bg-white/90 p-2 ring-1 ring-inset ring-gray-900/10 lg:rounded-2xl ">
               <Image
                 priority={true}
                 src="/6.png"
@@ -179,11 +179,11 @@ export default function Home() {
                 quality={100}
                 className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
               />
-              <div className="mt-2 rounded-lg bg-white/70 text-xl font-bold text-black backdrop-blur-xl">
+              <div className="mt-4 mb-2 rounded-lg bg-transparent text-xl uppercase font-light text-black">
                 Connect With Other Professionals
               </div>
             </div>
-            <div className=" rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10  lg:rounded-2xl">
+            <div className=" rounded-xl bg-white/90  p-2 ring-1 ring-inset ring-gray-900/10  lg:rounded-2xl">
               <Image
                 priority={true}
                 src="/lp3.png"
@@ -193,7 +193,7 @@ export default function Home() {
                 quality={100}
                 className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
               />
-              <div className="mt-2 rounded-lg bg-white/70 text-xl font-bold text-black backdrop-blur-xl">
+              <div className="mt-4 rounded-lg bg-transparent text-xl uppercase font-light text-black">
                 Collect Applications Efficiently
               </div>
             </div>

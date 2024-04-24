@@ -104,15 +104,15 @@ export default function JobApplicationForm() {
                   </div>
                   <div>
                   <Skeleton className="h-6 w-[200px] mb-2" />
-                  <Skeleton className="h-8 w-[400px] sm:w-[600px] mb-6" />
+                  <Skeleton className="h-8 w-[350px] sm:w-[600px] mb-6" />
                   <Skeleton className="h-6 w-[200px] mb-2" />
-                  <Skeleton className="h-8 w-[400px] sm:w-[600px] mb-6" />
+                  <Skeleton className="h-8 w-[350px] sm:w-[600px] mb-6" />
                   <Skeleton className="h-6 w-[200px] mb-2" />
-                  <Skeleton className="h-8 w-[400px] sm:w-[600px] mb-6" />
+                  <Skeleton className="h-8 w-[350px] sm:w-[600px] mb-6" />
                   <Skeleton className="h-6 w-[200px] mb-2" />
-                  <Skeleton className="h-8 w-[400px] sm:w-[600px] mb-6" />
+                  <Skeleton className="h-8 w-[350px] sm:w-[600px] mb-6" />
                   <Skeleton className="h-6 w-[200px] mb-2" />
-                  <Skeleton className="h-8 w-[400px] sm:w-[600px] mb-6" />
+                  <Skeleton className="h-8 w-[350px] sm:w-[600px] mb-6" />
 
                   </div>
                   {/* ... (Repeat similar structure for other form fields) ... */}

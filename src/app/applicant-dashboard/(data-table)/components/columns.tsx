@@ -1,20 +1,27 @@
-"use client"
+"use client";
 
-import { ColumnDef } from "@tanstack/react-table"
+import { ColumnDef } from "@tanstack/react-table";
 
-import { Badge } from "@/app/_components/ui/badge"
-import { Checkbox } from "@/app/_components/ui/checkbox"
+import { Badge } from "@/app/_components/ui/badge";
+import { Checkbox } from "@/app/_components/ui/checkbox";
 
-import { labels, priorities, statuses } from "../data/data"
-import { Task } from "../data/schema"
-import { DataTableColumnHeader } from "./data-table-column-header"
-import { DataTableRowActions } from "./data-table-row-actions"
-import { buttonVariants } from "@/app/_components/ui/button"
-import Link from "next/link"
-import { cn } from "@/server/utils"
-import { api } from "@/trpc/react"
-
-
+import { labels, priorities, statuses } from "../data/data";
+import { Task } from "../data/schema";
+import { DataTableColumnHeader } from "./data-table-column-header";
+import { DataTableRowActions } from "./data-table-row-actions";
+import { buttonVariants } from "@/app/_components/ui/button";
+import Link from "next/link";
+import { cn } from "@/server/utils";
+import { api } from "@/trpc/react";
+import { Application } from "@/app/_components/application-component";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/app/_components/ui/sheet";
 
 export const columns: ColumnDef<Task>[] = [
   {
@@ -65,7 +72,7 @@ export const columns: ColumnDef<Task>[] = [
             {row.getValue("job")}
           </span>
         </div>
-      )
+      );
     },
   },
   {
@@ -80,7 +87,7 @@ export const columns: ColumnDef<Task>[] = [
             {row.getValue("fullName")}
           </span>
         </div>
-      )
+      );
     },
   },
 
@@ -124,7 +131,7 @@ export const columns: ColumnDef<Task>[] = [
           {/* {label && <Badge variant="outline">{label.label}</Badge>} */}
           {row.getValue("status")}
         </div>
-      )
+      );
     },
   },
   // {
@@ -176,14 +183,17 @@ export const columns: ColumnDef<Task>[] = [
       //   })
       // }
       return (
-
         <div className="flex space-x-2">
           {/* {label && <Badge variant="outline">{label.label}</Badge>} */}
-          <Link href={"/applicant/profile/" + String(row.getValue("applicantId"))} className={cn(buttonVariants())} target="_blank">
+          <Link
+            href={"/applicant/profile/" + String(row.getValue("applicantId"))}
+            className={cn(buttonVariants())}
+            target="_blank"
+          >
             View
           </Link>
         </div>
-      )
+      );
     },
   },
   {
@@ -197,11 +207,19 @@ export const columns: ColumnDef<Task>[] = [
       return (
         <div className="flex space-x-2">
           {/* {label && <Badge variant="outline">{label.label}</Badge>} */}
-          <Link href={"/company/application/" + String(row.getValue("id"))} className={cn(buttonVariants({ variant: "outline" }))}>
-            View
-          </Link>
+
+          <Sheet>
+            <SheetTrigger
+              className={cn(buttonVariants({ variant: "outline" }))}
+            >
+              View
+            </SheetTrigger>
+            <SheetContent>
+              <Application id={String(row.getValue("id"))}/>
+            </SheetContent>
+          </Sheet>
         </div>
-      )
+      );
     },
   },
-]
+];

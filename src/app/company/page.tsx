@@ -45,14 +45,13 @@ export default function CompanyProfile() {
                 <Skeleton className="h-[20px] w-[200px]" />
               </div>
               <div className="mb-4 flex flex-col gap-x-2 sm:mb-0 sm:flex-row">
-                <Skeleton className="mr-4 mt-10 h-[100px] w-[500px]" />
-                <Skeleton className="mr-4 mt-10 h-[100px] w-[500px]" />
+                <Skeleton className="mr-4 mt-10 h-[100px] w-[300px] sm:w-[500px]" />
+                <Skeleton className="mr-4 mt-10 h-[100px] w-[300px] sm:w-[500px]" />
               </div>
             </div>
             <div>
               <Skeleton
-                className="overflow-hidden rounded-2xl"
-                style={{ width: "400px", height: "150px" }}
+                className="overflow-hidden rounded-2xl h-[150px] w-[300px] sm:w-[400px]"
               />
             </div>
           </div>
@@ -74,14 +73,13 @@ export default function CompanyProfile() {
                 <Skeleton className="h-[20px] w-[200px]" />
               </div>
               <div className="mb-4 flex flex-col gap-x-2 sm:mb-0 sm:flex-row">
-                <Skeleton className="mr-4 mt-10 h-[100px] w-[500px]" />
-                <Skeleton className="mr-4 mt-10 h-[100px] w-[500px]" />
+                <Skeleton className="mr-4 mt-10 h-[100px] w-[300px] sm:w-[500px]" />
+                <Skeleton className="mr-4 mt-10 h-[100px] w-[300px] sm:w-[500px]" />
               </div>
             </div>
             <div>
               <Skeleton
-                className="overflow-hidden rounded-2xl"
-                style={{ width: "400px", height: "150px" }}
+                className="overflow-hidden rounded-2xl h-[150px] w-[300px] sm:w-[400px]"
               />
             </div>
           </div>
@@ -103,14 +101,13 @@ export default function CompanyProfile() {
                 <Skeleton className="h-[20px] w-[200px]" />
               </div>
               <div className="mb-4 flex flex-col gap-x-2 sm:mb-0 sm:flex-row">
-                <Skeleton className="mr-4 mt-10 h-[100px] w-[500px]" />
-                <Skeleton className="mr-4 mt-10 h-[100px] w-[500px]" />
+                <Skeleton className="mr-4 mt-10 h-[100px] w-[300px] sm:w-[500px]" />
+                <Skeleton className="mr-4 mt-10 h-[100px] w-[300px] sm:w-[500px]" />
               </div>
             </div>
             <div>
               <Skeleton
-                className="overflow-hidden rounded-2xl"
-                style={{ width: "400px", height: "150px" }}
+                className="overflow-hidden rounded-2xl h-[150px] w-[300px] sm:w-[400px]"
               />
             </div>
           </div>
@@ -132,14 +129,13 @@ export default function CompanyProfile() {
                 <Skeleton className="h-[20px] w-[200px]" />
               </div>
               <div className="mb-4 flex flex-col gap-x-2 sm:mb-0 sm:flex-row">
-                <Skeleton className="mr-4 mt-10 h-[100px] w-[500px]" />
-                <Skeleton className="mr-4 mt-10 h-[100px] w-[500px]" />
+                <Skeleton className="mr-4 mt-10 h-[100px] w-[300px] sm:w-[500px]" />
+                <Skeleton className="mr-4 mt-10 h-[100px] w-[300px] sm:w-[500px]" />
               </div>
             </div>
             <div>
               <Skeleton
-                className="overflow-hidden rounded-2xl"
-                style={{ width: "400px", height: "150px" }}
+                className="overflow-hidden rounded-2xl h-[150px] w-[300px] sm:w-[400px]"
               />
             </div>
           </div>
@@ -161,14 +157,13 @@ export default function CompanyProfile() {
                 <Skeleton className="h-[20px] w-[200px]" />
               </div>
               <div className="mb-4 flex flex-col gap-x-2 sm:mb-0 sm:flex-row">
-                <Skeleton className="mr-4 mt-10 h-[100px] w-[500px]" />
-                <Skeleton className="mr-4 mt-10 h-[100px] w-[500px]" />
+                <Skeleton className="mr-4 mt-10 h-[100px] w-[300px] sm:w-[500px]" />
+                <Skeleton className="mr-4 mt-10 h-[100px] w-[300px] sm:w-[500px]" />
               </div>
             </div>
             <div>
               <Skeleton
-                className="overflow-hidden rounded-2xl"
-                style={{ width: "400px", height: "150px" }}
+                className="overflow-hidden rounded-2xl h-[150px] w-[300px] sm:w-[400px]"
               />
             </div>
           </div>
@@ -190,14 +185,13 @@ export default function CompanyProfile() {
                 <Skeleton className="h-[20px] w-[200px]" />
               </div>
               <div className="mb-4 flex flex-col gap-x-2 sm:mb-0 sm:flex-row">
-                <Skeleton className="mr-4 mt-10 h-[100px] w-[500px]" />
-                <Skeleton className="mr-4 mt-10 h-[100px] w-[500px]" />
+                <Skeleton className="mr-4 mt-10 h-[100px] w-[300px] sm:w-[500px]" />
+                <Skeleton className="mr-4 mt-10 h-[100px] w-[300px] sm:w-[500px]" />
               </div>
             </div>
             <div>
               <Skeleton
-                className="overflow-hidden rounded-2xl"
-                style={{ width: "400px", height: "150px" }}
+                className="overflow-hidden rounded-2xl h-[150px] w-[300px] sm:w-[400px]"
               />
             </div>
           </div>

@@ -40,7 +40,7 @@ export default function CompanyProfile() {
                 <Skeleton className="h-[20px] w-[100px]" />
                 <Skeleton className="h-[20px] w-[100px]" />
               </div>
-              <Skeleton className="mt-10 h-[40px] w-[400px]" />
+              <Skeleton className="mt-10 h-[40px] w-[200px] sm:w-[200px] sm:w-[400px]" />
             </div>
             <div className="w-full max-w-[30rem]">
               <div className="mt-8 text-xl font-medium tracking-tight text-black sm:text-2xl">
@@ -74,7 +74,7 @@ export default function CompanyProfile() {
                 <Skeleton className="h-[20px] w-[100px]" />
                 <Skeleton className="h-[20px] w-[100px]" />
               </div>
-              <Skeleton className="mt-10 h-[40px] w-[400px]" />
+              <Skeleton className="mt-10 h-[40px] w-[200px] sm:w-[400px]" />
             </div>
             <div className="w-full max-w-[30rem]">
               <div className="mt-8 text-xl font-medium tracking-tight text-black sm:text-2xl">
@@ -108,7 +108,7 @@ export default function CompanyProfile() {
                 <Skeleton className="h-[20px] w-[100px]" />
                 <Skeleton className="h-[20px] w-[100px]" />
               </div>
-              <Skeleton className="mt-10 h-[40px] w-[400px]" />
+              <Skeleton className="mt-10 h-[40px] w-[200px] sm:w-[400px]" />
             </div>
             <div className="w-full max-w-[30rem]">
               <div className="mt-8 text-xl font-medium tracking-tight text-black sm:text-2xl">
@@ -142,7 +142,7 @@ export default function CompanyProfile() {
                 <Skeleton className="h-[20px] w-[100px]" />
                 <Skeleton className="h-[20px] w-[100px]" />
               </div>
-              <Skeleton className="mt-10 h-[40px] w-[400px]" />
+              <Skeleton className="mt-10 h-[40px] w-[200px] sm:w-[400px]" />
             </div>
             <div className="w-full max-w-[30rem]">
               <div className="mt-8 text-xl font-medium tracking-tight text-black sm:text-2xl">
@@ -176,7 +176,7 @@ export default function CompanyProfile() {
                 <Skeleton className="h-[20px] w-[100px]" />
                 <Skeleton className="h-[20px] w-[100px]" />
               </div>
-              <Skeleton className="mt-10 h-[40px] w-[400px]" />
+              <Skeleton className="mt-10 h-[40px] w-[200px] sm:w-[400px]" />
             </div>
             <div className="w-full max-w-[30rem]">
               <div className="mt-8 text-xl font-medium tracking-tight text-black sm:text-2xl">

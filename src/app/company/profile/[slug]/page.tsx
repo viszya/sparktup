@@ -64,13 +64,101 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
                   <Skeleton className="h-[15px] w-[50px]" />
                 </div>
               </div>
-              <Skeleton className="mt-10 h-[100px] w-[480px]" />
+              <Skeleton className="mt-10 h-[100px] w-[250px] sm:w-[480px]" />
             </div>
             <div>
-              <Skeleton className="h-[150px] w-[400px] overflow-hidden rounded-2xl" />
+              <Skeleton className="h-[150px] w-[300px] overflow-hidden rounded-2xl sm:w-[400px]" />
+            </div>
+          </div>
+          <div className="m-2 mt-4 flex flex-col justify-between gap-x-6 rounded-2xl border-2 border-black bg-black p-8 sm:mt-10 sm:flex-row">
+            <div className="mb-4 w-full max-w-[30rem] sm:mb-0">
+              <div className="mb-4 flex flex-col gap-x-8 sm:flex-row">
+                <Skeleton className="h-[50px] w-[100px] overflow-hidden rounded-full" />
+                <div>
+                  <div className="mt-4 text-2xl font-medium tracking-tight text-white sm:text-4xl">
+                    <Skeleton className="h-[30px] w-[200px]" />
+                  </div>
+                  <div className="mt-2 flex flex-row items-center">
+                    <div className="text-white/80">
+                      <Skeleton className="h-[15px] w-[100px]" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col gap-x-4 sm:flex-row">
+                <div className="mb-2 flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-white/80 duration-200 sm:mb-0">
+                  <Skeleton className="h-[15px] w-[50px]" />
+                </div>
+                <div className="mb-2 flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-white/80 duration-200 sm:mb-0">
+                  <Skeleton className="h-[15px] w-[50px]" />
+                </div>
+              </div>
+              <Skeleton className="mt-10 h-[100px] w-[250px] sm:w-[480px]" />
+            </div>
+            <div>
+              <Skeleton className="h-[150px] w-[300px] overflow-hidden rounded-2xl sm:w-[400px]" />
+            </div>
+          </div>
+          <div className="m-2 mt-4 flex flex-col justify-between gap-x-6 rounded-2xl border-2 border-black bg-black p-8 sm:mt-10 sm:flex-row">
+            <div className="mb-4 w-full max-w-[30rem] sm:mb-0">
+              <div className="mb-4 flex flex-col gap-x-8 sm:flex-row">
+                <Skeleton className="h-[50px] w-[100px] overflow-hidden rounded-full" />
+                <div>
+                  <div className="mt-4 text-2xl font-medium tracking-tight text-white sm:text-4xl">
+                    <Skeleton className="h-[30px] w-[200px]" />
+                  </div>
+                  <div className="mt-2 flex flex-row items-center">
+                    <div className="text-white/80">
+                      <Skeleton className="h-[15px] w-[100px]" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col gap-x-4 sm:flex-row">
+                <div className="mb-2 flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-white/80 duration-200 sm:mb-0">
+                  <Skeleton className="h-[15px] w-[50px]" />
+                </div>
+                <div className="mb-2 flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-white/80 duration-200 sm:mb-0">
+                  <Skeleton className="h-[15px] w-[50px]" />
+                </div>
+              </div>
+              <Skeleton className="mt-10 h-[100px] w-[250px] sm:w-[480px]" />
+            </div>
+            <div>
+              <Skeleton className="h-[150px] w-[300px] overflow-hidden rounded-2xl sm:w-[400px]" />
+            </div>
+          </div>
+          <div className="m-2 mt-4 flex flex-col justify-between gap-x-6 rounded-2xl border-2 border-black bg-black p-8 sm:mt-10 sm:flex-row">
+            <div className="mb-4 w-full max-w-[30rem] sm:mb-0">
+              <div className="mb-4 flex flex-col gap-x-8 sm:flex-row">
+                <Skeleton className="h-[50px] w-[100px] overflow-hidden rounded-full" />
+                <div>
+                  <div className="mt-4 text-2xl font-medium tracking-tight text-white sm:text-4xl">
+                    <Skeleton className="h-[30px] w-[200px]" />
+                  </div>
+                  <div className="mt-2 flex flex-row items-center">
+                    <div className="text-white/80">
+                      <Skeleton className="h-[15px] w-[100px]" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col gap-x-4 sm:flex-row">
+                <div className="mb-2 flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-white/80 duration-200 sm:mb-0">
+                  <Skeleton className="h-[15px] w-[50px]" />
+                </div>
+                <div className="mb-2 flex w-full flex-row items-center justify-center rounded-sm border px-3 py-0.5 text-sm font-medium text-white/80 duration-200 sm:mb-0">
+                  <Skeleton className="h-[15px] w-[50px]" />
+                </div>
+              </div>
+              <Skeleton className="mt-10 h-[100px] w-[250px] sm:w-[480px]" />
+            </div>
+            <div>
+              <Skeleton className="h-[150px] w-[300px] overflow-hidden rounded-2xl sm:w-[400px]" />
             </div>
           </div>
         </div>
+
       </div>
     );
   }

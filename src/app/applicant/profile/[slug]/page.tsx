@@ -57,22 +57,21 @@ export default function ProfilePage({ params }: { params: { slug: string } }) {
                 </div>
               </div>
               <div className="mt-2 text-white/80">
-                <Skeleton className="h-[40px] w-[400px]" />
+                <Skeleton className="h-[40px] w-[200px] sm:w-[400px]" />
               </div>
               <div>
                 <div className="mt-2 text-white/80">
-                  <Skeleton className="h-[100px] w-[500px]" />
+                  <Skeleton className="h-[100px] w-[200px] sm:w-[500px]" />
                 </div>
               </div>
             </div>
             <div>
               <Skeleton
-                className="rounded-2xl"
-                style={{ width: "400px", height: "150px" }}
+                className="rounded-2xl h-[150px] w-[200px] sm:w-[400px]"
               />
 
               <div className="mt-5 w-full rounded-xl border-2 border-white/80 bg-primary/10 p-6">
-                <div className="text-2xl font-medium leading-6">
+                <div className="text-2xl font-medium leading-6 -[50px] w-[100px] sm:w-[300px]">
                   <Skeleton style={{ width: "300px", height: "50px" }} />
                 </div>
                 <div className="font-light"></div>
