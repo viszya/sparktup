@@ -18,7 +18,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero-image flex flex-col items-center justify-center text-center ">
         <div className="mx-4 sm:mx-0">
-          <h1 className="lg:text:8xl movein mb-2 mt-32 text-4xl font-semibold text-black md:text-7xl">
+          <h1 className="lg:text:8xl movein mb-2 mt-20 sm:mt-32 text-4xl font-semibold text-black md:text-7xl">
             Simplify and accelerate your job network
           </h1>
           <p className="movein mb-2 mt-5 max-w-prose text-sm sm:text-2xl text-primary">
