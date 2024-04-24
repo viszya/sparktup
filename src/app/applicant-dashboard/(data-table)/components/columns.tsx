@@ -208,13 +208,13 @@ export const columns: ColumnDef<Task>[] = [
         <div className="flex space-x-2">
           {/* {label && <Badge variant="outline">{label.label}</Badge>} */}
 
-          <Sheet>
+          <Sheet >
             <SheetTrigger
               className={cn(buttonVariants({ variant: "outline" }))}
             >
               View
             </SheetTrigger>
-            <SheetContent className="w-[800px] px-4">
+            <SheetContent className="w-[500px] bg-black">
               <Application id={String(row.getValue("id"))}/>
             </SheetContent>
           </Sheet>

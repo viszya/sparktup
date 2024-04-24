@@ -43,10 +43,10 @@ export function Application(props) {
   console.log(data);
 
   return (
-    <div className="bg-white w-full">
+    <div className="bg-white w-full bg-black">
       <div className={cn("", twp().wrapper)}>
-        <section className="mt-4 flex flex-col items-center justify-center ">
-          <h2 className="text-3xl font-bold tracking-tight">Application</h2>
+        <section className="mt-4 bg-black w-[400px]">
+          <h2 className="text-3xl w-full font-bold tracking-tight">Application</h2>
           <div className=" w-full max-w-3xl">
             <div className="mt-5 flex flex-col rounded-xl border border-dashed border-secondary p-5">
               <div className="flex flex-col justify-center text-center md:flex-row md:text-left">
