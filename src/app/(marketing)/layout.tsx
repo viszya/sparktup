@@ -17,7 +17,7 @@ export default function MarketingLayout({ children }: MarketingLayoutProps) {
     <div className="flex min-h-screen flex-col ">
       <Nav />
       {children}
-      <Footer />
+      <Footer className="mt-10 sm:mt-0"/>
       <Toaster />
       {/* <DropdownMenu>
         <DropdownMenuTrigger className="sticky bottom-4 ml-auto mr-1 sm:mr-4 ">

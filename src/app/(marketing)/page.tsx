@@ -233,7 +233,7 @@ export default function Home() {
 
       {/* About Us */}
       <section className="flex w-full flex-col items-center justify-center bg-white pb-20 sm:pb-40">
-        <h1 className="lg:text:7xl mb-2 pt-12 sm:pt-0 text-4xl font-semibold text-black md:text-6xl">
+        <h1 className="lg:text:7xl mb-2 pt-12 sm:pt-0 text-3xl font-semibold text-black md:text-6xl">
           Get started with a free <br /> Sparktup account today
         </h1>
         <div className="mt-4 flex flex-col sm:flex-row">
