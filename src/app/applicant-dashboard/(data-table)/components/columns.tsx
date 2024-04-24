@@ -214,7 +214,7 @@ export const columns: ColumnDef<Task>[] = [
             >
               View
             </SheetTrigger>
-            <SheetContent className="w-[400px] px-10">
+            <SheetContent className="w-[800px] px-4">
               <Application id={String(row.getValue("id"))}/>
             </SheetContent>
           </Sheet>
