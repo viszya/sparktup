@@ -43,9 +43,9 @@ export function Application(props) {
   console.log(data);
 
   return (
-    <div className="bg-white w-full bg-black">
-      <div className={cn("", twp().wrapper)}>
-        <section className="mt-4 bg-black w-[400px]">
+    <div className="bg-white w-full ">
+      <div >
+        <section className="mt-4 ">
           <h2 className="text-3xl w-full font-bold tracking-tight">Application</h2>
           <div className=" w-full max-w-3xl">
             <div className="mt-5 flex flex-col rounded-xl border border-dashed border-secondary p-5">

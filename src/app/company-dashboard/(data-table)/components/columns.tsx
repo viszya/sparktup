@@ -13,7 +13,15 @@ import { buttonVariants } from "@/app/_components/ui/button"
 import Link from "next/link"
 import { cn } from "@/server/utils"
 import { api } from "@/trpc/react"
-
+import { Application } from "@/app/_components/application-component";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/app/_components/ui/dialog";
 
 
 export const columns: ColumnDef<Task>[] = [
@@ -197,11 +205,19 @@ export const columns: ColumnDef<Task>[] = [
       return (
         <div className="flex space-x-2">
           {/* {label && <Badge variant="outline">{label.label}</Badge>} */}
-          <Link href={"/company/application/" + String(row.getValue("id"))} className={cn(buttonVariants({ variant: "outline" }))}>
-            View
-          </Link>
+
+          <Dialog>
+            <DialogTrigger
+              className={cn(buttonVariants({ variant: "outline" }))}
+            >
+              View
+            </DialogTrigger>
+            <DialogContent className=" max-h-[90vh] w-[500px] overflow-scroll">
+              <Application id={String(row.getValue("id"))} />
+            </DialogContent>
+          </Dialog>
         </div>
-      )
+      );
     },
   },
   {
