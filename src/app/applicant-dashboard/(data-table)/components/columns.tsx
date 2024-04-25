@@ -15,13 +15,13 @@ import { cn } from "@/server/utils";
 import { api } from "@/trpc/react";
 import { Application } from "@/app/_components/application-component";
 import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/app/_components/ui/sheet";
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/app/_components/ui/dialog";
 
 export const columns: ColumnDef<Task>[] = [
   {
@@ -208,16 +208,16 @@ export const columns: ColumnDef<Task>[] = [
         <div className="flex space-x-2">
           {/* {label && <Badge variant="outline">{label.label}</Badge>} */}
 
-          <Sheet >
-            <SheetTrigger
+          <Dialog>
+            <DialogTrigger
               className={cn(buttonVariants({ variant: "outline" }))}
             >
               View
-            </SheetTrigger>
-            <SheetContent className="w-[500px] bg-black">
-              <Application id={String(row.getValue("id"))}/>
-            </SheetContent>
-          </Sheet>
+            </DialogTrigger>
+            <DialogContent className=" max-h-[90vh] w-[500px] overflow-scroll">
+              <Application id={String(row.getValue("id"))} />
+            </DialogContent>
+          </Dialog>
         </div>
       );
     },

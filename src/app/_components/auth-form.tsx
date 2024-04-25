@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { useSearchParams } from "next/navigation"
+import { redirect, useSearchParams } from "next/navigation"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { signIn } from "next-auth/react"
 import { useForm } from "react-hook-form"
@@ -35,10 +35,10 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     async function onSubmit(data: FormData) {
         setIsLoading(true)
 
-        const signInResult = await signIn("email", {
+        const signInResult = await signIn("resend", {
             email: data.email.toLowerCase(),
             redirect: false,
-            callbackUrl: searchParams?.get("from") || "/dashboard",
+            callbackUrl: searchParams?.get("from") || "/onboarding",
         })
 
         setIsLoading(false)
@@ -51,9 +51,12 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
             })
         }
 
+        // const router = useRouter()
+        // router.push("/applicant-dashboard")
+
         return toast({
-            title: "Check your email",
-            description: "We sent you a login link. Be sure to check your spam too.",
+            title: "Success in auth verification",
+            action: <Link href='/onboarding'>Login</Link>,
         })
     }
 

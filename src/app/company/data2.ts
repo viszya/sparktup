@@ -367,10 +367,6 @@ export const data2 = [
         "pay": "$100,000/yr - $200,000/yr",
         "companyAbout": "Secure Systems Tech is a leading provider of cybersecurity solutions, dedicated to fortifying digital landscapes against evolving threats. Our expert team collaborates on projects that enhance security measures and protect businesses from cyber risks. Join us in our mission to build a safer digital future."
       }
-
-
-
-
     ],
     mediaGallery: [
       "/office1-appleData.jpeg",
