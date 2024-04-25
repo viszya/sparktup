@@ -15,6 +15,7 @@ import { Label } from "@/app/_components/ui/label"
 import { toast } from "@/app/_components/ui/use-toast"
 import { Icons } from "@/app/_components/icons"
 import Link from "next/link"
+import { useRouter } from 'next/navigation'
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> { }
 
@@ -51,7 +52,9 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
             })
         }
 
-        redirect('/onboarding');
+        const router = useRouter()
+        router.push("/applicant-dashboard")
+
         return toast({
             title: "Check your email",
             description: "We sent you a login link. Be sure to check your spam too.",
