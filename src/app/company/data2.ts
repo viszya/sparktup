@@ -216,7 +216,7 @@ export const data2 = [
   {
     companyName: "Apple Inc.",
     linkedInMembers: "Check LinkedIn for current figures",
-    logoSrc: "/apple.png",
+    logoSrc: "/apple_logo.jpeg",
     location: "Cupertino, CA, USA",
     website: "https://www.apple.com/",
     industry: "Technology",
@@ -291,7 +291,7 @@ export const data2 = [
         "position": "IOS Developer",
         "location": "San Francisco, CA",
         "applyLink": "https://techsolutions.com/careers/software-engineer",
-        "companyLogo": "/applelogo.png",
+        "companyLogo": "/apple_logo.jpeg",
         "description": "Company Name · San Francisco, CA · Reposted 1 week ago · Over 100 applicants",
         "pricingDescription": "$112,000/yr - $238,600/yr · Hybrid · Full-time",
         "sizeDescription": "10,001+ employees · IOS Developer",
@@ -307,7 +307,7 @@ export const data2 = [
         "position": "Software Tester",
         "location": "Remote",
         "applyLink": "https://techsolutions.com/careers/data-scientist",
-        "companyLogo": "/applelogo.png",
+        "companyLogo": "/apple_logo.jpeg",
         "description": "Company Name · Remote · Reposted 1 week ago · Over 100 applicants",
         "pricingDescription": "$120,000/yr - $250,000/yr · Remote · Full-time",
         "sizeDescription": "5,001-10,000 employees · Software Tester",
@@ -323,7 +323,7 @@ export const data2 = [
         "position": "Data Scientist",
         "location": "New York, NY",
         "applyLink": "https://techsolutions.com/careers/data-scientist",
-        "companyLogo": "/applelogo.png",
+        "companyLogo": "/apple_logo.jpeg",
         "description": "Tech Innovations Co. · New York, NY · Posted 2 weeks ago · 85 applicants",
         "pricingDescription": "$120,000/yr - $250,000/yr · Remote · Full-time",
         "sizeDescription": "500-1000 employees · Data Scientist",
@@ -339,7 +339,7 @@ export const data2 = [
         "position": "UX/UI Designer",
         "location": "Seattle, WA",
         "applyLink": "https://techsolutions.com/careers/ux-ui-designer",
-        "companyLogo": "/applelogo.png",
+        "companyLogo": "/apple_logo.jpeg",
         "description": "Creative Designs Inc. · Seattle, WA · Fresh posting · 120 applicants",
         "pricingDescription": "$90,000/yr - $180,000/yr · On-site · Full-time",
         "sizeDescription": "100-500 employees · UX/UI Designer",
@@ -355,7 +355,7 @@ export const data2 = [
         "position": "Cybersecurity Analyst",
         "location": "Austin, TX",
         "applyLink": "https://techsolutions.com/careers/cybersecurity-analyst",
-        "companyLogo": "/applelogo.png",
+        "companyLogo": "/apple_logo.jpeg",
         "description": "Secure Systems Tech · Austin, TX · Just posted · 75 applicants",
         "pricingDescription": "$100,000/yr - $200,000/yr · Hybrid · Full-time",
         "sizeDescription": "1000-5000 employees · Cybersecurity Analyst",
@@ -467,6 +467,607 @@ export const data2 = [
     ],
 
   },
+  {
+    companyName: "Amazon.com, Inc.",
+    linkedInMembers: "1,300,000+ associated members",
+    logoSrc: "/amazon-logo.jpeg", // Placeholder for Amazon's logo
+    location: "Seattle, WA, USA",
+    website: "https://www.amazon.com",
+    industry: "E-commerce, Cloud Computing, AI",
+    companySize: "10,001+ employees",
+    size: "10,001+ employees",
+    companyBannerImgSrc: "/amazon_banner.jpeg", // Placeholder for Amazon's banner
+    foundingYear: "Founded in 1994",
+    missionValues: "Amazon is guided by four principles: customer obsession rather than competitor focus, passion for invention, commitment to operational excellence, and long-term thinking.",
+    missionAndValues: "To be Earth's most customer-centric company.",
+    about: "Amazon strives to be Earth's most customer-centric company, where people can find and discover anything they might want to buy online.",
+    solutionsOverview: "Amazon offers a range of products and services, including retail goods, cloud services through AWS, digital streaming, and AI technology.",
+    keyBenefits: " - Global reach\n - Extensive product selections\n - Advanced technological infrastructure\n - Strong focus on customer service",
+    keyFeatures: " - E-commerce platform\n - AWS cloud services\n - Alexa AI assistant\n - Prime video streaming\n - Kindle publishing\n - Amazon Fresh and Prime Now",
+    testimonials: [
+      {
+        clientName: "Retail Dynamics",
+        feedback: "Amazon's distribution and logistics have revolutionized how we manage inventory and fulfill orders, dramatically enhancing our operational efficiency."
+      },
+      {
+        clientName: "Streaming Plus",
+        feedback: "With AWS, our streaming service has achieved unparalleled uptime and scalability, handling millions of concurrent users effortlessly."
+      },
+      {
+        clientName: "Global Reads",
+        feedback: "Amazon's Kindle Direct Publishing has opened up new revenue streams for us, making it easier to reach readers around the world."
+      },
+      {
+        clientName: "Fast Foods Inc.",
+        feedback: "Amazon Fresh has significantly improved our supply chain management, ensuring faster and fresher deliveries to our customers."
+      }
+    ],
+    specialties: [
+      "E-commerce",
+      "Cloud Computing",
+      "Artificial Intelligence",
+      "Digital Streaming",
+      "Logistics",
+      "Consumer Electronics",
+      "Publishing",
+      "Grocery Delivery"
+    ],
+    teamMembers: [
+      {
+        name: "Jeff Bezos",
+        role: "CEO",
+        photoSrc: "/jeff_bezos.jpeg" // Placeholder
+      },
+      {
+        name: "Dave Clark",
+        role: "CEO of Worldwide Consumer",
+        photoSrc: "/dave_clark.jpeg" // Placeholder
+      }
+    ],
+    companyCulture: "Amazon's culture is driven by innovation, customer focus, and a relentless pursuit of operational excellence, valuing big ideas and creative problem solving.",
+    contactInformation: {
+      email: "info@amazon.com",
+      phone: "+1 (888) 280-4331",
+      address: "410 Terry Ave N, Seattle, WA 98109"
+    },
+    careerOpportunities: [
+      {
+        "position": "Software Development Engineer",
+        "location": "Seattle, WA",
+        "applyLink": "https://amazon.jobs/en",
+        "companyLogo": "/amazon_career.jpeg", // Placeholder
+        "description": "Amazon · Seattle, WA · Over 200 applicants",
+        "pricingDescription": "$120,000/yr - $180,000/yr · Full-time",
+        "sizeDescription": "10,001+ employees · Technology Development",
+        "skills": "Software Development, Cloud Computing, +5 more",
+        "jobLink": "/",
+        "seeSrc": "/",
+        "thumbnail": "/microsoft-event.png" // Placeholder
+      },
+      {
+        "position": "Data Scientist",
+        "location": "Remote",
+        "applyLink": "https://amazon.jobs/en",
+        "companyLogo": "/amazon_career.jpeg", // Placeholder
+        "description": "Amazon · Remote · Over 150 applicants",
+        "pricingDescription": "$130,000/yr - $200,000/yr · Full-time",
+        "sizeDescription": "10,001+ employees · Data Analysis",
+        "skills": "Machine Learning, Statistical Analysis, Python",
+        "jobLink": "/",
+        "seeSrc": "/",
+        "thumbnail": "/microsoft-event.png" // Placeholder
+      }
+    ],
+    mediaGallery: [
+      "/amazon_office1.jpeg", "/amazon_office2.jpeg", "/amazon_office3.jpeg" // Placeholders
+    ],
+    termsAndConditionsLink: "https://amazon.com/terms",
+    privacyPolicyLink: "https://amazon.com/privacy",
+    eventData: [
+      {
+        "date": "Wed, Jun 15, 2023, 10:00 AM",
+        "title": "Amazon Alexa Day",
+        "location": "Live Video",
+        "imgsrc": "/amazon_image1.jpeg", // Placeholder
+        "attendees": "50,000 attendees",
+        "viewLink": "https://example.com/event1",
+        "eventType": "Live",
+        "seeSrc": "/",
+        "eventBy": "Event by Amazon",
+        "about": "Join our AWS experts to explore how cloud technology is driving business transformation across the globe.",
+        "attendSrc": "/",
+        "photoSrc": "/",
+        "speakers": [
+          {
+            "name": "Andy Jassy",
+            "fallback": "CN",
+            "imgsrc": "/jane-doe-microsoftData.jpeg", // Placeholder
+            "position": "CEO at Amazon"
+          },
+          {
+            "name": "Jeff Wilke",
+            "fallback": "CN",
+            "imgsrc": "/jhon-doe-microsoftData.jpeg", // Placeholder
+            "position": "CEO of Worldwide Consumer"
+          }
+        ]
+      },
+      {
+        "date": "Fri, Dec 3, 2022, 9:00 AM",
+        "title": "Prime Video Showcase",
+        "location": "Live Video",
+        "imgsrc": "/amazon_event2.jpeg", // Placeholder
+        "attendees": "30,000 attendees",
+        "viewLink": "https://example.com/event2",
+        "eventType": "Live",
+        "seeSrc": "/",
+        "eventBy": "Event by Amazon",
+        "about": "Discover new original series and films coming to Prime Video, with insights from producers and cast.",
+        "attendSrc": "/",
+        "photoSrc": "/",
+        "speakers": [
+          {
+            "name": "Jennifer Salke",
+            "fallback": "CN",
+            "imgsrc": "/jane-doe-microsoftData.jpeg", // Placeholder
+            "position": "Head of Amazon Studios"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    companyName: "Oracle Corporation",
+    linkedInMembers: "390,000 associated members",
+    logoSrc: "/oracle_logo.jpeg", // Use a placeholder
+    location: "Austin, TX, USA",
+    website: "https://www.oracle.com",
+    industry: "Technology",
+    companySize: "10,001+ employees",
+    size: "10,001+ employees",
+    companyBannerImgSrc: "/oracle_banner.jpeg", // Use a placeholder
+    foundingYear: "Founded in 1977",
+    missionValues: "Oracle's mission is to help people see data in new ways, discover insights, unlock endless possibilities.",
+    missionAndValues: "Delivering integrated cloud applications and platform services",
+    about: "Oracle is a global technology company that offers a comprehensive and fully integrated stack of cloud applications, platform services, and engineered systems.",
+    solutionsOverview: "Oracle provides solutions across various sectors including cloud computing, Java, database technology, and enterprise software.",
+    keyBenefits: " - Industry-leading performance\n - Comprehensive cloud solutions\n - Enhanced security features\n - Unmatched scalability",
+    keyFeatures: " - Enterprise Resource Planning\n - Human Capital Management\n - Supply Chain Management\n - Cloud infrastructure\n - Autonomous Database\n - Advanced Security",
+    testimonials: [
+      {
+        clientName: "Tech Pioneers",
+        feedback: "Oracle's cloud solutions have revolutionized our data operations, enhancing efficiency and security."
+      },
+      {
+        clientName: "FinanceFirst",
+        feedback: "With Oracle ERP, we have streamlined our financial processes, improving transparency and decision-making speed."
+      },
+      {
+        clientName: "HealthPro Networks",
+        feedback: "Oracle's healthcare solutions provide the reliability and compliance we need to manage patient data securely and efficiently."
+      }
+    ],
+    specialties: [
+      "Database Software & Technology",
+      "Cloud Engineered Systems",
+      "Enterprise IT",
+      "Java",
+      "ERP Solutions",
+      "AI",
+      "Machine Learning",
+      "Data Analytics",
+      "Security",
+      "Blockchain"
+    ],
+    teamMembers: [
+      {
+        name: "Safra Catz",
+        role: "CEO",
+        photoSrc: "/jane-doe-microsoftData.jpeg" // Use a placeholder
+      },
+      {
+        name: "Larry Ellison",
+        role: "CTO",
+        photoSrc: "/jhon-doe-microsoftData.jpeg" // Use a placeholder
+      }
+    ],
+    companyCulture: "Oracle promotes a culture of agility and innovation, empowering employees to bring new ideas to the table and drive growth.",
+    contactInformation: {
+      email: "info@oracle.com",
+      phone: "+1 (650) 506-7000",
+      address: "500 Oracle Parkway, Redwood Shores, CA 94065"
+    },
+    careerOpportunities: [
+      {
+        "position": "Cloud Solutions Architect",
+        "location": "Austin, TX",
+        "applyLink": "https://oracle.com/careers",
+        "companyLogo": "/oracle_logo.jpeg", // Use a placeholder
+        "description": "Oracle · Austin, TX · Over 100 applicants",
+        "pricingDescription": "$130,000/yr - $210,000/yr · Full-time",
+        "sizeDescription": "10,001+ employees · Cloud Solutions",
+        "skills": "Cloud Architecture, Security, +6 more",
+        "jobLink": "/",
+        "seeSrc": "/",
+        "thumbnail": "/oracle_career.jpeg", // Use a placeholder
+        "about": "Join our team to innovate cloud technologies that redefine modern data management and applications."
+      },
+      {
+        "position": "Java Developer",
+        "location": "Remote",
+        "applyLink": "https://oracle.com/careers",
+        "companyLogo": "/oracle_logo.jpeg", // Use a placeholder
+        "description": "Oracle · Remote · Over 150 applicants",
+        "pricingDescription": "$100,000/yr - $180,000/yr · Full-time",
+        "sizeDescription": "10,001+ employees · Software Development",
+        "skills": "Java, Spring, Hibernate, +3 more",
+        "jobLink": "/",
+        "seeSrc": "/",
+        "thumbnail": "/oracle_career.jpeg" // Use a placeholder
+      }
+    ],
+    mediaGallery: [
+      "/oracle_office1.jpeg", "/oracle_office2.jpeg", "/oracle_office3.jpeg" // Use placeholders
+    ],
+    termsAndConditionsLink: "https://oracle.com/terms",
+    privacyPolicyLink: "https://oracle.com/privacy",
+    eventData: [
+      {
+        "date": "Thu, Mar 25, 2023, 9:00 AM",
+        "title": "Oracle Cloud Innovations",
+        "location": "Live Video",
+        "imgsrc": "/oracle_event.jpeg", // Use a placeholder
+        "attendees": "26,000 attendees",
+        "viewLink": "https://example.com/event1",
+        "eventType": "Live",
+        "seeSrc": "/",
+        "eventBy": "Event by Oracle",
+        "about": "Explore the latest innovations in cloud technology with Oracle's experts and leaders.",
+        "attendSrc": "/",
+        "photoSrc": "/",
+        "speakers": [
+          {
+            "name": "Safra Catz",
+            "fallback": "CN",
+            "imgsrc": "/jane-doe-microsoftData.jpeg", // Use a placeholder
+            "position": "CEO at Oracle"
+          },
+          {
+            "name": "Larry Ellison",
+            "fallback": "CN",
+            "imgsrc": "/jhon-doe-microsoftData.jpeg", // Use a placeholder
+            "position": "CTO at Oracle"
+          }
+        ]
+      },
+      {
+        "date": "Wed, Sep 20, 2023, 11:00 AM",
+        "title": "Next-Gen Security Solutions",
+        "location": "Live Video",
+        "imgsrc": "/oracle_event2.jpeg", // Use a placeholder
+        "attendees": "18,000 attendees",
+        "viewLink": "https://example.com/event2",
+        "eventType": "Live",
+        "seeSrc": "/",
+        "eventBy": "Event by Oracle",
+        "about": "Join us to learn about Oracle's advancements in cybersecurity, featuring new tools and technologies to protect your data.",
+        "attendSrc": "/",
+        "photoSrc": "/",
+        "speakers": [
+          {
+            "name": "Mark Hurd",
+            "fallback": "CN",
+            "imgsrc": "/jhon-doe-microsoftData.jpeg", // Use a placeholder
+            "position": "President at Oracle"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    companyName: "IBM Corporation",
+    linkedInMembers: "600,000 associated members",
+    logoSrc: "/ibm_logo.jpeg", // Placeholder for IBM's logo
+    location: "Armonk, NY, USA",
+    website: "https://www.ibm.com",
+    industry: "Technology",
+    companySize: "10,001+ employees",
+    size: "10,001+ employees",
+    companyBannerImgSrc: "/ibm_banner.jpeg", // Placeholder for IBM's banner
+    foundingYear: "Founded in 1911",
+    missionValues: "IBM's mission is to lead in the invention, development, and manufacture of the industry's most advanced information technologies.",
+    missionAndValues: "Dedicated to every client's success and to creating innovations that matter for the world",
+    about: "IBM is a leading cloud platform and cognitive solutions company. We are the largest technology and consulting employer in the world, with more than 350,000 employees serving clients in 170 countries.",
+    solutionsOverview: "IBM offers a wide array of technology and consulting services; a broad portfolio of middleware for collaboration, predictive analytics, software development and systems management; and the world's most advanced servers and supercomputers.",
+    keyBenefits: " - Cutting-edge technology\n - Global expertise\n - Robust security solutions\n - Commitment to sustainability and corporate responsibility",
+    keyFeatures: " - Artificial Intelligence (Watson)\n - Cloud Computing\n - Blockchain\n - Quantum Computing\n - Data Analytics and AI",
+    testimonials: [
+      {
+        clientName: "Global Tech Innovations",
+        feedback: "IBM's Watson has transformed how we approach customer service and data analysis, enabling more personalized interactions."
+      },
+      {
+        clientName: "EcoTech Solutions",
+        feedback: "Thanks to IBM's sustainability initiatives, we have improved our environmental impact while enhancing our operational efficiency."
+      },
+      {
+        clientName: "Health Insights Inc.",
+        feedback: "IBM's cloud solutions provide the security and reliability we need to handle sensitive health data effectively."
+      },
+      {
+        clientName: "Finance Plus",
+        feedback: "With IBM's blockchain solutions, we've streamlined our transaction processes and significantly reduced costs and errors."
+      }
+    ],
+    specialties: [
+      "Cloud Computing",
+      "Artificial Intelligence",
+      "Quantum Computing",
+      "Blockchain",
+      "Data Security",
+      "Cognitive Computing",
+      "Automation",
+      "IT Infrastructure",
+      "Business Consulting",
+      "Technology Research"
+    ],
+    teamMembers: [
+      {
+        name: "Arvind Krishna",
+        role: "CEO",
+        photoSrc: "/jhon-doe-microsoftData.jpeg" // Placeholder
+      },
+      {
+        name: "Jim Whitehurst",
+        role: "President",
+        photoSrc: "/jhon-doe-microsoftData.jpeg" // Placeholder
+      }
+    ],
+    companyCulture: "IBM fosters an inclusive environment that values diverse perspectives, continuous learning, and a culture of innovation.",
+    contactInformation: {
+      email: "contactus@us.ibm.com",
+      phone: "+1 (914) 499-1900",
+      address: "1 New Orchard Road, Armonk, NY 10504, USA"
+    },
+    careerOpportunities: [
+      {
+        "position": "Cloud Engineer",
+        "location": "Remote",
+        "applyLink": "https://ibm.com/employment",
+        "companyLogo": "/ibm_logo.png", // Placeholder
+        "description": "IBM · Remote · Over 300 applicants",
+        "pricingDescription": "$90,000/yr - $150,000/yr · Full-time",
+        "sizeDescription": "10,001+ employees · Cloud Services",
+        "skills": "AWS, Azure, Cloud Architecture, +4 more",
+        "jobLink": "/",
+        "seeSrc": "/",
+        "thumbnail": "/ibm_career1.png" // Placeholder
+      },
+      {
+        "position": "AI Research Scientist",
+        "location": "Yorktown Heights, NY",
+        "applyLink": "https://ibm.com/employment",
+        "companyLogo": "/ibm_logo.png", // Placeholder
+        "description": "IBM · Yorktown Heights, NY · Over 200 applicants",
+        "pricingDescription": "$110,000/yr - $220,000/yr · Full-time",
+        "sizeDescription": "10,001+ employees · AI Research",
+        "skills": "Machine Learning, Python, Neural Networks",
+        "jobLink": "/",
+        "seeSrc": "/",
+        "thumbnail": "/ibm_career2.png" // Placeholder
+      }
+    ],
+    mediaGallery: [
+      "/ibm_office1.jpeg", "/ibm_office2.jpeg", "/ibm_office3.jpeg" // Placeholders
+    ],
+    termsAndConditionsLink: "https://ibm.com/terms",
+    privacyPolicyLink: "https://ibm.com/privacy",
+    eventData: [
+      {
+        "date": "Tue, May 10, 2023, 8:00 AM",
+        "title": "IBM Think 2023",
+        "location": "San Francisco, CA, USA",
+        "imgsrc": "/ibm_event1.jpeg", // Placeholder
+        "attendees": "40,000 attendees",
+        "viewLink": "https://example.com/event1",
+        "eventType": "Live",
+        "seeSrc": "/",
+        "eventBy": "Event by IBM",
+        "about": "IBM Think 2023 will bring together industry leaders and innovators to discuss the future of technology, from AI to quantum computing.",
+        "attendSrc": "/",
+        "photoSrc": "/",
+        "speakers": [
+          {
+            "name": "Arvind Krishna",
+            "fallback": "CN",
+            "imgsrc": "/jhon-doe-microsoftData.jpeg", // Placeholder
+            "position": "CEO at IBM"
+          },
+          {
+            "name": "Jim Whitehurst",
+            "fallback": "CN",
+            "imgsrc": "/jhon-doe-microsoftData.jpeg", // Placeholder
+            "position": "President at IBM"
+          }
+        ]
+      },
+      {
+        "date": "Mon, Aug 15, 2023, 10:00 AM",
+        "title": "IBM Security Summit",
+        "location": "Live Video",
+        "imgsrc": "/ibm_event2.jpeg", // Placeholder
+        "attendees": "25,000 attendees",
+        "viewLink": "https://example.com/event2",
+        "eventType": "Live",
+        "seeSrc": "/",
+        "eventBy": "Event by IBM",
+        "about": "Explore cutting-edge security technologies and tactics with IBM's top experts at the IBM Security Summit.",
+        "attendSrc": "/",
+        "photoSrc": "/",
+        "speakers": [
+          {
+            "name": "John Smith",
+            "fallback": "CN",
+            "imgsrc": "/jhon-doe-microsoftData.jpeg", // Placeholder
+            "position": "Head of IBM Security"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    companyName: "Meta Platforms, Inc.",
+    linkedInMembers: "200,000 associated members",
+    logoSrc: "/meta_logo.jpeg", // Placeholder for Meta's logo
+    location: "Menlo Park, CA, USA",
+    website: "https://www.meta.com",
+    industry: "Technology",
+    companySize: "10,001+ employees",
+    size: "10,001+ employees",
+    companyBannerImgSrc: "/meta_banner.jpeg", // Placeholder for Meta's banner
+    foundingYear: "Founded in 2004",
+    missionValues: "Meta's mission is to give people the power to build community and bring the world closer together.",
+    missionAndValues: "Connecting the world and building a global community",
+    about: "Meta builds technologies that help people connect, find communities, and grow businesses. From Facebook to Instagram, WhatsApp to Oculus, Meta is always pushing the envelope in digital innovation.",
+    solutionsOverview: "Meta offers a variety of products that aim to connect and empower communities globally, including social media platforms, messaging apps, and virtual reality systems.",
+    keyBenefits: " - Leading-edge technology\n - Global connectivity\n - Powerful advertising tools\n - Extensive user engagement",
+    keyFeatures: " - Social Networking\n - Instant Messaging\n - Virtual Reality\n - Augmented Reality",
+    testimonials: [
+      {
+        clientName: "Dynamic Ads Agency",
+        feedback: "Meta's advertising solutions have drastically increased our client engagement and campaign effectiveness."
+      },
+      {
+        clientName: "Virtual Game World",
+        feedback: "Using Oculus Rift, we've been able to provide breathtaking virtual experiences that have captivated our audience."
+      },
+      {
+        clientName: "Global Charity Foundation",
+        feedback: "Thanks to Meta's social platforms, our outreach and impact have grown internationally, connecting us with more communities."
+      },
+      {
+        clientName: "Tech Innovators",
+        feedback: "Meta’s AR platforms have allowed us to create interactive experiences that were previously impossible."
+      }
+    ],
+    specialties: [
+      "Social Media",
+      "Online Advertising",
+      "Virtual Reality",
+      "Augmented Reality",
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Data Security",
+      "Connectivity Solutions"
+    ],
+    teamMembers: [
+      {
+        name: "Mark Zuckerberg",
+        role: "CEO",
+        photoSrc: "/jhon-doe-microsoftData.jpeg" // Placeholder
+      },
+      {
+        name: "Sheryl Sandberg",
+        role: "COO",
+        photoSrc: "/jane-doe-microsoftData.jpeg" // Placeholder
+      }
+    ],
+    companyCulture: "Meta is committed to fostering a culture of innovation, inclusivity, and responsibility, encouraging employees to think boldly and take risks.",
+    contactInformation: {
+      email: "info@meta.com",
+      phone: "+1 (650) 543-4800",
+      address: "1 Hacker Way, Menlo Park, CA 94025, USA"
+    },
+    careerOpportunities: [
+      {
+        "position": "Software Engineer, Virtual Reality",
+        "location": "Menlo Park, CA",
+        "applyLink": "https://meta.com/careers",
+        "companyLogo": "/meta_logo.png", // Placeholder
+        "description": "Meta · Menlo Park, CA · Over 500 applicants",
+        "pricingDescription": "$150,000/yr - $240,000/yr · Full-time",
+        "sizeDescription": "10,001+ employees · Virtual Reality Development",
+        "skills": "C++, Unity, Unreal Engine, +3 more",
+        "jobLink": "/",
+        "seeSrc": "/",
+        "thumbnail": "/meta_career.png" // Placeholder
+      },
+      {
+        "position": "Data Scientist, AI & Analytics",
+        "location": "Remote",
+        "applyLink": "https://meta.com/careers",
+        "companyLogo": "/meta_logo.png", // Placeholder
+        "description": "Meta · Remote · Over 300 applicants",
+        "pricingDescription": "$130,000/yr - $210,000/yr · Full-time",
+        "sizeDescription": "10,001+ employees · AI & Analytics",
+        "skills": "Python, R, Machine Learning, Big Data",
+        "jobLink": "/",
+        "seeSrc": "/",
+        "thumbnail": "/meta_career.png" // Placeholder
+      }
+    ],
+    mediaGallery: [
+      "/meta_office1.jpeg", "/meta_office2.jpeg", "/meta_office3.jpeg" // Placeholders
+    ],
+    termsAndConditionsLink: "https://meta.com/terms",
+    privacyPolicyLink: "https://meta.com/privacy",
+    eventData: [
+      {
+        "date": "Fri, Apr 21, 2023, 9:00 AM",
+        "title": "Meta Connect",
+        "location": "Live Video",
+        "imgsrc": "/meta_event1.jpeg", // Placeholder
+        "attendees": "50,000 attendees",
+        "viewLink": "https://example.com/event1",
+        "eventType": "Live",
+        "seeSrc": "/",
+        "eventBy": "Event by Meta",
+        "about": "Join us at Meta Connect to explore the latest advancements in virtual and augmented reality technologies.",
+        "attendSrc": "/",
+        "photoSrc": "/",
+        "speakers": [
+          {
+            "name": "Mark Zuckerberg",
+            "fallback": "CN",
+            "imgsrc": "/jhon-doe-microsoftData.jpeg", // Placeholder
+            "position": "CEO at Meta"
+          },
+          {
+            "name": "John Carmack",
+            "fallback": "CN",
+            "imgsrc": "/jhon-doe-microsoftData.jpeg", // Placeholder
+            "position": "CTO of Oculus at Meta"
+          }
+        ]
+      },
+      {
+        "date": "Sat, Sep 10, 2023, 10:00 AM",
+        "title": "Meta AI Summit",
+        "location": "Live Video",
+        "imgsrc": "/meta_event2.jpeg", // Placeholder
+        "attendees": "30,000 attendees",
+        "viewLink": "https://example.com/event2",
+        "eventType": "Live",
+        "seeSrc": "/",
+        "eventBy": "Event by Meta",
+        "about": "Discover the future of AI at the Meta AI Summit, featuring discussions on ethical AI, machine learning innovations, and data security.",
+        "attendSrc": "/",
+        "photoSrc": "/",
+        "speakers": [
+          {
+            "name": "Yann LeCun",
+            "fallback": "CN",
+            "imgsrc": "/jane-doe-microsoftData.jpeg", // Placeholder
+            "position": "Chief AI Scientist at Meta"
+          }
+        ]
+      }
+    ]
+  }
+  
+  
+  
+  
 
 ]
 
