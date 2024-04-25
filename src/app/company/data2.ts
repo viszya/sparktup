@@ -542,7 +542,10 @@ export const data2 = [
         "skills": "Software Development, Cloud Computing, +5 more",
         "jobLink": "/",
         "seeSrc": "/",
-        "thumbnail": "/microsoft-event.png" // Placeholder
+        "thumbnail": "/microsoft-event.png", // Placeholder
+        "about": "Join our technology team as a Software Development Engineer and contribute to our innovative platforms. We are seeking creative problem solvers who are passionate about building scalable, reliable systems.",
+        "pay": "$120,000/yr - $180,000/yr",
+        "companyAbout": "Amazon, a global leader in e-commerce and cloud computing, is dedicated to being Earth's most customer-centric company, where users can find anything they might want to buy online."
       },
       {
         "position": "Data Scientist",
@@ -555,9 +558,28 @@ export const data2 = [
         "skills": "Machine Learning, Statistical Analysis, Python",
         "jobLink": "/",
         "seeSrc": "/",
-        "thumbnail": "/microsoft-event.png" // Placeholder
+        "thumbnail": "/microsoft-event.png", // Placeholder
+        "about": "Join our dynamic data science team as a Data Scientist to leverage big data technologies and analytics to revolutionize decision-making across our operations. Ideal candidates will have a robust analytical skillset and a drive to optimize operations through data insights.",
+        "pay": "$130,000/yr - $200,000/yr",
+        "companyAbout": "Amazon is pioneering new innovations across e-commerce, cloud, AI and more, transforming industries and enhancing the customer experience worldwide."
+      },
+      {
+        "position": "Cybersecurity Analyst",
+        "location": "Seattle, WA",
+        "applyLink": "https://amazon.jobs/en",
+        "companyLogo": "/amazon_career.jpeg", // Placeholder
+        "description": "Amazon · Seattle, WA · Over 250 applicants",
+        "pricingDescription": "$100,000/yr - $200,000/yr · Full-time",
+        "sizeDescription": "10,001+ employees · Security & Compliance",
+        "skills": "Information Security, Network Security, Threat Analysis, +5 more",
+        "jobLink": "/",
+        "seeSrc": "/",
+        "thumbnail": "/microsoft-event.png", // Placeholder
+        "about": "Join our cybersecurity team as a Cybersecurity Analyst and play a crucial role in safeguarding digital assets. We're looking for individuals with a strong understanding of cybersecurity principles and a commitment to proactive threat mitigation. If you're passionate about keeping systems secure, apply now to be part of our cybersecurity success story!",
+        "pay": "$100,000/yr - $200,000/yr",
+        "companyAbout": "Amazon Web Services (AWS) is a secure cloud services platform, offering compute power, database storage, content delivery, and other functionality to help businesses scale and grow. Join us in our mission to build a safer digital future and protect millions of customers across the globe."
       }
-    ],
+    ],    
     mediaGallery: [
       "/amazon_office1.jpeg", "/amazon_office2.jpeg", "/amazon_office3.jpeg" // Placeholders
     ],
@@ -690,7 +712,9 @@ export const data2 = [
         "jobLink": "/",
         "seeSrc": "/",
         "thumbnail": "/oracle_career.jpeg", // Use a placeholder
-        "about": "Join our team to innovate cloud technologies that redefine modern data management and applications."
+        "about": "Join our team to innovate cloud technologies that redefine modern data management and applications. We are seeking forward-thinking professionals passionate about cloud solutions and customer success.",
+        "pay": "$130,000/yr - $210,000/yr",
+        "companyAbout": "Oracle provides comprehensive cloud-based and local software solutions that encompass all aspects of cybersecurity. Join our dedicated team and help us protect enterprises against the most advanced security threats."
       },
       {
         "position": "Java Developer",
@@ -704,6 +728,9 @@ export const data2 = [
         "jobLink": "/",
         "seeSrc": "/",
         "thumbnail": "/oracle_career.jpeg" // Use a placeholder
+        "about": "As a Java Developer at Oracle, you will work on cutting-edge projects that influence the daily operations of millions of businesses. Be part of a team that pushes the boundaries of technology to create robust, scalable, and innovative software.",
+        "pay": "$100,000/yr - $180,000/yr",
+        "companyAbout": "Oracle is a leader in database technology and cloud computing, empowering businesses globally through advanced software and hardware systems that are transforming the way we live and work."
       }
     ],
     mediaGallery: [
@@ -841,7 +868,10 @@ export const data2 = [
         "skills": "AWS, Azure, Cloud Architecture, +4 more",
         "jobLink": "/",
         "seeSrc": "/",
-        "thumbnail": "/ibm_career1.png" // Placeholder
+        "thumbnail": "/ibm_career1.png", // Placeholder
+        "about": "Join IBM as a Cloud Engineer and help innovate cloud solutions that change the way businesses operate. We are looking for professionals with expertise in AWS, Azure, and modern cloud architectures to support our expansive cloud services.",
+        "pay": "$90,000/yr - $150,000/yr",
+        "companyAbout": "IBM is a global leader in IT infrastructure and cloud services, pushing the boundaries of what technology can accomplish in business and society."
       },
       {
         "position": "AI Research Scientist",
@@ -854,9 +884,12 @@ export const data2 = [
         "skills": "Machine Learning, Python, Neural Networks",
         "jobLink": "/",
         "seeSrc": "/",
-        "thumbnail": "/ibm_career2.png" // Placeholder
+        "thumbnail": "/ibm_career2.png", // Placeholder
+        "about": "As an AI Research Scientist at IBM, you will be at the forefront of machine learning and artificial intelligence research, developing new methodologies that influence industries and improve human interaction with AI systems.",
+        "pay": "$110,000/yr - $220,000/yr",
+        "companyAbout": "IBM has been a leader in the field of artificial intelligence since the inception of the technology. Our research divisions are dedicated to advancing AI to new heights, improving client outcomes across the globe."
       }
-    ],
+    ],    
     mediaGallery: [
       "/ibm_office1.jpeg", "/ibm_office2.jpeg", "/ibm_office3.jpeg" // Placeholders
     ],
@@ -990,7 +1023,10 @@ export const data2 = [
         "skills": "C++, Unity, Unreal Engine, +3 more",
         "jobLink": "/",
         "seeSrc": "/",
-        "thumbnail": "/meta_career.png" // Placeholder
+        "thumbnail": "/meta_career.png", // Placeholder
+        "about": "Join Meta's innovative team as a Software Engineer focusing on Virtual Reality development. Dive into creating immersive experiences using leading technologies such as C++, Unity, and Unreal Engine. If you are passionate about VR and AR, come shape the future of virtual interaction with us.",
+        "pay": "$150,000/yr - $240,000/yr",
+        "companyAbout": "Meta, formerly known as Facebook, leads in the development of social media platforms and technologies that help people connect, share, discover, and communicate in virtual environments."
       },
       {
         "position": "Data Scientist, AI & Analytics",
@@ -1003,9 +1039,12 @@ export const data2 = [
         "skills": "Python, R, Machine Learning, Big Data",
         "jobLink": "/",
         "seeSrc": "/",
-        "thumbnail": "/meta_career.png" // Placeholder
+        "thumbnail": "/meta_career.png", // Placeholder
+        "about": "As a Data Scientist in AI & Analytics at Meta, you will leverage advanced analytics to drive innovations in artificial intelligence, using data to inform decisions and improve user engagement. Your insights will directly contribute to Meta's strategic direction in AI and data utilization.",
+        "pay": "$130,000/yr - $210,000/yr",
+        "companyAbout": "Meta is at the forefront of artificial intelligence and analytics, pushing the boundaries of what is possible in the tech industry and impacting the lives of billions globally."
       }
-    ],
+    ],    
     mediaGallery: [
       "/meta_office1.jpeg", "/meta_office2.jpeg", "/meta_office3.jpeg" // Placeholders
     ],
