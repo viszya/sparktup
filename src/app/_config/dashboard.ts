@@ -82,11 +82,6 @@ export const dashboardCompanyConfig: DashboardConfig = {
       href: "/company-dashboard/update-profile",
       icon: "cog",
     },
-    // {
-    //   title: "Edit Careers & Events",
-    //   href: "/company-dashboard/edit",
-    //   icon: "edit",
-    // },
     {
       title: "Add Career",
       href: "/company-dashboard/add-career",

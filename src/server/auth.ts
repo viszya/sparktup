@@ -5,9 +5,11 @@ import {
   type NextAuthOptions,
 } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-
+import EmailProvider from "next-auth/providers/email"
 import { env } from "@/env.mjs";
 import { db } from "@/server/db";
+// import nodemailer from 'nodemailer'
+import { Resend } from "resend";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -31,6 +33,21 @@ declare module "next-auth" {
   //   // role: UserRole;
   // }
 }
+const resend = new Resend(env.RESEND_API_KEY);
+const sendVerificationRequest = async (params) => {
+  try {
+    console.log("HLDKSHFLKJFSLDJKJFKLSDLFJJSDF");
+    await resend.emails.send({
+      from: 'onboarding@resend.dev',
+      to: params.identifier,
+      subject: 'Email Verification',
+      html: 'YOUR EMAIL CONTENT',
+    });
+  } catch (error) {
+    console.log({ error });
+  }
+};
+
 
 /**
  * Options for NextAuth.js used to configure adapters, providers, callbacks, etc.
@@ -54,6 +71,19 @@ export const authOptions: NextAuthOptions = {
     GoogleProvider({
       clientId: env.GOOGLE_CLIENT_ID,
       clientSecret: env.GOOGLE_CLIENT_SECRET,
+    }),
+    EmailProvider({
+     //name: 'email',
+      from: 'onboarding@resend.dev',
+      sendVerificationRequest,
+      server: {
+        host: process.env.EMAIL_SERVER_HOST,
+        port: process.env.EMAIL_SERVER_PORT,
+        auth: {
+          user: process.env.EMAIL_SERVER_USER,
+          pass: process.env.EMAIL_SERVER_PASSWORD,
+        },
+      },
     }),
     /**
      * ...add more providers here.
