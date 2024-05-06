@@ -260,7 +260,7 @@ export default function CompanyProfile() {
         </h1>
 
         {data.map((data: any) => (
-          <Card className="relative z-10 mx-4 my-10 flex flex-col gap-x-2 rounded-3xl border border-gray-100 bg-white p-4 sm:mx-0 sm:flex-row">
+          <Card className="relative z-10 mx-4 my-10 flex flex-col gap-x-2 rounded-3xl border border-gray-100 bg-white p-4 sm:mx-0 sm:flex-row sm:justify-between">
             <div className="">
               <CardHeader>
                 <div className="flex items-center space-x-2">

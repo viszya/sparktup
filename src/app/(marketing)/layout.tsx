@@ -19,7 +19,7 @@ export default function MarketingLayout({ children }: MarketingLayoutProps) {
       {children}
       <Footer className="mt-10 sm:mt-0"/>
       <Toaster />
-      {/* <DropdownMenu>
+      <DropdownMenu>
         <DropdownMenuTrigger className="sticky bottom-4 ml-auto mr-1 sm:mr-4 ">
           <Image
             alt="Bot Image"
@@ -42,7 +42,7 @@ export default function MarketingLayout({ children }: MarketingLayoutProps) {
             <div className="absolute bottom-0 right-40 h-10 w-48 bg-black"></div>
           </div>
         </DropdownMenuContent>
-      </DropdownMenu> */}
+      </DropdownMenu>
     </div>
   );
 }
