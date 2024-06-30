@@ -255,9 +255,9 @@ model Application {
   backgroundCheckAuthorization Boolean  @default(false)
   termsAndConditionsAgreement  Boolean  @default(false)
   fullName                     String?
+  companyName                  String?
   company                      Company? @relation(fields: [companyId], references: [id])
   companyId                    String
   applicant                    User?    @relation(fields: [applicantId], references: [id])
   applicantId                  String
-  companyName                  String?
 }

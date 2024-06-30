@@ -9,6 +9,7 @@ export const taskSchema = z.object({
   job: z.string(),
   fullName: z.string(),
   applicantId: z.string(),
+  companyName: z.string(),
   technicalSkills: z.string(),
   softSkills: z.string(),
   certifications: z.string(),
@@ -22,7 +23,6 @@ export const taskSchema = z.object({
   challengingSituation: z.string(),
   backgroundCheckAuthorization: z.boolean(),
   termsAndConditionsAgreement: z.boolean(),
-  companyName: z.string(),
 })
 
 export type Task = z.infer<typeof taskSchema>

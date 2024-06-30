@@ -48,7 +48,9 @@ export  function DataPage() {
   }
 
 
-
+  for (let i = 0; i < data?.Application.length; i++) {
+    data.Application[i].companyName = data.Application[i].company?.companyName || 'Unknown'
+  }
 
 
 
