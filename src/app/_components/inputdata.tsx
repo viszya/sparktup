@@ -130,7 +130,7 @@ const data = [
       fullName: "Emma Clarke",
       jobTitle: "Frontend Developer",
       proEmail: "emma_clarke@gmail.com",
-      profileSrc: "/wp22.jpeg",
+      profileSrc: "/wp4.jpeg",
       username: "emmaclarke",
       phone: "+44 752 334 5678",
       location: "Manchester, England, UK",
