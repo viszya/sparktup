@@ -68,7 +68,7 @@ const Nav = () => {
   if (state == "applicant") {
     return (
       <header className="sticky top-0 z-40 border-b bg-background">
-        <div className="mx-2 mr-5 flex h-16 items-center justify-between py-4 sm:mx-32 md:mx-10 lg:mx-8">
+        <div className="mx-2  flex h-16 items-center justify-between py-4 sm:mx-32 md:mx-10 lg:mx-8">
           <MainNav items={dashboardConfig.mainNav} />
           <div className="flex items-center justify-center">
             <DropdownMenu>
