@@ -82,15 +82,11 @@ export default function RootLayout({
           strategy="beforeInteractive"
           type="text/javascript"
         ></Script>
-        <Script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></Script>
-        <Script>
-          window.OneSignalDeferred = window.OneSignalDeferred || [];
-          OneSignalDeferred.push(async function(OneSignal) {
-            await OneSignal.init({
-              appId: "6f7e2c82-5cff-4f6e-8d60-4c6f3459d195",
-            });
-          });
-        </Script>
+{/* <Script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></Script> */}
+<Script
+    src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
+    async=""
+  ></Script>
       </Head>
     </html>
   );

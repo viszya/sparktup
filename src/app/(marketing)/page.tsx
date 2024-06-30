@@ -6,8 +6,28 @@ import { cn } from "@/server/utils";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { Icons } from "@/app/_components/icons";
 import Image from "next/image";
+import { useEffect } from "react";
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
 
+</script>
 export default function Home() {
+  useEffect(() => {
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function () {
+        OneSignal.init({
+          appId: "6f7e2c82-5cff-4f6e-8d60-4c6f3459d195",
+          safari_web_id: "web.onesignal.auto.4463433a-b41c-4a34-809b-879a9d93883b",
+            notifyButton: {
+                enable: true,
+            },
+            allowLocalhostAsSecureOrigin: true,
+        });
+    });
+    return () => {
+        window.OneSignal = undefined;
+    };
+}, []);
   return (
     <main
       className={cn(
