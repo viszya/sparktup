@@ -2188,112 +2188,77 @@ const data = [
   ];
 
 export function InputData() {
-    const router = useRouter();
-    const { toast } = useToast();
+  const router = useRouter();
+  const { toast } = useToast();
 
-    //const updateProfile = api.test.createCompanyProfile.useMutation();
-    //const updateTestimonial = api.test.createTestimonial.useMutation();
-    //const s = api.user.getProfile.useQuery({ id: "clqst7m140000stm7xvs7wi5k" });
+  //const updateProfile = api.test.createCompanyProfile.useMutation();
+  //const updateTestimonial = api.test.createTestimonial.useMutation();
+  //const s = api.user.getProfile.useQuery({ id: "clqst7m140000stm7xvs7wi5k" });
 
-    const profile = api.settings.settingsForm11.useMutation();
-    const addSkill = api.settings.settingsForm2.useMutation();
-    const addRecommendation = api.settings.addRecommendation.useMutation();
-    const addProject = api.settings.addProject.useMutation();
-    const addExperience = api.settings.addExperience.useMutation();
-    function onSubmit() {
-        profile.mutate({
-            fullName: data[0].fullName,
-            proEmail: data[0].proEmail,
-            username: data[0].username,
-            location: data[0].location,
-            about: data[0].about,
-            jobTitle: data[0].jobTitle,
-            yearsOfExperience: data[0].yearsOfExperience,
-            availableForWork: data[0].avaiableForWork,
-            hasAJob: data[0].hasAJob,
-            resumeLink: data[0].resumeLink,
-            profileTags: data[0].profileTags,
-            interestedTags: data[0].interestedTags,
-            profileSrc: data[0].profileSrc,
-        });
-        addSkill.mutate({
-            skillName: data[0].topSkills[0].skillName,
-            skillDescription: data[0].topSkills[0].skillDescription,
-            color: data[0].topSkills[0].color,
-        });
-        addSkill.mutate({
-            skillName: data[0].topSkills[1].skillName,
-            skillDescription: data[0].topSkills[1].skillDescription,
-            color: data[0].topSkills[1].color,
-        });
-        addSkill.mutate({
-            skillName: data[0].topSkills[2].skillName,
-            skillDescription: data[0].topSkills[2].skillDescription,
-            color: data[0].topSkills[2].color,
-        });
-        addRecommendation.mutate({
-            name: data[0].recommendations[0].name,
-            jobTitle: data[0].recommendations[0].jobTitle,
-            srcImage: data[0].recommendations[0].srcImage,
-            message: data[0].recommendations[0].message,
-        });
-        // addRecommendation.mutate({
-        //     name: data[0].recommendations[1].name,
-        //     jobTitle: data[0].recommendations[1].jobTitle,
-        //     srcImage: data[0].recommendations[1].srcImage,
-        //     message: data[0].recommendations[1].message,
-        // });
-        // addRecommendation.mutate({
-        //     name: data[0].recommendations[2].name,
-        //     jobTitle: data[0].recommendations[2].jobTitle,
-        //     srcImage: data[0].recommendations[2].srcImage,
-        //     message: data[0].recommendations[2].message,
-        // });
-        addProject.mutate({
-            name: data[0].projects[0].name,
-            src: data[0].projects[0].src,
-            link: data[0].projects[0].link,
-        });
-        // addProject.mutate({
-        //     name: data[0].projects[1].name,
-        //     src: data[0].projects[1].src,
-        //     link: data[0].projects[1].link,
-        // });
-        // addProject.mutate({
-        //     name: data[0].projects[2].name,
-        //     src: data[0].projects[2].src,
-        //     link: data[0].projects[2].link,
-        // });
-        // addProject.mutate({
-        //     name: data[0].projects[3].name,
-        //     src: data[0].projects[3].src,
-        //     link: data[0].projects[3].link,
-        // });
-        addExperience.mutate({
-            companyLogoSrc: data[0].experiences[0].companyLogoSrc,
-            companyName: data[0].experiences[0].companyName,
-            companyImgSrc: data[0].experiences[0].companyImgSrc,
-            engagement: data[0].experiences[0].engagement,
-            relativeOfWork: data[0].experiences[0].relativeOfWork,
-            jobTitle: data[0].experiences[0].jobTitle,
-            location: data[0].experiences[0].location,
-            time: data[0].experiences[0].time,
-            jobDescriptions: data[0].experiences[0].jobDescriptions,
-        });
-        // addExperience.mutate({
-        //     companyLogoSrc: data[0].experiences[1].companyLogoSrc,
-        //     companyName: data[0].experiences[1].companyName,
-        //     companyImgSrc: data[0].experiences[1].companyImgSrc,
-        //     engagement: data[0].experiences[1].engagement,
-        //     relativeOfWork: data[0].experiences[1].relativeOfWork,
-        //     jobTitle: data[0].experiences[1].jobTitle,
-        //     location: data[0].experiences[1].location,
-        //     time: data[0].experiences[1].time,
-        //     jobDescriptions: data[0].experiences[1].jobDescriptions,
-        // });
-        toast({
-            title: "Data Inputted!",
-        });
+  const profile = api.settings.settingsForm11.useMutation();
+  const addSkill = api.settings.settingsForm2.useMutation();
+  const addRecommendation = api.settings.addRecommendation.useMutation();
+  const addProject = api.settings.addProject.useMutation();
+  const addExperience = api.settings.addExperience.useMutation();
+
+  function onSubmit() {
+      let dataNew = data[13];
+      profile.mutate({
+          fullName: dataNew.fullName,
+          proEmail: dataNew.proEmail,
+          username: dataNew.username,
+          location: dataNew.location,
+          about: dataNew.about,
+          jobTitle: dataNew.jobTitle,
+          yearsOfExperience: dataNew.yearsOfExperience,
+          availableForWork: dataNew.avaiableForWork,
+          hasAJob: dataNew.hasAJob,
+          resumeLink: dataNew.resumeLink,
+          profileTags: dataNew.profileTags,
+          interestedTags: dataNew.interestedTags,
+          profileSrc: dataNew.profileSrc,
+      });
+      addSkill.mutate({
+          skillName: dataNew.topSkills[0].skillName,
+          skillDescription: dataNew.topSkills[0].skillDescription,
+          color: dataNew.topSkills[0].color,
+      });
+      addSkill.mutate({
+          skillName: dataNew.topSkills[1].skillName,
+          skillDescription: dataNew.topSkills[1].skillDescription,
+          color: dataNew.topSkills[1].color,
+      });
+      addSkill.mutate({
+          skillName: dataNew.topSkills[2].skillName,
+          skillDescription: dataNew.topSkills[2].skillDescription,
+          color: dataNew.topSkills[2].color,
+      });
+      addRecommendation.mutate({
+          name: dataNew.recommendations[0].name,
+          jobTitle: dataNew.recommendations[0].jobTitle,
+          srcImage: dataNew.recommendations[0].srcImage,
+          message: dataNew.recommendations[0].message,
+      });
+      addProject.mutate({
+          name: dataNew.projects[0].name,
+          src: dataNew.projects[0].src,
+          link: dataNew.projects[0].link,
+      });
+      addExperience.mutate({
+          companyLogoSrc: dataNew.experiences[0].companyLogoSrc,
+          companyName: dataNew.experiences[0].companyName,
+          companyImgSrc: dataNew.experiences[0].companyImgSrc,
+          engagement: dataNew.experiences[0].engagement,
+          relativeOfWork: dataNew.experiences[0].relativeOfWork,
+          jobTitle: dataNew.experiences[0].jobTitle,
+          location: dataNew.experiences[0].location,
+          time: dataNew.experiences[0].time,
+          jobDescriptions: dataNew.experiences[0].jobDescriptions,
+      });
+
+      toast({
+          title: "Data Inputted!",
+      });
     }
 
     return (
