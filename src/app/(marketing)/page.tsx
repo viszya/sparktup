@@ -6,25 +6,24 @@ import { cn } from "@/server/utils";
 import { buttonVariants } from "@/app/_components/ui/button";
 import { Icons } from "@/app/_components/icons";
 import Image from "next/image";
-import { useEffect } from "react";
+
 
 export default function Home() {
   useEffect(() => {
-    window.OneSignalDeferred = window.OneSignalDeferred || [];
-    OneSignalDeferred.push(async function (OneSignal) {
-      await OneSignal.init({
-        appId: "6f7e2c82-5cff-4f6e-8d60-4c6f3459d195",
-        safari_web_id:
-          "web.onesignal.auto.4463433a-b41c-4a34-809b-879a9d93883b",
-        notifyButton: {
-          enable: true,
-        },
-      });
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function () {
+        OneSignal.init({
+            appId: "b40b7cc7-13dc-4662-8b48-efa668f9b72a",
+            notifyButton: {
+                enable: true,
+            },
+            allowLocalhostAsSecureOrigin: true,
+        });
     });
     return () => {
-      window.OneSignal = undefined;
+        window.OneSignal = undefined;
     };
-  }, []);
+}, []);
   return (
     <main
       className={cn(
@@ -34,11 +33,11 @@ export default function Home() {
     >
       {/* Hero Section */}
       <section className="hero-image flex flex-col items-center justify-center text-center ">
-        <div className="mx-4 flex flex-col items-center justify-center text-center sm:mx-0">
-          <h1 className="lg:text:8xl movein mb-2 mt-20 text-4xl font-semibold text-black sm:mt-32 md:text-7xl">
+        <div className="mx-4 sm:mx-0 text-center flex flex-col justify-center items-center">
+          <h1 className="lg:text:8xl movein mb-2 mt-20 sm:mt-32 text-4xl font-semibold text-black md:text-7xl">
             Simplify and accelerate your job network
           </h1>
-          <p className="movein mb-2 mt-5 max-w-prose text-center text-sm text-primary sm:text-2xl">
+          <p className="movein mb-2 mt-5 max-w-prose text-sm sm:text-2xl text-primary text-center">
             Streamline and expedite your professional connections with
             Sparktup's simplified job networking platform.
           </p>
@@ -140,7 +139,7 @@ export default function Home() {
                 height={200}
                 className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
               />
-              <div className="mt-4 rounded-lg bg-transparent text-xl font-light uppercase text-black">
+              <div className="mt-4 rounded-lg bg-transparent text-xl uppercase font-light text-black">
                 Bi-Connect Network
               </div>
             </div>
@@ -154,7 +153,7 @@ export default function Home() {
                 quality={100}
                 className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
               />
-              <div className="mt-4 rounded-lg bg-transparent text-xl font-light uppercase text-black">
+              <div className="mt-4 rounded-lg bg-transparent text-xl uppercase font-light text-black">
                 Real Time Dashboard
               </div>
             </div>
@@ -168,7 +167,7 @@ export default function Home() {
                 quality={100}
                 className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
               />
-              <div className="mt-4 rounded-lg bg-transparent text-xl font-light uppercase text-black">
+              <div className="mt-4 rounded-lg bg-transparent text-xl uppercase font-light text-black">
                 View Job Positions Real Time
               </div>
             </div>
@@ -182,7 +181,7 @@ export default function Home() {
                 quality={100}
                 className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
               />
-              <div className="mt-4 rounded-lg bg-transparent text-xl font-light uppercase text-black">
+              <div className="mt-4 rounded-lg bg-transparent text-xl uppercase font-light text-black">
                 Apply Through Website
               </div>
             </div>
@@ -196,7 +195,7 @@ export default function Home() {
                 quality={100}
                 className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
               />
-              <div className="mb-2 mt-4 rounded-lg bg-transparent text-xl font-light uppercase text-black">
+              <div className="mt-4 mb-2 rounded-lg bg-transparent text-xl uppercase font-light text-black">
                 Connect With Other Professionals
               </div>
             </div>
@@ -210,7 +209,7 @@ export default function Home() {
                 quality={100}
                 className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10"
               />
-              <div className="mt-4 rounded-lg bg-transparent text-xl font-light uppercase text-black">
+              <div className="mt-4 rounded-lg bg-transparent text-xl uppercase font-light text-black">
                 Collect Applications Efficiently
               </div>
             </div>
@@ -220,12 +219,10 @@ export default function Home() {
 
       <section className="w-full bg-black py-32">
         <h1 className="text-3xl text-white ">
-          <span className="text-4xl font-semibold sm:text-7xl">
-            Are you a company?
-          </span>{" "}
+          <span className="text-4xl sm:text-7xl font-semibold">Are you a company?</span>{" "}
           <br />
         </h1>
-        <h2 className="my-4 text-lg text-white sm:text-3xl">
+        <h2 className="my-4 text-lg sm:text-3xl text-white">
           Check out our powerful solutions for companies
         </h2>
         <Link
@@ -252,7 +249,7 @@ export default function Home() {
 
       {/* About Us */}
       <section className="flex w-full flex-col items-center justify-center bg-white pb-20 sm:pb-40">
-        <h1 className="lg:text:7xl mb-2 pt-12 text-3xl font-semibold text-black sm:pt-0 md:text-6xl">
+        <h1 className="lg:text:7xl mb-2 pt-12 sm:pt-0 text-3xl font-semibold text-black md:text-6xl">
           Get started with a free <br /> Sparktup account today
         </h1>
         <div className="mt-4 flex flex-col sm:flex-row">
@@ -262,7 +259,7 @@ export default function Home() {
               variant: "heroButton2",
               size: "lg",
               className:
-                " duration-250 mx-auto mb-4 mr-0 mt-10 flex max-w-fit  items-center justify-center space-x-2 overflow-hidden rounded-xl border-2 border-black bg-transparent px-7 py-2 text-black shadow-md backdrop-blur transition-colors ease-in-out hover:bg-black hover:text-white hover:shadow-xl sm:mr-5 sm:mt-0",
+                " duration-250 mx-auto mb-4 mr-0 sm:mr-5 mt-10 sm:mt-0  flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-xl border-2 border-black bg-transparent px-7 py-2 text-black shadow-md backdrop-blur transition-colors ease-in-out hover:bg-black hover:text-white hover:shadow-xl",
             })}
           >
             For Companies <Icons.arrowRight className="ml-2 h-5 w-5" />
@@ -272,7 +269,7 @@ export default function Home() {
             className={buttonVariants({
               size: "lg",
               className:
-                "ml-0 rounded-xl border-2 border-black bg-black duration-200 ease-in-out hover:border-black hover:bg-white  hover:text-black hover:shadow-xl sm:ml-5 ",
+                "ml-0 sm:ml-5 rounded-xl border-2 border-black bg-black duration-200 ease-in-out hover:border-black  hover:bg-white hover:text-black hover:shadow-xl ",
             })}
           >
             Get Started <Icons.arrowRight className="ml-2 h-5 w-5" />
