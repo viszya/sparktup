@@ -23,6 +23,19 @@ import {
   DialogTrigger,
 } from "@/app/_components/ui/dialog";
 
+function stringToAsciiNumber(str: string): number {
+  // Convert each character to its ASCII value
+  const asciiValues = str.split('').map(char => char.charCodeAt(0));
+
+  // Combine ASCII values into a single number as a string
+  const asciiString = asciiValues.join('');
+
+  // Convert the resulting string to a number
+  const asciiNumber = parseInt(asciiString, 10);
+
+  return asciiNumber;
+}
+
 
 export const columns: ColumnDef<Task>[] = [
   {
@@ -54,7 +67,7 @@ export const columns: ColumnDef<Task>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="ID" />
     ),
-    cell: ({ row }) => <div className="w-[80px]">{row.getValue("nID")}</div>,
+    cell: ({ row }) => <div className="w-[80px]">{stringToAsciiNumber(row.getValue("id").slice(5,8))}</div>,
     enableSorting: false,
     enableHiding: false,
   },
