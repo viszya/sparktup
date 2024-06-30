@@ -259,4 +259,5 @@ model Application {
   companyId                    String
   applicant                    User?    @relation(fields: [applicantId], references: [id])
   applicantId                  String
+  companyName                  String?
 }

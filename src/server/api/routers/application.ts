@@ -24,6 +24,7 @@ export const applicationRouter = createTRPCRouter({
             challengingSituation: z.string(),
             backgroundCheckAuthorization: z.boolean(),
             termsAndConditionsAgreement: z.boolean(),
+            companyName: z.string(),
             job: z.string(),
             companyId: z.string(),
         }))
@@ -51,6 +52,7 @@ export const applicationRouter = createTRPCRouter({
                     backgroundCheckAuthorization: input.backgroundCheckAuthorization,
                     termsAndConditionsAgreement: input.termsAndConditionsAgreement,
                     job: input.job,
+                    companyName: input.companyName,
                     company: {
                         connect: { id: input.companyId },
                     },
@@ -98,7 +100,7 @@ export const applicationRouter = createTRPCRouter({
                     id: ctx.session.user.id,
                 },
                 include: {
-                    Application: true,
+                  Application: true,
                 },
             });
         }),

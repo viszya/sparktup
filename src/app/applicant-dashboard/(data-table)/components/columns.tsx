@@ -53,7 +53,7 @@ export const columns: ColumnDef<Task>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="ID" />
     ),
-    cell: ({ row }) => <div className="w-[80px]">{row.getValue("nID")}</div>,
+    cell: ({ row }) => <div className="w-[80px]">{Math.floor(1000 + Math.random() * 9000)}</div>,
     enableSorting: false,
     enableHiding: false,
   },
@@ -78,13 +78,13 @@ export const columns: ColumnDef<Task>[] = [
   {
     accessorKey: "fullName",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Applicant" />
+      <DataTableColumnHeader column={column} title="Company" />
     ),
     cell: ({ row }) => {
       return (
         <div className="flex space-x-2">
           <span className="max-w-[500px] truncate font-medium">
-            {row.getValue("fullName")}
+            {row.getValue("companyName")}
           </span>
         </div>
       );

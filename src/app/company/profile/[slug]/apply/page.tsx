@@ -152,6 +152,7 @@ export default function JobApplicationForm() {
       challengingSituation,
       backgroundCheckAuthorization,
       termsAndConditionsAgreement,
+      companyName: data.companyName,
       job: position,
       companyId: id,
     });

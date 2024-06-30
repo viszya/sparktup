@@ -36,6 +36,7 @@ export  function DataPage() {
 
 
 
+
   if (applications.isLoading == true) {
     return (
       <Skeleton className="w-full h-96 rounded-2xl"/>
@@ -46,9 +47,16 @@ export  function DataPage() {
     data = {}
   }
 
-  // console.log("BUDFSHUFDS")
-  // console.log(data.Application)
-  // console.log("BUDFSHUFDS")
+
+
+
+
+
+
+  // data.forEach(application => {
+  //   application.companyName = application.company?.companyName || 'Unknown';
+  // });
+  console.log(data.Application);
 
   return (
     <>

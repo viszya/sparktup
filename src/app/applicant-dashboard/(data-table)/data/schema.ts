@@ -22,6 +22,7 @@ export const taskSchema = z.object({
   challengingSituation: z.string(),
   backgroundCheckAuthorization: z.boolean(),
   termsAndConditionsAgreement: z.boolean(),
+  companyName: z.string(),
 })
 
 export type Task = z.infer<typeof taskSchema>
