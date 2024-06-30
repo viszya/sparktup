@@ -82,11 +82,6 @@ export default function RootLayout({
           strategy="beforeInteractive"
           type="text/javascript"
         ></Script>
-{/* <Script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></Script> */}
-<Script
-    src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
-    async=""
-  ></Script>
       </Head>
     </html>
   );
