@@ -169,16 +169,16 @@ export default function JobApplicationForm() {
 
   function updateFormValuesWithExampleData() {
     const exampleData = {
-      technicalSkills: "JavaScript, React",
-      softSkills: "Communication, Teamwork",
-      certifications: "Certified Developer",
+      technicalSkills: "JavaScript, React, Node.js, Express, MongoDB, SQL, Python, Django, HTML, CSS, Git, Docker, Kubernetes",
+      softSkills: "Communication, Teamwork, Problem-solving, Leadership, Adaptability, Time Management, Conflict Resolution, Critical Thinking, Creativity, Emotional Intelligence",
+      certifications: "Certified Developer, AWS Certified Solutions Architect, Google Professional Cloud Architect, Microsoft Certified Azure Developer, PMP, Six Sigma Black Belt",
       startDate: "01/01/2023",
       employmentType: "Full-time",
-      desiredWorkSchedule: "Weekdays",
+      desiredWorkSchedule: "Weekdays, Flexible hours, Remote options available",
       convictedOfCrime: "No",
-      interestReason: "I love the company's mission.",
-      suitableCandidateReason: "I have relevant experience.",
-      challengingSituation: "Handled tight project deadlines successfully.",
+      interestReason: "I love the company's mission and vision. I have been following the company's progress for a long time and I am impressed with the innovative solutions and products it provides. I am passionate about the industry and believe that my skills and experiences align perfectly with the company's goals and values.",
+      suitableCandidateReason: "I have over 5 years of experience in software development with a strong background in full-stack development. My technical skills, coupled with my soft skills, make me a well-rounded candidate. I have successfully led projects from inception to deployment, working closely with cross-functional teams to deliver high-quality products. I am proactive, a quick learner, and always eager to take on new challenges.",
+      challengingSituation: "In my previous job, we had a critical project with a very tight deadline. The initial requirements were vague, and the team was under a lot of pressure. I took the initiative to organize a series of brainstorming sessions to clarify the requirements and break down the tasks into manageable chunks. I also introduced daily stand-up meetings to keep everyone on track and address any issues promptly. Despite the challenges, we delivered the project on time and received positive feedback from the client for our professionalism and quality of work.",
       backgroundCheckAuthorization: true,
       termsAndConditionsAgreement: true,
     };
