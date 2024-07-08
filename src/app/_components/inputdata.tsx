@@ -1386,6 +1386,110 @@ const data = [
     "resumeLink": "https://cisco.com"
   },
   {
+    "fullName": "Omkar Lad",
+    "jobTitle": "DevOps Engineer",
+    "proEmail": "omkar_lad@gmail.com",
+    "profileSrc": "/wp20.jpeg",
+    "username": "devopsomkar",
+    "phone": "+91 98765 43210",
+    "location": "Pune, India",
+    "connections": "450+",
+    "yearsOfExperience": "6",
+    "about": "Dedicated DevOps Engineer with a proven track record of facilitating seamless software deployments through automated processes and robust monitoring systems. Specializes in cloud infrastructure and continuous integration practices.",
+    "avaiableForWork": false,
+    "hasAJob": true,
+    "experiences": [
+      {
+        "companyLogoSrc": "/awslogo.png",
+        "companyName": "Amazon Web Services",
+        "companyImgSrc": "/aws.png",
+        "engagement": "Full-Time",
+        "relativeOfWork": "On-Site",
+        "jobTitle": "Senior DevOps Engineer",
+        "location": "Pune, India",
+        "time": "May 2018 - Present",
+        "jobDescriptions": [
+          "Designed and implemented automated CI/CD pipelines for multiple large-scale applications, improving deployment frequency by 70%",
+          "Managed AWS cloud infrastructure, ensuring 99.99% uptime and optimizing resource allocation",
+          "Led a team of junior DevOps engineers, mentoring them on best practices and advanced cloud solutions"
+        ]
+      },
+      {
+        "companyLogoSrc": "/freelancelogo.png",
+        "companyName": "Freelance",
+        "companyImgSrc": "/freelance.png",
+        "engagement": "Contract",
+        "relativeOfWork": "Remote",
+        "jobTitle": "Cloud Infrastructure Consultant",
+        "location": "Remote",
+        "time": "Jan 2016 - Apr 2018",
+        "jobDescriptions": [
+          "Provided consultancy on cloud migration strategies for various enterprises",
+          "Implemented robust disaster recovery plans that reduced potential downtime and data loss",
+          "Customized and optimized cloud services for cost efficiency and improved performance"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "E-commerce Platform Scalability Enhancement",
+        "src": "/dashboard-preview.png",
+        "link": "https://aws.com"
+      },
+      {
+        "name": "Real-Time Data Processing Pipeline",
+        "src": "/dashboard-preview.png",
+        "link": "https://aws.com"
+      }
+    ],
+    "topSkills": [
+      {
+        "skillName": "Continuous Integration/Continuous Deployment (CI/CD)",
+        "color": "blue",
+        "skillDescription": "Expert in setting up and maintaining CI/CD pipelines to streamline development and deployment processes."
+      },
+      {
+        "skillName": "AWS Cloud Services",
+        "color": "orange",
+        "skillDescription": "Advanced knowledge of AWS services, including EC2, S3, RDS, and Lambda, for scalable cloud solutions."
+      },
+      {
+        "skillName": "Infrastructure as Code (IaC)",
+        "color": "green",
+        "skillDescription": "Proficient in using tools like Terraform and Ansible to manage infrastructure through code, ensuring consistency and reliability."
+      }
+    ],
+    "recommendations": [
+      {
+        "name": "Amit Singh",
+        "jobTitle": "CTO at NextGen Tech",
+        "srcImage": "/profile38.png",
+        "message": "Omkar's contributions to our cloud architecture have been invaluable. His expertise in DevOps practices has driven significant improvements in our operational efficiency."
+      },
+      {
+        "name": "Priya Patel",
+        "jobTitle": "Director of Engineering at InnovateNow",
+        "srcImage": "/profile39.png",
+        "message": "His skills in automating our deployment processes have not only saved time but also greatly reduced the margin for error in our live environments."
+      }
+    ],
+    "profileTags": [
+      "DevOps",
+      "AWS",
+      "automation"
+    ],
+    "interestedTags": [
+      "cloud computing",
+      "system architecture",
+      "tech innovation"
+    ],
+    "resumeLink": "https://aws.com"
+  },
+  
+
+
+
+  {
     "fullName": "Charlotte Johnson",
     "jobTitle": "Human Resources Manager",
     "proEmail": "charlotte_johnson@gmail.com",
@@ -2184,7 +2288,108 @@ const data = [
       "strategic innovation"
     ],
     "resumeLink": "https://linkedin.com"
+  },
+  {
+    "fullName": "Omkar Lad",
+    "jobTitle": "DevOps Engineer",
+    "proEmail": "omkar_lad@gmail.com",
+    "profileSrc": "/wp20.jpeg",
+    "username": "devopsomkar",
+    "phone": "+91 98765 43210",
+    "location": "Pune, India",
+    "connections": "450+",
+    "yearsOfExperience": "6",
+    "about": "Dedicated DevOps Engineer with a proven track record of facilitating seamless software deployments through automated processes and robust monitoring systems. Specializes in cloud infrastructure and continuous integration practices.",
+    "avaiableForWork": false,
+    "hasAJob": true,
+    "experiences": [
+      {
+        "companyLogoSrc": "/awslogo.png",
+        "companyName": "Amazon Web Services",
+        "companyImgSrc": "/aws.png",
+        "engagement": "Full-Time",
+        "relativeOfWork": "On-Site",
+        "jobTitle": "Senior DevOps Engineer",
+        "location": "Pune, India",
+        "time": "May 2018 - Present",
+        "jobDescriptions": [
+          "Designed and implemented automated CI/CD pipelines for multiple large-scale applications, improving deployment frequency by 70%",
+          "Managed AWS cloud infrastructure, ensuring 99.99% uptime and optimizing resource allocation",
+          "Led a team of junior DevOps engineers, mentoring them on best practices and advanced cloud solutions"
+        ]
+      },
+      {
+        "companyLogoSrc": "/freelancelogo.png",
+        "companyName": "Freelance",
+        "companyImgSrc": "/freelance.png",
+        "engagement": "Contract",
+        "relativeOfWork": "Remote",
+        "jobTitle": "Cloud Infrastructure Consultant",
+        "location": "Remote",
+        "time": "Jan 2016 - Apr 2018",
+        "jobDescriptions": [
+          "Provided consultancy on cloud migration strategies for various enterprises",
+          "Implemented robust disaster recovery plans that reduced potential downtime and data loss",
+          "Customized and optimized cloud services for cost efficiency and improved performance"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "E-commerce Platform Scalability Enhancement",
+        "src": "/dashboard-preview.png",
+        "link": "https://aws.com"
+      },
+      {
+        "name": "Real-Time Data Processing Pipeline",
+        "src": "/dashboard-preview.png",
+        "link": "https://aws.com"
+      }
+    ],
+    "topSkills": [
+      {
+        "skillName": "Continuous Integration/Continuous Deployment (CI/CD)",
+        "color": "blue",
+        "skillDescription": "Expert in setting up and maintaining CI/CD pipelines to streamline development and deployment processes."
+      },
+      {
+        "skillName": "AWS Cloud Services",
+        "color": "orange",
+        "skillDescription": "Advanced knowledge of AWS services, including EC2, S3, RDS, and Lambda, for scalable cloud solutions."
+      },
+      {
+        "skillName": "Infrastructure as Code (IaC)",
+        "color": "green",
+        "skillDescription": "Proficient in using tools like Terraform and Ansible to manage infrastructure through code, ensuring consistency and reliability."
+      }
+    ],
+    "recommendations": [
+      {
+        "name": "Amit Singh",
+        "jobTitle": "CTO at NextGen Tech",
+        "srcImage": "/profile38.png",
+        "message": "Omkar's contributions to our cloud architecture have been invaluable. His expertise in DevOps practices has driven significant improvements in our operational efficiency."
+      },
+      {
+        "name": "Priya Patel",
+        "jobTitle": "Director of Engineering at InnovateNow",
+        "srcImage": "/profile39.png",
+        "message": "His skills in automating our deployment processes have not only saved time but also greatly reduced the margin for error in our live environments."
+      }
+    ],
+    "profileTags": [
+      "DevOps",
+      "AWS",
+      "automation"
+    ],
+    "interestedTags": [
+      "cloud computing",
+      "system architecture",
+      "tech innovation"
+    ],
+    "resumeLink": "https://aws.com"
   }
+  
   ];
 
 export function InputData() {
@@ -2202,7 +2407,7 @@ export function InputData() {
   const addExperience = api.settings.addExperience.useMutation();
 
   function onSubmit() {
-      let dataNew = data[13];
+      let dataNew = data[14];
       profile.mutate({
           fullName: dataNew.fullName,
           proEmail: dataNew.proEmail,
