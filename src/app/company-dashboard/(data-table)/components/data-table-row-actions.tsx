@@ -58,6 +58,12 @@ export function DataTableRowActions<TData>({
     },
   });
 
+
+  function autofillData(e) {
+    setMessage("I hope this message finds you well.\n\nThank you for your recent application to us. We appreciate the time and effort you invested in preparing your application. We are pleased to inform you that your application has been reviewed and you have moved on to the next stage of our selection process.\nHere are the next steps:\n\nInitial Screening Call:\nOne of our recruiters will contact you within the next week to schedule an initial screening call. This call will last approximately 30 minutes and will cover your background, experience, and career aspirations.");
+  }
+
+
   async function sendEmail() {
     try {
       const response = await fetch("/api/sendEmail", {
@@ -205,6 +211,11 @@ export function DataTableRowActions<TData>({
                     {loading ? "Sending..." : "Send Message"}
                   </button>
                 </div>
+                <div className="flex justify-center">
+                  <Button className="rounded-2xl" type="button" onClick={autofillData}>
+                    Autofill Data
+                  </Button>
+                </div>
               </form>
             </div>
           </DialogContent>
@@ -250,6 +261,11 @@ export function DataTableRowActions<TData>({
                     )}{" "}
                     {loading ? "Sending..." : "Send Message"}
                   </button>
+                </div>
+                <div className="flex justify-center">
+                  <Button className="rounded-2xl" type="button" onClick={autofillData}>
+                    Autofill Data
+                  </Button>
                 </div>
               </form>
             </div>
